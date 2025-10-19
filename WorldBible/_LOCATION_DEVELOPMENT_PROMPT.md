@@ -1,6 +1,6 @@
 # Location Development - New Chat Starter Prompt
 
-**Purpose:** Copy this entire prompt into a new chat to begin developing Temporal Tides locations  
+**Purpose:** Copy this entire prompt into a new chat to begin developing Temporal Tides locations
 **Date Created:** October 19, 2025
 
 ---
@@ -87,7 +87,7 @@ I'm working on developing locations for the **Temporal Tides World Bible** - a p
 - Dark, unstable, philosophical significance
 - File: `WorldBible/04_Locations/DrEntropysLair.md`
 
-**4. Chronopolis Central** 
+**4. Chronopolis Central**
 - Anne's origin city
 - Temporal Council stronghold
 - Ordered society (AC "Red Governed" inspiration)
@@ -96,16 +96,16 @@ I'm working on developing locations for the **Temporal Tides World Bible** - a p
 
 ### TIER 2 - Character Origins (Develop These Second)
 
-**5. Velocity City** - Eli's origin (Accelerated 2.5 RFR, autonomous, ADHD-friendly)  
-**6. Silent Hollow** - Dave's origin (Dilated 0.6 RFR, contemplative, depression-comfortable)  
-**7. Harmony Falls** - Maya's origin (Baseline, music culture, autistic-welcoming)  
+**5. Velocity City** - Eli's origin (Accelerated 2.5 RFR, autonomous, ADHD-friendly)
+**6. Silent Hollow** - Dave's origin (Dilated 0.6 RFR, contemplative, depression-comfortable)
+**7. Harmony Falls** - Maya's origin (Baseline, music culture, autistic-welcoming)
 **8. Mist Haven** - Iris's origin (Baseline liminal, artistic, mental health sanctuary)
 
 ### TIER 3 - Supporting Locations (AC-Inspired New Concepts)
 
-**9. Autonomous Haven Network** - 5 neurodivergent micro-communities  
-**10. Temporal Commons** - Public rest hub  
-**11. Gradient's Edge Outpost** - Frontier hub (Vibrion's parents memorial)  
+**9. Autonomous Haven Network** - 5 neurodivergent micro-communities
+**10. Temporal Commons** - Public rest hub
+**11. Gradient's Edge Outpost** - Frontier hub (Vibrion's parents memorial)
 **12. The Fractured Wastes** - Chaos zone, dangerous
 
 ## 🎨 Key Frameworks to Apply
@@ -171,7 +171,7 @@ I'm working on developing locations for the **Temporal Tides World Bible** - a p
 
 Please help me develop [LOCATION NAME] using:
 - Enhanced location template from `.cursor/rules/locations-worldbuilding.mdc`
-- Detailed concepts from `Refrences/LOCATION_DEVELOPMENT_REFERENCE.md`  
+- Detailed concepts from `Refrences/LOCATION_DEVELOPMENT_REFERENCE.md`
 - AC inspiration from `Refrences/Accountability Collective.md`
 - Existing character dossiers for connections (`WorldBible/03_Characters/Heroes/`)
 - Temporal physics from `WorldBible/01_UniverseFundamentals/`

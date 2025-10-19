@@ -1,14 +1,14 @@
 # The Mentor - Mysterious Guide
 
-**Part III: Characters | Antagonists**  
-**Status:** 📝 OUTLINE - TO BE EXPANDED
+**Part III: Characters | Antagonists**
+**Status:** OUTLINE - TO BE EXPANDED
 
 ---
 
 ## Quick Reference
 
-**Name:** The Mentor  
-**Role:** Mysterious Guide  
+**Name:** The Mentor
+**Role:** Mysterious Guide
 **Status:** TO BE DETAILED
 
 ---

@@ -1,7 +1,7 @@
 # Core Gameplay Loop
 
-**Part IX: Gameplay Mechanics**  
-**Status:** 📝 PLACEHOLDER
+**Part IX: Gameplay Mechanics**
+**Status:** PLACEHOLDER
 
 ---
 

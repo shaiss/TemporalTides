@@ -1,14 +1,14 @@
 # Dr. Entropy - Primary Antagonist
 
-**Part III: Characters | Antagonists**  
-**Status:** 📝 OUTLINE - TO BE EXPANDED
+**Part III: Characters | Antagonists**
+**Status:** OUTLINE - TO BE EXPANDED
 
 ---
 
 ## Quick Reference
 
-**Name:** Dr. Entropy  
-**Role:** Primary Antagonist  
+**Name:** Dr. Entropy
+**Role:** Primary Antagonist
 **Status:** TO BE DETAILED
 
 ---

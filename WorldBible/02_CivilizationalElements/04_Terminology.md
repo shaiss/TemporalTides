@@ -119,7 +119,7 @@ Ancient hub containing portals to different temporal zones. Origin unknown, serv
 
 **Temporal Zone Types:**
 - **Stable Zone:** Near-baseline time flow
-- **Accelerated Zone:** Faster-than-baseline time flow  
+- **Accelerated Zone:** Faster-than-baseline time flow
 - **Dilated Zone:** Slower-than-baseline time flow
 - **Looped Zone:** Cyclically repeating time
 - **Fractured Zone:** Chaotic, unpredictable time
@@ -213,8 +213,6 @@ Period in story when team members come together.
 
 **The Separation:**
 Crisis point when team is scattered across temporal zones.
-
----
 
 ---
 

@@ -1,15 +1,15 @@
 # Temporal Research Council
 
-**Part V: Factions & Organizations**  
-**Status:** 📝 PLACEHOLDER
+**Part V: Factions & Organizations**
+**Status:** PLACEHOLDER
 
 ---
 
 ## Quick Reference
 
-**Official Name:** Temporal Research Council  
-**Type:** Governing body for temporal matters  
-**Formation:** [TO BE DEFINED]  
+**Official Name:** Temporal Research Council
+**Type:** Governing body for temporal matters
+**Formation:** [TO BE DEFINED]
 **Current Status:** [TO BE DEFINED]
 
 ---

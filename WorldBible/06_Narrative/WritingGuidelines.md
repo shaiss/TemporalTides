@@ -1,7 +1,7 @@
 # Writing Guidelines
 
-**Part VI: Narrative Design**  
-**Status:** 📝 PLACEHOLDER
+**Part VI: Narrative Design**
+**Status:** PLACEHOLDER
 
 ---
 

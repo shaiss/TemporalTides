@@ -169,7 +169,7 @@ Baseline Metropolitan embodies **structured community governance** (middle of Ra
 - Cost-effective (cheaper than total control)
 
 **Dr. Volt's Assessment:**
-"Metropolitan proves my point—Chronopolis over-stabilizes. 3% variance is perfectly safe and feels more natural. Control for control's sake is Council paranoia."
+"Metropolitan proves my point - Chronopolis over-stabilizes. 3% variance is perfectly safe and feels more natural. Control for control's sake is Council paranoia."
 
 ### Character Experiences
 

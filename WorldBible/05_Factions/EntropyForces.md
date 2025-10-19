@@ -1,15 +1,15 @@
 # Dr. Entropy's Forces
 
-**Part V: Factions & Organizations**  
-**Status:** 📝 PLACEHOLDER
+**Part V: Factions & Organizations**
+**Status:** PLACEHOLDER
 
 ---
 
 ## Quick Reference
 
-**Official Name:** Dr. Entropy's Forces  
-**Type:** Antagonist organization  
-**Formation:** [TO BE DEFINED]  
+**Official Name:** Dr. Entropy's Forces
+**Type:** Antagonist organization
+**Formation:** [TO BE DEFINED]
 **Current Status:** [TO BE DEFINED]
 
 ---

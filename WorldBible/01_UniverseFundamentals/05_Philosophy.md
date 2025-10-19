@@ -46,7 +46,7 @@ Modeled after Star Trek's Prime Directive: minimize interference with natural te
 - May be impossible to actually follow
 
 **Team's Approach:**
-The team operates under a **harm reduction model**—intervene when temporal disruptions threaten universal stability or cause significant suffering, but avoid reshaping timelines for convenience or ideology.
+The team operates under a **harm reduction model**: intervene when temporal disruptions threaten universal stability or cause significant suffering, but avoid reshaping timelines for convenience or ideology.
 
 ### 5.3 Phenomenology of Neurodivergent Time
 
@@ -60,7 +60,7 @@ Each character's experience of time is **genuinely real**, not a distortion or i
 
 **Implications:**
 - Multiple valid perspectives on same events
-- "Objective" time is actually just averaged/consensus time
+- Objective time is actually just averaged or consensus time
 - Neurodivergent perception may access aspects of reality others miss
 - Understanding requires perspective-taking, not correction
 
@@ -69,7 +69,7 @@ Each character's experience of time is **genuinely real**, not a distortion or i
 **Core Tenets:**
 
 **Neurodiversity as Strength:**
-Different cognitive patterns aren't deficits but different ways of engaging with reality—each with unique advantages.
+Different cognitive patterns are not deficits but different ways of engaging with reality, each with unique advantages.
 
 **Condition vs. Experience:**
 Mental health conditions are:
@@ -108,8 +108,6 @@ Reality is not a static state but an ongoing **process of becoming**:
 - Branching timelines reflect real alternatives
 - Character growth is actual transformation, not just revelation
 - The universe itself evolves through time
-
----
 
 ---
 

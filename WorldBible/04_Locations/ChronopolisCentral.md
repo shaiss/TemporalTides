@@ -10,7 +10,7 @@
 
 ### Significance to Universe
 
-Chronopolis Central stands as the **capital of temporal civilization**—not through conquest or decree, but through sheer size, influence, and organization:
+Chronopolis Central stands as the **capital of temporal civilization** - not through conquest or decree, but through sheer size, influence, and organization:
 
 - **Population Capital:** 5 million permanent residents (largest single city)
 - **Political Center:** Temporal Research Council headquarters (Nexus Tower)
@@ -22,7 +22,7 @@ Chronopolis Central stands as the **capital of temporal civilization**—not thr
 
 **Strategic Position:**
 
-Chronopolis represents the **ORDERED** extreme on the societal spectrum. It proves that centralized control *can* create safety, stability, and prosperity—but at costs of freedom, spontaneity, and diversity. Understanding Chronopolis is essential to understanding:
+Chronopolis represents the **ORDERED** extreme on the societal spectrum. It proves that centralized control *can* create safety, stability, and prosperity - but at costs of freedom, spontaneity, and diversity. Understanding Chronopolis is essential to understanding:
 - Why Anne is how she is (product of environment)
 - What the Temporal Council represents (protective authority)
 - Why autonomous zones resist (rejection of this model)
@@ -2181,7 +2181,7 @@ Anne discovered some underground culture as teenager (felt less alone), but fear
 
 **Chapter 16 (Possible Attack):**
 - Dr. Entropy targets Chronopolis (symbolic)
-- Or: Doesn't (complexity—not pure destruction)
+- Or: Doesn't (complexity: not pure destruction)
 - Chronometric standard threatened
 - Team defends (despite reservations)
 - Lessons: Safety and freedom both matter

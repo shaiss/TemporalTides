@@ -1,7 +1,7 @@
 # Themes & Motifs
 
-**Part VI: Narrative Design**  
-**Status:** 📝 OUTLINE ESTABLISHED
+**Part VI: Narrative Design**
+**Status:** OUTLINE ESTABLISHED
 
 ---
 

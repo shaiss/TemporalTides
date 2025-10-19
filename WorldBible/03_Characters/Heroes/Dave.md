@@ -1,17 +1,17 @@
 # Dave Miller - Depression Empathic Specialist
 
-**Part III: Characters | Heroes**  
+**Part III: Characters | Heroes**
 
 ---
 
 ## Quick Reference
 
-**Full Name:** Dave Miller  
-**Age:** 18 years (born 324 AC)  
-**Mental Health Profile:** Depression  
-**Primary Ability:** Empathic Resonance  
-**Temporal Signature:** Class C (Dilated - Stretched Moments)  
-**Bioelectric Field Strength:** Class II (2.6 microtesla)  
+**Full Name:** Dave Miller
+**Age:** 18 years (born 324 AC)
+**Mental Health Profile:** Depression
+**Primary Ability:** Empathic Resonance
+**Temporal Signature:** Class C (Dilated - Stretched Moments)
+**Bioelectric Field Strength:** Class II (2.6 microtesla)
 **Visual Reference:** ![Dave Miller](/assets/character_portraits/Dave_Miller.jpg)
 
 ---
@@ -20,11 +20,11 @@
 
 ### Origin
 
-Dave comes from **Silent Hollow**, a small, secluded village at dilated time flow (0.6 RFR), surrounded by nature that often reflects his internal state—tranquil on the surface but with an underlying current of melancholy. The slow time matched his internal heaviness, making moments stretch and feelings linger.
+Dave comes from **Silent Hollow**, a small, secluded village at dilated time flow (0.6 RFR), surrounded by nature that often reflects his internal state - tranquil on the surface but with an underlying current of melancholy. The slow time matched his internal heaviness, making moments stretch and feelings linger.
 
 ### Childhood
 
-Dave's childhood was quiet and contemplative. While other children played energetically, Dave observed. He felt things deeply—too deeply sometimes—and time seemed to move slower for him than for others, even in a dilated zone where everyone experienced stretched time.
+Dave's childhood was quiet and contemplative. While other children played energetically, Dave observed. He felt things deeply - too deeply sometimes - and time seemed to move slower for him than for others, even in a dilated zone where everyone experienced stretched time.
 
 **Early Years:**
 - Quiet, thoughtful child
@@ -45,7 +45,7 @@ Dave's childhood was quiet and contemplative. While other children played energe
 
 ### Discovery of Ability
 
-At age 16 (340 AC), during a particularly deep depressive episode, Dave experienced his first **Empathic Resonance** activation. Sitting by the river, overwhelmed by his own emotions, he suddenly felt his father's concern radiating from the house behind him—actual perception of the bioelectric emotional field. Then his mother's worry, the dog's simple contentment, even the trees' slow vegetative peace. The world's emotions washed over him like water. Overwhelming but also... less alone. His depression wasn't separate from others' feelings; emotions were shared, resonant, connected.
+At age 16 (340 AC), during a particularly deep depressive episode, Dave experienced his first **Empathic Resonance** activation. Sitting by the river, overwhelmed by his own emotions, he suddenly felt his father's concern radiating from the house behind him - actual perception of the bioelectric emotional field. Then his mother's worry, the dog's simple contentment, even the trees' slow vegetative peace. The world's emotions washed over him like water. Overwhelming but also... less alone. His depression wasn't separate from others' feelings; emotions were shared, resonant, connected.
 
 **Ability Development:**
 - Age 16-17: Empathy activated during intense emotional states
@@ -147,7 +147,7 @@ Dave's journey involves learning to find moments of motivation and harness them,
 - Being slow and thoughtful is strength in fast world
 - Depression is part of him; he can thrive with it, not despite it
 
-**Key Turning Point:** During separation (Chapter 13), isolated and deeply depressed, Dave discovers his empathy extends to temporal echoes—residual emotions from past/future. These echoes comfort him; he's never truly alone in time. This revelation helps him reconnect with team and himself.
+**Key Turning Point:** During separation (Chapter 13), isolated and deeply depressed, Dave discovers his empathy extends to temporal echoes - residual emotions from past/future. These echoes comfort him; he's never truly alone in time. This revelation helps him reconnect with team and himself.
 
 ---
 
@@ -506,7 +506,7 @@ Weighted toward past. Depression makes past mistakes and regrets linger. Working
 - **At Rest:** Still, contemplative, sometimes looks distant
 - **Depressed:** Slower movements, heavy posture, minimal expression
 - **Using Empathy:** Closes eyes, hand to chest, feeling
-- **Playing Music:** Most alive—body sways, face shows emotion, present
+- **Playing Music:** Most alive - body sways, face shows emotion, present
 - **Engaged:** Attentive, leaning in, genuine interest
 - **Overwhelmed:** Withdraws physically, hunches, seeks quiet
 - **Rare Smile:** Small but genuine, precious when it appears
@@ -701,11 +701,11 @@ Appeals to:
 
 **Acceptance + Purpose Arc:**
 
-**Stage 1:** Sees depression as burden, questions his value  
-**Stage 2:** Discovers empathy helps others, finds purpose  
-**Stage 3:** Crisis where depression prevents helping  
-**Stage 4:** Learns value isn't determined by productivity  
-**Stage 5:** Accepts depression as part of him, finds meaning in depth  
+**Stage 1:** Sees depression as burden, questions his value
+**Stage 2:** Discovers empathy helps others, finds purpose
+**Stage 3:** Crisis where depression prevents helping
+**Stage 4:** Learns value isn't determined by productivity
+**Stage 5:** Accepts depression as part of him, finds meaning in depth
 
 ### Critical Story Moments
 
@@ -767,12 +767,12 @@ Appeals to:
 
 ### Team Synergies
 
-**Dave + Vibrion:** Dave senses emotions, Vibrion takes action  
-**Dave + Anne:** He feels what she worries about, confirms/denies threats  
-**Dave + Leo:** Emotional insight + analytical thought = complete understanding  
-**Dave + Maya:** Emotional patterns + structural patterns = full picture  
-**Dave + Eli:** He provides depth, Eli provides energy—balance each other  
-**Dave + Iris:** Emotional layers + reality layers = see everything  
+**Dave + Vibrion:** Dave senses emotions, Vibrion takes action
+**Dave + Anne:** He feels what she worries about, confirms/denies threats
+**Dave + Leo:** Emotional insight + analytical thought = complete understanding
+**Dave + Maya:** Emotional patterns + structural patterns = full picture
+**Dave + Eli:** He provides depth, Eli provides energy - balance each other
+**Dave + Iris:** Emotional layers + reality layers = see everything
 
 ### Depression Representation in Gameplay
 
@@ -786,7 +786,7 @@ Appeals to:
 - Low energy periods (not fun punishment, character reality)
 - Variable availability (some missions he can't handle)
 - Motivation struggles (game accommodates)
-- Not "cured" by adventure—manages ongoing
+- Not "cured" by adventure - manages ongoing
 
 **Accommodations in Design:**
 - Optional low-energy gameplay paths

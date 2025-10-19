@@ -1,7 +1,7 @@
 # Music Direction
 
-**Part VIII: Audio Design**  
-**Status:** 📝 PLACEHOLDER
+**Part VIII: Audio Design**
+**Status:** PLACEHOLDER
 
 ---
 

@@ -10,7 +10,7 @@
 
 ### Significance to Universe
 
-The Fractured Wastes represents **natural chaos**—the terrifying result of temporal stability breaking down without intervention or philosophy:
+The Fractured Wastes represents **natural chaos** - the terrifying result of temporal stability breaking down without intervention or philosophy:
 
 - **Cautionary Warning:** What happens when time control fails completely
 - **Natural Disaster Zone:** Permanent scar from historical temporal catastrophe
@@ -40,7 +40,7 @@ The Fractured Wastes serves multiple narrative functions:
 
 **Apocalyptic Horror:**
 
-The Wastes evoke *existential dread*—reality itself has died here:
+The Wastes evoke *existential dread* - reality itself has died here:
 
 **Visual Horror:**
 - Landscape that shouldn't exist (impossible geometry)
@@ -94,7 +94,7 @@ The Fractured Wastes doesn't fit AC's spectrum because it **rejects the possibil
 **Not Structured:** No community (can't form in chaos)
 **Not Autonomous:** No self-governance (survival only)
 **Not Frontier:** Beyond frontier (frontier implies potential)
-**Not Even Chaos Philosophy:** Dr. Entropy's Lair has ideology—Wastes has nothing
+**Not Even Chaos Philosophy:** Dr. Entropy's Lair has ideology - Wastes has nothing
 
 **Anti-Society:**
 - No governance possible (chaos prevents organization)
@@ -167,7 +167,7 @@ Chronometric sensors fail within minutes:
 **Timeline Fractures:**
 - Reality split into parallel versions
 - Multiple timelines occupy same space
-- Interact with alternate selves (usually hostile—why?)
+- Interact with alternate selves (usually hostile - why?)
 - Branching continues (fractures fracture)
 - Reconciliation impossible (too far gone)
 - Iris sees all (nightmare even for her)
@@ -391,7 +391,7 @@ Chronometric sensors fail within minutes:
 - Learning from natural chaos
 - Comparing to his controlled chaos
 - Gathering materials (paradox crystals)
-- Testing theories (safe for him—devices protect)
+- Testing theories (safe for him - devices protect)
 
 **Scavengers (Foolish):**
 - Seeking valuable materials
@@ -590,7 +590,7 @@ Unlike other locations (designed), the Wastes' "architecture" is **accidental de
 - Immediate anxiety (survival response)
 - Creeping dread (growing awareness of danger)
 - Dissociation (useful, protective)
-- Hallucinations (or not—can't tell)
+- Hallucinations (or not - can't tell)
 - Despair (philosophical, crushing)
 - Madness beckoning (tempting to let go)
 
@@ -641,7 +641,7 @@ Shows that **chaos isn't always liberating**:
 - Survival individual (everyone alone)
 
 **Dr. Entropy's Observation:**
-"The Wastes are what chaos looks like without intelligence guiding it. Beautiful in purity, terrifying in totality. This is why the Catalyst must be controlled—chaos without purpose is merely destruction."
+"The Wastes are what chaos looks like without intelligence guiding it. Beautiful in purity, terrifying in totality. This is why the Catalyst must be controlled - chaos without purpose is merely destruction."
 
 **Even He Recognizes Difference:**
 - His ideology requires some stability (to spread)
@@ -850,7 +850,7 @@ Shows that **chaos isn't always liberating**:
 - Maintains sanity through documentation obsession
 - Leaves messages in stable pockets (warnings, observations)
 - Team has found notes (invaluable intelligence)
-- Refused rescue (twice offered, declined—why?)
+- Refused rescue (twice offered, declined - why?)
 
 **Temporary Visitors (~10-30 at any time):**
 - Scavengers (seeking crystals)
@@ -1291,7 +1291,7 @@ Shows that **chaos isn't always liberating**:
 **Moral Complexity:**
 - Some trapped chose chaos (fled Chronopolis)
 - Got more than bargained for (be careful what you wish)
-- Rescue who can (not all want it—Chronicler)
+- Rescue who can (not all want it - Chronicler)
 - Accept limits (can't save everyone)
 
 ---
@@ -1410,7 +1410,7 @@ Shows that **chaos isn't always liberating**:
 
 ### How to Reach (Don't)
 
-**Official Council Position:** "Entry forbidden—survival not guaranteed, rescue unlikely"
+**Official Council Position:** "Entry forbidden - survival not guaranteed, rescue unlikely"
 
 **Actual Access Methods:**
 

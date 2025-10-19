@@ -1,7 +1,7 @@
 # Chapter-by-Chapter Breakdown
 
-**Part VI: Narrative Design**  
-**Status:** 📝 PLACEHOLDER
+**Part VI: Narrative Design**
+**Status:** PLACEHOLDER
 
 ---
 

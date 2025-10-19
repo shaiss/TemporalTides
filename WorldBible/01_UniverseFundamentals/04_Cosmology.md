@@ -36,33 +36,33 @@ The universe embodies aspects of both philosophical models:
 - Time is a dimension that can be traversed (with difficulty)
 
 **Synthesis:**
-Reality operates on **contextual temporality**—from an individual's perspective, presentism is true (they exist in the now). From a cosmic perspective, eternalism is true (all moments exist in spacetime). The apparent contradiction is resolved by understanding time as both subjective experience and objective structure.
+Reality operates on **contextual temporality**: from an individual's perspective, presentism is true (they exist in the now). From a cosmic perspective, eternalism is true (all moments exist in spacetime). The apparent contradiction is resolved by understanding time as both subjective experience and objective structure.
 
 ### 4.3 Layers of Reality
 
 **Layer 1: Physical Reality**
-The material world: matter, energy, forces, spacetime structure.  
+The material world: matter, energy, forces, spacetime structure.
 *Accessible to:* Everyone
 *Perception:* Standard sensory experience
 
 **Layer 2: Temporal Reality**
-The flow and structure of time itself: gradients, loops, fractures.  
-*Accessible to:* Those with temporal awareness or neuro-temporal abilities  
+The flow and structure of time itself: gradients, loops, fractures.
+*Accessible to:* Those with temporal awareness or neuro-temporal abilities
 *Perception:* Requires sensitivity to temporal variations
 
 **Layer 3: Bioelectric Reality**
-The energy fields of consciousness and life force.  
-*Accessible to:* Empathic individuals, energy manipulators  
+The energy fields of consciousness and life force.
+*Accessible to:* Empathic individuals, energy manipulators
 *Perception:* Dave's **Empathic Resonance**, Vibrion's energy sensing
 
 **Layer 4: Multitemporal Reality**
-Overlapping timelines, parallel possibilities, temporal echoes.  
-*Accessible to:* Rare individuals with multi-layered perception  
+Overlapping timelines, parallel possibilities, temporal echoes.
+*Accessible to:* Rare individuals with multi-layered perception
 *Perception:* Iris's **Visionary Insight** primarily operates here
 
 **Layer 5: The Substrate**
-The fundamental nature of reality beneath spacetime (largely unknown).  
-*Accessible to:* Unknown; possibly nobody in current era  
+The fundamental nature of reality beneath spacetime (largely unknown).
+*Accessible to:* Unknown; possibly nobody in current era
 *Perception:* Theoretical only
 
 **Interaction Between Layers:**
@@ -76,13 +76,13 @@ The fundamental nature of reality beneath spacetime (largely unknown).
 To reach a destination, one must cross infinite subdivisions of distance.
 
 **In Temporal Tides:**
-Some puzzles exploit this—characters must navigate spaces where distance subdivides infinitely. Maya's **Pattern Sense** helps recognize the pattern and find the "exit" point.
+Some puzzles exploit this: characters must navigate spaces where distance subdivides infinitely. Maya's **Pattern Sense** helps recognize the pattern and find the "exit" point.
 
 **Achilles and the Tortoise:**
 The faster runner can never overtake the slower if the slower has a head start.
 
 **In Temporal Tides:**
-Time dilation can create scenarios where this becomes literal—a character in an accelerated zone may never "catch up" to someone ahead in a dilated zone, despite moving faster objectively.
+Time dilation can create scenarios where this becomes literal: a character in an accelerated zone may never "catch up" to someone ahead in a dilated zone, despite moving faster objectively.
 
 **The Arrow Paradox:**
 At any instant, an arrow in flight is motionless, yet it moves.
@@ -104,8 +104,6 @@ These mysteries allow for:
 - Player/audience speculation
 - Narrative flexibility
 - Sense of wonder and discovery
-
----
 
 ---
 

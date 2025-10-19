@@ -1,7 +1,7 @@
 # Temporal Soundscape
 
-**Part VIII: Audio Design**  
-**Status:** 📝 FRAMEWORK
+**Part VIII: Audio Design**
+**Status:** FRAMEWORK
 
 ---
 

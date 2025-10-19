@@ -18,19 +18,19 @@ The Time Nexus stands as the single most important location in the Temporal Tide
 - **Cultural Crossroads:** Where beings from accelerated, dilated, and baseline zones interact
 - **Scientific Wonder:** Studying the Nexus advances temporal understanding
 
-The Nexus exists outside normal temporal-political control. No faction "owns" it—not the Temporal Research Council, not autonomous zones, not even Dr. Entropy dares claim it directly. This makes it simultaneously the safest and most contested location in existence.
+The Nexus exists outside normal temporal-political control. No faction "owns" it - not the Temporal Research Council, not autonomous zones, not even Dr. Entropy dares claim it directly. This makes it simultaneously the safest and most contested location in existence.
 
 ### Atmosphere and Feel
 
 **Upon First Arrival:**
 
-Visitors describe a profound sense of *temporal weightlessness*—the feeling of standing at the center of all possible timelines. The air itself seems to shimmer with potential, and time feels simultaneously frozen and racing. Colors appear more vivid, sounds have unusual clarity, and even baseline-perception individuals report heightened awareness.
+Visitors describe a profound sense of *temporal weightlessness* - the feeling of standing at the center of all possible timelines. The air itself seems to shimmer with potential, and time feels simultaneously frozen and racing. Colors appear more vivid, sounds have unusual clarity, and even baseline-perception individuals report heightened awareness.
 
 **Primary Sensations:**
 - **Visual:** Crystalline structures refracting light that shows past, present, and future versions simultaneously
 - **Auditory:** Layered echoes from multiple timestreams creating subtle harmonic drone
 - **Temporal:** Constant gentle fluctuation in perceived time flow (never disorienting, like breathing)
-- **Emotional:** Awe mixed with belonging—this place welcomes all temporal experiences equally
+- **Emotional:** Awe mixed with belonging - this place welcomes all temporal experiences equally
 
 **Cultural Mood:**
 
@@ -55,7 +55,7 @@ The Time Nexus embodies the **Centerverse concept** from Accountability Collecti
 
 **Unlike Other Locations:**
 
-Most zones have political positions (Ordered, Autonomous, Frontier, Chaos). The Nexus has none—or rather, it contains spaces representing all positions. It is deliberately **neutral**, **inclusive**, and **pre-political**. This neutrality is its strength and its protection.
+Most zones have political positions (Ordered, Autonomous, Frontier, Chaos). The Nexus has none - or rather, it contains spaces representing all positions. It is deliberately **neutral**, **inclusive**, and **pre-political**. This neutrality is its strength and its protection.
 
 ---
 
@@ -195,7 +195,7 @@ The Nexus is *saturated* with temporal phenomena, but all are **stable and non-t
 
 **Scientific Consensus:**
 
-The Nexus doesn't just *resist* temporal changes—it actively **anchors** universal timeline coherence. Destroying or destabilizing it could cause cascading temporal collapse across all zones. This makes it both critically protected and a primary target for Dr. Entropy.
+The Nexus doesn't just *resist* temporal changes - it actively **anchors** universal timeline coherence. Destroying or destabilizing it could cause cascading temporal collapse across all zones. This makes it both critically protected and a primary target for Dr. Entropy.
 
 ### Dangers and Benefits
 
@@ -225,7 +225,7 @@ The Nexus doesn't just *resist* temporal changes—it actively **anchors** unive
 
 **Physical Location:**
 
-The Nexus exists at a unique point in space-time—not a specific geographical location on a planet, but rather a *convergence* of multiple spatial and temporal coordinates. It occupies a stable micro-dimension, accessible via wormholes from all major temporal zones.
+The Nexus exists at a unique point in space-time - not a specific geographical location on a planet, but rather a *convergence* of multiple spatial and temporal coordinates. It occupies a stable micro-dimension, accessible via wormholes from all major temporal zones.
 
 **Approach Experience:**
 
@@ -237,7 +237,7 @@ Reaching the Nexus requires portal travel (direct physical travel impossible). A
 
 **Surrounding Environment:**
 
-The Nexus is surrounded by **temporal void**—not empty space, but a buffer zone where time is neither accelerated nor dilated but simply *undefined*. This void protects the Nexus from external temporal disturbances.
+The Nexus is surrounded by **temporal void** - not empty space, but a buffer zone where time is neither accelerated nor dilated but simply *undefined*. This void protects the Nexus from external temporal disturbances.
 
 **Size and Scale:**
 
@@ -259,7 +259,7 @@ The Nexus's architecture defies conventional engineering. It appears simultaneou
 
 **Core Material: Temporal Crystals**
 
-The primary structural material is **temporal crystal**—a theoretically impossible substance that maintains structural coherence across all possible timelines simultaneously.
+The primary structural material is **temporal crystal** - a theoretically impossible substance that maintains structural coherence across all possible timelines simultaneously.
 
 **Properties:**
 - Translucent with internal light refraction
@@ -372,7 +372,7 @@ The primary structural material is **temporal crystal**—a theoretically imposs
 - Gentle ebb and flow like breathing
 - Heightened temporal awareness (even baseline perceivers notice)
 - Feeling of standing "between moments"
-- Some describe as "temporal tinnitus"—awareness of time's presence
+- Some describe as "temporal tinnitus" - awareness of time's presence
 
 ---
 
@@ -491,7 +491,7 @@ The Nexus accommodates **all economic models simultaneously**:
 
 **Decentralized Employment:**
 - No single employer (individuals contract directly)
-- Reputation-based (on-chain accountability without identity revelation—AC concept!)
+- Reputation-based (on-chain accountability without identity revelation - AC concept!)
 - Flexible work (accept jobs matching availability and skills)
 - Streaming payments for ongoing services
 - Anonymous hiring possible (certification verified, identity private)
@@ -718,7 +718,7 @@ The Nexus uses technology to **enable rather than control**:
 
 **Observation Decks:**
 - Watching temporal currents (meditative)
-- Stargazing (sort of—temporal void shows quantum foam)
+- Stargazing (sort of - temporal void shows quantum foam)
 - Quiet contemplation
 - Couples and close friends
 
@@ -924,7 +924,7 @@ The Nexus's bioelectric saturation is **energizing**:
 **Visual Arts:**
 - Temporal echo photography
 - Multi-timeline sculpture
-- Crystal etching (using vibration—Vibrion tried once)
+- Crystal etching (using vibration - Vibrion tried once)
 - Reality-layer paintings (Iris's perspective invaluable)
 
 **Performance Arts:**
@@ -1488,9 +1488,9 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 
 ### The Central Confluence
 
-**Size:** 200-meter diameter chamber  
-**Height:** 50 meters to domed ceiling  
-**Population:** 100-1,000 simultaneous occupants  
+**Size:** 200-meter diameter chamber
+**Height:** 50 meters to domed ceiling
+**Population:** 100-1,000 simultaneous occupants
 **RFR:** 1.0 baseline (extraordinarily stable)
 
 **Features:**
@@ -1508,9 +1508,9 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 
 ### The Temporal Bazaar
 
-**Size:** Sprawling multi-level marketplace (1 square kilometer)  
-**Sections:** Organized by RFR (0.8 → 1.0 → 1.5 zones)  
-**Vendors:** 200+ shops, stalls, restaurants  
+**Size:** Sprawling multi-level marketplace (1 square kilometer)
+**Sections:** Organized by RFR (0.8 → 1.0 → 1.5 zones)
+**Vendors:** 200+ shops, stalls, restaurants
 **Operating Hours:** 24/7 chronometric (vendors rotate shifts)
 
 **Zones:**
@@ -1541,8 +1541,8 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 
 ### Team Headquarters (Residential Level)
 
-**Location:** Upper level, east wing  
-**Access:** Private (team and approved guests only)  
+**Location:** Upper level, east wing
+**Access:** Private (team and approved guests only)
 **Size:** 1,000 square meters
 
 **Layout:**
@@ -1611,8 +1611,8 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 
 ### The Quantum Laboratory (Dr. Volt's Domain)
 
-**Location:** Research Quarter, main facility  
-**Size:** 500 square meters across 5 specialized chambers  
+**Location:** Research Quarter, main facility
+**Size:** 500 square meters across 5 specialized chambers
 **Access:** Scientists, students, team members (training)
 
 **Chambers:**
@@ -1649,9 +1649,9 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 
 ### The Psycho-Temporal Clinic (Dr. Mental's Practice)
 
-**Location:** Medical Wing, quiet section  
-**Size:** 300 square meters  
-**Access:** Patients, appointment-based  
+**Location:** Medical Wing, quiet section
+**Size:** 300 square meters
+**Access:** Patients, appointment-based
 **RFR:** Adjustable per room (patient preference)
 
 **Facilities:**
@@ -1688,9 +1688,9 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 
 ### The Training Grounds
 
-**Location:** Lower level, high-ceiling chamber  
-**Size:** 2,000 square meters  
-**Access:** Team primary, others by reservation  
+**Location:** Lower level, high-ceiling chamber
+**Size:** 2,000 square meters
+**Access:** Team primary, others by reservation
 **RFR:** Variable by section (0.5 to 2.5 available)
 
 **Sections:**
@@ -1727,9 +1727,9 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 
 ### The Timeline Archives
 
-**Location:** Deep level (descended from Central Confluence)  
-**Size:** Massive (multiple interconnected chambers, unknown total size)  
-**Access:** Public (some restricted sections)  
+**Location:** Deep level (descended from Central Confluence)
+**Size:** Massive (multiple interconnected chambers, unknown total size)
+**Access:** Public (some restricted sections)
 **RFR:** 1.0 baseline (preservation stability)
 
 **Collections:**
@@ -1761,9 +1761,9 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 
 ### The Temporal Commons
 
-**Location:** Adjacent to Central Confluence  
-**Size:** 500 square meters  
-**Access:** Public, free  
+**Location:** Adjacent to Central Confluence
+**Size:** 500 square meters
+**Access:** Public, free
 **RFR:** Multi-zone (0.5 / 1.0 / 1.5 sections)
 
 **AC-Inspired Communal Space:**
@@ -1806,9 +1806,9 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 
 ### The Portal Chambers (12 Primary)
 
-**Layout:** Radiating from Central Confluence like clock positions  
-**Size:** 30 meters diameter each  
-**Function:** Wormhole access to specific zones  
+**Layout:** Radiating from Central Confluence like clock positions
+**Size:** 30 meters diameter each
+**Function:** Wormhole access to specific zones
 **Activity:** Hundreds of transits daily per portal
 
 **Notable Portals:**

@@ -6,29 +6,29 @@
 
 ### 10.1 Vibrion (Main Character / Team Leader)
 
-**Full Name:** [Real name unknown; goes by Vibrion]  
-**Age:** 34 years (born 308 AC)  
-**Temporal Signature:** Class A (Standard) but can briefly shift through vibration  
-**Primary Ability:** Vibrational Manipulation  
-**Bioelectric Field Strength:** Class III (15.2 microtesla)  
+**Full Name:** [Real name unknown; goes by Vibrion]
+**Age:** 34 years (born 308 AC)
+**Temporal Signature:** Class A (Standard) but can briefly shift through vibration
+**Primary Ability:** Vibrational Manipulation
+**Bioelectric Field Strength:** Class III (15.2 microtesla)
 **Visual Reference:** ![Vibrion](/assets/character_portraits/Vibrion.jpg) - Chain mesh armor, muscular build
 
 **Biography:**
 
-**Origin:**  
+**Origin:**
 As a child, Vibrion was fascinated by electricity and its boundless possibilities. This curiosity led to a severe lightning accident during a thunderstorm at age 18 (326 AC). Instead of causing harm, the massive electrical discharge triggered a latent genetic mutation, fundamentally altering his physiology and brain structure.
 
-**Transformation:**  
+**Transformation:**
 The lightning rewired his neural pathways and altered his cellular structure at the molecular level. His body adapted to handle extreme electrical energy, and he discovered he could vibrate his molecules at variable frequencies. The accident that could have killed him instead awakened extraordinary abilities.
 
-**Early Development:**  
+**Early Development:**
 - Age 18-21: Struggled to control powers; accidental property damage
 - Age 21: Met Dr. Volt, who helped him understand the scientific basis of his abilities
 - Age 21-24: Intensive training to master vibration control
 - Age 24-27: Development and testing of alloy chain mesh costume
 - Age 27-34: Operated as solo hero, studying temporal phenomena
 
-**Current Status:**  
+**Current Status:**
 Leader and organizer of the team assembled to stop Dr. Entropy's temporal disruption plot. Serves as the lynchpin connecting the neuro-temporal specialists.
 
 **Psychology & Personality:**
@@ -200,7 +200,7 @@ The lightning strike enhanced his brain's processing:
 
 **Temporal Profile:**
 
-**Time Perception:**  
+**Time Perception:**
 Standard (Class A) by default, but vibration at extreme frequencies can alter his subjective experience. At 10,000+ Hz, he can experience time at 2-3x normal speed for brief periods (seconds of subjective time).
 
 **Temporal Abilities:**
@@ -208,10 +208,10 @@ Standard (Class A) by default, but vibration at extreme frequencies can alter hi
 - **Gradient Resistance:** Vibration allows easier adjustment to gradient transitions
 - **Potential Temporal Phasing:** Theoretical ability to vibrate into adjacent timeline (never successfully tested, extremely dangerous)
 
-**Paradox Vulnerability:**  
+**Paradox Vulnerability:**
 Moderate. His enhanced cognition makes him aware of paradoxes but doesn't protect him from effects.
 
-**Time Preference:**  
+**Time Preference:**
 Lives in present with eye toward future. Learns from past but doesn't dwell. Balanced temporal perspective.
 
 **Visual & Aesthetic Design:**
@@ -312,7 +312,6 @@ Entry point character with relatable concerns (responsibility, fear of failure) 
 Discovery arc (learning what kind of leader he needs to be) combined with empowerment arc (embracing team approach over solo heroism).
 
 ---
-
 
 ---
 

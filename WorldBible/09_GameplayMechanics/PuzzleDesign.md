@@ -1,7 +1,7 @@
 # Temporal Puzzle Design
 
-**Part IX: Gameplay Mechanics**  
-**Status:** 📝 PLACEHOLDER
+**Part IX: Gameplay Mechanics**
+**Status:** PLACEHOLDER
 
 ---
 

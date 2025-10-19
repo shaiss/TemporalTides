@@ -1,17 +1,17 @@
 # Eli Carter - ADHD Rapid Response Specialist
 
-**Part III: Characters | Heroes**  
+**Part III: Characters | Heroes**
 
 ---
 
 ## Quick Reference
 
-**Full Name:** Eli Carter  
-**Age:** 19 years (born 323 AC)  
-**Mental Health Profile:** ADHD (Attention Deficit Hyperactivity Disorder)  
-**Primary Ability:** Kinetic Rush  
-**Temporal Signature:** Class B (Highly Variable - "DJ Turntable")  
-**Bioelectric Field Strength:** Class II (4.2 microtesla - high for Class II)  
+**Full Name:** Eli Carter
+**Age:** 19 years (born 323 AC)
+**Mental Health Profile:** ADHD (Attention Deficit Hyperactivity Disorder)
+**Primary Ability:** Kinetic Rush
+**Temporal Signature:** Class B (Highly Variable - "DJ Turntable")
+**Bioelectric Field Strength:** Class II (4.2 microtesla - high for Class II)
 **Visual Reference:** ![Eli Carter](/assets/character_portraits/Eli_Carter.jpg)
 
 ---
@@ -20,7 +20,7 @@
 
 ### Origin
 
-Eli's childhood in **Velocity City**, an accelerated zone (2.5 RFR), mirrored his ever-active mind. The city of constant motion—rapid transit, 24-hour activity, fast-paced culture—was both perfect match and amplifier for his hyperactive energy. While others needed time to adjust to the accelerated flow, Eli felt at home instantly.
+Eli's childhood in **Velocity City**, an accelerated zone (2.5 RFR), mirrored his ever-active mind. The city of constant motion - rapid transit, 24-hour activity, fast-paced culture - was both perfect match and amplifier for his hyperactive energy. While others needed time to adjust to the accelerated flow, Eli felt at home instantly.
 
 ### Childhood
 
@@ -43,9 +43,9 @@ Eli was always in motion. Sitting still felt impossible, focus was fleeting unle
 - Age 13: Joined drum corps, found community that valued his energy
 - Age 15: First experienced time "scratching" effect (DJ turntable sensation)
 
-### Discovery of Ability. 
+### Discovery of Ability
 
-At age 16 (339 AC), during an intense drum solo performance, Eli experienced his first **Kinetic Rush** activation. Hyperfocused on the rhythm, his perception shifted—time subjectively slowed while his coordination and skill seemed to peak. In this state, he played astonishingly complex patterns, executing chord progressions and drum combos that were previously only attainable by legendary drummers. The audience watched, fully able to follow his movements, but were left awestruck by the sheer creativity and technicality of what they heard—drumming feats they'd never witnessed live before. The performance felt like minutes to him but lasted only 45 seconds. His bioelectric field had surged, channeling hyperfocus into an extraordinary display of physical and creative mastery.
+At age 16 (339 AC), during an intense drum solo performance, Eli experienced his first **Kinetic Rush** activation. Hyperfocused on the rhythm, his perception shifted - time subjectively slowed while his coordination and skill seemed to peak. In this state, he played astonishingly complex patterns, executing chord progressions and drum combos that were previously only attainable by legendary drummers. The audience watched, fully able to follow his movements, but were left awestruck by the sheer creativity and technicality of what they heard - drumming feats they'd never witnessed live before. The performance felt like minutes to him but lasted only 45 seconds. His bioelectric field had surged, channeling hyperfocus into an extraordinary display of physical and creative mastery.
 
 **Ability Development:**
 - Age 16-17: Rush activated spontaneously during intense focus or excitement
@@ -86,7 +86,7 @@ At age 16 (339 AC), during an intense drum solo performance, Eli experienced his
 
 ### Meeting Vibrion
 
-Age 19 (342 AC): Eli was drumming on a street corner (needed movement, making some money) when temporal disruption occurred nearby. While others froze, Eli's hyperfocus kicked in—he saw the rhythm in the fluctuation, moved in perfect sync with it, and reached safety while helping three people evacuate. Vibrion witnessed the impossible speed and rhythm-sense. Approached Eli, who immediately said "YES! Whatever you're asking, yes! This sounds awesome!" Vibrion explained  the mission. Eli: "I said yes before you talked. Sounded exciting. No regrets!"
+Age 19 (342 AC): Eli was drumming on a street corner (needed movement, making some money) when temporal disruption occurred nearby. While others froze, Eli's hyperfocus kicked in - he saw the rhythm in the fluctuation, moved in perfect sync with it, and reached safety while helping three people evacuate. Vibrion witnessed the impossible speed and rhythm-sense. Approached Eli, who immediately said "YES! Whatever you're asking, yes! This sounds awesome!" Vibrion explained  the mission. Eli: "I said yes before you talked. Sounded exciting. No regrets!"
 
 ### Current Status
 
@@ -145,7 +145,7 @@ Eli's journey involves learning to channel his energy and impulsivity into produ
 - Present-focus means he's never paralyzed by past or future
 - His "chaos" has rhythm and pattern
 - Sometimes slow and steady wins, but fast and explosive has its place
-- ADHD isn't disorder—it's different processing speed and style
+- ADHD isn't disorder - it's different processing speed and style
 
 **Key Turning Point:** During separation (Chapter 13), Eli is trapped in dilated zone (0.3 RFR) where his natural speed is useless. He must learn patience and find different rhythm. Discovers he can vary his tempo, not just operate at maximum.
 
@@ -415,7 +415,7 @@ Kinetic Rush is ADHD hyperfocus channeled physically:
 
 **Subjective Experience:**
 
-Eli describes his time perception as "like a DJ's turntable"—sometimes steady, sometimes scratching erratically:
+Eli describes his time perception as "like a DJ's turntable" - sometimes steady, sometimes scratching erratically:
 
 - **Hyperfocus:** Time slows dramatically (rush mode)
 - **Engaged:** Time flows normally, pleasantly
@@ -522,7 +522,7 @@ Lives almost exclusively in present moment. Past is "already done," future is "n
 
 ### Body Language
 
-- **At Rest:** Doesn't really exist—always micro-movements
+- **At Rest:** Doesn't really exist - always micro-movements
 - **Engaged:** Energetic gestures, expressive body language, bouncing
 - **Using Kinetic Rush:** Blur of motion, visible speed lines, afterimages
 - **Bored:** Extremely fidgety, restless, looking for anything interesting
@@ -555,8 +555,8 @@ Lives almost exclusively in present moment. Past is "already done," future is "n
 ### Verbal Tics
 
 - "YES!" (enthusiasm for ideas)
-- "Wait, wait, wait—" (rapid thought interrupting itself)
-- "Okay so—" (launching into new topic)
+- "Wait, wait, wait - " (rapid thought interrupting itself)
+- "Okay so - " (launching into new topic)
 - "That's so cool!" (genuine excitement)
 - Beatboxes or drums on surfaces unconsciously
 - "Can we do [X] now? Now? What about now?" (impatience)
@@ -564,22 +564,22 @@ Lives almost exclusively in present moment. Past is "already done," future is "n
 ### Communication Examples
 
 **Excited Planning:**
-"Okay okay okay so what if—hear me out—what if instead of sneaking we just GO, like really fast, I could rush in, grab the thing, be out before they even see us, like WHOOSH, done, mission complete, who needs a plan when you have SPEED!"
+"Okay okay okay so what if - hear me out - what if instead of sneaking we just GO, like really fast, I could rush in, grab the thing, be out before they even see us, like WHOOSH, done, mission complete, who needs a plan when you have SPEED!"
 
 **During Action:**
 "Moving left, right, DUCK, okay there's three of them, taking left one, center one, moving moving moving, BEHIND YOU ANNE, got it, okay we're clear, wait no there's another, I'm on it!"
 
 **Bored:**
-"How much longer? Is this almost done? Can we do something? Anything? This is taking forever. What if we just—no okay fine we'll wait. But seriously. Forever. This is forever."
+"How much longer? Is this almost done? Can we do something? Anything? This is taking forever. What if we just - no okay fine we'll wait. But seriously. Forever. This is forever."
 
 **Musical Description:**
-"It's like—okay imagine the beat drops but instead of ONE drop it's boom-boom-BAP-boom-BAP-ba-ba-BAP and your body just KNOWS what to do, you don't think, you just move with it, and time is just this thing that happens around the rhythm!"
+"It's like - okay imagine the beat drops but instead of ONE drop it's boom-boom-BAP-boom-BAP-ba-ba-BAP and your body just KNOWS what to do, you don't think, you just move with it, and time is just this thing that happens around the rhythm!"
 
 **Growth Moment:**
 "I had to wait. Slow time, couldn't rush, couldn't move fast, just... sit. With myself. For hours that felt like years. And I found this rhythm, really slow, like a heartbeat when you're falling asleep. My internal drum. Even when I can't move fast, the rhythm's still there. That's pretty cool actually."
 
 **Social Moment:**
-"Oh man, sorry, did I interrupt? I do that. Brain moves faster than mouth filter. You were saying something about—actually wait I forgot. Can you repeat? I'll try to let you finish this time!"
+"Oh man, sorry, did I interrupt? I do that. Brain moves faster than mouth filter. You were saying something about - actually wait I forgot. Can you repeat? I'll try to let you finish this time!"
 
 ### Communication Style
 
@@ -713,11 +713,11 @@ Appeals to:
 
 **Acceptance + Balance Arc:**
 
-**Stage 1:** Operates at maximum speed always, afraid of slowing down  
-**Stage 2:** Forced into situation where speed doesn't help  
-**Stage 3:** Crisis where impulsivity creates problem  
-**Stage 4:** Learns to vary tempo, finds rhythm includes rests  
-**Stage 5:** Integrates speed with strategy, movement with patience  
+**Stage 1:** Operates at maximum speed always, afraid of slowing down
+**Stage 2:** Forced into situation where speed doesn't help
+**Stage 3:** Crisis where impulsivity creates problem
+**Stage 4:** Learns to vary tempo, finds rhythm includes rests
+**Stage 5:** Integrates speed with strategy, movement with patience
 
 ### Critical Story Moments
 
@@ -735,7 +735,7 @@ Appeals to:
 
 **Chapter 16 (Climax):** His timing and rhythm provide tempo for team's coordinated strike
 
-**Chapter 19 (Reflection):** Realizes ADHD isn't flaw—it's his superpower's foundation
+**Chapter 19 (Reflection):** Realizes ADHD isn't flaw - it's his superpower's foundation
 
 ---
 
@@ -783,11 +783,11 @@ Appeals to:
 
 ### Team Synergies
 
-**Eli + Anne:** She identifies timing window, he executes with perfect tempo  
-**Eli + Leo:** Leo plans approach, Eli implements at high speed  
-**Eli + Maya:** She predicts pattern rhythm, he moves in sync  
-**Eli + Dave:** Dave calls emotional timing, Eli acts on cue  
-**Eli + Iris:** She sees path through realities, he speeds through it  
+**Eli + Anne:** She identifies timing window, he executes with perfect tempo
+**Eli + Leo:** Leo plans approach, Eli implements at high speed
+**Eli + Maya:** She predicts pattern rhythm, he moves in sync
+**Eli + Dave:** Dave calls emotional timing, Eli acts on cue
+**Eli + Iris:** She sees path through realities, he speeds through it
 
 ### ADHD Representation in Gameplay
 

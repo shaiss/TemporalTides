@@ -1,14 +1,14 @@
 # Enigma Volt - Secondary Antagonist
 
-**Part III: Characters | Antagonists**  
-**Status:** 📝 OUTLINE - TO BE EXPANDED
+**Part III: Characters | Antagonists**
+**Status:** OUTLINE - TO BE EXPANDED
 
 ---
 
 ## Quick Reference
 
-**Name:** Enigma Volt  
-**Role:** Secondary Antagonist  
+**Name:** Enigma Volt
+**Role:** Secondary Antagonist
 **Status:** TO BE DETAILED
 
 ---
