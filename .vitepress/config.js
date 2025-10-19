@@ -11,7 +11,7 @@ export default defineConfig({
   srcDir: './',
   
   // Exclude directories from build
-  srcExclude: ['deprecated/**', 'scripts/**', 'logs/**', 'node_modules/**', '.vitepress/cache/**', '.git/**'],
+  srcExclude: ['deprecated/**', 'scripts/**', 'logs/**', 'node_modules/**', '.vitepress/cache/**', '.git/**', '.cursor/**'],
   
   // Clean URLs (removes .html extension)
   cleanUrls: true,
