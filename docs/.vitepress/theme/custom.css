@@ -1,0 +1,207 @@
+/**
+ * Temporal Tides Custom Styling
+ * Enhance the default VitePress theme with brand colors and custom elements
+ */
+
+:root {
+  /* Primary brand colors - temporal blue/purple gradient theme */
+  --vp-c-brand-1: #646cff;
+  --vp-c-brand-2: #747bff;
+  --vp-c-brand-3: #535bf2;
+  --vp-c-brand-soft: rgba(100, 108, 255, 0.14);
+  
+  /* Accent colors for different character types */
+  --temporal-hero: #646cff;
+  --temporal-mentor: #42b883;
+  --temporal-antagonist: #ff4757;
+  
+  /* Enhanced readability */
+  --vp-c-text-1: rgba(60, 60, 67, 0.98);
+  --vp-c-text-2: rgba(60, 60, 67, 0.78);
+  
+  /* Custom spacing for better content breathing room */
+  --vp-layout-max-width: 1440px;
+}
+
+.dark {
+  /* Dark mode brand colors */
+  --vp-c-brand-1: #747bff;
+  --vp-c-brand-2: #646cff;
+  --vp-c-brand-3: #8289ff;
+  --vp-c-brand-soft: rgba(116, 123, 255, 0.16);
+  
+  /* Better dark mode text */
+  --vp-c-text-1: rgba(255, 255, 245, 0.98);
+  --vp-c-text-2: rgba(235, 235, 245, 0.78);
+}
+
+/* Enhanced hero section */
+.VPHero .name {
+  background: linear-gradient(120deg, #646cff 0%, #747bff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Better code blocks */
+.vp-doc div[class*='language-'] {
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+/* Image styling for character portraits */
+.vp-doc img {
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+.dark .vp-doc img {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom containers for lore notes */
+.vp-doc .custom-block.tip {
+  border-color: var(--temporal-hero);
+}
+
+.vp-doc .custom-block.warning {
+  border-color: var(--temporal-antagonist);
+}
+
+.vp-doc .custom-block.info {
+  border-color: var(--temporal-mentor);
+}
+
+/* Table of contents styling */
+.VPDocAside .outline-link {
+  transition: all 0.2s ease;
+}
+
+.VPDocAside .outline-link:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* Better sidebar navigation */
+.VPSidebarItem.level-0 {
+  font-weight: 600;
+}
+
+/* Character portrait optimization */
+img[alt*="Portrait"],
+img[alt*="portrait"] {
+  max-width: 400px;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* Timeline visualization support */
+.timeline-container {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--vp-c-brand-1);
+  margin: 2rem 0;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 1.5rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--vp-c-brand-1);
+  border: 2px solid var(--vp-c-bg);
+}
+
+/* Enhance home page features grid */
+.VPFeatures {
+  padding: 2rem 0;
+}
+
+.VPFeature {
+  transition: all 0.3s ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(100, 108, 255, 0.15);
+}
+
+/* Custom character grid layout support */
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.character-card {
+  padding: 1.5rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.character-card:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 16px var(--vp-c-brand-soft);
+  transform: translateY(-2px);
+}
+
+/* Better mobile experience */
+@media (max-width: 768px) {
+  img[alt*="Portrait"],
+  img[alt*="portrait"] {
+    max-width: 100%;
+  }
+  
+  .character-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Print styles for documentation export */
+@media print {
+  .VPNav,
+  .VPSidebar,
+  .VPDocAside {
+    display: none;
+  }
+  
+  .VPDoc {
+    max-width: 100%;
+  }
+}
+
+/* Custom badge styles for completion status */
+.status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.status-complete {
+  background: rgba(66, 184, 131, 0.2);
+  color: #42b883;
+}
+
+.status-progress {
+  background: rgba(255, 197, 61, 0.2);
+  color: #ffc53d;
+}
+
+.status-pending {
+  background: rgba(100, 108, 255, 0.2);
+  color: #646cff;
+}

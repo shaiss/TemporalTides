@@ -12,7 +12,7 @@
 **Primary Ability:** Kinetic Rush  
 **Temporal Signature:** Class B (Highly Variable - "DJ Turntable")  
 **Bioelectric Field Strength:** Class II (4.2 microtesla - high for Class II)  
-**Visual Reference:** ![Eli Carter](../../../assets/character_portraits/Eli_Carter.jpg)
+**Visual Reference:** ![Eli Carter](/assets/character_portraits/Eli_Carter.jpg)
 
 ---
 

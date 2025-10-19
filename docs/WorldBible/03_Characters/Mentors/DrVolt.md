@@ -10,7 +10,7 @@
 **Full Name:** Dr. Volt [First name TBD]  
 **Age:** ~50-60s  
 **Role:** Temporal Physicist & Mentor  
-**Visual Reference:** ![Dr. Volt](../../../assets/character_portraits/Dr._Volt.jpg)
+**Visual Reference:** ![Dr. Volt](/assets/character_portraits/Dr._Volt.jpg)
 
 ---
 

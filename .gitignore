@@ -1,28 +1,31 @@
-# Ignore deprecated folder
-deprecated/
-deprecated/**
+# VitePress build output
+docs/.vitepress/dist
+docs/.vitepress/cache
+.temp
 
-# Node modules and dependency folders (if applicable)
-node_modules/
+# Node
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Editor folders and system files
-.vscode/
-.idea/
+# OS
 .DS_Store
+Thumbs.db
 
-# Python caches (if applicable)
-__pycache__/
-*.pyc
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Temporary files
-*.log
-*.tmp
-
-# World bible/editor artifacts
-*.md~
-*.swp
-*.bak
-
-# Cursor extension meta
-cursor-data/
-logs/
+# Env
+.env
+.env.local
+.env.*.local

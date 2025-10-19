@@ -10,6 +10,9 @@ export default defineConfig({
   // Last updated timestamp
   lastUpdated: true,
   
+  // Ignore dead links (many are placeholders for future content)
+  ignoreDeadLinks: true,
+  
   // Head tags for better SEO and styling
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],

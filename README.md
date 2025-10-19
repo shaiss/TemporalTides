@@ -4,13 +4,28 @@
 
 ---
 
+## 🚀 **NEW: VitePress Documentation Site Live!**
+
+Your world bible is now available as a beautiful, searchable website!
+
+```bash
+npm run docs:dev
+```
+
+**Then visit**: http://localhost:5173
+
+📚 **[Read Setup Guide →](VITEPRESS_SETUP.md)** | 🎯 **[Quick Start →](QUICK_START.md)** | ✅ **[Test Report →](VITEPRESS_TEST_REPORT.md)**
+
+---
+
 ## 🌊 Project Overview
 
 Temporal Tides is a comprehensive world bible for a future game/narrative experience that reframes mental health conditions as genuine superpowers within a universe where time is subjective and malleable. Built on scientific principles (relativity, quantum mechanics) and philosophical depth (presentism vs. eternalism, phenomenology), this world celebrates neurodiversity as strength.
 
 **Version:** 1.0  
 **Status:** Active Development  
-**Last Updated:** October 19, 2025
+**Last Updated:** October 19, 2025  
+**Documentation:** VitePress (54 pages, searchable, mobile-friendly)
 
 ---
 
