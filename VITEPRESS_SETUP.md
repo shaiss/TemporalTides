@@ -96,13 +96,23 @@ npm run docs:preview  # Preview production build
 - [x] Assets (images) load correctly
 - [x] Responsive design works
 
+### GitHub Pages Integration
+
+✅ **GitHub Pages deployment is now configured!**
+
+- Automated deployment workflow created (`.github/workflows/deploy-docs.yml`)
+- Base path configured for GitHub Pages (`/TemporalTides/`)
+- Will deploy automatically when merged to `main` branch
+
+**See `GITHUB_PAGES_SETUP.md` and `DEPLOYMENT_CHECKLIST.md` for deployment instructions.**
+
+**Your live site URL:** https://shaiss.github.io/TemporalTides/
+
 ### Next Steps (Optional)
 
-If you want to deploy this:
-1. Fix image import issue for production builds (use HTML img tags or different markdown plugin)
-2. Configure deployment to GitHub Pages, Netlify, or Vercel
-3. Add custom domain if desired
-4. Enable additional VitePress features (PWA, i18n, etc.)
+1. Add custom domain if desired
+2. Enable additional VitePress features (PWA, i18n, etc.)
+3. Customize theme further
 
 ### Accessing the Site
 

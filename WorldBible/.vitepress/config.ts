@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Temporal Tides",
   description: "A narrative universe where time is subjective and mental health conditions are superpowers",
-  base: '/',
+  base: '/TemporalTides/',
   
   vite: {
     assetsInclude: ['**/*.jpg', '**/*.png', '**/*.gif'],

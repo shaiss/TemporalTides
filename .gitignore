@@ -4,7 +4,6 @@ deprecated/**
 
 # Node modules and dependency folders (if applicable)
 node_modules/
-package-lock.json
 
 # VitePress
 WorldBible/.vitepress/cache/
