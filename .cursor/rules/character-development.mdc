@@ -1,0 +1,203 @@
+---
+description: Guidelines for developing character profiles and relationships in Temporal Tides
+---
+
+# Character Development Guide for Temporal Tides
+
+## Character Dossier Structure
+
+Every character entry should include these sections in order:
+
+### 1. Character Header
+- **Full Name** (including any aliases or code names)
+- **Age** (including how time perception affects their experienced age)
+- **Mental Health Profile** (condition and how it manifests)
+- **Primary Ability** (name and brief description)
+- **Temporal Signature** (how they experience time)
+- **Visual Reference** (link to character portrait)
+
+### 2. Biography
+- **Origin Story** - Where they came from, formative experiences
+- **Pivotal Moments** - 3-5 key events that shaped them
+- **Current Status** - Where they are at story start
+- **Future Potential** - Hints at growth possibilities
+
+### 3. Psychology & Personality
+- **Core Traits** - 5-7 defining characteristics
+- **Motivations** - What drives them
+- **Fears & Vulnerabilities** - What they struggle with
+- **Coping Mechanisms** - How they manage their condition
+- **Growth Arc** - How they develop throughout the narrative
+
+### 4. Abilities & Skills
+- **Primary Power** (mental health-based superpower)
+  - Manifestation: How it appears/functions
+  - Strengths: What makes it powerful
+  - Limitations: When/why it doesn't work
+  - Development: How it evolves
+- **Secondary Skills** (learned abilities)
+- **Weaknesses** (specific vulnerabilities)
+- **Energy Dynamics** (for powered characters)
+
+### 5. Relationships
+- **Core Relationships** - Deep connections with other characters
+- **Team Dynamics** - How they function in the group
+- **Mentors & Students** - Who teaches/learns from them
+- **Rivalries & Tensions** - Conflicts with others
+- **Romantic Potential** - If applicable, handled sensitively
+
+### 6. Temporal Profile
+- **Time Perception** - Their subjective experience of time
+- **Temporal Abilities** - How they interact with time mechanics
+- **Paradox Vulnerability** - How temporal anomalies affect them
+- **Time Preference** - Do they dwell on past, live in present, or focus on future?
+
+### 7. Visual & Aesthetic Design
+- **Physical Appearance** - Height, build, distinctive features
+- **Style & Fashion** - How they dress, what it says about them
+- **Color Palette** - Associated colors for visual design
+- **Costume/Gear** (if applicable)
+- **Body Language** - How they move and carry themselves
+
+### 8. Voice & Communication
+- **Speech Patterns** - How they talk (formal, casual, technical, etc.)
+- **Verbal Tics** - Recurring phrases or expressions
+- **Communication Style** - Direct, subtle, metaphorical, etc.
+- **Musical Theme** - Associated sound/music motif
+
+### 9. Cultural & Background Details
+- **Place of Origin** - Where they grew up
+- **Socioeconomic Background** - Class, resources, opportunities
+- **Education & Training** - Formal and informal learning
+- **Cultural Influences** - What shaped their worldview
+- **Hobbies & Interests** - What they do for themselves
+
+### 10. Story Function
+- **Narrative Role** - Their purpose in the story
+- **Thematic Representation** - What ideas they embody
+- **Player/Reader Connection** - How audiences relate to them
+- **Arc Type** - Growth, fall, redemption, discovery, etc.
+
+## Character Relationship Guidelines
+
+When developing relationships between characters:
+
+### Complementary Dynamics
+- Pair characters whose abilities or perceptions complement each other
+- Show how different time experiences create unique connections
+- Example: Leo (ADD, interrupted time) and Eli (ADHD, erratic time) finding rhythm together
+
+### Conflict Sources
+- Differences in time perception can cause misunderstandings
+- Contrasting coping mechanisms may clash
+- Abilities that interfere with each other create tension
+- Never base conflict solely on the mental health condition itself
+
+### Growth Through Connection
+- Relationships should help characters understand themselves
+- Others can provide "anchors" or "catalysts" for personal development
+- Show mutual benefit - both characters grow from the relationship
+
+### Authentic Representation
+- Avoid savior complexes (one character "fixing" another)
+- Show neurodivergent characters building relationships organically
+- Include friendships, not just romantic relationships
+- Normalize asking for/offering support
+
+## Character Consistency Rules
+
+### The Five Constants
+Every character should have these consistent elements:
+1. **Core Value** - One principle they never violate
+2. **Baseline Behavior** - How they act in neutral situations
+3. **Stress Response** - What they do under pressure
+4. **Joy Expression** - How they show happiness
+5. **Temporal Anchor** - One consistent way they relate to time
+
+### Evolution vs. Contradiction
+- Characters should **evolve** (grow, learn, change perspective)
+- Characters should NOT **contradict** (act against established nature without reason)
+- Major changes require narrative justification
+- Small inconsistencies can be explained by circumstances
+
+## Writing Character Voices
+
+Each character should have a distinct voice in dialogue and narration:
+
+### Vibrion
+- Scientific terminology mixed with streetwise practicality
+- Decisive, action-oriented language
+- References to energy, vibration, frequency
+
+### Leo (ADD)
+- Tangential thoughts, follows interesting side paths
+- Literary references, bookish vocabulary
+- Sometimes trails off mid-thought, returns later
+
+### Anne (Anxiety)
+- Precise, careful word choice
+- Anticipatory language ("what if," "in case")
+- Lists and organized thinking patterns
+
+### Maya (Autism)
+- Pattern-based language and metaphors
+- Technical precision
+- Literal interpretations, clarifying questions
+
+### Eli (ADHD)
+- Rapid-fire speech, enthusiasm
+- Present-focused language
+- Percussion/rhythm metaphors
+
+### Dave (Depression)
+- Contemplative, sometimes melancholic
+- Musical references
+- Depth over speed, thoughtful pauses
+
+### Iris (Psychosis)
+- Artistic, visual language
+- Fluid boundaries between metaphor and literal
+- References to seeing multiple layers of reality
+
+## Character Sheet Template
+
+Use this template when creating new characters:
+
+```markdown
+# [Character Name]
+
+**Profile:**
+- Age: [age]
+- Mental Health Profile: [condition]
+- Primary Ability: [ability name]
+- Temporal Signature: [how they experience time]
+
+**Quick Summary:** [2-3 sentences]
+
+## Biography
+[Origin and history]
+
+## Psychology
+[Personality traits, motivations, fears]
+
+## Abilities
+[Powers and skills]
+
+## Relationships
+[Key connections]
+
+## Temporal Profile
+[Time perception and interactions]
+
+## Visual Design
+[Appearance and style]
+
+## Voice
+[Communication style]
+
+## Background
+[Cultural and personal details]
+
+## Story Function
+[Narrative role]
+```

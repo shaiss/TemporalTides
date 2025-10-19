@@ -1,0 +1,259 @@
+---
+description: Terminology, naming conventions, and consistency guidelines for Temporal Tides
+---
+
+# Terminology & Consistency Guide for Temporal Tides
+
+## Core Terminology Standards
+
+### Temporal Science Terms
+
+**Official Terms** (use these consistently):
+
+- **Temporal Zone** - A region with specific time-flow properties
+- **Time Nexus** - The central hub connecting multiple temporal zones
+- **Temporal Gradient** - The transition area between zones with different time flows
+- **Chronometric Baseline** - The "standard" time flow used as reference
+- **Temporal Signature** - An individual's unique pattern of time perception
+- **Time Dilation** - When time flows at different rates in different locations
+- **Temporal Loop** - A repeating sequence of time
+- **Temporal Fracture** - A break in normal time flow creating instability
+- **Temporal Echo** - Remnants of past (or future) events visible in present
+- **Wormhole** - A shortcut through space-time
+- **Paradox** - A logical contradiction arising from temporal manipulation
+- **Quantum Superposition** - Multiple potential realities existing simultaneously
+- **Temporal Collapse** - When multiple timelines converge into one
+- **Reality Anchor** - A fixed point that stabilizes time flow
+
+**Avoid These Terms:**
+- ❌ "Time travel" (too simplistic; use "temporal navigation" or "temporal displacement")
+- ❌ "Time machine" (use "temporal device" or "chronometric apparatus")
+- ❌ "Going back in time" (use "accessing an earlier temporal state" or "returning to a prior point in the timeline")
+
+### Mental Health Terminology
+
+**Respectful Framework:**
+
+Always use person-first OR identity-first language based on character preference:
+- ✅ "Leo, who has ADD" OR "Leo experiences ADD"
+- ✅ "Maya is autistic" (if that's her preference)
+- ❌ "Leo is ADD" or "the ADD character"
+
+**Power Classification:**
+- **Neuro-Temporal Ability** - The official term for mental health-based superpowers
+- **Cognitive Signature** - How a character's unique neurology manifests
+- **Perceptual Power** - Abilities based on different ways of experiencing reality
+
+**Terms to Embrace:**
+- Neurodivergent / Neurotypical
+- Mental health condition (not "disorder" unless clinically appropriate)
+- Different perception / Alternative perception
+- Unique cognitive pattern
+
+**Terms to Avoid:**
+- ❌ Suffering from (unless character is genuinely suffering)
+- ❌ Afflicted with
+- ❌ Victim of
+- ❌ Handicapped/disabled (in context of powers)
+
+### Energy & Physics Terms
+
+- **Bioelectric Field** - The electromagnetic energy surrounding living beings
+- **Vibrational Frequency** - Rate of molecular vibration (Vibrion's power)
+- **Energy Absorption** - Drawing in ambient energy
+- **Thermal Emission** - Release of heat energy
+- **Subatomic Alteration** - Changes at the atomic/molecular level
+- **Quantum Field** - The fundamental energy field of reality
+- **Entropic Disruption** - Dr. Entropy's ability to increase chaos/disorder
+
+### Ability Names & Powers
+
+**Established Powers:**
+- **Immersive Thought** (Leo) - Deep analytical focus
+- **Foresight** (Anne) - Pattern anticipation and prediction
+- **Pattern Sense** (Maya) - Recognition of sequences and structures
+- **Kinetic Rush** (Eli) - Bursts of enhanced speed and energy
+- **Empathic Resonance** (Dave) - Sensing emotional states
+- **Visionary Insight** (Iris) - Perceiving hidden layers of reality
+- **Vibrational Manipulation** (Vibrion) - Control over molecular frequencies
+
+**Power Terminology Structure:**
+- Primary ability: [Adjective] [Noun] (e.g., "Kinetic Rush")
+- Avoid generic terms: Use specific, evocative language
+- Tie to character's mental health experience
+
+### Factions & Organizations
+
+**Established Groups:**
+- **The Team** - Vibrion's assembled group of neuro-temporal heroes
+- **Dr. Entropy's Forces** - The antagonist's organization
+- **Temporal Researchers** - Scientists studying time phenomena
+
+**Naming Convention for New Factions:**
+- Use titles that suggest their purpose/ideology
+- Avoid overly generic names ("The Resistance," "The Alliance")
+- Consider temporal/scientific terms: "The Chronological Institute," "Temporal Preservation Society"
+
+### Character Titles & Roles
+
+**Mentor/Support Roles:**
+- **Dr. Mental** - Psychologist/neuroscientist (not "the psychologist")
+- **Dr. Volt** - Physicist (not "the scientist")
+- **The Mentor** - The mysterious guide who meets the team
+
+**Antagonist Titles:**
+- **Dr. Entropy** - Main antagonist
+- **Enigma Volt** - Dr. Entropy's ally
+
+**Character References:**
+When referring to characters in world bible entries:
+- First mention: Full name + title/descriptor
+- Subsequent: First name or established nickname
+- Formal contexts: Last name or title
+
+## Naming Conventions
+
+### For New Characters:
+**Pattern to Follow:**
+- First name: Generally common, accessible
+- Personal connection: Often reflects their background
+- Easy to remember and pronounce
+
+**Current Examples:**
+- Leo, Anne, Maya, Eli, Dave, Iris (one syllable or simple two syllables)
+- Vibrion (unique, evocative of his powers)
+- Dr. Mental, Dr. Volt (descriptor + characteristic)
+
+### For Locations:
+- **Actual places**: Descriptive + Function ("The Time Nexus")
+- **Temporal zones**: Property + Type ("Accelerated Quarter," "Looped Grove")
+- **Research facilities**: Institution + Purpose ("Chronometric Institute")
+- **Natural phenomena**: Evocative poetry ("The Fractured Wastes," "Still Point")
+
+### For Technology/Artifacts:
+**Format**: [Function] + [Type] or [Origin] + [Object]
+- Examples: "Chronos Catalyst," "Temporal Anchor," "Reality Stabilizer"
+- Avoid: Overly technical acronyms (unless there's a story reason)
+- Consider: How would characters naturally refer to it?
+
+### For Events:
+- **Major story events**: "The [Descriptor] [Noun]" ("The Great Fracture," "The Convergence")
+- **Historical events**: Year/era if applicable + Event
+- **Personal events**: Character-focused ("Vibrion's Transformation," "The Team's Formation")
+
+## Style & Formatting Standards
+
+### Document Structure
+All world bible entries should follow this hierarchy:
+
+```markdown
+# Main Title (H1) - Entry Name
+
+## Major Section (H2) - Core Categories
+
+### Subsection (H3) - Specific Topics
+
+#### Detail Level (H4) - Granular Information
+```
+
+### Text Formatting:
+- **Bold** for emphasis, character names on first mention, important terms
+- *Italic* for thoughts, internal dialogue, foreign terms, titles of works
+- `Code formatting` for technical specifications, measurements, data
+- > Blockquotes for in-universe documents, quotes from characters
+
+### Lists:
+- **Unordered lists** for non-sequential items
+- **Numbered lists** for sequences, steps, rankings
+- **Checkboxes** for requirements or verification lists
+
+### Cross-Referencing:
+When referencing other entries:
+- Link format: See **[Character Name]** or **[Location Name]**
+- First mention: Include brief context
+- Subsequent: Just link
+- Build a web of interconnected lore
+
+## Measurement & Scale
+
+### Time Measurements:
+- **Standard seconds/minutes/hours** for baseline time
+- **Relative time** when in temporal zones: "experiences as [duration]" or "[X] times faster/slower"
+- **Subjective time** for character perception: "feels like [duration]"
+
+Example: "The Accelerated Quarter flows at 3x baseline, meaning one hour spent there equals three hours of standard time elapsed."
+
+### Physical Measurements:
+- Use **metric primarily** with imperial equivalents when helpful
+- Be specific: Not "very tall" but "2.1 meters (6'11")"
+- Consider scale: Human scale vs. cosmic scale
+
+### Energy Levels:
+- Create a consistent scale (1-10, or color-coded tiers)
+- Define what each level means functionally
+- Example: "Level 7 temporal instability means physical discomfort and difficulty maintaining focus"
+
+## Canon Hierarchy
+
+When contradictions arise, priority order:
+
+1. **Core Documents** - The main Temporal Tides overview and World Bible 3
+2. **Character Profiles** - Established character information
+3. **Published Story Content** - Any narrative content that's been finalized
+4. **Supplementary Materials** - Additional lore and background
+5. **Speculation/Ideas** - Concepts under development
+
+### Retcon Guidelines:
+- **Soft Retcon**: Add detail that doesn't contradict existing lore
+- **Clarifying Retcon**: Specify vague existing information
+- **Hard Retcon**: Change established fact (only with good reason, document clearly)
+
+## Consistency Checklist
+
+Before finalizing any terminology or naming:
+
+- [ ] Checked against existing glossary/terminology
+- [ ] Follows established naming patterns
+- [ ] Sounds natural when spoken aloud
+- [ ] Distinguishable from similar terms
+- [ ] Appropriate for tone and setting
+- [ ] Respectful (especially for mental health terms)
+- [ ] Scientifically grounded (for technical terms)
+- [ ] Easy to remember
+- [ ] Has clear definition
+- [ ] Won't become confusing with additions
+
+## Glossary Maintenance
+
+Keep a master glossary updated with:
+- **Term** - The official name
+- **Pronunciation** - If not obvious
+- **Definition** - Clear, concise explanation
+- **Etymology** - Origin of the term (in-universe or meta)
+- **Usage** - Examples of proper use
+- **Related Terms** - Connected concepts
+- **First Appearance** - When introduced in the world
+
+## Writing Voice Consistency
+
+### World Bible Tone:
+- **Authoritative but accessible** - Expert, but not dry
+- **Enthusiastic about the world** - Show love for the details
+- **Clear and organized** - Easy to navigate and find information
+- **Respectful of subjects** - Especially mental health representation
+
+### In-Universe Documents:
+When writing as if from within the world:
+- **Character voice** - Reflect who's writing
+- **Knowledge limitations** - They don't know everything
+- **Perspective bias** - Show their viewpoint
+- **Era-appropriate** - Match language to when it was written
+
+## Version Control
+
+When updating terminology or making changes:
+- Note the date of change
+- Explain reasoning if changing established term
+- Provide alternative terms if applicable
+- Update all related documents
+- Mark deprecated terms clearly
