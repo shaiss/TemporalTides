@@ -31,7 +31,7 @@ Temporal Tides explores these philosophical questions through gameplay and narra
 ### 5.2 Temporal Ethics
 
 **The Temporal Non-Interference Principle:**
-Modeled after Star Trek's Prime Directive - minimize interference with natural temporal flow.
+Modeled after Star Trek's Prime Directive: minimize interference with natural temporal flow.
 
 **Arguments For:**
 - Preserves timeline stability
