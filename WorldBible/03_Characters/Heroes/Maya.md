@@ -12,7 +12,7 @@
 **Primary Ability:** Pattern Sense  
 **Temporal Signature:** Class A (Standard with strong rhythmic component)  
 **Bioelectric Field Strength:** Class II (3.4 microtesla)  
-**Visual Reference:** ![Maya Johnson](../../../assets/character_portraits/Maya_Johnson.jpg)
+**Visual Reference:** ![Maya Johnson](/character_portraits/Maya_Johnson.jpg)
 
 ---
 

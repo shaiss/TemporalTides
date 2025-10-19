@@ -4,6 +4,11 @@ deprecated/**
 
 # Node modules and dependency folders (if applicable)
 node_modules/
+package-lock.json
+
+# VitePress
+WorldBible/.vitepress/cache/
+WorldBible/.vitepress/dist/
 
 # Editor folders and system files
 .vscode/

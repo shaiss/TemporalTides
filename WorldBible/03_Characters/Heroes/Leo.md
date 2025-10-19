@@ -12,7 +12,7 @@
 **Primary Ability:** Immersive Thought  
 **Temporal Signature:** Class D (Fragmented)  
 **Bioelectric Field Strength:** Class II (3.1 microtesla)  
-**Visual Reference:** ![Leo Thompson](Leo_Thompson.jpg) - Casual style, thoughtful expression
+**Visual Reference:** ![Leo Thompson](/character_portraits/Leo_Thompson.jpg) - Casual style, thoughtful expression
 
 **Biography:**
 

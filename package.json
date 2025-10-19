@@ -1,0 +1,27 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "**A narrative universe where time is subjective and mental health conditions are superpowers**",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev WorldBible",
+    "docs:build": "vitepress build WorldBible",
+    "docs:preview": "vitepress preview WorldBible",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaiss/TemporalTides.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaiss/TemporalTides/issues"
+  },
+  "homepage": "https://github.com/shaiss/TemporalTides#readme",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

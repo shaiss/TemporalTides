@@ -12,7 +12,7 @@
 **Primary Ability:** Foresight  
 **Temporal Signature:** Class B (Accelerated)  
 **Bioelectric Field Strength:** Class II (2.8 microtesla)  
-**Visual Reference:** ![Anne Parker](../../../assets/character_portraits/Anne_Parker.jpg)
+**Visual Reference:** ![Anne Parker](/character_portraits/Anne_Parker.jpg)
 
 ---
 

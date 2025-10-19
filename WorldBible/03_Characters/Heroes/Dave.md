@@ -12,7 +12,7 @@
 **Primary Ability:** Empathic Resonance  
 **Temporal Signature:** Class C (Dilated - Stretched Moments)  
 **Bioelectric Field Strength:** Class II (2.6 microtesla)  
-**Visual Reference:** ![Dave Miller](../../../assets/character_portraits/Dave_Miller.jpg)
+**Visual Reference:** ![Dave Miller](/character_portraits/Dave_Miller.jpg)
 
 ---
 
