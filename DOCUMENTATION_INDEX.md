@@ -18,7 +18,7 @@ All documentation for your Temporal Tides VitePress installation.
 | **[QUICK_START.md](QUICK_START.md)** | Get started in 60 seconds | 1 min |
 | **[VITEPRESS_SUMMARY.md](VITEPRESS_SUMMARY.md)** | Executive summary | 3 min |
 | **[TESTING_CHECKLIST.md](TESTING_CHECKLIST.md)** | Verify everything works | 5 min |
-| **[RUN_VITEPRESS.sh](RUN_VITEPRESS.sh)** | Quick launcher script | - |
+| **[RUN_VITEPRESS.sh](scripts/RUN_VITEPRESS.sh)** | Quick launcher script | - |
 
 ---
 
@@ -99,7 +99,7 @@ All documentation for your Temporal Tides VitePress installation.
 npm run docs:dev      # Start dev server
 npm run docs:build    # Build for production
 npm run docs:preview  # Preview built site
-./RUN_VITEPRESS.sh   # Quick launcher
+./scripts/RUN_VITEPRESS.sh   # Quick launcher
 ```
 
 ### Essential Files
@@ -192,7 +192,7 @@ npm run docs:preview  # Preview built site
 - DOCUMENTATION_PLATFORM_COMPARISON.md
 
 ### Scripts (4 files)
-- RUN_VITEPRESS.sh
+- scripts/RUN_VITEPRESS.sh
 - scripts/sync-worldbible.sh
 - scripts/build-and-check.sh
 - scripts/check-links.sh

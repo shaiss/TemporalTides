@@ -1,7 +1,10 @@
 # VitePress build output
-docs/.vitepress/dist
-docs/.vitepress/cache
+.vitepress/dist
+.vitepress/cache
 .temp
+
+# Logs
+logs/
 
 # Node
 node_modules
