@@ -125,9 +125,13 @@
 
 ## Next Development Steps
 
-### Priority 1: Complete Character Dossiers (5 heroes)
-- Expand Anne, Maya, Eli, Dave, Iris to same depth as Vibrion and Leo
-- Each should be ~300-500 lines with full biography, psychology, abilities, relationships, etc.
+### ✅ Priority 1: Complete Character Dossiers (5 heroes) - DONE!
+- ✅ Anne Parker expanded (694 lines)
+- ✅ Maya Johnson expanded (814 lines)
+- ✅ Eli Carter expanded (828 lines)
+- ✅ Dave Miller expanded (812 lines)
+- ✅ Iris Green expanded (892 lines)
+- **RESULT: All 7 heroes now complete! 4,647 total lines**
 
 ### Priority 2: Develop Supporting Characters (5 characters)
 - Full profiles for Dr. Volt and Dr. Mental (mentors)

@@ -35,7 +35,7 @@ From a young age, Anne exhibited exceptional organizational skills alongside hei
 
 ### Discovery of Ability
 
-At age 17 (338 AC), during a particularly intense period of exam preparation, Anne had her first full **Foresight** experience. While running her usual route to manage stress, she suddenly saw the next thirty seconds unfold before they happened—a cyclist swerving, a car door opening, a child running into the street. She adjusted her path instinctively, avoiding all three hazards before they occurred. The experience was simultaneously terrifying and exhilarating.
+At age 17 (338 AC), during a particularly intense period of exam preparation, Anne experienced her first full manifestation of **Foresight**. While running her usual route to manage stress, she abruptly perceived the next thirty seconds of events unfolding—a cyclist about to swerve, a car door preparing to swing open, a child poised to dash into the street. Instead of simply avoiding these hazards, Anne instinctively altered her path in subtle, deliberate ways. By darting in front of the cyclist, she caused them to swerve away—directly in view of the child, whose startled reaction stopped them in their tracks before they could step into the street. Just as the car door swung open, there was no longer anyone in harm’s way. Anne realized she hadn’t just anticipated danger—her interventions subtly rearranged the sequence of events, making each potential accident dissolve before it could occur. The revelation that she could not only see but also actively reshape the immediate future was simultaneously terrifying and exhilarating.
 
 **Ability Development:**
 - Age 17-18: Foresight activated sporadically, always during high-stress situations
