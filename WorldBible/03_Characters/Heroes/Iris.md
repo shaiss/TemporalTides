@@ -1,6 +1,6 @@
 # Iris Green - Psychosis Multi-Reality Specialist
 
-**Part III: Characters | Heroes**
+**Part III: Characters | Heroes**  
 
 ---
 

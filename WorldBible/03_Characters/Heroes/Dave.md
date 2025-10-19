@@ -1,6 +1,6 @@
 # Dave Miller - Depression Empathic Specialist
 
-**Part III: Characters | Heroes**
+**Part III: Characters | Heroes**  
 
 ---
 

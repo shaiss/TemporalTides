@@ -1,0 +1,1176 @@
+# **Accountability with Anonymity**
+
+[**Introduction	1**](#introduction)
+
+[Defining Accountability	1](#defining-accountability)
+
+[Anonymity	3](#anonymity)
+
+[The Drawbacks of Anonymity	4](#the-drawbacks-of-anonymity)
+
+[The role of accountability in balancing anonymity	5](#the-role-of-accountability-in-balancing-anonymity)
+
+[Societal Guardrails	5](#societal-guardrails)
+
+[**Goals	6**](#goals)
+
+[Outcomes	7](#outcomes)
+
+[Tenets	7](#tenets)
+
+[**Digging into Anonymity	7**](#digging-into-anonymity)
+
+[Challenges	7](#challenges)
+
+[Benefits	10](#benefits)
+
+[Who Benefits	13](#who-benefits)
+
+[Who could it Harm	14](#who-could-it-harm)
+
+[Future Risks	14](#future-risks)
+
+[**Concepts	15**](#concepts)
+
+[Anonymous Souls	15](#anonymous-souls)
+
+[Mixtopia	16](#mixtopia)
+
+[Centerverse	17](#centerverse)
+
+[Worlds	17](#worlds)
+
+[Independent Societies	18](#independent-societies)
+
+[All-in OnChain	18](#all-in-onchain)
+
+[Smart contract quadrilemma	18](#smart-contract-quadrilemma)
+
+[Proof of accountability	19](#proof-of-accountability)
+
+[Proof of correctness	19](#proof-of-correctness)
+
+[**Timeline	20**](#timeline)
+
+[Eras/Epochs/Stages	20](#eras/epochs/stages)
+
+[Celestial Blending	21](#celestial-blending)
+
+[Astro Frontier	21](#astro-frontier)
+
+[Galactic Mobility	21](#galactic-mobility)
+
+[Cosmic Consensus	22](#cosmic-consensus)
+
+[Interplanetary Expansion	23](#interplanetary-expansion)
+
+[Nebular Sovereignty	23](#nebular-sovereignty)
+
+[Key Events	23](#key-events)
+
+[The 200 year Transition	26](#the-200-year-transition)
+
+[5 Years	29](#5-years)
+
+[Tech	29](#tech)
+
+[Internet	29](#internet)
+
+[Private and Permissioned Blockchain Networks	30](#private-and-permissioned-blockchain-networks)
+
+[Public and permissionless Blockchain Networks	31](#public-and-permissionless-blockchain-networks)
+
+[zkproofs	31](#zkproofs)
+
+[cross-chain messaging	32](#cross-chain-messaging)
+
+[CBDCs	33](#cbdcs)
+
+[Network Architectures	33](#network-architectures)
+
+[asset discovery	34](#asset-discovery)
+
+[IP protection tooling	34](#ip-protection-tooling)
+
+[App Specific Chains	34](#app-specific-chains)
+
+[Blended Reality in Sports	35](#blended-reality-in-sports)
+
+[Society	36](#society)
+
+[Distributed Education	36](#distributed-education)
+
+[Decentralized Media	37](#decentralized-media)
+
+[**Societal Structures	37**](#societal-structures)
+
+[Foundations	38](#foundations)
+
+[Role of A Reserve Currency	38](#role-of-a-reserve-currency)
+
+[Role of A Settlement Layer	39](#role-of-a-settlement-layer)
+
+[Blend of Rainbow and Red	40](#blend-of-rainbow-and-red)
+
+[Architecture	41](#architecture)
+
+[Key Concepts	41](#key-concepts)
+
+[Blockchain Tech	41](#blockchain-tech)
+
+[Function of the CBDC	41](#function-of-the-cbdc)
+
+[Anonymity	41](#anonymity-1)
+
+[Politicians	42](#politicians)
+
+[Blockchain Networks	42](#blockchain-networks)
+
+[Bridge to Rainbow	42](#bridge-to-rainbow)
+
+[Flex Jobs	42](#flex-jobs)
+
+[Average Day	42](#average-day)
+
+[Grey Nebulous Societies	42](#grey-nebulous-societies)
+
+[Architecture	42](#architecture-1)
+
+[Average Day	43](#average-day-1)
+
+[Society Structures	45](#society-structures)
+
+[Red Governed Societies	46](#red-governed-societies)
+
+[Architecture	46](#architecture-2)
+
+[Average Day	46](#average-day-2)
+
+[Command Structures	47](#command-structures)
+
+[**Examples	49**](#examples)
+
+[Education	49](#education)
+
+[Employment	49](#employment)
+
+[Real Estate	49](#real-estate)
+
+[Restaurant	51](#restaurant)
+
+[Sports	54](#sports)
+
+[**Call to Action	55**](#call-to-action)
+
+[**Pledge	55**](#pledge)
+
+[Timeline	55](#timeline-1)
+
+[**About the author	55**](#about-the-author)
+
+[**Appendix A \- Terminology	57**](#appendix-a---terminology)
+
+# **Introduction** {#introduction}
+
+Accountability with anonymity refers to a situation in which individuals or organizations are held responsible for their actions, but their identities are not disclosed. This can be beneficial in situations where individuals may face negative consequences for their actions, such as retaliation or discrimination. Anonymity can protect individuals from these consequences and allow them to speak out about important issues without fear of reprisal.
+
+## **Defining Accountability** {#defining-accountability}
+
+Accountability refers to the obligation of an individual or organization to account for their actions, decisions, and outcomes. It is the willingness to accept responsibility for the consequences of one's actions and to be held accountable for them. Accountability can involve answering for the results of one's actions, both positive and negative, and being willing to justify those actions and their outcomes. In the context of organizations, accountability often involves having clear systems in place for evaluating and reporting on the performance and impact of an organization's work. 
+
+However, anonymity can also create challenges for accountability. Without the ability to identify the individuals or organizations involved, it can be difficult to hold them accountable for their actions.
+
+There are 4 predominant challenges to the concept of “Accountability with Anonimity” this paper will look to address.
+
+1. Investigation difficulties: Without knowing the identity of the individual or organization involved, it can be difficult to thoroughly investigate an issue or incident. This can make it challenging to gather the necessary evidence and to determine the full extent of the problem.  
+2. Lack of transparency: Anonymity can create a lack of transparency, which can make it difficult for others to understand the situation and to hold those involved accountable.  
+3. Misuse of anonymity: Anonymity can also be misused, such as by individuals who use it to avoid taking responsibility for their actions or to hide wrongdoing. This can undermine the credibility of anonymous reporting systems and make it more difficult to hold individuals accountable.  
+4. Limited recourse: Without knowing the identity of the individuals or organizations involved, it can be difficult to pursue legal or other forms of recourse for wrongdoing. This can make it difficult to hold individuals or organizations accountable for their actions.
+
+## **Anonymity** {#anonymity}
+
+Anonymity refers to the state of being anonymous, or not being identifiable as an individual. This means that someone's identity is not known or disclosed. In some cases, anonymity is used to protect the privacy of an individual, while in other cases, it may be used to protect the safety of an individual or to allow them to express their opinions or ideas freely without fear of retribution. Anonymity is often associated with the use of online pseudonyms, or "screen names," which allow users to communicate online without revealing their true identity. Anonymity is also often associated with the concept of online privacy, as it allows individuals to communicate and share information without fear of being tracked or monitored.
+
+Why is accountability important?
+
+Accountability is important for a number of reasons. First and foremost, it helps to protect privacy. When individuals and organizations are held accountable for their actions, it ensures that personal information is not mishandled or misused. This is especially important in today's digital age, where data breaches and cyber attacks are becoming increasingly common.
+
+Freedom of expression
+
+Re-write this
+
+In addition to privacy protection, accountability is also important for the freedom of expression. When individuals and organizations are held accountable for their words and actions, it allows for open and honest communication without fear of retribution. This promotes a more inclusive and diverse society, as people are free to express their thoughts and opinions without fear of being silenced or punished.
+
+Finally, accountability is important for the protection from retaliation. When people and organizations are held accountable for their actions, it helps to prevent the abuse of power and ensures that those who do wrong are held accountable for their I'm actions. This helps to create a more fair and just society, where everyone is treated with respect and equality.
+
+## **The Drawbacks of Anonymity** {#the-drawbacks-of-anonymity}
+
+Anonymity, or the ability to hide one's identity, has its drawbacks. One major drawback is the potential for bullying and harassment. Without the fear of being held accountable for their actions, some individuals may feel emboldened to engage in abusive or harmful behavior towards others. This can lead to a toxic online environment and can have serious consequences for the victims.
+
+Another drawback of anonymity is the proliferation of misinformation. Without the accountability that comes with using one's real identity, it becomes easier for individuals to spread false or misleading information. This can have serious consequences, as it can lead to the spread of conspiracy theories and other harmful beliefs.
+
+Finally, anonymity can also facilitate scams and fraud. Without the ability to trace an individual's identity, it becomes easier for scammers to prey on unsuspecting individuals and steal their personal information or money. This can lead to significant financial losses and can have long-term consequences for the victims.
+
+In this book we will dig into benefits and challenges and discuss how technology addresses it.
+
+## **The role of accountability in balancing anonymity** {#the-role-of-accountability-in-balancing-anonymity}
+
+Verification and authentication processes
+
+Consequences for misuse of anonymity
+
+Societal moderation and reporting systems
+
+Citation
+
+F. Mogavero, I. Visconti, A. Vitaletti and M. Zecchini, "The Blockchain Quadrilemma: When Also Computational Effectiveness Matters," 2021 IEEE Symposium on Computers and Communications (ISCC), 2021, pp. 1-6, doi: 10.1109/ISCC53001.2021.9631511.
+
+	What are the Opportunities to accelerate these
+
+#### 	Societal Guardrails {#societal-guardrails}
+
+Societal guardrails refer to the ethical, legal, and social frameworks that help ensure that the use and development of technology aligns with the values and goals of society. These guardrails can include laws, regulations, policies, and norms that govern the use of technology, as well as institutions and mechanisms that enforce these frameworks and hold individuals and organizations accountable for their actions.
+
+The role of societal guardrails is to help mitigate the negative impacts of technology on society and to promote the responsible and ethical use of technology. For example, societal guardrails can help protect the privacy and security of individuals, ensure that technology is used in a way that is fair and equitable, and prevent the misuse of technology for harmful purposes.
+
+Societal guardrails are important because the rapid pace of technological change can outstrip the ability of society to fully understand and address the consequences of new technologies. 
+
+	Develop tooling to enable choice
+
+# **Goals** {#goals}
+
+The goal of this book is to explore the potential for cooperation and coexistence between central bank digital currencies (CBDCs) and public networks. Shai believes that it is possible for these two worlds to coexist, and that by understanding and building the necessary technology, we can create a more digitally sovereign society.
+
+The book is organized as a reference-style collection of articles, allowing readers to easily access and understand the various concepts and ideas presented. Each article stands on its own, but may also build upon other concepts in the book.
+
+This book draws on a wide range of data sources and presents ideas and assumptions based on Shai's extensive experience in the field. With over 12 years in the space and 28 years in IT and business, Shai brings a unique perspective on the future of society and how we can "build forward." All sources are properly cited, helping to build credibility and trust with readers.
+
+## **Outcomes**  {#outcomes}
+
+* Increased understanding and knowledge of the topic: By presenting clear, well-researched information on the topic, we’ll increase the understanding and knowledge of your readers on the potential for cooperation between CBDCs and public networks.  
+* More informed decision-making: With a better understanding of the topic, readers may be better equipped to make informed decisions about the role that CBDCs and public networks could play in their own lives or in the wider society.  
+* Greater awareness of the potential for cooperation: help to raise awareness of the potential for cooperation between CBDCs and public networks, encouraging more people to consider the benefits of this approach.
+
+Inspiration for new ideas and solutions: Inspire readers to come up with their own innovative solutions to bring together CBDCs and public networks.
+
+Improved policy and regulation: By providing a better understanding of the technical and social implications of CBDCs and public networks,
+
+## **Tenets**  {#tenets}
+
+Educate & Inspire
+
+# **Digging into Anonymity** {#digging-into-anonymity}
+
+## **Challenges** {#challenges}
+
+Difficulty in verifying the accuracy of information: Without knowing the identity of the individual or organization providing the information, it can be difficult to verify the accuracy and credibility of their claims.
+
+Difficulty in assessing credibility: Without knowing the identity of the individual or organization, it can be difficult to assess their credibility or to determine whether they have a vested interest in the outcome of the situation.
+
+Difficulty in obtaining additional information: Without knowing the identity of the individual or organization, it may be difficult to obtain additional information or clarification on their claims.
+
+Difficulty in determining the appropriate course of action: Without knowing the identity of the individual or organization, it may be difficult to determine the appropriate course of action to take in response to their claims.
+
+Difficulty in identifying patterns of behavior: Without knowing the identity of the individual or organization, it may be difficult to identify patterns of behavior or to track the history of their actions.
+
+Difficulty in tracking the progress of an issue: Without knowing the identity of the individual or organization, it may be difficult to track the progress of an issue or to follow up on any actions taken in response to their claims.
+
+Difficulty in building trust: Without knowing the identity of the individual or organization, it may be difficult to build trust with them or to establish a relationship based on mutual respect and understanding.
+
+Difficulty in establishing accountability: Without knowing the identity of the individual or organization, it may be difficult to hold them accountable for their actions or to ensure that they are taking appropriate steps to address any issues or concerns.
+
+Difficulty in engaging in dialogue or communication: Without knowing the identity of the individual or organization, it may be difficult to engage in dialogue or communication with them in order to address any issues or concerns.
+
+Difficulty in determining the appropriate level of confidentiality: Without knowing the identity of the individual or organization, it may be difficult to determine the appropriate level of confidentiality to maintain in order to protect their identity and privacy.
+
+Difficulty in balancing the need for anonymity with the need for transparency: Anonymity can create a tension between the need for transparency and the need to protect the identity of the individual or organization involved.
+
+Difficulty in ensuring fairness: Without knowing the identity of the individual or organization, it may be difficult to ensure that they are treated fairly and that any decisions or actions taken in response to their claims are impartial.
+
+Difficulty in addressing power imbalances: Without knowing the identity of the individual or organization, it may be difficult to address any power imbalances that may exist between them and other parties involved.
+
+Difficulty in addressing cultural or language barriers: Without knowing the identity of the individual or organization, it may be difficult to address any cultural or language barriers that may exist between them and other parties involved.
+
+Difficulty in establishing a sense of accountability and ownership: Without knowing the identity of the individual or organization, it may be difficult to establish a sense of accountability and ownership for their actions or to encourage them to take responsibility for any negative consequences.
+
+Difficulty in creating a safe and supportive environment: Without knowing the identity of the individual or organization, it may be difficult to create a safe and supportive environment that encourages open and honest communication and promotes mutual understanding and respect.
+
+Difficulty in addressing concerns in a timely manner: Without knowing the identity of the individual or organization, it may be difficult to address concerns in a timely manner and to ensure that any issues or concerns are addressed in a timely and appropriate way.
+
+Difficulty in maintaining confidentiality: Without knowing the identity of the individual or organization, it may be difficult to maintain confidentiality
+
+## **Benefits** {#benefits}
+
+Anonymity can provide a sense of privacy and security: Anonymity can provide a sense of privacy and security for individuals who may be concerned about their personal safety or the potential consequences of speaking out.
+
+Anonymity can support free expression: Anonymity can support free expression by allowing individuals to express their views and opinions without fear of reprisal or discrimination.
+
+Anonymity can encourage more diverse perspectives: Anonymity can encourage more diverse perspectives by allowing individuals from underrepresented groups or marginalized communities to speak out without fear of discrimination or backlash.
+
+Anonymity can protect vulnerable individuals: Anonymity can protect vulnerable individuals, such as those who may be at risk of abuse or exploitation, from negative consequences for speaking out or reporting misconduct.
+
+Anonymity can support the reporting of sensitive or controversial issues: Anonymity can support the reporting of sensitive or controversial issues by providing a safe and confidential way for individuals to come forward with important information.
+
+Anonymity can encourage more candid and honest communication: Anonymity can encourage more candid and honest communication by allowing individuals to speak openly and honestly without fear of reprisal or negative consequences.
+
+Anonymity can foster a sense of trust and confidentiality: Anonymity can foster a sense of trust and confidentiality by providing a safe and secure way for individuals to share sensitive or personal information.
+
+Anonymity can support the investigation and resolution of issues: Anonymity can support the investigation and resolution of issues by providing a way for individuals to report misconduct or other problems without fear of reprisal or negative consequences.
+
+Anonymity can encourage more thorough and objective investigations: Anonymity can encourage more thorough and objective investigations by allowing individuals to report misconduct or other issues without fear of reprisal or bias.
+
+Anonymity can support the protection of sensitive or confidential information: Anonymity can support the protection of sensitive or confidential information by providing a safe and secure way for individuals to share this information without fear of reprisal or negative consequences.
+
+Anonymity can promote fairness and impartiality: Anonymity can promote fairness and impartiality by allowing individuals to report misconduct or other issues without fear of reprisal or bias.
+
+Anonymity can encourage more constructive and respectful communication: Anonymity can encourage more constructive and respectful communication by allowing individuals to express their views and opinions without fear of reprisal or negative consequences.
+
+Anonymity can support the maintenance of confidentiality agreements: Anonymity can support the maintenance of confidentiality agreements by providing a safe and secure way for individuals to report misconduct or other issues without violating these agreements.
+
+Anonymity can encourage the resolution of issues in a timely manner: Anonymity can encourage the resolution of issues in a timely manner by providing a safe and secure way for individuals to report problems and seek help without fear of reprisal or negative consequences.
+
+Anonymity can support the maintenance of a safe and supportive environment: Anonymity can support the maintenance of a safe and supportive environment by providing a way for individuals to report misconduct or other issues without fear of reprisal or negative consequences.
+
+Anonymity can support the resolution of issues in a respectful and compassionate manner: Anonymity can support the resolution of issues in a respectful and compassionate manner by allowing individuals to report problems and seek help without fear of reprisal or negative consequences.
+
+## **Who Benefits** {#who-benefits}
+
+Individuals who may face negative consequences for speaking out: Anonymity can protect individuals from retaliation, discrimination, or other negative consequences for speaking out about important issues or reporting misconduct.
+
+Individuals who may be hesitant to speak out about sensitive or controversial issues: Anonymity can provide a sense of safety and protection for individuals who may be hesitant to speak out about sensitive or controversial issues.
+
+Individuals from underrepresented groups or marginalized communities: Anonymity can encourage more diverse perspectives by allowing individuals from underrepresented groups or marginalized communities to speak out without fear of discrimination or backlash.
+
+Vulnerable individuals: Anonymity can protect vulnerable individuals, such as those who may be at risk of abuse or exploitation, from negative consequences for speaking out or reporting misconduct.
+
+Whistleblowers: Anonymity can provide a safe and confidential way for whistleblowers to report misconduct or other important issues.
+
+Individuals who may be concerned about their personal safety or privacy: Anonymity can provide a sense of privacy and security for individuals who may be concerned about their personal safety or the potential consequences of speaking out.
+
+## **Who could it Harm** {#who-could-it-harm}
+
+Organizations: Anonymity can make it more difficult for organizations to fully investigate and address issues or concerns, and may limit their ability to hold individuals accountable for their actions.
+
+Individuals who may be wrongly accused: Anonymity can make it more difficult for individuals who may be wrongly accused of misconduct or other issues to clear their name and protect their reputation.
+
+The general public: Anonymity can create a lack of transparency, which can make it more difficult for the general public to understand the full extent of an issue or to hold individuals or organizations accountable for their actions.
+
+Third parties: Anonymity can create challenges for third parties, such as mediators or investigators, who may be involved in addressing issues or concerns.
+
+## **Future Risks** {#future-risks}
+
+Increasing mistrust: Anonymity can create a lack of transparency, which can lead to increasing mistrust among individuals and organizations.
+
+Decreasing accountability: Anonymity can make it more difficult to hold individuals or organizations accountable for their actions, which can lead to a decrease in accountability.
+
+Decreasing credibility: Anonymity can be misused or abused, which can undermine the credibility of anonymous reporting systems and make it more difficult to hold individuals accountable for their actions.
+
+Increasing uncertainty: Anonymity can create uncertainty about the identity of individuals or organizations involved in an issue or concern, which can make it more difficult to fully understand and address the problem.
+
+Decreasing transparency: Anonymity can create a lack of transparency, which can make it more difficult for the general public to understand the full extent of an issue or to hold individuals or organizations accountable for their actions.
+
+# **Concepts** {#concepts}
+
+### **Anonymous Souls** {#anonymous-souls}
+
+An anonymous soul is a concept that refers to an individual or organization that is held accountable for their actions, but their identity remains unknown. While similar to Soul Bound Tokens, Anonymous Souls are a symbolic representation of an individual or group and how we refer to those we hold accountable for their actions. The idea behind anonymous souls is that accountability is more important than identity, and that knowing who is behind an action is not necessary in order to hold them accountable. This concept can be useful in situations where anonymity is important for personal safety or security, or when the focus is on the action itself rather than the identity of the person or group responsible. Anonymous souls offer a way to hold individuals and organizations accountable for their actions while preserving their anonymity.
+
+### 	**Mixtopia** {#mixtopia}
+
+	The concept of Mixtopia is one that encompasses both the utopian and dystopian elements of society. It is a world that exists somewhere in between these two far ends, where perfection and dysfunction coexist. In Mixtopia, both the digital and real worlds are accessible, and assets can move freely between them. The key to this balanced world is the use of MixedReality, which allows for the integration of virtual and physical elements in a way that enhances the overall experience.
+
+One of the main features of Mixtopia is the ability to seamlessly access both the digital and real worlds. This means that individuals can take advantage of the convenience and connectivity of the digital realm while still maintaining a connection to the tangible elements of the physical world. This blend of the two worlds allows for a greater sense of balance and harmony, as people are able to experience the best of both worlds.
+
+Another important aspect of Mixtopia is the ability to move assets between the digital and real worlds. This means that people are able to use the digital realm as a way to store and access physical assets, such as money or valuable items. This ability to transfer assets between worlds opens up new possibilities for trade and commerce, as well as for personal use.
+
+### 	**Centerverse** {#centerverse}
+
+The concept of the Centerverse is one that refers to a world at the center of a multiverse, where a decentralized network of independent parallel societies coexist and interact. This world serves as a hub, connecting these different societies and facilitating the exchange of information and resources between them.
+
+One of the main features of the Centerverse is its role as a hub within a decentralized network. This means that it serves as a central point of connection for the various societies within the multiverse, allowing them to interact and exchange resources in a way that is transparent and secure. The decentralized nature of the network ensures that no single entity has control over the flow of information or resources, ensuring that all societies have an equal say in the decisions that affect them.
+
+Another important aspect of the Centerverse is its ability to facilitate the exchange of resources between the different societies within the multiverse. This can include both physical assets, such as goods and services, and digital assets, such as information and data. The use of a decentralized network ensures that these exchanges are transparent and secure, allowing societies to trust that they are receiving what they have agreed upon.
+
+### 	**Worlds** {#worlds}
+
+The concept of "Worlds" refers to the different realms that exist within a multiverse, each with its own unique characteristics and features. In the future, it is possible to imagine multiple worlds, including a digital world, the physical world of Earth, and the space and planets of the solar system. Each of these worlds offers its own unique experiences and opportunities, and the ability to access and explore them is becoming increasingly important.
+
+One of the main features of these worlds is their diversity and variety. The digital world is a realm of virtual reality and limitless possibilities, where people can create and explore new worlds and experiences. The physical world of Earth is a place of tangible reality, where people can interact with the natural world and experience the beauty and complexity of the planet. The space and planets of the solar system offer a world of exploration and discovery, where people can learn about the mysteries of the universe and the other worlds that exist beyond our own.
+
+Another important aspect of these worlds is their potential for exploration and development. The digital world provides endless opportunities for creativity and innovation, as people can create and explore new virtual realities. The physical world of Earth offers a wealth of resources and opportunities for development, as people seek to improve their lives and the world around them. The space and planets of the solar system represent a vast frontier of exploration, where people can learn about the mysteries of the universe and the other worlds that exist beyond our own.
+
+Overall, the concept of "Worlds" represents the 
+
+### 	**Independent Societies** {#independent-societies}
+
+These are similar to the distributed societies of ancient worlds
+
+### 	**All-in OnChain** {#all-in-onchain}
+
+		similar to allin on cloud
+
+### 	**Smart contract quadrilemma** {#smart-contract-quadrilemma}
+
+Need to confirm the below
+
+The Smart Contract Quadrilateral is a framework that describes the four key properties that a smart contract should possess in order to be effective and useful. These properties are:
+
+* Correctness: A smart contract should be free of errors and operate as intended.  
+* Privacy: A smart contract should protect the privacy of parties involved in the contract, such as by encrypting sensitive data.  
+* Scalability: A smart contract should be able to handle a large volume of transactions without experiencing delays or other performance issues.  
+* Security: A smart contract should be secure and resistant to tampering, hacking, or other types of cyber attacks.
+
+Achieving all four of these properties simultaneously is often referred to as the "smart contract quadrilateral" or the "smart contract quadrilemma." Developing smart contracts that meet all four of these criteria can be challenging, as they often require trade-offs between different properties. For example, increasing the privacy of a smart contract may come at the cost of scalability, or improving the security of a smart contract may require sacrificing some level of correctness.
+
+### **Proof of accountability** {#proof-of-accountability}
+
+### **Proof of correctness** {#proof-of-correctness}
+
+The concept of Proof of Correctness addresses the important issue of proving the accuracy and fairness of AI prompts in a decentralized and trustless manner. The traditional methods of scoring AI prompts, such as relying on AI algorithms or human judgement, are often biased and subjective, leading to concerns about the reliability and trustworthiness of the outputs of these prompts.
+
+Proof of Correctness offers a solution that utilizes blockchain technology to decentralize the scoring process and eliminate the need for trust. This ensures that the scoring is fair, unbiased, transparent, and verifiable. The decentralized nature of the solution means that multiple users can compete to arrive at a consensus score, reducing the risk of bias or subjectivity. The trustless nature of the solution means that the scoring process is transparent and verifiable, allowing users to have confidence in the accuracy and fairness of the scores.
+
+The importance of addressing the issue of proving the accuracy and fairness of AI prompts cannot be overstated. AI algorithms and applications have become widespread across a wide range of industries, including finance, healthcare, transportation, and manufacturing. The accuracy and fairness of these algorithms and applications are critical to the reliability and trustworthiness of the outputs they produce. By offering a solution that utilizes blockchain technology to decentralize the scoring process and eliminate the need for trust, Proof of Correctness aims to codeify trust and increase confidence in the reliability and trustworthiness of AI prompts.
+
+In addition to increasing confidence in the reliability and trustworthiness of AI prompts, the concept of Proof of Correctness has the potential to have significant impacts on a wide range of industries and applications. For example, in the financial industry, accurate and fair AI prompts are essential for making informed investment decisions. In the healthcare industry, accurate and fair AI prompts are critical for the proper diagnosis and treatment of patients. In the transportation industry, accurate and fair AI prompts are necessary for the safe and efficient operation of transportation systems.
+
+Furthermore, the concept of Proof of Correctness has the potential to contribute to the overall advancement of AI technology. By providing a reliable and trustworthy way to score the output of AI prompts, Proof of Correctness can help to improve the accuracy and fairness of AI algorithms and applications, leading to more reliable and trustworthy outputs. This, in turn, can help to increase the adoption and use of AI technology, as users will have greater confidence in its reliability and trustworthiness.
+
+# 
+
+# **Timeline** {#timeline}
+
+## **Eras/Epochs/Stages** {#eras/epochs/stages}
+
+This section sets out to define what epochs are for the reader.  Then goes through each of the epochs proposed in this paper
+
+In the context of blockchain technology, an epoch is a period of time during which a specific set of blocks are considered valid. Epochs are typically used in proof-of-work (PoW) blockchain networks, such as Bitcoin, to organize the validation process and ensure the security of the network.
+
+In a PoW blockchain, the validation process involves miners competing to solve complex mathematical problems in order to create new blocks and add them to the chain. The first miner to solve the problem gets to create the block and is rewarded with a certain amount of cryptocurrency. This process is known as "mining."
+
+The epoch in a PoW blockchain is defined by the length of time it takes for a specific number of blocks to be added to the chain. For example, in the Bitcoin network, an epoch is defined as 2016 blocks, which takes approximately two weeks to complete. At the end of each epoch, the network recalculates the difficulty of the mining problem, adjusting it up or down based on the overall mining power of the network. This ensures that the network maintains a consistent rate of block creation, despite fluctuations in mining power.
+
+### **Celestial Blending** {#celestial-blending}
+
+Period: 2020-2025
+
+Year: 2120
+
+Event: Blended Reality
+
+In this period, it is assumed that the world will see the emergence of blended reality, a term that refers to the merging of the physical and digital worlds. This could involve the use of technologies such as augmented reality (AR) and virtual reality (VR) to create immersive experiences that blur the line between the real and the virtual.
+
+### **Astro Frontier** {#astro-frontier}
+
+Period: 2026-2035
+
+Year: 2026
+
+Event: Space Race 2.0
+
+The period from 2026 to 2035 is assumed to see the return of the space race, with countries and private organizations competing to explore and utilize the resources of the solar system. This period may also see significant advancements in space travel and the colonization of other planets.
+
+### **Galactic Mobility** {#galactic-mobility}
+
+Period: 2035-2050
+
+Year: 2035
+
+Event: Decentralized societies
+
+Societies’ will move away from centralized cities and towards decentralized communal structures. Skyscrapers, once a symbol of modernity and urbanization, will become a thing of the past. Remote work will become the norm as technology advances allow for greater connectivity and collaboration across time zones.
+
+Technological advances will significantly reduce physical travel times. For example, a trip that might have taken four hours 20 years ago could now be completed in as little as a 20-minute nap, thanks to these advancements. This could have major implications for how we travel and how we think about distance and proximity.
+
+Digital societies and economies become more prevalent with a greater emphasis on self-sovereignty and independence. Emergence of digital only societies and governance structures will have matured from the DAO and DAC as early primitives of the technology from the early 2020s
+
+The lack of centralized control will become less necessary as technology enables greater transparency and accountability, even with anonymity. This shift towards individual autonomy and self-governance will lead to significant changes in the way that societies are organized and the way that individuals interact with each other and with institutions.
+
+### **Cosmic Consensus** {#cosmic-consensus}
+
+Period: 2051-2090
+
+### **Interplanetary Expansion** {#interplanetary-expansion}
+
+Period: 2090-2120
+
+Year: 2092
+
+Event: Space Exploration
+
+In the period from 2090 to 2120, it is assumed that space exploration will continue to be a major focus, with a particular emphasis on the colonization of other planets and the search for extraterrestrial life. This could involve the establishment of permanent settlements on other planets and the development of technologies to sustain human life in these harsh environments.
+
+### **Nebular Sovereignty** {#nebular-sovereignty}
+
+Period: 2121-2200
+
+## **Key Events** {#key-events}
+
+Building on the epochs above to expand on key events that may affect humanity as a whole.
+
+Catastrophic events have played a significant role in shaping the course of history. These events are often characterized by their impact on society, their ability to disrupt daily life, and their ability to cause widespread damage and destruction. Here is a brief overview of some catastrophic events that have occurred in the past, as well as some hypothetical events that may occur in the future:
+
+2000: The Y2K event, also known as the "Millennium Bug," was a catastrophic event that was feared to cause widespread problems with computer systems as the year 2000 approached. While the event ultimately did not have the widespread impact that was feared, it did lead to significant preparations and precautions being taken by governments, businesses, and individuals.
+
+2001: The terrorist attacks of September 11th, 2001, were a catastrophic event that had a profound impact on the world. The attacks, which involved the hijacking and crashing of four commercial airplanes, resulted in the deaths of nearly 3,000 people and caused widespread destruction. The attacks had far-reaching consequences, including the launch of the War on Terror, the passage of the USA PATRIOT Act, and the invasion of Iraq.
+
+2008: The global recession of 2008 was a catastrophic event that had a significant impact on the world economy. The recession, which was caused by a variety of factors, including the collapse of the housing market and the subprime mortgage crisis, resulted in widespread job loss, reduced economic growth, and increased poverty. The recession had long-lasting consequences, including the ongoing economic inequality that many countries continue to struggle with.
+
+\~2012: The Maker Movement, which began around 2012, was a significant event in the world of technology and innovation. The movement, which was characterized by a DIY approach to technology and a focus on open-source hardware and software, helped to foster a culture of creativity and innovation and led to the development of a wide range of new technologies and products.
+
+2016: The political theater of 2016 was a catastrophic event in the world of politics. The event, which involved the contentious presidential election of 2016, was marked by widespread polarization, misinformation, and mistrust. The political theater had significant consequences, including the erosion of trust in political institutions and the rise of extremist ideologies.
+
+2020: The COVID-19 pandemic, which began in 2020, was a catastrophic event that had a profound impact on the world. The pandemic, which was caused by the novel coronavirus, resulted in widespread illness and death, disrupted daily life, and caused significant economic damage. The pandemic had far-reaching consequences, including the acceleration of digital transformation and the rise of telemedicine.
+
+2022-2025: A hypothetical catastrophic event that may occur in the future is a nuclear threat. The proliferation of nuclear weapons and the increasing tensions between nations has raised the possibility of a nuclear conflict, which could have devastating consequences for the world.
+
+2025: Another hypothetical catastrophic event that may occur in the future is a catalytic climate event, which could be accelerated by a space race or a nuclear arms race. The increasing demand for resources and the pursuit of technological advancement could lead to a situation where the Earth's natural systems are irreversibly damaged, resulting in a catastrophic event that could have far-reaching consequences for the planet.
+
+2035: Another hypothetical catastrophic event that may occur in the future is a catalytic climate event, which could be accelerated by a space race or a nuclear arms race. The increasing demand for resources and the pursuit of technological advancement could lead toa situation where the Earth's natural systems are irreversibly damaged, resulting in a catastrophic event that could have far-reaching consequences for the planet. The acceleration of climate change, which is already underway, could result in more frequent and severe natural disasters, such as hurricanes, floods, and droughts, as well as more widespread loss of biodiversity and increased social and economic disruption.
+
+It is important for society to consider the potential consequences of these catastrophic events and to take steps to prevent or mitigate their impact. This may include efforts to reduce the risk of nuclear conflict, to address the root causes of climate change, and to build resilience to the impacts of natural disasters. By preparing for and responding to these events, it may be possible to minimize the negative consequences and to create a more stable and sustainable future for all.
+
+## **The 200 year Transition** {#the-200-year-transition}
+
+The past 200 years have witnessed significant transitions in technology, society, and culture. These transitions have had far-reaching consequences and have shaped the course of history. Here is a brief overview of some of the key transitions that have occurred over the past 200 years:
+
+1927: The end of the Model T, which was the first mass-produced automobile, marked a significant transition in transportation and mobility. The Model T revolutionized the way people moved around and changed the way goods were transported, leading to the development of modern transportation systems.
+
+1940s: The development of the ENIAC, which was the first electronic computer, marked a significant transition in technology. The ENIAC paved the way for the development of modern computing and led to the proliferation of computers in society. The 1940s also saw the emergence of the Gen Z and Gen Y age groups, which were characterized by their experiences during World War II and the post-war period.
+
+1970: The development of token ring networks marked a significant transition in networking and communication. Token ring networks were an early form of networking that allowed computers to communicate with each other and share data. The 1970s also saw the emergence of the Gen Z and Gen Y age groups, which were characterized by their experiences during the counterculture movement and the rise of technology.
+
+mid-90s: The emergence of the internet marked a significant transition in communication and information sharing. The internet revolutionized the way people connected with each other and accessed information, leading to the development of modern communication systems. The mid-90s also saw the emergence of the Gen Z and Gen Y age groups, which were characterized by their experiences during the rise of the internet and the emergence of digital culture.
+
+2007: The release of the iPhone marked a significant transition in mobile technology and communication. The iPhone, which was the first smartphone, revolutionized the way people accessed information and communicated with each other, leading to the widespread adoption of smartphones. The 2007 also saw the emergence of the Gen Z and Gen Y age groups, which were characterized by their experiences during the rise of mobile technology and the proliferation of social media.
+
+2020-2025: The threat of nuclear war and the fall-out from COVID supply constraints mark a significant transitionin global politics and economic stability. The potential for a nuclear conflict and the ongoing pandemic have had far-reaching consequences, including economic disruption, social unrest, and loss of life. The 2020-2025 period also saw the emergence of the Gen Alpha age group, which was characterized by their experiences during this time of uncertainty and change.
+
+2022: A hypothetical transition that may occur in the future is the decentralization of society and the search for a balance between centralization and decentralization. This transition could be driven by a variety of factors, including the desire for greater personal freedom and autonomy, the need for more resilient systems, and the desire to address global challenges such as climate change.
+
+2026-2035: Another hypothetical transition that may occur in the future is the acceleration of space exploration as a result of efforts to de-escalate nuclear tensions or mitigate the threat of nuclear conflict. This transition, known as Space Race 2.0, could be driven by the desire for greater security and the need to find new resources and opportunities beyond Earth. The 2026-2035 period could also be a crucial era that plays a key role in shaping the future, with the Gen Z and Gen Y age groups being key drivers of social change.
+
+2035: A hypothetical catastrophic event that may occur in the future is a catalytic climate event with greater effects on travel than COVID. This event could lead to further decentralization of society or the emergence of totalitarian states. The Gen Alpha age group, which ranges in age from 7-22, could play a key role in shaping the response to this event.
+
+2035-2050: As societies rebuild following a catastrophic event, it is possible that mixtopia and "worlds" as outlined in the accountability collective mind map could emerge. These societies could blend elements of the digital and physical world and seek to find a balance between centralization and decentralization. The Gen Z and Gen Y age groups, which range in age from 7-54, could play a key role in shaping these societies.
+
+2050: A hypothetical transition that may occur in the future is the commoditization of blockchain networks. This transition could be driven by a technological breakthrough similar to the ENIAC in the 1940s, token rings in the 1970s, the internet in the 1990s, smartphones in the 2010s, and the internet in the 2020s. The Gen Y age group, which ranges in age from 54-69, and the Gen Z age group, which ranges in age from 38-53, could play a key role in driving this transition.
+
+2072: 50 years from 2022 could see significant changes in technology and society. It is difficult to predict exactly what these changes will be,but they could be influenced by advancements in fields such as artificial intelligence, robotics, and renewable energy. The Gen Z and Gen Y age groups, which range in age from 38-69, could play a key role in shaping the direction of these changes.
+
+2092: 70 years from 2022 could see the emergence of a blend of the digital and physical world, with some people choosing to live entirely in the digital world and others preferring the real world. The Gen Z and Gen Y age groups, which range in age from 38-69, could be key in driving this transition and shaping the future. The space exploration industry could also become a commodity, with technology advancing to the point where full VR and AR experiences are possible.
+
+2120: As we enter the 22nd century, it is possible that life will blend between the digital and physical world, with little distinction between the two. Some people may choose to live entirely in the digital world, while others may prefer the real world. Governments and societies may also exist online, creating a blended reality that is difficult to distinguish from the physical world. The Gen Alpha age group, which ranges in age from 22-37, could play a key role in shaping this future.
+
+## **5 Years** {#5-years}
+
+Now that we have a clear understanding of the past and potential future transitions in technology and society, it is important to consider the key areas that we should focus on in the next 5 years. As we move forward, it will be crucial to invest in research and development in order to develop the necessary architectures and technologies that will enable us to navigate and thrive in this rapidly changing landscape. The next section explores key areas to focus on before 2030\.
+
+### **Tech**  {#tech}
+
+Before we get into the R\&D, we need to give the reader a fundamental understanding of some foundational concepts.   This helps understand how they could fit into society in later sections.  
+
+Factual and foundational on the topics below, but add perspectives to start the segway and build the narrative for the societal structures next.
+
+#### Internet {#internet}
+
+The internet has become a fundamental part of our daily lives, providing us with access to vast amounts of information, communication, and entertainment. It has become a commodity, something that is readily available and taken for granted by many. This is due in part to the widespread availability of internet access, which has become almost ubiquitous in many parts of the world.
+
+However, access to the internet is not always guaranteed, and it can be gated or restricted based on various factors such as social class or location. Some people may not have access to the internet due to financial or technological barriers, while others may face restrictions due to government censorship or surveillance.
+
+#### Private and Permissioned Blockchain Networks {#private-and-permissioned-blockchain-networks}
+
+Private and permissioned blockchain networks are types of blockchain systems that are restricted in terms of access and participation. These types of networks are often referred to as "firewalled," as they are protected by a set of rules and permissions that control who can access and interact with the network.
+
+Private blockchain networks are typically owned and operated by a single organization or group, and access to the network is restricted to specific individuals or entities. These types of networks are often used for internal processes within an organization, such as supply chain management or record keeping.
+
+Permissioned blockchain networks are similar to private networks in that access is restricted, but they are typically open to multiple organizations or groups that have been granted permission to participate. These types of networks are often used for collaborative projects or for the creation of shared databases.
+
+In some cases, the use of private or permissioned blockchain networks may be forbidden by law. For example, certain countries may have regulations in place that prohibit the use of certain types of blockchain technology or restrict access to it
+
+#### Public and permissionless Blockchain Networks {#public-and-permissionless-blockchain-networks}
+
+Public and permissionless blockchain networks, in contrast to private and permissioned networks, are open and decentralized systems that are not restricted by rules or permissions governing access and participation.
+
+Public blockchain networks, such as the Bitcoin and Ethereum networks, are open to anyone with an internet connection and the necessary hardware and software. Anyone can participate in these networks by running a full node, mining new blocks, or creating and publishing transactions. The decentralization of public blockchain networks allows for a high degree of transparency and security, as there is no single point of control or authority.
+
+Permissionless blockchain networks are similar to public networks in that they are open and decentralized, but they may have certain rules or protocols in place that govern participation. For example, a permissionless network may require users to meet certain technical or security requirements in order to participate.
+
+The openness and decentralization of public and permissionless blockchain networks make them appealing for a variety of applications, including decentralized finance (DeFi), supply chain management, and the creation of decentralized autonomous organizations (DAOs). These types of networks offer the potential for greater transparency, security, and inclusivity compared to private and permissioned networks.
+
+#### 	zkproofs {#zkproofs}
+
+	Zero-knowledge proofs (ZKPs) are a type of cryptographic technique that allow one party (the prover) to prove to another party (the verifier) that a statement is true, without revealing any additional information about the statement itself. This is achieved through the use of mathematical algorithms and protocols that enable the prover to create a proof that is verifiable by the verifier, but which does not reveal any details about the statement being proven.
+
+ZKPs have a long history, with the concept first being proposed in the 1980s by researchers Shafi Goldwasser, Silvio Micali, and Charles Rackoff. However, it wasn't until the development of the zk-SNARKs (Zero-Knowledge Succinct Non-Interactive Argument of Knowledge) protocol in 2014 by researchers Eli Ben-Sasson, Alessandro Chiesa, Daniel Genkin, Eran Tromer, and Madars Virza that ZKPs began to gain widespread attention and adoption.
+
+ZKPs are a key component of hybrid Web2.5 architectures, which seek to bring the benefits of blockchain technology to traditional web applications. These architectures use ZKPs to bring off-chain data, such as data stored in databases or cloud storage systems, onto public blockchain networks as proofs, allowing for the creation of decentralized applications (dApps) that can interact with off-chain data in a secure and transparent manner.
+
+The use of ZKPs in hybrid Web2.5 architectures has the potential to lead to a future where more and more data and processes are "all-in onchain," meaning that they are fully integrated into and governed by blockchain networks. This could bring numerous benefits, including increased security, transparency, and interoperability, as well as the potential for the creation of new types of decentralized applications and services.
+
+#### 	cross-chain messaging {#cross-chain-messaging}
+
+	Cross-chain messaging refers to the ability for different blockchain networks to communicate and exchange information with each other. This can be achieved through the use of specialized protocols or interfaces that enable different networks to interoperate and exchange data in a secure and transparent manner.
+
+Cross-chain messaging plays a key critical role in bringing together permissioned and public blockchain networks, as it allows these networks to share data and interact with each other in a way that is not possible without cross-chain communication. For example, a permissioned network may be able to share data with a public network through the use of cross-chain messaging, allowing the public network to verify the authenticity and integrity of the data without revealing any sensitive information.
+
+There are a number of cross-chain messaging protocols that have been developed to enable this type of communication. These protocols often use cryptographic techniques, such as zero-knowledge proofs or multi-signature schemes, to enable the exchange of information between different networks in a secure and trustless manner.
+
+One example of a cross-chain messaging protocol is LayerZero, which is a protocol that enables the transfer of data between different blockchain networks through the use of "relays." These relays act as intermediaries, enabling the secure and verifiable transfer of data between networks without revealing any sensitive information.
+
+Another example is Nomad, which is a protocol that enables the creation of "bridges" between different blockchain networks. These bridges allow for the transfer of data and assets between networks, enabling cross-chain communication and interoperability.
+
+Overall, cross-chain messaging plays a crucial role in enabling the integration and interoperability of different blockchain networks, including both permissioned and public networks. It has the potential to facilitate the creation of new decentralized applications and services that are able to take advantage of the strengths and capabilities of multiple blockchain networks.
+
+#### CBDCs {#cbdcs}
+
+Cross-chain messaging can help to ensure the security and integrity of CBDC transactions by enabling the verification of transaction data across different networks. By using ZKPs to bring CBDC transactions onto public blockchain networks as proofs, it is possible to verify the authenticity and integrity of these transactions without revealing any sensitive information, such as the identity of the parties involved or the details of the transaction itself.
+
+Cross-chain messaging and ZKPs can play a key role in ensuring the security and integrity of CBDC transactions, while also enabling the creation of new financial applications and services that are able to take advantage of the capabilities of both CBDC systems and public blockchain networks. This could lead to the development of new financial products and services that are not possible with traditional financial systems, and could help to facilitate the adoption and integration of CBDCs into the broader financial ecosystem.
+
+#### 	Network Architectures {#network-architectures}
+
+Use this section to talk about the tech side w/o mentioning brands
+
+Cosmos aligns with grey
+
+* Common language and foundations is key		  
+* networks that enable common langauge across decentralized model
+
+Avalanche is the Red
+
+	Subnets is the key tech
+
+Polkadot the rainbow	
+
+Slot auctions	
+
+		Kusama
+
+			aligns with grey and red side
+
+			could be the onramp/bridge
+
+			purpose built networks
+
+#### 	asset discovery {#asset-discovery}
+
+		correlating data across chains
+
+		mapping out contract interaction
+
+			security tooling
+
+#### 	IP protection tooling {#ip-protection-tooling}
+
+		detecting fraud ip onchain will be key
+
+#### App Specific Chains {#app-specific-chains}
+
+App-specific blockchain networks are blockchain systems that are designed and optimized for a specific application or use case. These networks are typically developed to meet the specific needs of a particular application, such as providing fast and efficient transaction processing, storing large amounts of data, or enabling the creation of decentralized autonomous organizations (DAOs).
+
+In the future, app-specific blockchain networks are likely to play a significant role in the development and deployment of decentralized applications (dApps). These networks will enable dApps to take advantage of the specific features and capabilities of a particular blockchain system, while also providing a platform for the development and deployment of these applications.
+
+One example of an app-specific blockchain network is Rendr, which is a decentralized rendering platform that uses an app-specific blockchain network to enable distributed rendering of 3D graphics and video. The network is optimized for fast and efficient processing of rendering tasks, and uses a decentralized model to provide access to a global network of rendering resources.
+
+Another example is Theta, a decentralized content delivery network (CDN) that uses an app-specific blockchain network to enable the efficient distribution of video and other multimedia content. The network is optimized for fast and reliable delivery of content, and uses a decentralized model to provide access to a global network of caching and delivery nodes.
+
+A third example is Storj, a decentralized storage platform that uses an app-specific blockchain network to enable secure and decentralized storage of data. The network is optimized for the storage and management of large amounts of data, and uses a decentralized model to provide access to a global network of storage resources.
+
+#### Blended Reality in Sports {#blended-reality-in-sports}
+
+In the future, we will see the integration of blended reality and distributed data technologies in the world of sports. This could allow for the creation of new types of sports experiences that combine the excitement and thrill of real-world sports with the immersive and interactive elements of digital environments.
+
+One example of how this could be applied is through the use of real-time rendering technology to create a car race that laps an interchange between a real-world track and a digital environment. This could involve the use of sensors and cameras to capture data about the real-world track and the performance of the cars, which is then processed and rendered in real-time to create a digital representation of the race.
+
+This digital representation could be used to enhance the viewing experience for fans, by providing a more immersive and interactive view of the race. It could also be used to create new types of betting or gaming experiences, such as allowing fans to place bets on the outcomes of the race or compete against each other in virtual races.
+
+This same logic could be applied to other sports examples, such as football or basketball. For example, a football game could be enhanced by the use of real-time rendering technology to create a digital representation of the game that is overlaid on top of the real-world field. This could provide fans with a more immersive and interactive view of the game, as well as the ability to access a wide range of data and statistics about the players and teams.
+
+### **Society** {#society}
+
+Communal societies, which have existed since early human history, are characterized by a focus on collaboration and shared resources, and have the potential to offer a more sustainable and equitable alternative to traditional forms of social organization. We will see a continuation of experimentation with modernizing communal societies, as technology continues to evolve and enable decentralized forms of social organization. 
+
+A key aspect of modernizing communal societies will be the development of technology that enables decentralized forms of social organization. This could include distributed ledger technology (such as blockchain), decentralized applications (dApps), and other technologies that facilitate the creation of decentralized networks and systems.
+
+#### 	Distributed Education {#distributed-education}
+
+Education will be critical in this process, as it will be necessary to educate people about the benefits and potential of decentralized forms of social organization, as well as the tools and technologies that enable them. This could involve the development of distributed education systems that build on social media platforms and other online communities, and which prioritize anonymity and verifiability.
+
+#### Decentralized Media {#decentralized-media}
+
+Decentralized media platforms, which are built on decentralized technologies such as blockchain, offer the potential for greater transparency, security, and inclusivity compared to traditional media platforms. The tooling that enables decentralized media will be critical in this process, as it will provide the infrastructure necessary to support the development and growth of decentralized media platforms.
+
+Decentralized media platforms have the potential to disrupt traditional media models by enabling the creation of more open and participatory forms of media. They could allow for the creation of more diverse and independent media outlets, as well as the development of new types of media products and services that are not possible with traditional media platforms.
+
+# **Societal Structures** {#societal-structures}
+
+Societal structures are the fundamental building blocks of any society. They define the relationships between individuals and groups, and they shape the way people interact with each other and the world around them. Societal structures can take many forms, including family structure, political structure, economic structure, social class, religious structure, and cultural structure.
+
+The family structure of a society refers to the way that families are organized and the roles and responsibilities of family members. This can vary widely from one society to another, and may be influenced by cultural, economic, and political factors. For example, some societies may have a nuclear family structure, where the family is made up of a husband, wife, and their children, while others may have extended family structures, where multiple generations and unrelated individuals live together.
+
+Political structure refers to the way that a society is governed and the relationships between different levels of government. This can include the form of government (e.g. democracy, monarchy, dictatorship), the branches of government (e.g. legislative, executive, judicial), and the distribution of power among these branches. Political structures can also include the relationships between the government and other institutions, such as the media, military, and civil society organizations.
+
+Economic structure refers to the way that a society produces, distributes, and consumes goods and services. This includes the type of economic system (e.g. capitalism, socialism, mixed economy), the ownership of resources (e.g. private, public, cooperative), and the role of the government in regulating and influencing the economy. Economic structures can have a major impact on the distribution of wealth and opportunities within a society.
+
+Social class refers to the way that people are ranked or stratified based on their socio-economic status, education, and other factors. This can include factors such as income, occupation, education level, and wealth. Societies can have a variety of social class systems, ranging from rigid hierarchies to more fluid systems where social mobility is possible.
+
+Religious structure refers to the way that a society's religious beliefs and practices are organized and the roles of religious leaders and institutions. This can include the dominant religions in a society, the relationship between religion and the state, and the role of religious institutions in shaping social norms and values.
+
+Cultural structure refers to the way that a society's shared values, beliefs, customs, and behaviors are transmitted and maintained. This can include language, art, literature, music, and other forms of cultural expression, as well as the norms and values that are passed down from one generation to the next. Cultural structures can also include the ways in which different cultural groups within a society interact and influence each other.
+
+## **Foundations** {#foundations}
+
+### **Role of A Reserve Currency** {#role-of-a-reserve-currency}
+
+A reserve currency is a type of currency that is held in significant quantities by governments and institutions as part of their foreign exchange reserves. Reserve currencies are often used in international trade, as they are widely accepted and can be easily converted into other currencies.
+
+One of the key benefits of a reserve currency is that it is typically stable and reliable, which makes it easier for governments and institutions to use it as a medium of exchange. This is especially important in times of economic uncertainty, when the value of other currencies may fluctuate significantly.
+
+In the context of cryptocurrency, Bitcoin (BTC) has been proposed as a potential reserve currency due to its decentralized nature and the fact that it is not subject to the control of any government or central authority. In the Bitcoin whitepaper, the creator(s) of Bitcoin, known under the pseudonym Satoshi Nakamoto, outlined the need for a decentralized and censor-resistant digital currency that could be used as a medium of exchange without the need for intermediaries.
+
+Since its creation, Bitcoin has become the most well-known and widely used cryptocurrency, and it has gained significant adoption as a store of value and a medium of exchange. While Bitcoin is not yet widely used as a reserve currency, its decentralized nature and security make it an attractive option for those looking for a stable and reliable digital asset that is resistant to censorship and tampering. Overall, the role of a reserve currency is to provide a stable and reliable means of exchange that can be used in international trade and financial transactions, and Bitcoin's decentralized and secure nature make it a strong candidate for this role in the cryptocurrency space.
+
+### **Role of A Settlement Layer** {#role-of-a-settlement-layer}
+
+A settlement layer is a component of a financial system that is responsible for facilitating the transfer of assets or value between parties. In the context of cryptocurrency, a settlement layer is a blockchain or other distributed ledger technology that is used to securely and transparently record the transfer of digital assets between parties.
+
+One key feature of a settlement layer is its ability to provide a secure and reliable platform for the transfer of assets. This is often achieved through the use of cryptographic technologies such as public-key encryption, which allows parties to verify the authenticity of a transaction and prevent fraud.
+
+The age and security of a settlement layer can also be important factors to consider when choosing a settlement layer. For example, a settlement layer that has been in operation for a longer period of time may be considered more reliable and secure than a newer settlement layer. Similarly, a settlement layer that has a strong track record of security and reliability may be preferred over one that has a history of vulnerabilities or security breaches.
+
+In the context of cryptocurrency, Ethereum (ETH) is often considered a potential settlement layer due to its age and security. Ethereum is a decentralized platform that runs smart contracts: applications that run exactly as programmed without any possibility of downtime, censorship, fraud or third-party interference. 
+
+Ethereum's ability to support these additional use cases has made it a popular choice for developers looking to build decentralized applications and services. It has also contributed to its popularity as a potential settlement layer, as it offers more flexibility and functionality than Bitcoin and other cryptocurrencies that are primarily focused on facilitating the transfer of value.
+
+Cardano (ADA) is another cryptocurrency that has been proposed as a potential settlement layer. Cardano is a decentralized platform that is built on a proof-of-stake consensus algorithm, which means that it relies on validators to verify transactions and secure the network. Cardano is known for its methodical and peer-reviewed approach to development, which has resulted in a platform that is highly secure and scalable. Cardano is also designed to enable other developers to build applications on top of it, which could make it a more attractive settlement layer for those looking to create new financial applications and services. Overall, the evolution of a settlement layer like Cardano is a slow process, but this slow and deliberate approach is seen as necessary in order to build a secure and reliable platform that can support a wide range of applications and use cases.
+
+## **Blend of Rainbow and Red** {#blend-of-rainbow-and-red}
+
+Diversity and inclusion are essential for creating a functional and flourishing society. A diverse society, one that embraces a range of different identities and experiences, is likely to be more innovative and adaptable, as it brings together a variety of perspectives and ideas. Inclusion, on the other hand, is about ensuring that everyone feels valued and included in the society, regardless of their differences.
+
+The "blend of rainbow and red" concept highlights the importance of both diversity and passion in creating a thriving society. A society that is diverse and inclusive is more likely to be vibrant and dynamic, as it brings together people from different backgrounds and experiences who can contribute their unique perspectives and ideas.
+
+However, it's also important to recognize that societies can function in different ways. Some societies may place a greater emphasis on conformity and may not value diversity and individuality as much. In these societies, it may be more difficult for individuals to flourish and for the society as a whole to thrive.
+
+Ultimately, the key to creating a functional and flourishing society is to find a balance between conformity and individuality, and to ensure that all members of the society feel valued and included. This requires building guardrails and enablement to allow individuals to function and flourish on their own, as independent and autonomous entities, while also promoting a sense of community and belonging.
+
+### **Architecture** {#architecture}
+
+Polkadot w/o saying
+
+Slot auctions are key.  Focus on how they would be used in society
+
+Centralized authority acts as an enabler
+
+Holds equal weight in the network
+
+harmonious countries that want to work together
+
+Push for harmony and balance
+
+Countries actively adopting crypto
+
+Government's Purpose
+
+	Look after people
+
+	Provide common services
+
+Blockchain Network Interoperability
+
+### **Key Concepts** {#key-concepts}
+
+#### Blockchain Tech {#blockchain-tech}
+
+Blockchain technology could be widely used to facilitate secure and transparent financial transactions, as well as to store and manage important information such as contracts, deeds, and records. This could help to increase trust and accountability in various sectors, such as finance, healthcare, and government.
+
+#### Function of the CBDC {#function-of-the-cbdc}
+
+CBDC could play a central role in the economy, providing a secure and convenient means of payment for goods and services. It could also help to improve financial inclusion, by making it easier for individuals and businesses to access financial services and participate in the economy.
+
+#### Anonymity {#anonymity-1}
+
+Anonymity could be respected and protected, with individuals free to express their opinions and identities without fear of discrimination or persecution. This could help to create a more open and inclusive society, where people are free to be themselves and express their views without fear of reprisal.
+
+#### Politicians {#politicians}
+
+Politicians could be held accountable for their actions and decisions, and the political process could be open and transparent. This could help to ensure that politicians are accountable to the public and that the political system serves the needs of all members of the society.
+
+#### Blockchain Networks {#blockchain-networks}
+
+#### Bridge to Rainbow {#bridge-to-rainbow}
+
+#### Flex Jobs {#flex-jobs}
+
+Flexible work arrangements would be more common, allowing individuals to balance their work and personal lives in a way that works best for them. This could help to create a more inclusive and supportive work environment, where people are able to achieve their full potential and contribute to the society
+
+### **Average Day** {#average-day}
+
+The below section should focus on illustrating a day in the life example.  Setup some assumptions upfront.
+
+## **Grey Nebulous Societies** {#grey-nebulous-societies}
+
+### **Architecture** {#architecture-1}
+
+This platform enables the creation of independent, scalable, and interoperable communities, designed to facilitate the exchange of ideas and resources between different independent societies, allowing them to build together and grow seamlessly.
+
+At the center of this decentralized society is a central hub that serves as a connection point for other communities to join. This hub is powered by a shared set of values and beliefs, which serve to secure the society and facilitate interactions between different groups.  It is the decentralized society that governs and builds guardrails.
+
+Any centralized entity in this architecture is an equal member of the society with equal shares in the interest and growth of the ecosystem as it’s participants.  It’s anonymity that keeps all parties equal and the networks ability to programmatically hold an anonymous soul accountable.
+
+One of the key features of this decentralized society is its use of a novel consensus mechanism that allows for high levels of speed and scalability, while also ensuring the security and integrity of the community.
+
+This decentralized society also includes a number of other components, such as protocols for the exchange of ideas and resources between different groups, and development frameworks that enable the creation of custom communities and initiatives.
+
+Society is somewhere in between
+
+Grey area will always bleed into the other colors
+
+Over time borders get thicker
+
+Anything that doesn't fall into the other two sides
+
+### **Average Day** {#average-day-1}
+
+blend of rainbow and red
+
+a diverse and inclusive society, with the rainbow representing a range of different identities and experiences, and the red representing passion or emotion
+
+spectrum of conformity in between sides
+
+the various ways in which people in this society may conform to or deviate from certain norms or expectations
+
+Not a dystopian world
+
+not characterized by oppressive or totalitarian rule, but rather is a functional and flourishing society
+
+some societies function and flourish on their own
+
+independent societies
+
+society is autonomous and self-governing, rather than being controlled by a larger external power
+
+In this future world, an average day for an individual might involve the following:
+
+Upon waking up, the individual utilizes a virtual assistant to check their schedule and receive updates on the news and weather. They also utilize wearable technology to track their physical activity and monitor their health.
+
+As they get ready for their day, the individual employs a combination of physical and digital devices to get dressed, brush their teeth, and prepare breakfast. They also utilize a smart home system to control the temperature, lighting, and security of their home.
+
+As they commute to work or other appointments, the individual utilizes a self-driving car or flying taxi. They may also utilize a virtual reality headset to attend meetings or participate in other events remotely.
+
+Throughout the day, the individual utilizes a variety of digital tools and platforms to communicate with others, access information, and complete tasks. They may also utilize augmented reality technology to enhance their experiences and interact with their environment in new ways.
+
+As the day comes to a close, the individual utilizes a home automation system to prepare for bed and ensure that their home is secure. They also utilize a sleep tracking device to monitor their sleep and receive recommendations for improving their sleep quality.
+
+In this future world, individuals have access to a wide range of tools and resources that enable them to stay connected, productive, and healthy. The seamless integration of digital and physical technologies into every aspect of daily life is a defining characteristic of this future world.
+
+### **Society Structures** {#society-structures}
+
+Not quite what I’m going for but it’s getting there, need to rewrite these:
+
+A greater emphasis on decentralization and distributed systems: In this world, individuals and organizations would have more control over their own data and resources, and there would be a greater emphasis on decentralization and distributed systems. This could include the use of blockchain technology to create more open and transparent networks, as well as the adoption of more decentralized models of governance and decision-making.
+
+Increased privacy and autonomy: In this world, individuals would have greater privacy and autonomy, with fewer restrictions on their ability to communicate and express themselves freely. This could be facilitated by the use of technologies such as anonymity-preserving networks and decentralized identity systems.
+
+A more diverse and inclusive society: In this world, there would be a greater emphasis on diversity and inclusion, with more opportunities for individuals from underrepresented groups to participate in and contribute to society. This could be facilitated by the adoption of more decentralized and distributed models of decision-making, which would allow for a greater diversity of voices to be heard.
+
+## **Red Governed Societies** {#red-governed-societies}
+
+### **Architecture** {#architecture-2}
+
+Refers to avalanche w/o saying it
+
+Command and control
+
+Countries actively pushing CBDCs and control
+
+Firewalled
+
+Private chains only
+
+	Govt back doors
+
+	Private versions of public chains \- Illusion of public/private sector cooperation
+
+### **Average Day** {#average-day-2}
+
+Command and Control
+
+used to gate
+
+Tunnel back to grey side
+
+Blockchain Tech
+
+Bridges
+
+Anonymity
+
+Function of CBDC
+
+flex jobs
+
+distributed society
+
+In contrast to the future world described above, there is a possibility of a future in which countries actively push for the adoption of central bank digital currencies (CBDCs) as a means of exerting greater control over their economies and citizens. In this scenario, the use of blockchain technology is heavily regulated and firewalled, with access restricted to private chains that are controlled by governments or large corporations. These private chains may have government-mandated backdoors, giving authorities the ability to monitor and control transactions.
+
+Additionally, the use of public blockchain networks may be discouraged or outright banned, with private versions of these networks being promoted as an illusion of public-private sector cooperation. These private networks may be used to gate access to certain resources or services, effectively creating a tunnel back to the "grey side" of the internet.
+
+In this future, the ability to maintain anonymity and privacy online may be greatly diminished, as authorities attempt to use the function of CBDCs and other technologies to track and monitor individuals. This could have serious implications for the gig economy and other forms of flexible work, as it would be difficult for individuals to maintain a distributed and decentralized lifestyle.
+
+### **Command Structures** {#command-structures}
+
+In a future where countries actively push for the adoption of central bank digital currencies (CBDCs) as a means of exerting greater control over their economies and citizens, it is likely that the societal structure would be highly centralized and hierarchical. Large corporations and governments would hold a great deal of power and influence, and there may be a limited ability for individuals or smaller organizations to challenge their authority.
+
+The gig economy and other forms of flexible work may be heavily regulated or restricted, as authorities seek to exert control over the flow of labor and capital. This could lead to greater income inequality and a concentration of wealth and power in the hands of a few.
+
+Individuals may have limited privacy and autonomy, as authorities use CBDCs and other technologies to track and monitor their activities. This could lead to a society in which people are more hesitant to express dissenting views or engage in activities that might be perceived as controversial.
+
+# **Examples** {#examples}
+
+## **Education** {#education}
+
+## **Employment** {#employment}
+
+Decentralized Employment
+
+	Payment
+
+		Support streaming payments
+
+		negotiated rate by the employee
+
+	decentralized job board
+
+		Employee Anonymity
+
+			employers don't need to know who the employee is.
+
+				employers don't need to know who the employee is. Total
+
+			Employers only know the work the employee is certified to do
+
+				Employers only know the work the employee is certified to do Total
+
+		employee is certified to be a grocery cashier
+
+			digital cert
+
+			Soulbound proof (dynamic roles)
+
+		Employee walks into the store and goes straight to open cashier station from app notification
+
+		Employer Requirements
+
+			How do they hold employee accountable
+
+				OnChain Reputation
+
+				SBT?
+
+			stations are automated
+
+		flex work
+
+			employee works how many hours they want
+
+			streaming payments
+
+				real time payments
+
+		Job types this makes sense
+
+			Call center
+
+			Can apply to many shift type work
+
+			Grocery cashier
+
+			Mechanic
+
+		This is a key precursor to a real world DeSoc
+
+			Will be used as the key employment pipeline and tooling
+
+		10yrs from now
+
+			app notifications for available jobs
+
+		Benefits to employee
+
+			flex work
+
+			psedu-anonymity
+
+	Grocery stores commit to a base standard of employment and support the flex model cross companies.
+
+## **Real Estate** {#real-estate}
+
+Set the stage Autonomous Campground
+
+What is access to these resources like in a modern society
+
+	Garden Area
+
+		Open air workspaces
+
+		Zen garden
+
+		Aligns w/ Deltagarden
+
+	Autonomous Society
+
+		Enable dynamic roles
+
+			Distributor (financial)
+
+			Donator (novel)
+
+			Supplier
+
+			User
+
+	Decentralize as much as possible
+
+		Smart contract controlled connected devices
+
+			Commercial based staking
+
+			IOTEX
+
+			Reputation based staking
+
+	Micro-community
+
+		Communal areas
+
+		Comunal Cooking
+
+		Focused on family activities
+
+		Includes school
+
+		Membership by Soulbound Token / NFT (depending on commercial model
+
+	Partnerships
+
+		Invite existing project/protocols to experiment alongside.
+
+	similar to River Run Grandby
+
+		cabins
+
+		cointains residential housing area
+
+		LAke
+
+		RV Area
+
+		tent area
+
+	Supports Retreat activities
+
+	use stories
+
+		Write it stories people would share that line in the community or come visit. Voice of the custom
+
+## **Restaurant** {#restaurant}
+
+a multi layered decentralized restaurant model. Blockchain is key for creating an autonomous free market for employment across the layers. Zero knowledge proofs allow for a decentralized societal trust model.
+
+One of the biggest challenges facing the restaurant industry is the high overhead costs associated with operating a traditional centralized restaurant. These costs include rent, utilities, and labor, as well as the costs of purchasing ingredients and supplies. These costs can be particularly burdensome for small and independent restaurants, which often struggle to access capital and other resources.
+
+Our proposed decentralized restaurant model addresses these challenges by creating a more efficient and inclusive market for employment and value creation. By connecting small-scale food producers, independent restaurants, and customers through a decentralized marketplace, we can create a more efficient and effective supply chain, reducing the cost of ingredients and other inputs. We can also create a more flexible labor market, allowing restaurants to easily find and hire workers, and giving workers more control over their own schedules and wages.
+
+The restaurant industry is a $899 billion market in the United States alone, and it continues to grow. However, the traditional centralized model of restaurants has a number of drawbacks, including high overhead costs, inflexible labor markets, and limited access to capital for small businesses. Our proposed solution is a multi-layered decentralized restaurant model that uses blockchain technology and zero-knowledge proofs to create a more efficient and inclusive market for employment and value creation.
+
+The first layer of our model is the food production layer, which consists of small-scale food producers who grow and raise the ingredients used in the restaurant. These producers will be connected through a decentralized marketplace built on the blockchain, allowing them to easily sell their products to restaurants and consumers. The marketplace will also facilitate the efficient allocation of resources, such as land and water, through the use of smart contracts.
+
+The second layer is the restaurant layer, which consists of a network of independent restaurants that are able to purchase ingredients from the food production layer and prepare meals for customers. These restaurants will also be connected through the decentralized marketplace, allowing them to easily find and hire workers, as well as sell their products to customers.
+
+The third layer is the customer layer, which consists of individuals who are able to easily discover and purchase meals from the restaurants in the network. Customers will also be able to easily provide feedback and rate their experiences, helping to improve the overall quality of the network.
+
+Through the use of blockchain technology and zero-knowledge proofs, our decentralized restaurant model will create a more efficient and inclusive market for employment and value creation. It will also provide numerous benefits for consumers, including greater access to high-quality, locally-sourced food, as well as the ability to easily discover and support independent restaurants.
+
+## **Sports** {#sports}
+
+Sports in 100yrs
+
+	Car Racing
+
+		marathon type races alertnates between real and virtual
+
+			no dif to the viewer
+
+		one of the first "blended sports"
+
+		digital version of real car allows fans to race digital replica
+
+			game locations alternate between real and virtual
+
+				not too far from what exists in 2022
+
+	e-sports and sports will blend together
+
+	watching experience
+
+		seemless regardless of modality
+
+		Users watching a real game
+
+			esports cgi is good enough that in blends in with the real game
+
+	Basketball
+
+		robotic AI blends seamlessly with other players
+
+			AI/robot versions of real and historical players
+
+	Soccer
+
+	AI/robot player with matching performance charateristic
+
+# **Call to Action** {#call-to-action}
+
+# **Pledge** {#pledge}
+
+Accountability Pledge
+
+	Signed by various entities
+
+	Pledge lays out commitments needed to get to the rainbow side of the world
+
+	Pledge by type of org
+
+## 	**Timeline** {#timeline-1}
+
+	2025
+
+	2035
+
+	2030
+
+	2050
+
+	2092
+
+	2120
+
+# **About the author** {#about-the-author}
+
+Shai Perednik, a global web3 and blockchain tech leader, helms the segment for a partner organization. Perednik leads a team of 20 and leverages the broader crypto cohort community, which comprises 1654 members as of the last count.
+
+Perednik first dipped their toes in the blockchain technology space in 2010 when they built a Bitcoin miner. Although the hard drive was later wiped and the Mac mini lost, their curiosity about the technology persisted. In 2017, they were particularly interested in the growth of Ethereum and the potential for decentralized computing.
+
+In 2020, Perednik fully committed to exploring the potential of blockchain technology and began researching the use of web3 terminology at Amazon. They created the crypto cohort in 2021, launched a partner solution to the marketplace, and drafted the 2022 segment plan in December 2022\. In April 2022, Perednik assumed their current role and outlined the vision for the organization for the next two years.
+
+Perednik has a strong conviction that blockchain technology is at the core of a revolution in trust and human interaction. They see similarities between the current moment and the economic challenges of 2008 and beyond, and believe that society and the economy will be forced to rebuild trust and relationships. Perednik views the current moment as analogous to the early days of the internet, when technologies like email and social media were just beginning to be understood and adopted.
+
+In addition to their work in blockchain technology, Perednik has also had the opportunity to work across the IT stack over the past 28 years. They have experience building Windows NT networks, creating web pages with FrontPage 95, and serving as a backup architect, infrastructure architect, enterprise architect, and cloud infrastructure architect. Perednik has been with Amazon Web Services for the past 5.5 years, starting in the role of cloud infrastructure architect before moving into greenfield sales and enterprise sales.
+
+Perednik's interests and career goals align with their desire to double major in computer science and psychology, which they expressed in their college entrance letter. They have always been interested in the potential for computers to understand human psychology and believe that their current role allows them to be on the right side of this potential future development.
+
+# Appendix
+
+# **Appendix A \- Terminology** {#appendix-a---terminology}

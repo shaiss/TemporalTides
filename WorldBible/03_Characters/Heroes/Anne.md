@@ -1,6 +1,6 @@
 # Anne Parker - Anxiety Strategic Planner
 
-**Part III: Characters | Heroes**
+**Part III: Characters | Heroes**  
 
 ---
 

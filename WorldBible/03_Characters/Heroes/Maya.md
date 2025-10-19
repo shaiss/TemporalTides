@@ -1,6 +1,6 @@
 # Maya Johnson - Autism Pattern Recognition Specialist
 
-**Part III: Characters | Heroes**
+**Part III: Characters | Heroes**  
 
 ---
 
