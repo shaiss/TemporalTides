@@ -2181,7 +2181,7 @@ Anne discovered some underground culture as teenager (felt less alone), but fear
 
 **Chapter 16 (Possible Attack):**
 - Dr. Entropy targets Chronopolis (symbolic)
-- Or: Doesn't (complexity - not pure destruction)
+- Or: Doesn't (complexity: not pure destruction)
 - Chronometric standard threatened
 - Team defends (despite reservations)
 - Lessons: Safety and freedom both matter
