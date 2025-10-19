@@ -12,7 +12,7 @@
 **Primary Ability:** Visionary Insight  
 **Temporal Signature:** Class E (Multi-Layered - Fluid, Fragmented Canvas)  
 **Bioelectric Field Strength:** Class II (3.7 microtesla, highly variable)  
-**Visual Reference:** ![Iris Green](../../../assets/character_portraits/Iris_Green.jpg)
+**Visual Reference:** ![Iris Green](/assets/character_portraits/Iris_Green.jpg)
 
 ---
 

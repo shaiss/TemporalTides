@@ -11,7 +11,7 @@
 **Temporal Signature:** Class A (Standard) but can briefly shift through vibration  
 **Primary Ability:** Vibrational Manipulation  
 **Bioelectric Field Strength:** Class III (15.2 microtesla)  
-**Visual Reference:** ![Vibrion](Vibrion.jpg) - Chain mesh armor, muscular build
+**Visual Reference:** ![Vibrion](/assets/character_portraits/Vibrion.jpg) - Chain mesh armor, muscular build
 
 **Biography:**
 

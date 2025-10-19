@@ -10,7 +10,7 @@
 **Full Name:** Dr. Mental [First name TBD]  
 **Age:** ~50-60s  
 **Role:** Psycho-Temporal Therapist & Advisor  
-**Visual Reference:** ![Dr. Mental](../../../assets/character_portraits/Dr._Mental.jpg)
+**Visual Reference:** ![Dr. Mental](/assets/character_portraits/Dr._Mental.jpg)
 
 ---
 

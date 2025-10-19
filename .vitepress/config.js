@@ -7,6 +7,12 @@ export default defineConfig({
   // Base path for GitHub Pages (repository name)
   base: '/TemporalTides/',
   
+  // Source directory (explicit)
+  srcDir: './',
+  
+  // Exclude directories from build
+  srcExclude: ['deprecated/**', 'scripts/**', 'logs/**', 'node_modules/**', '.vitepress/cache/**', '.git/**'],
+  
   // Clean URLs (removes .html extension)
   cleanUrls: true,
   
