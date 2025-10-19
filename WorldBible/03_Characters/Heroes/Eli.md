@@ -43,7 +43,7 @@ Eli was always in motion. Sitting still felt impossible, focus was fleeting unle
 - Age 13: Joined drum corps, found community that valued his energy
 - Age 15: First experienced time "scratching" effect (DJ turntable sensation)
 
-### Discovery of Ability.
+### Discovery of Ability
 
 At age 16 (339 AC), during an intense drum solo performance, Eli experienced his first **Kinetic Rush** activation. Hyperfocused on the rhythm, his perception shifted - time subjectively slowed while his coordination and skill seemed to peak. In this state, he played astonishingly complex patterns, executing chord progressions and drum combos that were previously only attainable by legendary drummers. The audience watched, fully able to follow his movements, but were left awestruck by the sheer creativity and technicality of what they heard - drumming feats they'd never witnessed live before. The performance felt like minutes to him but lasted only 45 seconds. His bioelectric field had surged, channeling hyperfocus into an extraordinary display of physical and creative mastery.
 
