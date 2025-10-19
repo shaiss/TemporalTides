@@ -4,6 +4,9 @@ export default defineConfig({
   title: 'Temporal Tides',
   description: 'A narrative universe where time is subjective and mental health conditions are superpowers',
   
+  // Base path for GitHub Pages (repository name)
+  base: '/TemporalTides/',
+  
   // Clean URLs (removes .html extension)
   cleanUrls: true,
   
