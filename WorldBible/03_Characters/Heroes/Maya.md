@@ -1,17 +1,17 @@
 # Maya Johnson - Autism Pattern Recognition Specialist
 
-**Part III: Characters | Heroes**  
+**Part III: Characters | Heroes**
 
 ---
 
 ## Quick Reference
 
-**Full Name:** Maya Johnson  
-**Age:** 20 years (born 322 AC)  
-**Mental Health Profile:** Autism  
-**Primary Ability:** Pattern Sense  
-**Temporal Signature:** Class A (Standard with strong rhythmic component)  
-**Bioelectric Field Strength:** Class II (3.4 microtesla)  
+**Full Name:** Maya Johnson
+**Age:** 20 years (born 322 AC)
+**Mental Health Profile:** Autism
+**Primary Ability:** Pattern Sense
+**Temporal Signature:** Class A (Standard with strong rhythmic component)
+**Bioelectric Field Strength:** Class II (3.4 microtesla)
 **Visual Reference:** ![Maya Johnson](/assets/character_portraits/Maya_Johnson.jpg)
 
 ---
@@ -20,11 +20,11 @@
 
 ### Origin
 
-Maya grew up in a quiet town at baseline time flow, where the predictable flow of seasons and schedules mirrored her need for structure. The town's consistency—same sunrise time, regular community events, predictable patterns—provided the stability that allowed her to thrive.
+Maya grew up in a quiet town at baseline time flow, where the predictable flow of seasons and schedules mirrored her need for structure. The town's consistency - same sunrise time, regular community events, predictable patterns - provided the stability that allowed her to thrive.
 
 ### Childhood
 
-From her earliest memories, Maya perceived the world differently. While others saw randomness, she saw patterns. The way leaves fell followed mathematical distributions. Social interactions had underlying rhythms. Time itself moved like a metronome—consistent, measurable, predictable.
+From her earliest memories, Maya perceived the world differently. While others saw randomness, she saw patterns. The way leaves fell followed mathematical distributions. Social interactions had underlying rhythms. Time itself moved like a metronome - consistent, measurable, predictable.
 
 **Early Differences:**
 - Spoke later than expected, then in complete sentences
@@ -43,7 +43,7 @@ From her earliest memories, Maya perceived the world differently. While others s
 
 ### Discovery of Ability
 
-At age 15 (337 AC), during a classical music concert, Maya experienced her first full **Pattern Sense** activation. Immersed in the music, she began to notice subtle cues—the pianist leaning fractionally more to the right with each phrase, a gradually intensifying pressure on certain keys, and timing shifts almost imperceptible to others. These micro-patterns alerted her that the performer was deviating from his usual technique. While Maya couldn’t know exactly when or what would happen, she felt a mounting certainty—rooted in the rhythm of the performer’s small mistakes—that a significant error was likely imminent. When the pianist eventually played a wrong note, just as she had sensed was increasingly probable, Maya realized her pattern recognition went far beyond ordinary analysis: she could intuitively detect the direction and likelihood of events through highly attuned perceptual patterning—though never with absolute certainty or exact timing.
+At age 15 (337 AC), during a classical music concert, Maya experienced her first full **Pattern Sense** activation. Immersed in the music, she began to notice subtle cues - the pianist leaning fractionally more to the right with each phrase, a gradually intensifying pressure on certain keys, and timing shifts almost imperceptible to others. These micro-patterns alerted her that the performer was deviating from his usual technique. While Maya couldn’t know exactly when or what would happen, she felt a mounting certainty - rooted in the rhythm of the performer’s small mistakes - that a significant error was likely imminent. When the pianist eventually played a wrong note, just as she had sensed was increasingly probable, Maya realized her pattern recognition went far beyond ordinary analysis: she could intuitively detect the direction and likelihood of events through highly attuned perceptual patterning - though never with absolute certainty or exact timing.
 
 **Ability Development:**
 - Age 15-16: Pattern Sense activated with music, mathematics, natural phenomena
@@ -190,7 +190,7 @@ Maya's brain processes patterns at exceptional speed:
 
 - **Passive:** Continuous, no time limit
 - **Active:** Can maintain focus for 10-30 minutes before fatigue
-- **Prediction Range:** 
+- **Prediction Range:**
   - Simple patterns: Minutes to hours ahead
   - Complex patterns: Seconds to minutes ahead
   - Chaotic systems: May find underlying pattern or recognize as truly random
@@ -503,7 +503,7 @@ Present-focused with pattern extending into near future. Past is completed patte
 - **Stimming:** Hand movements, rocking, humming (self-regulation, not distress necessarily)
 - **Overwhelmed:** Covers ears, closes eyes, retreat to quiet
 - **Pleased:** Small smile, relaxed shoulders (subtle but genuine)
-- **Playing Music:** Most expressive—body moves with rhythm, face shows emotion
+- **Playing Music:** Most expressive - body moves with rhythm, face shows emotion
 
 ### Visual Effects (During Ability Use)
 
@@ -546,7 +546,7 @@ Present-focused with pattern extending into near future. Past is completed patte
 "I don't understand. You said the plan was X, but now you're doing Y. Did the plan change? Should I update my model? What parameter made you decide differently?"
 
 **Pattern Enthusiasm:**
-"The Chronos Catalyst's energy emission follows a fractal pattern—look, it's a Mandelbrot set manifesting in three dimensions! The iteration depth determines the disruption radius. If we interrupt at the sixth iteration, we can destabilize the entire system!"
+"The Chronos Catalyst's energy emission follows a fractal pattern - look, it's a Mandelbrot set manifesting in three dimensions! The iteration depth determines the disruption radius. If we interrupt at the sixth iteration, we can destabilize the entire system!"
 
 **Social Learning:**
 "Eli, when you said 'I'm fine,' your bioelectric field indicated distress. I've learned that sometimes humans say opposite of truth for social reasons. Would you like to discuss what's actually concerning you, or would you prefer I not mention this observation?"
@@ -648,7 +648,7 @@ Both parents learned about autism and adapted parenting to support Maya's needs.
   - Classical music composition and theory
   - Fractal geometry and chaos mathematics
   - Pattern recognition in nature
-  
+
 - **Regular Activities:**
   - Piano practice (daily, 2 hours minimum)
   - Mathematical puzzles and problems
@@ -702,11 +702,11 @@ Appeals to:
 
 **Discovery + Empowerment Arc:**
 
-**Stage 1:** Comfortable with known patterns, anxious about unpredictability  
-**Stage 2:** Encounters chaos that defies her pattern recognition  
-**Stage 3:** Crisis in fractured zone where patterns seem absent  
-**Stage 4:** Discovers patterns at different scales, order within chaos  
-**Stage 5:** Confidence that her way of seeing always finds structure eventually  
+**Stage 1:** Comfortable with known patterns, anxious about unpredictability
+**Stage 2:** Encounters chaos that defies her pattern recognition
+**Stage 3:** Crisis in fractured zone where patterns seem absent
+**Stage 4:** Discovers patterns at different scales, order within chaos
+**Stage 5:** Confidence that her way of seeing always finds structure eventually
 
 ### Critical Story Moments
 
@@ -716,13 +716,13 @@ Appeals to:
 
 **Chapter 8 (Rising Tension):** Struggles when team acts spontaneously, wants structure
 
-**Chapter 13 (Dark Night):** Alone in Fractured Zone, patterns seem absent—breakthrough when she finds chaos patterns
+**Chapter 13 (Dark Night):** Alone in Fractured Zone, patterns seem absent - breakthrough when she finds chaos patterns
 
 **Chapter 14 (Resurrection):** Her fractal pattern discovery helps team navigate back together
 
 **Chapter 16 (Climax):** Recognizes Chronos Catalyst's fractal pattern, provides key to Leo's analysis
 
-**Chapter 19 (Reflection):** Realizes autism isn't separate from ability—it IS her ability
+**Chapter 19 (Reflection):** Realizes autism isn't separate from ability - it IS her ability
 
 ---
 
@@ -768,11 +768,11 @@ Appeals to:
 
 ### Team Synergies
 
-**Maya + Anne:** Pattern prediction + foresight = perfect execution timing  
-**Maya + Leo:** She finds patterns in data, he analyzes what patterns mean  
-**Maya + Eli:** She predicts rhythm, he executes in perfect tempo  
-**Maya + Dave:** His empathy senses emotional patterns, her sense structural patterns  
-**Maya + Iris:** She sees patterns in order, Iris sees patterns in chaos—together map everything  
+**Maya + Anne:** Pattern prediction + foresight = perfect execution timing
+**Maya + Leo:** She finds patterns in data, he analyzes what patterns mean
+**Maya + Eli:** She predicts rhythm, he executes in perfect tempo
+**Maya + Dave:** His empathy senses emotional patterns, her sense structural patterns
+**Maya + Iris:** She sees patterns in order, Iris sees patterns in chaos - together map everything
 
 ### Accessibility Representation
 

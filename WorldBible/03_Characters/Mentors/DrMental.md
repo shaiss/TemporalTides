@@ -1,15 +1,15 @@
 # Dr. Mental - Psycho-Temporal Therapist & Advisor
 
-**Part III: Characters | Mentors**  
-**Status:** 📝 OUTLINE - TO BE EXPANDED
+**Part III: Characters | Mentors**
+**Status:** OUTLINE - TO BE EXPANDED
 
 ---
 
 ## Quick Reference
 
-**Full Name:** Dr. Mental [First name TBD]  
-**Age:** ~50-60s  
-**Role:** Psycho-Temporal Therapist & Advisor  
+**Full Name:** Dr. Mental [First name TBD]
+**Age:** ~50-60s
+**Role:** Psycho-Temporal Therapist & Advisor
 **Visual Reference:** ![Dr. Mental](/assets/character_portraits/Dr._Mental.jpg)
 
 ---

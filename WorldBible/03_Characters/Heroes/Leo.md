@@ -6,21 +6,21 @@
 
 ### 10.2 Leo (ADD - Analytical Specialist)
 
-**Full Name:** Leo Thompson  
-**Age:** 22 years (born 320 AC)  
-**Mental Health Profile:** ADD (Attention Deficit Disorder)  
-**Primary Ability:** Immersive Thought  
-**Temporal Signature:** Class D (Fragmented)  
-**Bioelectric Field Strength:** Class II (3.1 microtesla)  
+**Full Name:** Leo Thompson
+**Age:** 22 years (born 320 AC)
+**Mental Health Profile:** ADD (Attention Deficit Disorder)
+**Primary Ability:** Immersive Thought
+**Temporal Signature:** Class D (Fragmented)
+**Bioelectric Field Strength:** Class II (3.1 microtesla)
 **Visual Reference:** ![Leo Thompson](/assets/character_portraits/Leo_Thompson.jpg) - Casual style, thoughtful expression
 
 **Biography:**
 
 **Origin:**
-Leo grew up in a serene countryside at dilated time flow (0.7 RFR), where life moved slower and deeper. This environment both comforted and contrasted with his internal restlessness—a mind that wandered while the world contemplated.
+Leo grew up in a serene countryside at dilated time flow (0.7 RFR), where life moved slower and deeper. This environment both comforted and contrasted with his internal restlessness - a mind that wandered while the world contemplated.
 
 **Childhood:**
-The slow pace of his hometown made his attention differences more apparent. While others settled into long tasks easily, Leo's mind jumped between interests. Books became his anchor—structured worlds where his wandering mind could explore freely without social pressure.
+The slow pace of his hometown made his attention differences more apparent. While others settled into long tasks easily, Leo's mind jumped between interests. Books became his anchor - structured worlds where his wandering mind could explore freely without social pressure.
 
 **Discovery of Ability:**
 At age 16, during deep focus on a complex mystery novel, Leo experienced his first full **Immersive Thought** episode. Time seemed to stop completely as he analyzed every clue, connection, and possibility simultaneously. He solved the mystery three chapters before the reveal, but subjectively experienced hours of thought in seconds.
@@ -33,7 +33,7 @@ At age 16, during deep focus on a complex mystery novel, Leo experienced his fir
 - Never completed degree (too many interesting tangents)
 
 **Meeting Vibrion:**
-Age 22 (342 AC): Leo was researching temporal paradoxes in a public library when Vibrion noticed him simultaneously reading three books and taking notes across multiple subjects. Recognized Leo's analytical pattern-making as potential asset. Leo accepted invitation immediately—new challenge, new narrative to explore.
+Age 22 (342 AC): Leo was researching temporal paradoxes in a public library when Vibrion noticed him simultaneously reading three books and taking notes across multiple subjects. Recognized Leo's analytical pattern-making as potential asset. Leo accepted invitation immediately - new challenge, new narrative to explore.
 
 **Psychology & Personality:**
 
@@ -68,7 +68,7 @@ Age 22 (342 AC): Leo was researching temporal paradoxes in a public library when
 - Physical movement when focus wanes
 
 **Growth Arc:**
-Leo learns that his "wandering" mind isn't a flaw but a feature—his tangential thinking often finds connections others miss. He develops confidence that his way of thinking has unique value, and learns to balance deep focus with team needs.
+Leo learns that his "wandering" mind isn't a flaw but a feature - his tangential thinking often finds connections others miss. He develops confidence that his way of thinking has unique value, and learns to balance deep focus with team needs.
 
 **Abilities & Skills:**
 
@@ -230,7 +230,7 @@ Dwells equally in past (memories/books), present (when engaged), and future (pos
 - Uses metaphors and analogies extensively
 
 **Example:**
-"It's like... you know that Borges story where the man remembers everything? Or wait, no, that's not quite right. The point is—and this connects to what Anne was saying earlier about patterns—if time is just memory and anticipation, then..."
+"It's like... you know that Borges story where the man remembers everything? Or wait, no, that's not quite right. The point is - and this connects to what Anne was saying earlier about patterns - if time is just memory and anticipation, then..."
 
 **Verbal Tics:**
 - "That reminds me of..." (leading into tangent)
@@ -265,7 +265,6 @@ Indie folk with unexpected time signature changes. Acoustic guitar with occasion
 Empowerment arc: Learning his way of thinking is valuable, not flawed. Confidence building.
 
 ---
-
 
 ---
 

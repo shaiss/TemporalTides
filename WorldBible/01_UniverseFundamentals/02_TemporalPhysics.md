@@ -26,41 +26,41 @@
 
 **Type 1: Stable Zones**
 - **Flow Rate:** 0.95-1.05 RFR (within 5% of baseline)
-- **Predictability:** High; minimal temporal anomalies
+- **Predictability:** High, minimal temporal anomalies
 - **Safety:** Low risk for temporal disorientation
 - **Example Locations:** Urban centers, research facilities, residential areas
 
 **Type 2: Accelerated Zones**
 - **Flow Rate:** 1.5-5.0 RFR (time moves faster)
-- **Predictability:** Moderate; occasional fluctuations
-- **Safety:** Moderate risk; can cause temporal fatigue
+- **Predictability:** Moderate, occasional fluctuations
+- **Safety:** Moderate risk, can cause temporal fatigue
 - **Example Locations:** High-energy zones, certain industrial areas
 - **Subjective Experience:** Events feel rushed, difficulty maintaining focus
 
 **Type 3: Dilated Zones**
 - **Flow Rate:** 0.2-0.8 RFR (time moves slower)
-- **Predictability:** Moderate; stable but non-standard
-- **Safety:** Moderate risk; can cause temporal stagnation
+- **Predictability:** Moderate, stable but non-standard
+- **Safety:** Moderate risk, can cause temporal stagnation
 - **Example Locations:** Contemplative sanctuaries, deep meditation zones
 - **Subjective Experience:** Stretched moments, enhanced perception of detail
 
 **Type 4: Looped Zones**
-- **Flow Rate:** Variable; cyclical pattern
-- **Predictability:** Low; repeating temporal sequences
-- **Safety:** High risk; easy to become trapped
+- **Flow Rate:** Variable, cyclical pattern
+- **Predictability:** Low, repeating temporal sequences
+- **Safety:** High risk, easy to become trapped
 - **Example Locations:** Temporal anomaly sites, paradox remnants
 - **Subjective Experience:** Déjà vu, repeating events, memory confusion
 
 **Type 5: Fractured Zones**
-- **Flow Rate:** Chaotic; multiple simultaneous rates
-- **Predictability:** Extremely low; unpredictable shifts
-- **Safety:** Extreme risk; potential for temporal dissolution
+- **Flow Rate:** Chaotic, multiple simultaneous rates
+- **Predictability:** Extremely low, unpredictable shifts
+- **Safety:** Extreme risk, potential for temporal dissolution
 - **Example Locations:** Reality breakdown sites, major conflict zones
 - **Subjective Experience:** Disorientation, overlapping timelines, paradox exposure
 
 #### The Time Nexus: Unique Classification
 
-The **Time Nexus** exists as a special case—a convergence point of all temporal zone types, creating a meta-stable hub where multiple temporal flows coexist in controlled harmony.
+The **Time Nexus** exists as a special case: a convergence point of all temporal zone types, creating a meta-stable hub where multiple temporal flows coexist in controlled harmony.
 
 **Properties:**
 - Contains chambers with independently controlled temporal properties
@@ -144,7 +144,7 @@ Rapid temporal transitions can cause:
 - Resolution: Temporal momentum enforces certain outcomes
 
 **Temporal Tides Universe Approach:**
-Reality has **paradox resistance**—the universe naturally dampens or resolves small contradictions. However, large-scale paradoxes (created by devices like the Chronos Catalyst) can:
+Reality has **paradox resistance**: the universe naturally dampens or resolves small contradictions. However, large-scale paradoxes (created by devices like the Chronos Catalyst) can:
 - Destabilize entire temporal zones
 - Create fractured reality zones
 - Threaten universal temporal coherence
@@ -155,8 +155,6 @@ Reality has **paradox resistance**—the universe naturally dampens or resolves 
 - Physical instability
 - Temporal echoes manifesting
 - Headaches, nausea, disorientation in observers
-
----
 
 ---
 

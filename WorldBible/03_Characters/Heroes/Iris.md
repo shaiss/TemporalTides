@@ -1,17 +1,17 @@
 # Iris Green - Psychosis Multi-Reality Specialist
 
-**Part III: Characters | Heroes**  
+**Part III: Characters | Heroes**
 
 ---
 
 ## Quick Reference
 
-**Full Name:** Iris Green  
-**Age:** 17 years (born 325 AC)  
-**Mental Health Profile:** Psychosis  
-**Primary Ability:** Visionary Insight  
-**Temporal Signature:** Class E (Multi-Layered - Fluid, Fragmented Canvas)  
-**Bioelectric Field Strength:** Class II (3.7 microtesla, highly variable)  
+**Full Name:** Iris Green
+**Age:** 17 years (born 325 AC)
+**Mental Health Profile:** Psychosis
+**Primary Ability:** Visionary Insight
+**Temporal Signature:** Class E (Multi-Layered - Fluid, Fragmented Canvas)
+**Bioelectric Field Strength:** Class II (3.7 microtesla, highly variable)
 **Visual Reference:** ![Iris Green](/assets/character_portraits/Iris_Green.jpg)
 
 ---
@@ -20,11 +20,11 @@
 
 ### Origin
 
-Iris comes from **Mist Haven**, a coastal town at baseline time flow known for its ethereal quality—misty mornings, shifting light, landscapes that seem to exist between realities. The town's liminal aesthetic matched Iris's experience of reality as fluid, multi-layered, and sometimes uncertain.
+Iris comes from **Mist Haven**, a coastal town at baseline time flow known for its ethereal quality - misty mornings, shifting light, landscapes that seem to exist between realities. The town's liminal aesthetic matched Iris's experience of reality as fluid, multi-layered, and sometimes uncertain.
 
 ### Childhood
 
-Iris always perceived more than others. As a young child, she saw colors in sounds, emotions as visible auras, and sometimes glimpses of things that "weren't there"—or perhaps were there but in adjacent layers of reality. Her parents initially thought she had a vivid imagination.
+Iris always perceived more than others. As a young child, she saw colors in sounds, emotions as visible auras, and sometimes glimpses of things that "weren't there" - or perhaps were there but in adjacent layers of reality. Her parents initially thought she had a vivid imagination.
 
 **Early Years:**
 - Described seeing "the in-between places"
@@ -45,7 +45,7 @@ Iris always perceived more than others. As a young child, she saw colors in soun
 
 ### Discovery of Ability
 
-At age 14 (339 AC), during an art class, Iris experienced her first confirmed **Visionary Insight** activation. She was painting a landscape when she suddenly saw the scene's past (building under construction), present (current view), and future (building destroyed) simultaneously. She painted all three layers. Her teacher, a temporal physicist's spouse, recognized this wasn't imagination—Iris had actually perceived the building's temporal echo from past and probable future. Tests confirmed: Iris could perceive Layer 4 of reality.
+At age 14 (339 AC), during an art class, Iris experienced her first confirmed **Visionary Insight** activation. She was painting a landscape when she suddenly saw the scene's past (building under construction), present (current view), and future (building destroyed) simultaneously. She painted all three layers. Her teacher, a temporal physicist's spouse, recognized this wasn't imagination - Iris had actually perceived the building's temporal echo from past and probable future. Tests confirmed: Iris could perceive Layer 4 of reality.
 
 **Ability Development:**
 - Age 14-15: Learning to distinguish true temporal vision from hallucinations
@@ -94,7 +94,7 @@ Iris has psychosis AND neuro-temporal ability. Some perceptions are hallucinatio
 
 ### Meeting Vibrion
 
-Age 17 (342 AC): Iris saw Vibrion coming three days before he arrived—literally. A vision showed her a man with electric-blue bioelectric field recruiting her for temporal mission. She painted the vision. When Vibrion arrived and matched the painting exactly, he was stunned. She simply said, "I saw you. I painted you. I'll come." Her mother was concerned; Vibrion explained he'd ensure her safety and medical needs. Iris: "The vision showed seven people. We're supposed to be together. All the layers say so."
+Age 17 (342 AC): Iris saw Vibrion coming three days before he arrived - literally. A vision showed her a man with electric-blue bioelectric field recruiting her for temporal mission. She painted the vision. When Vibrion arrived and matched the painting exactly, he was stunned. She simply said, "I saw you. I painted you. I'll come." Her mother was concerned; Vibrion explained he'd ensure her safety and medical needs. Iris: "The vision showed seven people. We're supposed to be together. All the layers say so."
 
 ### Current Status
 
@@ -154,8 +154,8 @@ Iris develops strategies to distinguish her unique perceptions from shared reali
 - Her unique perception sees possibilities others miss entirely
 - She can trust her judgment (with team verification when needed)
 - Psychosis and ability coexist; managing one doesn't eliminate other
-- Different reality isn't wrong reality—just different layer
-- She belongs, even when—especially when—she sees things others don't
+- Different reality isn't wrong reality - just different layer
+- She belongs, even when - especially when - she sees things others don't
 
 **Key Turning Point:** During climax (Chapter 16), Iris must trust a vision showing impossible solution. Team doubts because it sounds like hallucination. She must distinguish: is this psychosis or true temporal insight? Stakes are universe's fate. She trusts herself. Vision is true. Team succeeds.
 
@@ -184,7 +184,7 @@ Iris's perception operates differently from neurotypical brain:
 2. **Weak Reality Filtering:** Neurotypical brains filter to "consensus reality"; Iris's doesn't filter as strongly
 3. **Enhanced Temporal Sensitivity:** Perceives time non-linearly across layers
 4. **Symbolic Translation:** Brain translates complex temporal data into visual/symbolic form
-5. **Variable Reliability:** Sometimes genuine Layer 4 access, sometimes psychosis symptoms—distinction requires judgment
+5. **Variable Reliability:** Sometimes genuine Layer 4 access, sometimes psychosis symptoms - distinction requires judgment
 
 **The Challenge: Discernment**
 
@@ -386,7 +386,7 @@ Visionary Insight is RELATED to psychosis but distinct:
 ### With Dave
 
 - Deep emotional connection (both sensitive to invisible aspects)
-- He feels emotions, she sees realities—complementary perception
+- He feels emotions, she sees realities - complementary perception
 - Both artistic souls (music + visual)
 - He grounds her emotionally when layers overwhelm
 - She shows him beauty in the darkness
@@ -761,11 +761,11 @@ Appeals to:
 
 **Discernment + Self-Trust Arc:**
 
-**Stage 1:** Uncertain about her perceptions, defers to others' reality  
-**Stage 2:** Discovers some visions are genuinely accurate  
-**Stage 3:** Crisis where she must choose: trust vision or consensus reality?  
-**Stage 4:** Trusts herself, vision proves true, gains confidence  
-**Stage 5:** Accepts uncertainty as part of her power, trusts judgment while remaining open  
+**Stage 1:** Uncertain about her perceptions, defers to others' reality
+**Stage 2:** Discovers some visions are genuinely accurate
+**Stage 3:** Crisis where she must choose: trust vision or consensus reality?
+**Stage 4:** Trusts herself, vision proves true, gains confidence
+**Stage 5:** Accepts uncertainty as part of her power, trusts judgment while remaining open
 
 ### Critical Story Moments
 
@@ -835,12 +835,12 @@ Appeals to:
 
 ### Team Synergies
 
-**Iris + Vibrion:** She sees hidden threats, he acts on them  
-**Iris + Leo:** She sees impossible, he analyzes if it's true impossible or perception-limited impossible  
-**Iris + Anne:** Probable futures + possible futures = complete outcome map  
-**Iris + Maya:** Patterns across layers, complete understanding  
-**Iris + Eli:** She sees path through realities, he speeds through it  
-**Iris + Dave:** Emotional truth + reality truth = complete truth  
+**Iris + Vibrion:** She sees hidden threats, he acts on them
+**Iris + Leo:** She sees impossible, he analyzes if it's true impossible or perception-limited impossible
+**Iris + Anne:** Probable futures + possible futures = complete outcome map
+**Iris + Maya:** Patterns across layers, complete understanding
+**Iris + Eli:** She sees path through realities, he speeds through it
+**Iris + Dave:** Emotional truth + reality truth = complete truth
 
 ### Psychosis Representation in Gameplay
 

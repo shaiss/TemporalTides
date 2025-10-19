@@ -1,7 +1,7 @@
 # Character-Specific Gameplay
 
-**Part IX: Gameplay Mechanics**  
-**Status:** 📝 PLACEHOLDER
+**Part IX: Gameplay Mechanics**
+**Status:** PLACEHOLDER
 
 ---
 

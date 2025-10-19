@@ -21,33 +21,33 @@ In the Temporal Tides universe, **time is not a universal constant but a subject
 The universe recognizes five primary classifications of temporal experience:
 
 ### Class A: Standard Flow
-**Description:** Time flows at chronometric baseline, the reference point for all measurements.  
-**Experience:** Consistent, linear, predictable progression.  
-**Prevalence:** Most common in stable regions and among neurotypical individuals.  
+**Description:** Time flows at chronometric baseline, the reference point for all measurements.
+**Experience:** Consistent, linear, predictable progression.
+**Prevalence:** Most common in stable regions and among neurotypical individuals.
 **Measurement:** 1:1 ratio with chronometric baseline.
 
 ### Class B: Accelerated Perception
-**Description:** Subjective experience where time feels faster than objective flow.  
-**Experience:** Urgency, racing thoughts, compressed moments.  
-**Associated Conditions:** Anxiety, stress responses, certain ADHD manifestations.  
+**Description:** Subjective experience where time feels faster than objective flow.
+**Experience:** Urgency, racing thoughts, compressed moments.
+**Associated Conditions:** Anxiety, stress responses, certain ADHD manifestations.
 **Measurement:** Subjective time > objective time (experiences 2 hours in 1 hour).
 
 ### Class C: Dilated Perception
-**Description:** Subjective experience where time feels slower than objective flow.  
-**Experience:** Stretched moments, heightened detail awareness, contemplative depth.  
-**Associated Conditions:** Depression, certain ADD manifestations, deep focus states.  
+**Description:** Subjective experience where time feels slower than objective flow.
+**Experience:** Stretched moments, heightened detail awareness, contemplative depth.
+**Associated Conditions:** Depression, certain ADD manifestations, deep focus states.
 **Measurement:** Subjective time < objective time (experiences 30 minutes in 1 hour).
 
 ### Class D: Fragmented Perception
-**Description:** Non-linear, discontinuous temporal experience.  
-**Experience:** Interrupted flow, temporal jumps, narrative fragmentation.  
-**Associated Conditions:** ADD, dissociation, certain trauma responses.  
+**Description:** Non-linear, discontinuous temporal experience.
+**Experience:** Interrupted flow, temporal jumps, narrative fragmentation.
+**Associated Conditions:** ADD, dissociation, certain trauma responses.
 **Measurement:** Variable, discontinuous ratios.
 
 ### Class E: Multi-Layered Perception
-**Description:** Simultaneous experience of multiple temporal streams.  
-**Experience:** Past, present, and future bleeding together; parallel realities visible.  
-**Associated Conditions:** Psychosis, certain autistic experiences, advanced precognition.  
+**Description:** Simultaneous experience of multiple temporal streams.
+**Experience:** Past, present, and future bleeding together; parallel realities visible.
+**Associated Conditions:** Psychosis, certain autistic experiences, advanced precognition.
 **Measurement:** Non-standard; exists outside conventional temporal metrics.
 
 ---

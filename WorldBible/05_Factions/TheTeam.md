@@ -1,15 +1,15 @@
 # The Team
 
-**Part V: Factions & Organizations**  
-**Status:** 📝 OUTLINE ESTABLISHED
+**Part V: Factions & Organizations**
+**Status:** OUTLINE ESTABLISHED
 
 ---
 
 ## Quick Reference
 
-**Official Name:** The Team  
-**Type:** Vibrion's assembled heroes  
-**Formation:** [TO BE DEFINED]  
+**Official Name:** The Team
+**Type:** Vibrion's assembled heroes
+**Formation:** [TO BE DEFINED]
 **Current Status:** [TO BE DEFINED]
 
 ---

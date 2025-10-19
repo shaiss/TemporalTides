@@ -1,7 +1,7 @@
 # Character Themes
 
-**Part VIII: Audio Design**  
-**Status:** 📝 PARTIAL
+**Part VIII: Audio Design**
+**Status:** PARTIAL
 
 ---
 

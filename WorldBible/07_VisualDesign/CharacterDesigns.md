@@ -1,7 +1,7 @@
 # Character Designs
 
-**Part VII: Visual Design**  
-**Status:** 📝 PARTIAL
+**Part VII: Visual Design**
+**Status:** PARTIAL
 
 ---
 

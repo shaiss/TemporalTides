@@ -1,15 +1,15 @@
 # Dr. Volt - Temporal Physicist & Mentor
 
-**Part III: Characters | Mentors**  
-**Status:** 📝 OUTLINE - TO BE EXPANDED
+**Part III: Characters | Mentors**
+**Status:** OUTLINE - TO BE EXPANDED
 
 ---
 
 ## Quick Reference
 
-**Full Name:** Dr. Volt [First name TBD]  
-**Age:** ~50-60s  
-**Role:** Temporal Physicist & Mentor  
+**Full Name:** Dr. Volt [First name TBD]
+**Age:** ~50-60s
+**Role:** Temporal Physicist & Mentor
 **Visual Reference:** ![Dr. Volt](/assets/character_portraits/Dr._Volt.jpg)
 
 ---

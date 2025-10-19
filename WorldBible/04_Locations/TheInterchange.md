@@ -27,7 +27,7 @@ The Interchange stands as the **economic heart** of the Temporal Tides universe.
 
 **Strategic Importance:**
 
-If the Time Nexus is the universe's *spiritual heart*, The Interchange is its *economic bloodstream*. Attack or destabilize it, and civilization's prosperity collapses overnight. Dr. Entropy recognizes this—disrupting The Interchange could spread chaos through economic collapse before ever deploying the Chronos Catalyst directly.
+If the Time Nexus is the universe's *spiritual heart*, The Interchange is its *economic bloodstream*. Attack or destabilize it, and civilization's prosperity collapses overnight. Dr. Entropy recognizes this - disrupting The Interchange could spread chaos through economic collapse before ever deploying the Chronos Catalyst directly.
 
 ### Atmosphere and Feel
 
@@ -36,7 +36,7 @@ If the Time Nexus is the universe's *spiritual heart*, The Interchange is its *e
 The Interchange pulses with *vibrant, organized energy*. Unlike the contemplative mystery of the Time Nexus, The Interchange is:
 
 - **Loud:** Multilingual negotiations, merchants calling wares, temporal navigator briefings
-- **Colorful:** Goods from every zone creating rainbow of cultural aesthetics  
+- **Colorful:** Goods from every zone creating rainbow of cultural aesthetics
 - **Dynamic:** Constant movement between districts, shipments arriving/departing
 - **Purposeful:** Everyone here has business to conduct, deals to close
 - **Meritocratic:** Success based on value provided, not background
@@ -46,7 +46,7 @@ The Interchange pulses with *vibrant, organized energy*. Unlike the contemplativ
 
 First-time visitors describe feeling energized rather than overwhelmed:
 - **Visual:** Three distinct architectural zones blending at borders
-- **Auditory:** Controlled cacophony—loud but not painful, musical quality
+- **Auditory:** Controlled cacophony - loud but not painful, musical quality
 - **Temporal:** Physical sensation of crossing gradients (gentle but noticeable)
 - **Olfactory:** Food vendors from all zones, exotic spices, fresh goods
 - **Emotional:** Excitement, possibility, opportunity
@@ -127,7 +127,7 @@ This creates unique psychological effect: you can *physically walk* from slow co
 
 **Engineering Marvel:**
 
-The gradient is *artificial*—maintained by sophisticated temporal stabilization arrays. This required:
+The gradient is *artificial* - maintained by sophisticated temporal stabilization arrays. This required:
 - 50 years of planning and construction (280-330 AC)
 - Collaboration between Time Nexus scientists and all major zones
 - Dr. Volt consulted on stabilization technology
@@ -1328,13 +1328,13 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 
 **Key Milestones:**
 
-**332 AC:** First full year operating profit  
-**334 AC:** Chronometric standardization universally adopted  
-**335 AC:** Fast Market added  
-**337 AC:** Labor Exchange reaches 10,000 workers  
-**339 AC:** Trade Council recognized by Temporal Research Council  
-**340 AC:** Eli begins working as navigator  
-**341 AC:** Team first visits (equipment shopping)  
+**332 AC:** First full year operating profit
+**334 AC:** Chronometric standardization universally adopted
+**335 AC:** Fast Market added
+**337 AC:** Labor Exchange reaches 10,000 workers
+**339 AC:** Trade Council recognized by Temporal Research Council
+**340 AC:** Eli begins working as navigator
+**341 AC:** Team first visits (equipment shopping)
 **342 AC:** Team becomes regular visitors (current)
 
 ### Relationship to Temporal Council

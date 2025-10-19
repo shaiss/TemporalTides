@@ -1,7 +1,7 @@
 # Story Structure
 
-**Part VI: Narrative Design**  
-**Status:** 📝 FRAMEWORK ESTABLISHED
+**Part VI: Narrative Design**
+**Status:** FRAMEWORK ESTABLISHED
 
 ---
 

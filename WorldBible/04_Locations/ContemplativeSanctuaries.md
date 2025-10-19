@@ -1,14 +1,14 @@
 # Contemplative Sanctuaries
 
-**Part IV: Locations**  
-**Status:** 📝 PLACEHOLDER
+**Part IV: Locations**
+**Status:** PLACEHOLDER
 
 ---
 
 ## Quick Reference
 
-**Location Type:** Dilated Zones for Meditation  
-**Temporal Classification:** [TO BE DEFINED]  
+**Location Type:** Dilated Zones for Meditation
+**Temporal Classification:** [TO BE DEFINED]
 **Accessibility:** [TO BE DEFINED]
 
 ---

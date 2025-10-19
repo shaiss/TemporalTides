@@ -9,7 +9,7 @@
 **Chronometric Standard (CS):**
 All dates referenced relative to establishment of the Chronometric Baseline at the Time Nexus.
 - **Before Chronometric (BC):** Events before baseline establishment
-- **After Chronometric (AC):** Events after baseline establishment  
+- **After Chronometric (AC):** Events after baseline establishment
 - **Current Year:** 342 AC (approximately equivalent to mid-2020s Earth time)
 
 ### 6.2 Ancient History (Pre-BC to 0 CS)
@@ -157,27 +157,27 @@ All dates referenced relative to establishment of the Chronometric Baseline at t
 
 **The following events occur during the narrative:**
 
-**Phase I - Discovery and Assembly:**
+**Phase I: Discovery and Assembly**
 - Vibrion encounters Leo, recognizes his analytical abilities
 - Team recruitment: Anne, Maya, Eli, Dave, Iris join
 - Meeting with mysterious mentor figure
 - Establishment of team dynamics and headquarters at Time Nexus
 
-**Phase II - Investigation and Conflict:**
+**Phase II: Investigation and Conflict**
 - Discovery of Dr. Entropy's involvement
 - Revelation of Enigma Volt as ally
 - First confrontations with Dr. Entropy's forces
 - Team learns to work across different temporal perceptions
 - Rising tensions as challenges increase
 
-**Phase III - Crisis and Separation:**
+**Phase III: Crisis and Separation**
 - Revelation of Chronos Catalyst's existence
 - Attack on Time Nexus
 - Team's defeat and separation across temporal zones
 - Individual struggles in isolation
 - Dark night of the soul for each character
 
-**Phase IV - Reunion and Resolution:**
+**Phase IV: Reunion and Resolution**
 - Team members find way back to each other
 - Infiltration of Dr. Entropy's lair
 - Leo's **Immersive Thought** crucial to understanding Chronos Catalyst
@@ -185,7 +185,7 @@ All dates referenced relative to establishment of the Chronometric Baseline at t
 - Disabling of Chronos Catalyst
 - Restoration of temporal stability
 
-**Phase V - Aftermath:**
+**Phase V: Aftermath**
 - Processing of events
 - Character growth consolidated
 - Relationships deepened
@@ -201,8 +201,6 @@ All dates referenced relative to establishment of the Chronometric Baseline at t
 - Exploration of unknown temporal zones
 - Investigation into Time Nexus origins
 - Emergence of new threats to temporal stability
-
----
 
 ---
 

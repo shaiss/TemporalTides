@@ -1,7 +1,7 @@
 # Temporal Visual Language
 
-**Part VII: Visual Design**  
-**Status:** 📝 FRAMEWORK
+**Part VII: Visual Design**
+**Status:** FRAMEWORK
 
 ---
 

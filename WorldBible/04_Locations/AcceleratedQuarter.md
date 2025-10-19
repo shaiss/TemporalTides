@@ -1,14 +1,14 @@
 # The Accelerated Quarter
 
-**Part IV: Locations**  
-**Status:** 📝 PLACEHOLDER
+**Part IV: Locations**
+**Status:** PLACEHOLDER
 
 ---
 
 ## Quick Reference
 
-**Location Type:** Urban Zone at 3.0 RFR  
-**Temporal Classification:** [TO BE DEFINED]  
+**Location Type:** Urban Zone at 3.0 RFR
+**Temporal Classification:** [TO BE DEFINED]
 **Accessibility:** [TO BE DEFINED]
 
 ---

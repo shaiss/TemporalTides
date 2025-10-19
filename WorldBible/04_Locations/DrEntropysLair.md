@@ -21,7 +21,7 @@ Dr. Entropy's Lair stands as the **antithesis of Chronopolis Central** and repre
 
 **Strategic Position:**
 
-The Lair isn't just villain's hideout—it's **proof of concept** for Dr. Entropy's philosophy. If Chronopolis proves maximum order can create prosperity (at cost of freedom), the Lair proves maximum chaos can create... something. Whether that something is liberation or annihilation depends on perspective.
+The Lair isn't just villain's hideout - it's **proof of concept** for Dr. Entropy's philosophy. If Chronopolis proves maximum order can create prosperity (at cost of freedom), the Lair proves maximum chaos can create... something. Whether that something is liberation or annihilation depends on perspective.
 
 **Ideological Significance:**
 
@@ -846,7 +846,7 @@ Unlike every other location (predictable schedules), the Lair has **no consisten
 - Avoid paradox zones (marked if lucky)
 - Philosophical discussions (why they're here)
 - Sleep attempted (difficult, time unstable)
-- Some disappear (dissolved, left, or transcended—unknown)
+- Some disappear (dissolved, left, or transcended - unknown)
 
 **Inner Circle Members:**
 - Catalyst maintenance (critical work)

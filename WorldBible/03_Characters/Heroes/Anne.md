@@ -1,17 +1,17 @@
 # Anne Parker - Anxiety Strategic Planner
 
-**Part III: Characters | Heroes**  
+**Part III: Characters | Heroes**
 
 ---
 
 ## Quick Reference
 
-**Full Name:** Anne Parker  
-**Age:** 21 years (born 321 AC)  
-**Mental Health Profile:** Anxiety  
-**Primary Ability:** Foresight  
-**Temporal Signature:** Class B (Accelerated)  
-**Bioelectric Field Strength:** Class II (2.8 microtesla)  
+**Full Name:** Anne Parker
+**Age:** 21 years (born 321 AC)
+**Mental Health Profile:** Anxiety
+**Primary Ability:** Foresight
+**Temporal Signature:** Class B (Accelerated)
+**Bioelectric Field Strength:** Class II (2.8 microtesla)
 **Visual Reference:** ![Anne Parker](/assets/character_portraits/Anne_Parker.jpg)
 
 ---
@@ -20,7 +20,7 @@
 
 ### Origin
 
-Anne grew up in a bustling urban center at baseline time flow, where the fast pace amplified her natural anxiety. The city's constant motion—traffic, crowds, deadlines, expectations—created an environment where her hypervigilant mind was always on alert, always anticipating the next challenge or potential crisis.
+Anne grew up in a bustling urban center at baseline time flow, where the fast pace amplified her natural anxiety. The city's constant motion - traffic, crowds, deadlines, expectations - created an environment where her hypervigilant mind was always on alert, always anticipating the next challenge or potential crisis.
 
 ### Childhood
 
@@ -35,7 +35,7 @@ From a young age, Anne exhibited exceptional organizational skills alongside hei
 
 ### Discovery of Ability
 
-At age 17 (338 AC), during a particularly intense period of exam preparation, Anne experienced her first full manifestation of **Foresight**. While running her usual route to manage stress, she abruptly perceived the next thirty seconds of events unfolding—a cyclist about to swerve, a car door preparing to swing open, a child poised to dash into the street. Instead of simply avoiding these hazards, Anne instinctively altered her path in subtle, deliberate ways. By darting in front of the cyclist, she caused them to swerve away—directly in view of the child, whose startled reaction stopped them in their tracks before they could step into the street. Just as the car door swung open, there was no longer anyone in harm’s way. Anne realized she hadn’t just anticipated danger—her interventions subtly rearranged the sequence of events, making each potential accident dissolve before it could occur. The revelation that she could not only see but also actively reshape the immediate future was simultaneously terrifying and exhilarating.
+At age 17 (338 AC), during a particularly intense period of exam preparation, Anne experienced her first full manifestation of **Foresight**. While running her usual route to manage stress, she abruptly perceived the next thirty seconds of events unfolding - a cyclist about to swerve, a car door preparing to swing open, a child poised to dash into the street. Instead of simply avoiding these hazards, Anne instinctively altered her path in subtle, deliberate ways. By darting in front of the cyclist, she caused them to swerve away - directly in view of the child, whose startled reaction stopped them in their tracks before they could step into the street. Just as the car door swung open, there was no longer anyone in harm’s way. Anne realized she hadn’t just anticipated danger - her interventions subtly rearranged the sequence of events, making each potential accident dissolve before it could occur. The revelation that she could not only see but also actively reshape the immediate future was simultaneously terrifying and exhilarating.
 
 **Ability Development:**
 - Age 17-18: Foresight activated sporadically, always during high-stress situations
@@ -53,7 +53,7 @@ At age 17 (338 AC), during a particularly intense period of exam preparation, An
 
 ### Meeting Vibrion
 
-Age 21 (342 AC): Anne was running her morning route when she sensed a temporal anomaly before it manifested—a rare wormhole forming in a public square. She evacuated the area minutes before it appeared, preventing casualties. Vibrion witnessed this and recognized her ability as neuro-temporal foresight. He approached her during her cooldown, explaining the team's mission. Anne's first question: "What are all the ways this could go wrong?" Vibrion appreciated her caution and strategic mind. She agreed after creating a 47-point risk assessment.
+Age 21 (342 AC): Anne was running her morning route when she sensed a temporal anomaly before it manifested - a rare wormhole forming in a public square. She evacuated the area minutes before it appeared, preventing casualties. Vibrion witnessed this and recognized her ability as neuro-temporal foresight. He approached her during her cooldown, explaining the team's mission. Anne's first question: "What are all the ways this could go wrong?" Vibrion appreciated her caution and strategic mind. She agreed after creating a 47-point risk assessment.
 
 ### Current Status
 
@@ -106,7 +106,7 @@ Strategic planner for the team. Handles mission preparation, contingency plannin
 Anne's journey involves learning to trust her abilities and build confidence in crisis situations. She discovers that:
 - Planning for every contingency is impossible and sometimes unnecessary
 - Her "worst case scenario" thinking is actually pattern recognition
-- Anxiety isn't weakness—it's enhanced awareness
+- Anxiety isn't weakness - it's enhanced awareness
 - She can adapt when plans fail
 - Trusting teammates means not controlling everything
 - Sometimes the best plan is to trust her foresight in the moment
@@ -262,7 +262,7 @@ During Foresight, Anne experiences:
 - Maya's pattern recognition helps Anne see order in chaos
 - Anne's strategic planning provides framework Maya appreciates
 - Both prefer linear communication style
-- Sometimes too similar—need others to provide spontaneity
+- Sometimes too similar - need others to provide spontaneity
 - Shared understanding of needing predictability
 - Anne helps Maya prepare for unpredictable events
 
@@ -439,7 +439,7 @@ Lives primarily in imminent future. Constantly thinking "what's next?" and "what
 - **Using Foresight:** Goes very still, eyes slightly unfocused, seeing beyond present
 - **Confident:** Straight posture, decisive movements (rare but growing)
 - **Overwhelmed:** Hands to head, closed eyes, controlled breathing
-- **Running:** Fluid, rhythmic, peaceful—only time she looks fully relaxed
+- **Running:** Fluid, rhythmic, peaceful - only time she looks fully relaxed
 
 ### Visual Effects (During Ability Use)
 
@@ -474,13 +474,13 @@ Lives primarily in imminent future. Constantly thinking "what's next?" and "what
 ### Communication Examples
 
 **Strategic Planning:**
-"Okay, so before we proceed, we should consider three scenarios. First, if we enter through the main portal, there's approximately 60% chance of detection, which means we'd need a rapid extraction plan—Eli, you'd be critical there. Second, if the gradient is steeper than predicted, we'll experience temporal vertigo, so Maya, watch for pattern changes. Third, and this is the worst case, if Dr. Entropy has predicted our approach..."
+"Okay, so before we proceed, we should consider three scenarios. First, if we enter through the main portal, there's approximately 60% chance of detection, which means we'd need a rapid extraction plan - Eli, you'd be critical there. Second, if the gradient is steeper than predicted, we'll experience temporal vertigo, so Maya, watch for pattern changes. Third, and this is the worst case, if Dr. Entropy has predicted our approach..."
 
 **During Crisis:**
-"Everyone, listen! In the next fifteen seconds, the temporal fracture will expand northwest. Eli, grab Dave and move three meters east. Maya, that support beam is about to collapse—yes, that one—shift left NOW. We have seven seconds, move, move, MOVE!"
+"Everyone, listen! In the next fifteen seconds, the temporal fracture will expand northwest. Eli, grab Dave and move three meters east. Maya, that support beam is about to collapse - yes, that one - shift left NOW. We have seven seconds, move, move, MOVE!"
 
 **Anxious Moment:**
-"I just... I keep running through scenarios and I can't see one where this doesn't go wrong. What if the stabilizer fails? What if my foresight is off? What if I'm missing something critical and someone gets hurt because I didn't prepare for—" [breath] "Sorry. Spiraling. Give me a moment."
+"I just... I keep running through scenarios and I can't see one where this doesn't go wrong. What if the stabilizer fails? What if my foresight is off? What if I'm missing something critical and someone gets hurt because I didn't prepare for - " [breath] "Sorry. Spiraling. Give me a moment."
 
 **Growth Moment:**
 "I can't plan for every possibility. And that's... terrifying. But I have to trust. Trust the team. Trust my ability to adapt. Trust that we'll handle whatever comes together. So here's what I can foresee clearly: the next thirty seconds. That's all we need right now. Ready?"
@@ -610,11 +610,11 @@ Relatable to anyone who's experienced:
 
 **Empowerment + Trust Arc:**
 
-**Stage 1:** Relies entirely on planning, doesn't trust spontaneity or others  
-**Stage 2:** Plans fail, forced to rely on raw ability and team  
-**Stage 3:** Discovers she can adapt in moment, doesn't need perfect preparation  
-**Stage 4:** Learns to trust team's abilities, share planning burden  
-**Stage 5:** Integrates planning with flexibility, anxiety with confidence  
+**Stage 1:** Relies entirely on planning, doesn't trust spontaneity or others
+**Stage 2:** Plans fail, forced to rely on raw ability and team
+**Stage 3:** Discovers she can adapt in moment, doesn't need perfect preparation
+**Stage 4:** Learns to trust team's abilities, share planning burden
+**Stage 5:** Integrates planning with flexibility, anxiety with confidence
 
 ### Critical Story Moments
 
@@ -630,7 +630,7 @@ Relatable to anyone who's experienced:
 
 **Chapter 16 (Climax):** Her foresight identifies critical moment to disable Chronos Catalyst
 
-**Chapter 19 (Reflection):** Realizes anxiety isn't something to eliminate—it's her foresight manifesting
+**Chapter 19 (Reflection):** Realizes anxiety isn't something to eliminate - it's her foresight manifesting
 
 ---
 
@@ -674,11 +674,11 @@ Relatable to anyone who's experienced:
 
 ### Team Synergies
 
-**Anne + Leo:** Her foresight identifies problem, his Immersive Thought solves it  
-**Anne + Maya:** Pattern prediction + strategic timing = perfect execution  
-**Anne + Eli:** She sees opening, he executes at high speed  
-**Anne + Dave:** She plans approach, he senses emotional state to adjust  
-**Anne + Iris:** She sees probable futures, Iris sees impossible ones—together cover all possibilities  
+**Anne + Leo:** Her foresight identifies problem, his Immersive Thought solves it
+**Anne + Maya:** Pattern prediction + strategic timing = perfect execution
+**Anne + Eli:** She sees opening, he executes at high speed
+**Anne + Dave:** She plans approach, he senses emotional state to adjust
+**Anne + Iris:** She sees probable futures, Iris sees impossible ones - together cover all possibilities
 
 ---
 

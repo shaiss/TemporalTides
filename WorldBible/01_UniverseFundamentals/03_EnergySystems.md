@@ -85,7 +85,7 @@ Frequency increases exponentially raise energy consumption. Vibrion must constan
 ### 3.5 Entropy & The Chronos Catalyst
 
 **Entropy in This Universe:**
-Beyond thermodynamic disorder, entropy in Temporal Tides refers to **temporal-causal disorder**—the breakdown of cause-effect relationships and temporal coherence.
+Beyond thermodynamic disorder, entropy in Temporal Tides refers to **temporal-causal disorder**: the breakdown of cause-effect relationships and temporal coherence.
 
 **Dr. Entropy's Philosophy:**
 Believes that perfect order is stagnation; controlled chaos drives evolution and growth. Seeks to increase entropy to "free" the universe from rigid temporal structures.
@@ -99,9 +99,7 @@ Believes that perfect order is stagnation; controlled chaos drives evolution and
 - **Location:** Dr. Entropy's lair (coordinates unknown until discovered by team)
 
 **Opposing Forces:**
-The team's goal is not to eliminate entropy (impossible and undesirable) but to **restore balance**—allowing natural change while preventing catastrophic disorder.
-
----
+The team's goal is not to eliminate entropy (impossible and undesirable) but to **restore balance**: allowing natural change while preventing catastrophic disorder.
 
 ---
 
