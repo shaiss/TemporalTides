@@ -1,11 +1,7 @@
 # The Nature of Time in Temporal Tides
 
 **Part I: Universe Fundamentals | Section 1**
-
----
-
 ## 1.1 Core Principle: Subjective Time as Reality
-
 In the Temporal Tides universe, **time is not a universal constant but a subjective experience that shapes objective reality**. This fundamental principle distinguishes our universe from conventional physics and forms the foundation of all temporal phenomena.
 
 **Key Tenets:**
@@ -13,8 +9,6 @@ In the Temporal Tides universe, **time is not a universal constant but a subject
 - Subjective experience can alter objective temporal flow
 - Mental states directly influence temporal mechanics
 - Multiple valid timelines can coexist without paradox
-
----
 
 ## 1.2 Time Perception Classes
 
@@ -50,8 +44,6 @@ The universe recognizes five primary classifications of temporal experience:
 **Associated Conditions:** Psychosis, certain autistic experiences, advanced precognition.
 **Measurement:** Non-standard; exists outside conventional temporal metrics.
 
----
-
 ## 1.3 The Observer Effect in Temporal Mechanics
 
 Drawing from quantum mechanics, **observation actively shapes temporal flow** in this universe:
@@ -67,8 +59,6 @@ Drawing from quantum mechanics, **observation actively shapes temporal flow** in
 - Meditative or focused states can slow subjective time
 - Conflicting observations create temporal instability zones
 
----
-
 ## 1.4 Temporal Relativity
 
 Building on Einstein's relativity while incorporating subjective experience:
@@ -81,15 +71,11 @@ Building on Einstein's relativity while incorporating subjective experience:
 
 **Example:** A character experiencing anxiety (accelerated perception) in a fast-moving vehicle (physical time dilation) may experience dramatically compressed subjective time while objective observers see normal flow.
 
----
-
 **Cross-References:**
 - See [Temporal Physics](02_TemporalPhysics.md) for technical measurements
 - See [Energy Systems](03_EnergySystems.md) for how energy interacts with time
 - See [Terminology](../02_CivilizationalElements/04_Terminology.md) for definitions
 - See Character dossiers for individual time perception examples
-
----
 
 *[Return to Index](../00_INDEX.md)*
 
