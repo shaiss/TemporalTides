@@ -1,35 +1,65 @@
 # Overall Aesthetic
 
 **Part VII: Visual Design**
-**Status:** FRAMEWORK
 
 ---
 
 ## Overview
 
-Core visual principles
+Temporal Tides combines **cinematic realism** with **subtle fantastical elements**. Environments feel grounded and lived-in; temporal effects and abilities provide the fantastical layer. The world should feel real enough to inhabit, strange enough to wonder at.
 
 ---
 
-## Content to Develop
+## Core Principles
 
-[Visual design guidelines and specifications]
+### 1. Grounded Foundation
+- Architecture, clothing, objects: recognizable, tactile
+- Lighting: naturalistic (with temporal exceptions)
+- Physics: mostly familiar (gravity, materials)
+
+### 2. Fantastical Layer
+- Temporal distortions: visual representation of time flow
+- Bioelectric auras: subtle, not garish
+- Nexus crystals: refracting past/present/future
+- Ability effects: distinct per character
+
+### 3. Environmental Storytelling
+- Location reflects temporal properties (dilated = slower visuals; accelerated = rapid)
+- Character design reflects perception (Dave: heavier; Eli: kinetic)
+- Color carries meaning (see ColorPalettes)
+
+---
+
+## Lighting
+
+**Baseline Zones:** Natural, soft, consistent
+**Accelerated:** Brighter; sharper shadows; urgency
+**Dilated:** Softer; longer shadows; contemplative
+**Lair/Chaos:** Unstable; multiple sources; wrong angles
+
+---
+
+## Composition
+
+**Character Moments:** Intimate; face and expression
+**Action:** Dynamic; ability-focused
+**Environment:** Wide when establishing; detail when exploring
 
 ---
 
 ## Reference Materials
 
-- Character portraits in `/assets/character_portraits/`
-- [Character dossiers](../../03_Characters/) contain established visual designs
-- Cinematic realism with subtle fantastical elements
-- Temporal effects as environmental storytelling
+- Character portraits: `/assets/character_portraits/`
+- [Character dossiers](../../03_Characters/) — Visual Design sections
+- [Locations](../../04_Locations/) — Environmental descriptions
+- [TemporalVisuals](TemporalVisuals.md) — Effect specifications
 
 ---
 
 **Cross-References:**
-- [Characters](../../03_Characters/) - Individual character designs
-- [Locations](../../04_Locations/) - Environmental designs
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Visual representation of time distortions
+- [CharacterDesigns](CharacterDesigns.md)
+- [ColorPalettes](ColorPalettes.md)
+- [TemporalVisuals](TemporalVisuals.md)
 
 ---
 

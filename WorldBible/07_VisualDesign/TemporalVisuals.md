@@ -1,35 +1,74 @@
 # Temporal Visual Language
 
 **Part VII: Visual Design**
-**Status:** FRAMEWORK
 
 ---
 
 ## Overview
 
-How time distortions look
+Temporal effects must be visually distinct: players/viewers need to understand time flow, distortions, and ability manifestations. Consistency across media is critical.
 
 ---
 
-## Content to Develop
+## Time Flow Visualization
 
-[Visual design guidelines and specifications]
+**Baseline (1.0 RFR):** No effect; standard visuals
+**Accelerated (>1.0):** Slight motion blur; faster particle movement; sharper edges
+**Dilated (<1.0):** Slower motion; extended trails; softer edges
+**Chaotic/Variable:** Flickering; multiple overlapping states; impossible geometry
 
 ---
 
-## Reference Materials
+## Per-Ability Visual Effects
 
-- Character portraits in `/assets/character_portraits/`
-- [Character dossiers](../../03_Characters/) contain established visual designs
-- Cinematic realism with subtle fantastical elements
-- Temporal effects as environmental storytelling
+**Vibrion — Vibrational Manipulation:**
+- Visible aura (blue to white by energy level)
+- Molecular shimmer (heat waves)
+- Lichtenberg pattern glow on costume
+
+**Leo — Immersive Thought:**
+- Time appears to slow/freeze for him
+- Focus glow (subtle); world blurs at edges
+- "Deep dive" visual: tunnel vision
+
+**Anne — Foresight:**
+- Overlay of possible futures (translucent)
+- Anticipatory highlights (objects of interest)
+- Tension in frame (accelerated perception)
+
+**Maya — Pattern Sense:**
+- Sequential highlights (pattern elements)
+- Rhythm visualization (when relevant)
+- Structural clarity (she sees order)
+
+**Eli — Kinetic Rush:**
+- Speed lines; motion blur
+- Burst of energy (brief)
+- Hyperfocus glow
+
+**Dave — Empathic Resonance:**
+- Bioelectric auras visible (others' emotions)
+- Color shifts (emotional state)
+- Subtle; not overwhelming
+
+**Iris — Visionary Insight:**
+- Layer overlay (multiple realities)
+- Fractured geometry; impossible angles
+- Synesthetic color (emotions as hue)
+
+---
+
+## Zone-Specific Effects
+
+**Time Nexus:** Crystal refraction; past/present/future simultaneously
+**Fractured Wastes:** Reality splinters; multiple timelines visible
+**Lair:** Controlled chaos; flickering; unstable
 
 ---
 
 **Cross-References:**
-- [Characters](../../03_Characters/) - Individual character designs
-- [Locations](../../04_Locations/) - Environmental designs
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Visual representation of time distortions
+- [Energy Systems](../../01_UniverseFundamentals/03_EnergySystems.md)
+- [Character dossiers](../../03_Characters/) — Abilities sections
 
 ---
 

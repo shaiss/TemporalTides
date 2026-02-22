@@ -1,35 +1,53 @@
-# Character Designs
+# Character Design Specifications
 
 **Part VII: Visual Design**
-**Status:** PARTIAL
 
 ---
 
 ## Overview
 
-Visual design for all characters
+Each character has established visual design in their dossier. This document consolidates for quick reference. See individual dossiers for full detail.
 
 ---
 
-## Content to Develop
+## Heroes
 
-[Visual design guidelines and specifications]
+**Vibrion:** 1.88m; muscular; Lichtenberg scars; alloy chain mesh (silver/blue); confident stance
+**Leo:** Academic build; comfortable clothing; often distracted posture
+**Anne:** Put-together; strategic; slight tension
+**Maya:** Structured; precise; comfortable in patterns
+**Eli:** Lean, athletic; kinetic; always moving
+**Dave:** Softer build; contemplative; musical quality
+**Iris:** Youngest; artistic; fluid presence
 
 ---
 
-## Reference Materials
+## Mentors
 
-- Character portraits in `/assets/character_portraits/`
-- [Character dossiers](../../03_Characters/) contain established visual designs
-- Cinematic realism with subtle fantastical elements
-- Temporal effects as environmental storytelling
+**Dr. Volt:** 62; thin; gray hair; wire glasses; lab coat; academic
+**Dr. Mental:** 55; warm; approachable; soft colors
+
+---
+
+## Antagonists
+
+**Dr. Entropy:** 58; thin; gray; dark clothing; intense eyes
+**Enigma Volt:** 29; lean; dark tactical gear; restless
+**The Mentor:** Variable; deliberately unremarkable; obscured
+
+---
+
+## Design Consistency
+
+- Each character identifiable by silhouette
+- Costume/clothing reflects function and personality
+- Body language distinct (see dossiers)
 
 ---
 
 **Cross-References:**
-- [Characters](../../03_Characters/) - Individual character designs
-- [Locations](../../04_Locations/) - Environmental designs
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Visual representation of time distortions
+- [Character dossiers](../../03_Characters/) — Full Visual Design sections
+- [ColorPalettes](ColorPalettes.md)
 
 ---
 

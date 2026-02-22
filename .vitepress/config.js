@@ -4,8 +4,8 @@ export default defineConfig({
   title: 'Temporal Tides',
   description: 'A narrative universe where time is subjective and mental health conditions are superpowers',
   
-  // Base path for GitHub Pages (repository name)
-  base: '/TemporalTides/',
+  // Base path: '/' for Vercel, '/TemporalTides/' for GitHub Pages
+  base: process.env.VERCEL ? '/' : '/TemporalTides/',
   
   // Source directory (explicit)
   srcDir: './',
