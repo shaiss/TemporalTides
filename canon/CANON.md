@@ -38,6 +38,8 @@ Source: `narrative-structure.mdc` (Narrative Restrictions + Emotional Authentici
   6. Suffering Olympics — don't rank conditions or imply some are "worse."
   7. Simplistic solutions — complex challenges don't have easy fixes.
   8. Tokenization — characters are people first, not representation checklist items.
+  9. Mental health condition as the problem itself — the condition is not the antagonist.
+  10. Pity for characters' conditions — empathy yes; pity no.
 
 - **✅ SHOULD:**
   1. Show authentic lived experiences — based on real neurodivergent lives.
@@ -48,12 +50,6 @@ Source: `narrative-structure.mdc` (Narrative Restrictions + Emotional Authentici
   6. Respect agency — characters make their own choices about management.
   7. Demonstrate growth — learning to thrive, not "overcome."
   8. Create empathy — help audiences understand different experiences.
-
-- **Also from Conflict Sources — never use:**
-  - Mental health condition as the problem itself.
-  - "Overcoming" or "curing" neurodivergence.
-  - Pity for characters' conditions.
-  - Characters as inspiration porn.
 
 ### Per-Condition Show / Avoid Table
 
@@ -179,6 +175,8 @@ Source: `WorldBible/00_INDEX.md`, `01_NatureOfTime.md`, `04_Cosmology.md`, `TheT
 | **D** | Fragmented Perception | Non-linear, discontinuous temporal experience; interrupted flow, temporal jumps, narrative fragmentation. | ADD, dissociation, certain trauma responses. | Variable, discontinuous ratios. |
 | **E** | Multi-Layered Perception | Simultaneous experience of multiple temporal streams; past, present, and future bleeding together; parallel realities visible. | Psychosis, certain autistic experiences, advanced precognition. | Non-standard; exists outside conventional temporal metrics. |
 
+*Roster sub-qualifiers (e.g. Standard-Rhythmic, Variable) denote individual variation within the base class; see WorldBible for detail.*
+
 ### 5 Reality Layers
 
 | Layer | Name | Accessible To | Perception |
@@ -209,8 +207,8 @@ Source: `WorldBible/00_INDEX.md`, `01_NatureOfTime.md`, `04_Cosmology.md`, `TheT
 
 **Antagonists:**
 - **Dr. Entropy** — Main antagonist.
-- **Enigma Volt** — Dr. Entropy's ally.
-- **The Mentor** — Mysterious guide; helps both Team and Entropy; agenda unknown.
+- **Enigma Volt** — Dr. Entropy's primary field agent and combat specialist; direct counter to Vibrion (his Bioelectric Disruption destabilizes Vibrion's Vibrational Manipulation). Not ideologically driven — his loyalty is personal; redemption arc is possible.
+- **The Mentor** *(distinct antagonist character, not the Mentors/Advisors above)* — Mysterious guide; helps both Team and Entropy; agenda unknown.
 
 ### Central Conflict
 
