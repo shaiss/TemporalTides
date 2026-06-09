@@ -183,6 +183,18 @@ Neutral term for psychological/neurological state. Prefer over "disorder" unless
 **Neurodiverse:**
 Recognition that cognitive diversity is natural and valuable.
 
+**Different Perception / Alternative Perception:**
+Preferred framing for how neurodivergent characters experience reality differently — avoid framing as deficient.
+
+**Unique Cognitive Pattern:**
+Preferred descriptor for the distinctive neurological profile of each character.
+
+**Terms to Avoid (Mental Health):**
+- ❌ "Suffering from" (unless character is genuinely suffering)
+- ❌ "Afflicted with"
+- ❌ "Victim of"
+- ❌ "Handicapped/disabled" (in context of powers)
+
 ### 9.10 Philosophical Terms
 
 **Presentism:**
@@ -213,6 +225,15 @@ Period in story when team members come together.
 
 **The Separation:**
 Crisis point when team is scattered across temporal zones.
+
+### 9.12 Banned / Avoid Terms
+
+The following terms are prohibited in all Temporal Tides writing. Each entry lists the banned term and its approved replacement(s).
+
+**Temporal Terms:**
+- ❌ "Time travel" → use **temporal navigation** or **temporal displacement**
+- ❌ "Time machine" → use **temporal device** or **chronometric apparatus**
+- ❌ "Going back in time" → use **accessing an earlier temporal state** or **returning to a prior point in the timeline**
 
 ---
 

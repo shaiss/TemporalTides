@@ -78,9 +78,35 @@
 
 ---
 
+## Should Do
+
+1. ✅ **Show authentic experiences** - Based on real neurodivergent lives
+2. ✅ **Celebrate differences** - Neurodiversity as genuine strength
+3. ✅ **Normalize support** - Asking for and offering help is good
+4. ✅ **Show complexity** - Both gifts and challenges of each condition
+5. ✅ **Build community** - Neurodivergent people supporting each other
+6. ✅ **Respect agency** - Characters make own choices about management
+7. ✅ **Demonstrate growth** - Learning to thrive, not "overcome"
+8. ✅ **Create empathy** - Help audiences understand different experiences
+
+---
+
+## Per-Condition: Show / Avoid
+
+| Condition | Show | Avoid |
+|---|---|---|
+| **Depression (Dave)** | The weight of time; difficulty seeing future joy; moments of connection breaking through | "Snapping out of it"; simple solutions; being "cured by friends" |
+| **Anxiety (Anne)** | Racing thoughts; hypervigilance as strength and burden; managing not eliminating | "Just calm down" solutions; anxiety as purely negative |
+| **ADHD (Eli)** | Hyperfocus as superpower; executive function challenges; energy management | "Just try harder" narrative; medication as plot device |
+| **ADD (Leo)** | Deep dive thinking; difficulty with uninteresting tasks; rich inner world | "Lazy" characterization; focus as purely willpower |
+| **Autism (Maya)** | Pattern recognition gift; sensory experiences; communication differences | Savant stereotypes; lack of emotion; "puzzle" metaphors |
+| **Psychosis (Iris)** | Different relationship with reality; unique insights; managing symptoms | "Crazy" tropes; violence associations; losing all touch with reality |
+
+---
+
 ## Cross-References
 
-- [Narrative Structure Rules](../../.cursor/rules/narrative-structure.mdc) - Dialogue, pacing, restrictions
+- [Narrative Structure Rules](../../.cursor/rules/narrative-structure.mdc) - Dialogue, pacing
 - [Themes](Themes.md) - Thematic consistency
 - [Character dossiers](../../03_Characters/) - Voice, personality
 
