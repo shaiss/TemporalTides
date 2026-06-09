@@ -12,6 +12,25 @@
 
 ---
 
+## ⚠️ REVISION — 2026-06-09: `WorldBible/` is the single source of truth
+
+This supersedes the `CANON.md`-based architecture described below. On review, `canon/CANON.md` proved to be a **third, lossy copy** of canon that already lives in `WorldBible/`, so it is **retired**. Per Shai's call:
+
+- **One source of truth = `WorldBible/`.** No digest file.
+- **Consolidate the orphaned constraints into WorldBible** (currently stranded in `.cursor/rules`):
+  - Banned-terms list → `WorldBible/02_CivilizationalElements/04_Terminology.md`
+  - ✅ SHOULD list + per-condition Show/Avoid table → `WorldBible/06_Narrative/WritingGuidelines.md` (and delete its circular `See narrative-structure.mdc` pointer)
+- **Skills & Cursor rules read WorldBible docs directly:**
+  - `/coach` → `06_Narrative/Themes.md` (pillars) + facts (`01_UniverseFundamentals/01_NatureOfTime.md`, `05_Factions/TheTeam.md`, `06_Narrative/StoryStructure.md`)
+  - `/canon` → `02_CivilizationalElements/04_Terminology.md` (terms incl. banned)
+  - `/conscience` → `06_Narrative/WritingGuidelines.md` (❌/✅ + per-condition) + `06_Narrative/Themes.md` (pillars)
+- **Meta-process → the `/canon` skill (Shai's call "b").** Canon hierarchy, retcon rules, and naming conventions live *in the Canon Keeper skill as process* (they govern *how to adjudicate*, not world-facts) — single home there to avoid re-duplication; NOT in WorldBible, NOT re-copied into the Cursor rules.
+- **Task 1 is now:** retire `CANON.md` + consolidate the orphans into WorldBible + remove the circular pointer (Shai fidelity gate unchanged). Tasks 2–6 reference WorldBible docs instead of `CANON.md`.
+
+Where sections below say `canon/CANON.md`, read "the relevant WorldBible doc" per this revision.
+
+---
+
 ## Notes for the implementer
 
 - **Verification is acceptance-based.** There are no unit tests. Each task ends with a concrete check: a fidelity diff against the source canon, a frontmatter/structure validation, or a behavioral smoke-test (invoke the hat, confirm it asks questions and refuses to generate). "Expected" lines describe what you should observe.

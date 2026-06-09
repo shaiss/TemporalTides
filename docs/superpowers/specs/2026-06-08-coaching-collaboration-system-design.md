@@ -9,6 +9,19 @@
 
 ---
 
+## ⚠️ REVISION — 2026-06-09: `WorldBible/` is the single source of truth
+
+Supersedes the `CANON.md` design below. `canon/CANON.md` was a third, lossy copy of canon already in `WorldBible/`, and is **retired**. New architecture (Shai's call):
+
+- **One source of truth = `WorldBible/`** — no digest.
+- The orphaned constraints stranded in `.cursor/rules` are **consolidated into WorldBible**: banned terms → `02_CivilizationalElements/04_Terminology.md`; ✅ list + per-condition table → `06_Narrative/WritingGuidelines.md` (and its circular `.cursor/rules` pointer removed).
+- The three skills and the Cursor rules **read the relevant WorldBible docs directly**.
+- **Meta-process** (canon hierarchy, retcon, naming) lives in the **Canon Keeper skill** as process (Shai's call "b") — not in WorldBible, not duplicated.
+
+Read the `CANON.md`-based sections below in light of this revision.
+
+---
+
 ## 1. Problem & Purpose
 
 The Temporal Tides world bible (v1.0, "100% complete") was largely produced by an AI ghostwriter operating under `.cursor/rules/*.mdc`, which instruct the AI: *"You are part of an expert world bible writing team... develop comprehensive, consistent, and deeply detailed lore."*
@@ -162,7 +175,8 @@ Files: `temporal-tides-world-bible.mdc`, `character-development.mdc`, `narrative
 | Conscience intensity | Adjustable dial, default 60 | Shai controls when it leans in; 60 catches "cape-wearing" traps without self-censorship |
 | Architecture | Canon core + 3 thin hats | Single source of truth; flips old rules write→check; no duplication |
 | Names / triggers | Coach `/coach`, Canon Keeper `/canon`, Conscience `/conscience` | Shai's choice |
-| Cursor rules | Share `CANON.md` via `@` reference + flip stance; repoint (don't delete) legacy `mdc:` links | Full consistency across tools; reference method verified against Cursor docs (2026-06-08) |
+| Cursor rules | Share canon via `@` reference + flip stance; repoint (don't delete) legacy `mdc:` links | Full consistency across tools; reference method verified against Cursor docs (2026-06-08) |
+| **Single source of truth** (revised 2026-06-09) | `WorldBible/`, not a `CANON.md` digest; consolidate orphans into it; meta-rules → Canon Keeper skill (process) | `CANON.md` was a third, lossy copy of WorldBible canon — Shai's call; see Revision note at top |
 
 ---
 
