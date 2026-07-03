@@ -529,7 +529,7 @@ Metropolitan proves balance possible:
 - Religious/philosophical beliefs
 - Interpersonal relationships
 
-**Relationship to Temporal Council:**
+**Relationship to Temporal Research Council:**
 
 **Cooperative Independence:**
 - Follows Temporal Accords voluntarily (sees value)
@@ -1284,7 +1284,7 @@ Metropolitan proves balance possible:
 - Prosperity shared (inequality reducing)
 - Model relationship (mutual benefit)
 
-### Relationship to Temporal Council
+### Relationship to Temporal Research Council
 
 **Cooperative Independence:**
 

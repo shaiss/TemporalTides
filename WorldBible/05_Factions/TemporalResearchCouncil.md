@@ -8,7 +8,7 @@
 
 **Official Name:** Temporal Research Council (TRC)
 **Type:** Governing body for temporal research, stability, and enforcement
-**Formation:** Early civilization (post-temporal fracture stabilization)
+**Formation:** 0 AC (Chronometric Baseline established; post-temporal fracture stabilization)
 **Headquarters:** Nexus Tower, Chronopolis Central
 **Status:** Dominant authority over baseline and ordered zones
 **Leadership:** Council Chair (rotating); bureaucratic hierarchy

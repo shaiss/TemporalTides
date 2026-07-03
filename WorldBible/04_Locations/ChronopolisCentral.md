@@ -24,7 +24,7 @@ Chronopolis Central stands as the **capital of temporal civilization** - not thr
 
 Chronopolis represents the **ORDERED** extreme on the societal spectrum. It proves that centralized control *can* create safety, stability, and prosperity - but at costs of freedom, spontaneity, and diversity. Understanding Chronopolis is essential to understanding:
 - Why Anne is how she is (product of environment)
-- What the Temporal Council represents (protective authority)
+- What the Temporal Research Council represents (protective authority)
 - Why autonomous zones resist (rejection of this model)
 - What Dr. Entropy opposes (excessive control stifles)
 
@@ -76,7 +76,7 @@ Despite being **baseline 1.0 RFR**, time *feels* accelerated in Chronopolis:
 Chronopolis embodies the **Red (Governed/Controlled) extreme** of the Rainbow-Red spectrum:
 
 **Command and Control Model:**
-- Centralized authority (Temporal Council)
+- Centralized authority (Temporal Research Council)
 - Top-down decision making
 - Safety prioritized over freedom
 - Heavy surveillance "for protection"
@@ -534,7 +534,7 @@ Every aspect intentional:
 Chronopolis occupies the **ORDERED** extreme of the societal spectrum:
 
 **Characteristics:**
-- Heavy Temporal Council direct oversight
+- Heavy Temporal Research Council direct oversight
 - Top-down decision making
 - Comprehensive regulation "for safety"
 - Surveillance and monitoring ubiquitous
@@ -1514,7 +1514,7 @@ Anne discovered some underground culture as teenager (felt less alone), but fear
 - Dr. Entropy opposing entire philosophy
 - Team operating independently (Council frustration)
 
-### Relationship to Temporal Council
+### Relationship to Temporal Research Council
 
 **Chronopolis IS Council stronghold:**
 - Headquarters here (Nexus Tower)
@@ -1658,7 +1658,7 @@ Anne discovered some underground culture as teenager (felt less alone), but fear
 
 ### Strategic Value to Factions
 
-**Why Temporal Council Needs It:**
+**Why Temporal Research Council Needs It:**
 - Physical headquarters (seat of power)
 - Legitimacy (major city supports them)
 - Resources (tax base, talent pool)

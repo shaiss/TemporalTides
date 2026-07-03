@@ -16,7 +16,7 @@ Dr. Entropy's Lair stands as the **antithesis of Chronopolis Central** and repre
 - **Chronos Catalyst Location:** Houses the universe's greatest temporal threat
 - **Final Confrontation Site:** Where Team will face ultimate challenge
 - **Chaos Laboratory:** Experimenting with controlled entropy increase
-- **Symbol of Opposition:** Everything the Temporal Council fears
+- **Symbol of Opposition:** Everything the Temporal Research Council fears
 - **Existential Question:** Is this place horrifying nightmare or philosophical truth?
 
 **Strategic Position:**
@@ -28,7 +28,7 @@ The Lair isn't just villain's hideout - it's **proof of concept** for Dr. Entrop
 **Dr. Entropy's Argument (Manifest Here):**
 - Perfect order is death (heat death of universe)
 - Change requires disorder (evolution through chaos)
-- Temporal Council oppresses through control
+- Temporal Research Council oppresses through control
 - Chaos liberates from stagnation
 - Entropy increase is natural, healthy, necessary
 
@@ -603,7 +603,7 @@ The Lair occupies the **CHAOS** extreme, opposite Chronopolis's ORDER:
 **Core Beliefs:**
 - "Perfect order is death" (heat death of universe proves)
 - "Change requires chaos" (evolution through disorder)
-- "Control oppresses" (Temporal Council is tyranny)
+- "Control oppresses" (Temporal Research Council is tyranny)
 - "Entropy liberates" (freedom from structure)
 - "Adaptation strengthens" (survival through trial)
 
@@ -819,8 +819,6 @@ This isn't decentralized governance (which AC explored). This is **rejection of 
 
 ---
 
-*[Continuing sections 5-11 in next write to manage file size...]*
-
 ## 5. Daily Life (Average Day)
 
 ### There Is No "Average Day" (By Design)
@@ -956,7 +954,7 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 - Accidental arrivals (wormhole accidents)
 - Can't escape (lost, confused, dissolving)
 - Dr. Entropy allows departure (if they ask and he notices)
-- Some past救助: Team's goal includes rescuing these
+- Some are still trapped: the Team's goal includes rescuing these
 
 **Origin Breakdown:**
 - Chronopolis refugees: 30% (fleeing oppression)
@@ -1130,7 +1128,7 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 **Dr. Entropy (Primary Antagonist):**
 - **Real Name:** [Unknown, rejected identity]
 - **Age:** Appears 50s (actual unknown, temporal effects)
-- **Background:** Former Temporal Council scientist, radicalized
+- **Background:** Former Temporal Research Council scientist, radicalized
 - **Ideology:** Entropy increases evolution, order causes death
 - **Motivation:** Genuinely believes he's saving universe (from itself)
 - **Personality:** Brilliant, charismatic, isolated, zealous
@@ -1146,7 +1144,7 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 - **Team Threat:** Can disable their communication, disrupt abilities
 - **Redemption Possible:** Maybe (not pure evil, just extreme)
 
-**[3-5 Inner Circle Members, Named]:**
+**Inner Circle Members:**
 
 **Fracture (Temporal Navigator):**
 - Survived longest besides Entropy (8 years)

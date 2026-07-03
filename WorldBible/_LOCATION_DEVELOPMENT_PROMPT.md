@@ -89,7 +89,7 @@ I'm working on developing locations for the **Temporal Tides World Bible** - a p
 
 **4. Chronopolis Central**
 - Anne's origin city
-- Temporal Council stronghold
+- Temporal Research Council stronghold
 - Ordered society (AC "Red Governed" inspiration)
 - Represents safe but controlled extreme
 - File: Create new `WorldBible/04_Locations/ChronopolisCentral.md`
@@ -165,7 +165,7 @@ I'm working on developing locations for the **Temporal Tides World Bible** - a p
 - Character connection established
 - Shows "safe but controlled" extreme
 - AC "Red Governed" inspiration
-- Temporal Council stronghold
+- Temporal Research Council stronghold
 
 ## 📖 What I Need From You
 

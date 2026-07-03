@@ -382,8 +382,8 @@ The Sanctuaries embody **Contemplative Haven** — communities designed for thos
 **Major Events:**
 - 180 AC: Formal autonomy recognized (Council treaty)
 - 250 AC: Inter-sanctuary council established
-- 310 AC: Dave born in Silent Hollow
-- 340 AC: Dave leaves for Team (rare; most don't)
+- 324 AC: Dave born in Silent Hollow
+- 342 AC: Dave leaves for Team (rare; most don't)
 - Present: Stable; unchanged; content
 
 **Relationship to Council:**

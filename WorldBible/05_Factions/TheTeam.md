@@ -26,7 +26,7 @@
 
 **Formation:**
 - **Inception:** 340-341 AC — Vibrion recognized Dr. Entropy's threat escalating; began seeking allies
-- **Formal assembly:** 342 AC — Seventh member (Dave) joined; core roster complete
+- **Formal assembly:** 342 AC — Iris (seventh and final member) joined; core roster complete
 - **Catalyst:** Dr. Entropy's operations becoming bolder; Nexus attack intelligence
 
 **Current Status:**

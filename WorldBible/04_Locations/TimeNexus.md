@@ -189,7 +189,7 @@ The Nexus is *saturated* with temporal phenomena, but all are **stable and non-t
 
 **Notable Incidents:**
 - 127 AC: Major wormhole collapse prevented by Nexus stabilization field
-- 189 AC: Dr. Entropy's first attack attempt (repelled by Nexus's inherent resistance)
+- 189 AC (Council archival dating; discrepancy noted — see Dr. Entropy dossier): Dr. Entropy's first attack attempt, repelled by Nexus's inherent resistance
 - 298 AC: Timeline fracture healed by channeling through Nexus convergence
 - 341 AC: Team established headquarters (current era)
 
@@ -1240,7 +1240,7 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 - Ancient systems still surprise researchers
 - Mystery deepens rather than resolves
 
-### Relationship to Temporal Council
+### Relationship to Temporal Research Council
 
 **Complex Dynamic:**
 
@@ -1419,7 +1419,7 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 - Neutral base (not tied to Council politics)
 - Symbol of what they protect: diversity, connection, stability
 
-**Why Temporal Council Values It:**
+**Why Temporal Research Council Values It:**
 - Legitimacy from proximity to Nexus
 - Research access advances temporal science
 - Diplomatic venue for zone coordination
@@ -2019,7 +2019,7 @@ The Nexus exists in micro-dimension, inaccessible through normal space travel. O
 
 **Closest Stable Zones (conceptually, not spatially):**
 
-**Nexus Tower (Temporal Council HQ):**
+**Nexus Tower (Temporal Research Council HQ):**
 - Technically separate structure
 - Built adjacent to Nexus in micro-dimension
 - Connected via short wormhole bridge

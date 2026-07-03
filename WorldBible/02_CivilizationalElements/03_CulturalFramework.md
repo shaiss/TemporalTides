@@ -94,7 +94,7 @@ Governing principles for responsible temporal interaction:
 
 **Article IV: Emergency Override**
 - In cases of universal threat, Accords may be temporarily suspended
-- Requires authorization from Temporal Council
+- Requires authorization from Temporal Research Council
 - Must return to compliance once threat resolved
 
 **Article V: Knowledge Access**
@@ -103,7 +103,7 @@ Governing principles for responsible temporal interaction:
 - Balance between safety and freedom
 
 **Enforcement:**
-- Temporal Council oversees compliance
+- Temporal Research Council oversees compliance
 - Penalties for violations: ability restriction, zone exile, imprisonment
 - Debate ongoing about enforcement methods
 
