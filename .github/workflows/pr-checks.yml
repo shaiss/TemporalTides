@@ -159,14 +159,36 @@ jobs:
 
       # Blocking gate: fail the job iff Claude found a "Never Do" violation.
       # Delete this step to make the judge advisory-only.
+      #
+      # NOTE: do NOT use fromJSON() in `env:` here. GitHub Actions evaluates
+      # `env:` template expressions while building the job graph, BEFORE the
+      # `if:` condition gates the step — so fromJSON('') on an empty
+      # structured_output (e.g. when the judge step was skipped) throws a
+      # template error and fails the job. Parse the JSON in-shell instead.
       - name: Enforce block on hard violations
         id: enforce-block
-        if: steps.prose.outputs.prose == 'true' && steps.judge.outputs.structured_output != ''
+        if: steps.prose.outputs.prose == 'true'
         env:
-          BLOCK: ${{ fromJSON(steps.judge.outputs.structured_output).block }}
-          SUMMARY: ${{ fromJSON(steps.judge.outputs.structured_output).summary }}
+          STRUCTURED_OUTPUT: ${{ steps.judge.outputs.structured_output }}
         run: |
-          echo "Claude summary: ${SUMMARY:-<none>}"
+          # If the judge didn't run or produced no structured output, pass.
+          if [ -z "$STRUCTURED_OUTPUT" ]; then
+            echo "ℹ️  No structured judge output (skipped or no API key). Passing."
+            exit 0
+          fi
+          # Parse with python (preinstalled on ubuntu-latest); tolerant of the
+          # JSON the action emits. Two separate calls avoid multiline-summary issues.
+          BLOCK="$(printf '%s' "$STRUCTURED_OUTPUT" | python3 -c 'import json,sys
+          try:
+              print(str(json.load(sys.stdin).get("block", False)).lower())
+          except Exception:
+              print("false")')"
+          SUMMARY="$(printf '%s' "$STRUCTURED_OUTPUT" | python3 -c 'import json,sys
+          try:
+              print((json.load(sys.stdin).get("summary") or "<none>").replace("\n"," "))
+          except Exception as e:
+              print("parse-error: %s" % e)')"
+          echo "Claude summary: $SUMMARY"
           if [ "$BLOCK" = "true" ]; then
             echo "::error::Claude editorial review flagged blocking violation(s). See the PR review for details."
             echo "::error::To make this check advisory-only, delete the 'Enforce block' step in .github/workflows/pr-checks.yml."
