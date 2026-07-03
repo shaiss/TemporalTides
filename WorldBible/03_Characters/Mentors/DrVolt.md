@@ -24,7 +24,7 @@ Lawrence Volt was born in Baseline Metropolitan to a family of scientists. His g
 - **Age 25-35:** Temporal Physics Institute (Council-affiliated); rose to senior researcher
 - **Age 28:** Met Marcus Theron — later Dr. Entropy. They were colleagues, then friends. Collaborative research on entropy dynamics. Volt believed in measured experimentation; Theron pushed toward radical applications. The divergence began here.
 
-- **Age 35 (315 AC):** Theron's unauthorized research discovered. Council confiscated materials, banned Theron. Volt was cleared of involvement but witnessed the destruction of a brilliant mind. Guilt: "I could have intervened earlier. I could have questioned where he was going."
+- **Age 40 (320 AC):** Theron's unauthorized research discovered. Council confiscated materials, banned Theron. Volt was cleared of involvement but witnessed the destruction of a brilliant mind. Guilt: "I could have intervened earlier. I could have questioned where he was going."
 
 **Stabilization Technology and Regret:**
 

@@ -449,7 +449,7 @@ The corridors between districts show *architectural morphing*:
 
 The Interchange occupies the **STRUCTURED** position on the Order-Chaos spectrum:
 
-**Not Ordered (Temporal Council Control):**
+**Not Ordered (Temporal Research Council Control):**
 - Self-governing through Trade Council
 - Minimal external regulation
 - Commerce drives decisions, not authority
@@ -1337,7 +1337,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 **341 AC:** Team first visits (equipment shopping)
 **342 AC:** Team becomes regular visitors (current)
 
-### Relationship to Temporal Council
+### Relationship to Temporal Research Council
 
 **Complex Partnership:**
 
@@ -1486,7 +1486,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 - Cultural understanding (diverse perspectives)
 - Gradient training (ability development)
 
-**Why Temporal Council Values It:**
+**Why Temporal Research Council Values It:**
 - Economic stability supports their governance
 - Chronometric standardization (their framework)
 - Tax revenue (zones prosper, pay more)

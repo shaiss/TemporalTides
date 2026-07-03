@@ -115,6 +115,7 @@ All dates referenced relative to establishment of the Chronometric Baseline at t
 
 **322 AC:**
 - Maya born (20 years ago)
+- Dr. Mental establishes practice specializing in neuro-temporal psychology
 
 **323 AC:**
 - Eli born (19 years ago)
@@ -130,6 +131,9 @@ All dates referenced relative to establishment of the Chronometric Baseline at t
 - Development of his vibrational manipulation abilities
 - First contact with Dr. Volt (begins mentorship)
 
+**327 AC:**
+- Dr. Mental begins documenting neuro-temporal abilities systematically
+
 **328 AC:**
 - Dr. Entropy begins research into controlled entropy increase
 - Early experiments conducted in secret
@@ -138,10 +142,6 @@ All dates referenced relative to establishment of the Chronometric Baseline at t
 - Enigma Volt emerges as operative disrupting electrical systems
 - First recorded alliance with Dr. Entropy
 - Series of mysterious temporal disruptions begin
-
-**338 AC:**
-- Dr. Mental establishes practice specializing in neuro-temporal psychology
-- Begins documenting neuro-temporal abilities systematically
 
 **340 AC:**
 - Chronos Catalyst development begins (unbeknownst to authorities)

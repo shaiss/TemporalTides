@@ -1042,7 +1042,7 @@ Shows that **chaos isn't always liberating**:
 
 **Notable Achievements:**
 - Harmony Symphony (famous orchestra)
-- Valley philosophical school (influenced Temporal Council ethics)
+- Valley philosophical school (influenced Temporal Research Council ethics)
 - Agricultural innovations (feeding universe)
 - Architectural marvels (now ruins)
 
