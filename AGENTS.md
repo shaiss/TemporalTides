@@ -70,7 +70,7 @@ Mechanical work (fixing links, VitePress config, reorganizing files, faithful di
 
 These apply to any text written or edited in this repo:
 
-- **Banned terms** (full list: `WorldBible/02_CivilizationalElements/04_Terminology.md` §9.12): never "time travel" (→ temporal navigation/displacement), "time machine" (→ temporal device), "going back in time" (→ accessing an earlier temporal state).
+- **Banned terms**: the full prohibited-terms list and their approved replacements live in `WorldBible/02_CivilizationalElements/04_Terminology.md` §9.12 — consult it before writing any temporal-procedural language, and never reproduce a banned term in this repo (not even as an example). Use only the approved replacement phrasing.
 - **Mental health representation** (full guardrails: `WorldBible/06_Narrative/WritingGuidelines.md`): no cure narratives, no inspiration porn, no savior complexes, no violent stereotypes, no mental health for shock value. Conditions are genuine strengths with real challenges — characters thrive *with* their conditions, never by being "fixed."
 - **Terminology consistency**: use the official terms in `04_Terminology.md`; person-first or identity-first language per character preference (e.g., "Leo, who has ADD" — never "the ADD character").
 - **Every element serves the Three Pillars**: time perception, authentic mental health representation, empathy through understanding.
