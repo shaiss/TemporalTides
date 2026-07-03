@@ -108,7 +108,7 @@ Explore Zone → Encounter Challenge → Switch Character → Solve/Fight → Pr
 - [CharacterGameplay](CharacterGameplay.md) — Per-character mechanics
 - [PuzzleDesign](PuzzleDesign.md) — Challenge types
 - [TeamMechanics](TeamMechanics.md) — Synergy systems
-- [Characters](../../03_Characters/) — Ability details
+- [Characters](../03_Characters/) — Ability details
 
 ---
 

@@ -46,7 +46,7 @@ Each character has established visual design in their dossier. This document con
 ---
 
 **Cross-References:**
-- [Character dossiers](../../03_Characters/) — Full Visual Design sections
+- [Character dossiers](../03_Characters/) — Full Visual Design sections
 - [ColorPalettes](ColorPalettes.md)
 
 ---

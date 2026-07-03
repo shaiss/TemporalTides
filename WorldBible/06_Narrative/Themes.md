@@ -102,7 +102,7 @@
 
 - [Philosophy](../01_UniverseFundamentals/05_Philosophy.md)
 - [StoryStructure](StoryStructure.md)
-- [Character dossiers](../../03_Characters/) — Story Function sections
+- [Character dossiers](../03_Characters/) — Story Function sections
 
 ---
 

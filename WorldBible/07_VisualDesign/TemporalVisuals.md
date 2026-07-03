@@ -68,7 +68,7 @@ Temporal effects must be visually distinct: players/viewers need to understand t
 
 **Cross-References:**
 - [Energy Systems](../01_UniverseFundamentals/03_EnergySystems.md)
-- [Character dossiers](../../03_Characters/) — Abilities sections
+- [Character dossiers](../03_Characters/) — Abilities sections
 
 ---
 

@@ -1852,7 +1852,7 @@ Metropolitan proves balance possible:
 - [Technology](../02_CivilizationalElements/02_Technology.md) - Moderate stabilization, sustainable tech
 
 **Characters:**
-- [All Team Members](../../03_Characters/Heroes/) - Positive relationship, comfortable visiting
+- [All Team Members](../03_Characters/Heroes/) - Positive relationship, comfortable visiting
 - [Dr. Volt](../03_Characters/Mentors/DrVolt.md) - University collaboration, recommended to Team
 
 **Other Locations:**
@@ -1864,7 +1864,7 @@ Metropolitan proves balance possible:
 **Factions:**
 - [The Team](../05_Factions/TheTeam.md) - Allied, supportive relationship
 - [Temporal Research Council](../05_Factions/TemporalResearchCouncil.md) - Cooperative tension
-- [Zone Independence Movement](../../05_Factions/ZoneIndependence.md) - Democratic model inspiration
+- [Zone Independence Movement](../05_Factions/ZoneIndependence.md) - Democratic model inspiration
 
 **Guidelines:**
 - [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Structured spectrum position

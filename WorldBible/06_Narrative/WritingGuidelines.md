@@ -108,7 +108,7 @@
 
 - [Narrative Structure Rules](../../.cursor/rules/narrative-structure.mdc) - Dialogue, pacing
 - [Themes](Themes.md) - Thematic consistency
-- [Character dossiers](../../03_Characters/) - Voice, personality
+- [Character dossiers](../03_Characters/) - Voice, personality
 
 ---
 

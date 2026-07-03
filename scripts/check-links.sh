@@ -20,6 +20,13 @@ while IFS= read -r file; do
       broken=$((broken+1))
     fi
   done < <(grep -o ']([^)]*\.md[^)]*)' "$file" | sed 's/^](//; s/)$//' | grep -v '^https\?:' | grep -v '^/')
+  # Also validate relative directory links: [text](path/)
+  while IFS= read -r link_path; do
+    if [ ! -d "$dir/$link_path" ]; then
+      echo "❌ Broken directory link in $file: $link_path"
+      broken=$((broken+1))
+    fi
+  done < <(grep -o '][(][^):]*/[)]' "$file" | sed 's/^](//; s/)$//' | grep -v '^/')
 done < <(find WorldBible -name "*.md" -type f)
 
 echo ""

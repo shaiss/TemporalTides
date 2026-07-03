@@ -50,8 +50,8 @@ Temporal Tides combines **cinematic realism** with **subtle fantastical elements
 ## Reference Materials
 
 - Character portraits: `/assets/character_portraits/`
-- [Character dossiers](../../03_Characters/) — Visual Design sections
-- [Locations](../../04_Locations/) — Environmental descriptions
+- [Character dossiers](../03_Characters/) — Visual Design sections
+- [Locations](../04_Locations/) — Environmental descriptions
 - [TemporalVisuals](TemporalVisuals.md) — Effect specifications
 
 ---
