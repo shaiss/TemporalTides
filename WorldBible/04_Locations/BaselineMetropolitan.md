@@ -1842,18 +1842,18 @@ Metropolitan proves balance possible:
 ## Cross-References
 
 **Universe Fundamentals:**
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Baseline stability, variance management
-- [The Nature of Time](../../01_UniverseFundamentals/01_NatureOfTime.md) - Time perception comfortable for all classes
-- [Philosophy](../../01_UniverseFundamentals/05_Philosophy.md) - Democratic temporal ethics
+- [Temporal Physics](../01_UniverseFundamentals/02_TemporalPhysics.md) - Baseline stability, variance management
+- [The Nature of Time](../01_UniverseFundamentals/01_NatureOfTime.md) - Time perception comfortable for all classes
+- [Philosophy](../01_UniverseFundamentals/05_Philosophy.md) - Democratic temporal ethics
 
 **Civilizational Elements:**
-- [Universal Timeline](../../02_CivilizationalElements/01_UniversalTimeline.md) - Founding, growth, Golden Valley refugees
-- [Cultural Framework](../../02_CivilizationalElements/03_CulturalFramework.md) - Structured community model
-- [Technology](../../02_CivilizationalElements/02_Technology.md) - Moderate stabilization, sustainable tech
+- [Universal Timeline](../02_CivilizationalElements/01_UniversalTimeline.md) - Founding, growth, Golden Valley refugees
+- [Cultural Framework](../02_CivilizationalElements/03_CulturalFramework.md) - Structured community model
+- [Technology](../02_CivilizationalElements/02_Technology.md) - Moderate stabilization, sustainable tech
 
 **Characters:**
-- [All Team Members](../../03_Characters/Heroes/) - Positive relationship, comfortable visiting
-- [Dr. Volt](../../03_Characters/Mentors/DrVolt.md) - University collaboration, recommended to Team
+- [All Team Members](../03_Characters/Heroes/) - Positive relationship, comfortable visiting
+- [Dr. Volt](../03_Characters/Mentors/DrVolt.md) - University collaboration, recommended to Team
 
 **Other Locations:**
 - [Chronopolis Central](ChronopolisCentral.md) - Sister city, governance contrast, friendly rivalry
@@ -1862,14 +1862,14 @@ Metropolitan proves balance possible:
 - [Artist Quarter Autonomous Zones](VelocityCity.md) - Cultural exchange, mutual learning
 
 **Factions:**
-- [The Team](../../05_Factions/TheTeam.md) - Allied, supportive relationship
-- [Temporal Research Council](../../05_Factions/TemporalResearchCouncil.md) - Cooperative tension
-- [Zone Independence Movement](../../05_Factions/ZoneIndependence.md) - Democratic model inspiration
+- [The Team](../05_Factions/TheTeam.md) - Allied, supportive relationship
+- [Temporal Research Council](../05_Factions/TemporalResearchCouncil.md) - Cooperative tension
+- [Zone Independence Movement](../05_Factions/ZoneIndependence.md) - Democratic model inspiration
 
 **Guidelines:**
-- [Location Development Guidelines](../../../.cursor/rules/locations-worldbuilding.mdc) - Structured spectrum position
-- [Narrative Structure](../../../.cursor/rules/narrative-structure.mdc) - Hope and balance themes
+- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Structured spectrum position
+- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Hope and balance themes
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

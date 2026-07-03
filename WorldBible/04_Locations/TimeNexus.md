@@ -2312,28 +2312,28 @@ The Nexus exists in micro-dimension, inaccessible through normal space travel. O
 ## Cross-References
 
 **Universe Fundamentals:**
-- [The Nature of Time](../../01_UniverseFundamentals/01_NatureOfTime.md) - Time perception classes, observer effects
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Zone classifications, RFR measurements, wormholes
-- [Energy Systems](../../01_UniverseFundamentals/03_EnergySystems.md) - Bioelectric fields, vibrational frequencies
-- [Cosmology](../../01_UniverseFundamentals/04_Cosmology.md) - Reality layers, multiverse structure
-- [Philosophy](../../01_UniverseFundamentals/05_Philosophy.md) - Temporal ethics, phenomenology
+- [The Nature of Time](../01_UniverseFundamentals/01_NatureOfTime.md) - Time perception classes, observer effects
+- [Temporal Physics](../01_UniverseFundamentals/02_TemporalPhysics.md) - Zone classifications, RFR measurements, wormholes
+- [Energy Systems](../01_UniverseFundamentals/03_EnergySystems.md) - Bioelectric fields, vibrational frequencies
+- [Cosmology](../01_UniverseFundamentals/04_Cosmology.md) - Reality layers, multiverse structure
+- [Philosophy](../01_UniverseFundamentals/05_Philosophy.md) - Temporal ethics, phenomenology
 
 **Civilizational Elements:**
-- [Universal Timeline](../../02_CivilizationalElements/01_UniversalTimeline.md) - Nexus discovery, major events
-- [Technology](../../02_CivilizationalElements/02_Technology.md) - Ancient artifacts, modern devices
-- [Cultural Framework](../../02_CivilizationalElements/03_CulturalFramework.md) - Societal values, neurodiversity acceptance
-- [Terminology](../../02_CivilizationalElements/04_Terminology.md) - Definitions and glossary
+- [Universal Timeline](../02_CivilizationalElements/01_UniversalTimeline.md) - Nexus discovery, major events
+- [Technology](../02_CivilizationalElements/02_Technology.md) - Ancient artifacts, modern devices
+- [Cultural Framework](../02_CivilizationalElements/03_CulturalFramework.md) - Societal values, neurodiversity acceptance
+- [Terminology](../02_CivilizationalElements/04_Terminology.md) - Definitions and glossary
 
 **Characters:**
-- [Vibrion](../../03_Characters/Heroes/Vibrion.md) - Team leader, Nexus as headquarters
-- [Leo](../../03_Characters/Heroes/Leo.md) - Researcher, Archives frequent visitor
-- [Anne](../../03_Characters/Heroes/Anne.md) - Strategic planner, training grounds user
-- [Maya](../../03_Characters/Heroes/Maya.md) - Pattern analyst, loves Nexus structure
-- [Eli](../../03_Characters/Heroes/Eli.md) - Rapid responder, training grounds energy outlet
-- [Dave](../../03_Characters/Heroes/Dave.md) - Empathic specialist, dilated chambers sanctuary
-- [Iris](../../03_Characters/Heroes/Iris.md) - Multi-layer perceiver, sees Nexus across reality
-- [Dr. Volt](../../03_Characters/Mentors/DrVolt.md) - Chief scientist, Quantum Laboratory
-- [Dr. Mental](../../03_Characters/Mentors/DrMental.md) - Therapist, Psycho-Temporal Clinic
+- [Vibrion](../03_Characters/Heroes/Vibrion.md) - Team leader, Nexus as headquarters
+- [Leo](../03_Characters/Heroes/Leo.md) - Researcher, Archives frequent visitor
+- [Anne](../03_Characters/Heroes/Anne.md) - Strategic planner, training grounds user
+- [Maya](../03_Characters/Heroes/Maya.md) - Pattern analyst, loves Nexus structure
+- [Eli](../03_Characters/Heroes/Eli.md) - Rapid responder, training grounds energy outlet
+- [Dave](../03_Characters/Heroes/Dave.md) - Empathic specialist, dilated chambers sanctuary
+- [Iris](../03_Characters/Heroes/Iris.md) - Multi-layer perceiver, sees Nexus across reality
+- [Dr. Volt](../03_Characters/Mentors/DrVolt.md) - Chief scientist, Quantum Laboratory
+- [Dr. Mental](../03_Characters/Mentors/DrMental.md) - Therapist, Psycho-Temporal Clinic
 
 **Other Locations:**
 - [Chronopolis Central](ChronopolisCentral.md) - Council stronghold, Council Portal connection
@@ -2342,15 +2342,15 @@ The Nexus exists in micro-dimension, inaccessible through normal space travel. O
 - [The Fractured Wastes](FracturedWastes.md) - Chaos zones, Nexus's opposite
 
 **Factions:**
-- [The Team](../../05_Factions/TheTeam.md) - Nexus as home base
-- [Temporal Research Council](../../05_Factions/TemporalResearchCouncil.md) - Adjacent headquarters, complex relationship
-- [Entropy Forces](../../05_Factions/EntropyForces.md) - Nexus as ultimate target
+- [The Team](../05_Factions/TheTeam.md) - Nexus as home base
+- [Temporal Research Council](../05_Factions/TemporalResearchCouncil.md) - Adjacent headquarters, complex relationship
+- [Entropy Forces](../05_Factions/EntropyForces.md) - Nexus as ultimate target
 
 **Guidelines:**
-- [Location Development Guidelines](../../../.cursor/rules/locations-worldbuilding.mdc) - Enhanced template used
-- [Character Development](../../../.cursor/rules/character-development.mdc) - Character connections
-- [Narrative Structure](../../../.cursor/rules/narrative-structure.mdc) - Story function and plot points
+- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Enhanced template used
+- [Character Development](../../.cursor/rules/character-development.mdc) - Character connections
+- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Story function and plot points
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

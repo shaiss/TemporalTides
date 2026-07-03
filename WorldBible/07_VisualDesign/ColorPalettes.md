@@ -148,9 +148,9 @@ Color is identity in Temporal Tides. Each character and temporal zone has a dist
 **Cross-References:**
 - [CharacterDesigns](CharacterDesigns.md)
 - [TemporalVisuals](TemporalVisuals.md)
-- [Character dossiers](../../03_Characters/) — Visual Design sections
-- [Locations](../../04_Locations/) — Environmental descriptions
+- [Character dossiers](../03_Characters/) — Visual Design sections
+- [Locations](../04_Locations/) — Environmental descriptions
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

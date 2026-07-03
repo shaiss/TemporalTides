@@ -115,8 +115,8 @@ Each character plays differently. Switching characters is not cosmetic — it fu
 - [CoreLoop](CoreLoop.md) — Primary loop
 - [PuzzleDesign](PuzzleDesign.md) — Challenge specifications
 - [TeamMechanics](TeamMechanics.md) — Synergies
-- [Character dossiers](../../03_Characters/) — Full ability details
+- [Character dossiers](../03_Characters/) — Full ability details
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

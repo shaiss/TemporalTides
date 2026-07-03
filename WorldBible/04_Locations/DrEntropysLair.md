@@ -1783,25 +1783,25 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 ## Cross-References
 
 **Universe Fundamentals:**
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Chaos mechanics, entropy, anomalies
-- [Energy Systems](../../01_UniverseFundamentals/03_EnergySystems.md) - Chronos Catalyst, bioelectric manipulation
-- [Cosmology](../../01_UniverseFundamentals/04_Cosmology.md) - Reality layers, timeline fractures
-- [Philosophy](../../01_UniverseFundamentals/05_Philosophy.md) - Entropy ideology, temporal ethics
+- [Temporal Physics](../01_UniverseFundamentals/02_TemporalPhysics.md) - Chaos mechanics, entropy, anomalies
+- [Energy Systems](../01_UniverseFundamentals/03_EnergySystems.md) - Chronos Catalyst, bioelectric manipulation
+- [Cosmology](../01_UniverseFundamentals/04_Cosmology.md) - Reality layers, timeline fractures
+- [Philosophy](../01_UniverseFundamentals/05_Philosophy.md) - Entropy ideology, temporal ethics
 
 **Civilizational Elements:**
-- [Universal Timeline](../../02_CivilizationalElements/01_UniversalTimeline.md) - Lair establishment, confrontations
-- [Technology](../../02_CivilizationalElements/02_Technology.md) - Chronos Catalyst, stabilizers
-- [Cultural Framework](../../02_CivilizationalElements/03_CulturalFramework.md) - Chaos extreme, anti-governance
+- [Universal Timeline](../02_CivilizationalElements/01_UniversalTimeline.md) - Lair establishment, confrontations
+- [Technology](../02_CivilizationalElements/02_Technology.md) - Chronos Catalyst, stabilizers
+- [Cultural Framework](../02_CivilizationalElements/03_CulturalFramework.md) - Chaos extreme, anti-governance
 
 **Characters:**
-- [Dr. Entropy](../../03_Characters/Antagonists/DrEntropy.md) - Creator, ideology, confrontation
-- [Enigma Volt](../../03_Characters/Antagonists/EnigmaVolt.md) - Lieutenant, defender
-- [Vibrion](../../03_Characters/Heroes/Vibrion.md) - Final confrontation, Catalyst disabling
-- [Anne](../../03_Characters/Heroes/Anne.md) - Character breakthrough, worst environment
-- [Iris](../../03_Characters/Heroes/Iris.md) - Navigation essential, validation
-- [Leo](../../03_Characters/Heroes/Leo.md) - Pattern recognition, critical insight
-- [Maya](../../03_Characters/Heroes/Maya.md) - Catalyst rhythm discovery
-- [Dr. Volt](../../03_Characters/Mentors/DrVolt.md) - Former colleague, intelligence provider
+- [Dr. Entropy](../03_Characters/Antagonists/DrEntropy.md) - Creator, ideology, confrontation
+- [Enigma Volt](../03_Characters/Antagonists/EnigmaVolt.md) - Lieutenant, defender
+- [Vibrion](../03_Characters/Heroes/Vibrion.md) - Final confrontation, Catalyst disabling
+- [Anne](../03_Characters/Heroes/Anne.md) - Character breakthrough, worst environment
+- [Iris](../03_Characters/Heroes/Iris.md) - Navigation essential, validation
+- [Leo](../03_Characters/Heroes/Leo.md) - Pattern recognition, critical insight
+- [Maya](../03_Characters/Heroes/Maya.md) - Catalyst rhythm discovery
+- [Dr. Volt](../03_Characters/Mentors/DrVolt.md) - Former colleague, intelligence provider
 
 **Other Locations:**
 - [Chronopolis Central](ChronopolisCentral.md) - Ideological opposite (Order vs. Chaos)
@@ -1809,14 +1809,14 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 - [Fractured Wastes](FracturedWastes.md) - Natural chaos zones (related environment)
 
 **Factions:**
-- [Entropy Forces](../../05_Factions/EntropyForces.md) - Organization, ideology
-- [The Team](../../05_Factions/TheTeam.md) - Final mission, confrontation
-- [Temporal Research Council](../../05_Factions/TemporalResearchCouncil.md) - Opposition, historical conflict
+- [Entropy Forces](../05_Factions/EntropyForces.md) - Organization, ideology
+- [The Team](../05_Factions/TheTeam.md) - Final mission, confrontation
+- [Temporal Research Council](../05_Factions/TemporalResearchCouncil.md) - Opposition, historical conflict
 
 **Guidelines:**
-- [Location Development Guidelines](../../../.cursor/rules/locations-worldbuilding.mdc) - Chaos spectrum extreme
-- [Narrative Structure](../../../.cursor/rules/narrative-structure.mdc) - Climax location, thematic resolution
+- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Chaos spectrum extreme
+- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Climax location, thematic resolution
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

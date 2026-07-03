@@ -145,8 +145,8 @@ Time has sound. Different temporal zones, distortions, and abilities produce dis
 **Cross-References:**
 - [CharacterThemes](CharacterThemes.md) — Musical motifs
 - [MusicDirection](MusicDirection.md) — Overall direction
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) — Zone mechanics
+- [Temporal Physics](../01_UniverseFundamentals/02_TemporalPhysics.md) — Zone mechanics
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

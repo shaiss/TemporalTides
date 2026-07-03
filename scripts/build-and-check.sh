@@ -15,7 +15,7 @@ if [ $? -eq 0 ]; then
   # Check build size
   echo ""
   echo "📊 Build size:"
-  du -sh docs/.vitepress/dist
+  du -sh .vitepress/dist
   
   echo ""
   echo "💡 You can preview the built site with: npm run docs:preview"

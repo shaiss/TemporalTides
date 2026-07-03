@@ -118,8 +118,8 @@ Team mechanics translate the narrative theme — neurodiversity as strength — 
 - [CoreLoop](CoreLoop.md) — Primary loop
 - [CharacterGameplay](CharacterGameplay.md) — Individual abilities
 - [PuzzleDesign](PuzzleDesign.md) — Multi-character puzzles
-- [Character dossiers](../../03_Characters/) — Relationships sections
+- [Character dossiers](../03_Characters/) — Relationships sections
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*
