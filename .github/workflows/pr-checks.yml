@@ -1,0 +1,197 @@
+# PR checks for Temporal Tides: build, banned-terms, and Claude editorial review.
+#
+# Three independent jobs run on every PR to `main`:
+#   build        — VitePress build (the repo's de-facto test suite)
+#   banned-terms — deterministic grep for §9.12 prohibited temporal phrases
+#   claude-judge — semantic editorial review via anthropics/claude-code-action
+#
+# SETUP (one-time, repo admin required):
+#   1. Provide an Anthropic credential. Two options:
+#      a. GitHub App (recommended): run `claude /install-github-app` from a
+#         terminal. Installs the Claude app (reviews post as `claude[bot]`) and
+#         creates the ANTHROPIC_API_KEY secret in one flow.
+#      b. API key only: Settings → Secrets and variables → Actions → New
+#         repository secret → ANTHROPIC_API_KEY. Reviews post as
+#         `github-actions[bot]`.
+#   2. Branch protection (Settings → Branches → main → Require status checks):
+#      require `build`, `banned-terms`, and `claude-judge`.
+#
+# The claude-judge job blocks merge when it reports a hard-rule violation
+# (severity "block"). To make it advisory-only instead, delete the final
+# `enforce-block` step — the review/inline comments will still post.
+name: PR checks
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, ready_for_review, reopened]
+  workflow_dispatch: {} # manual run for debugging
+
+# Each job uses its own minimal token scope; the write on pull-requests is so
+# the Claude action can post PR reviews and inline comments.
+permissions:
+  contents: read
+  pull-requests: write
+  id-token: write # required by claude-code-action
+
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  # Build gate — VitePress build must succeed.
+  build:
+    name: Build (docs:build)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build with VitePress
+        run: npm run docs:build
+
+  # Banned-terms gate — deterministic grep over §9.12 prohibited phrases.
+  banned-terms:
+    name: Banned terms (§9.12)
+    runs-on: ubuntu-latest
+    env:
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # need both base and head SHAs for the diff
+
+      - name: Check added prose for §9.12 banned terms
+        run: bash scripts/banned-terms.sh
+
+  # Semantic editorial gate — Claude reviews added prose against the rubric.
+  # Only runs when prose changes, to avoid API cost on non-content PRs.
+  claude-judge:
+    name: Editorial review (Claude)
+    runs-on: ubuntu-latest
+    # Skip the (costly) LLM judge on draft PRs; it'll run once marked ready.
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect prose changes
+        id: prose
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            prose:
+              - '**/*.md'
+              - '**/*.mdc'
+
+      - name: Run Claude editorial review
+        id: judge
+        if: steps.prose.outputs.prose == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # No @claude trigger needed — the prompt itself is the task.
+          prompt: |
+            You are the editorial reviewer for the Temporal Tides World Bible —
+            a creative-writing project that reframes mental-health conditions as
+            superpowers, set in a world of subjective time. Review the prose
+            ADDED in this pull request (added/modified lines only — do not flag
+            pre-existing content) against the rules below.
+
+            READ THESE FILES FROM THE REPO FOR THE AUTHORITATIVE RULES:
+              - WorldBible/06_Narrative/WritingGuidelines.md
+                  (the "Restrictions (Never Do)" block; the per-condition
+                  Show/Avoid table; POV rules)
+              - WorldBible/02_CivilizationalElements/04_Terminology.md §9.9
+                  (mental-health "Terms to Avoid" — CONTEXTUAL, judge per usage)
+
+            BLOCKING RULES (set a violation's severity to "block" for ANY of
+            these — they are the "Never Do" list):
+              - Mental health used for shock value (e.g. a sudden "crazy" reveal)
+              - Cure narratives (characters grow WITH conditions, not past them)
+              - Inspiration porn (neurodivergent people existing to inspire
+                neurotypicals)
+              - Savior complexes (a neurotypical character "fixing"/"saving" a
+                neurodivergent one)
+              - Violent mental-health stereotypes (mental illness ≠ danger)
+              - Suffering Olympics (ranking conditions or implying some are worse)
+              - Simplistic solutions (complex challenges with easy fixes)
+              - Tokenization (characters as representation checklist items)
+
+            §9.9 CONTEXTUAL LANGUAGE — judge per usage, not blindly:
+              "suffering from", "afflicted with", "victim of" are ONLY violations
+              when used to DEFINE a character by their condition. §9.9 explicitly
+              permits "suffering from" when a character is genuinely suffering.
+              Do not flag legitimate clinical/emotional usage.
+
+            NOTE SEVERITY (mention, but do NOT set block):
+              - Per-condition Show/Avoid guidance from WritingGuidelines.md
+              - POV drift from third-person limited, or in-scene head-hopping
+
+            DO NOT RE-FLAG the §9.12 temporal phrases ("time travel", "time
+            machine", "going back in time") — a separate deterministic check
+            already covers them. Skip them to avoid duplicate noise.
+
+            Post an inline comment (via mcp__github_inline_comment__*) on each
+            specific violation line you can locate, with the rule and a concrete
+            suggested fix. Then return your structured JSON verdict.
+          # Restrict tools to read-only + the GitHub review MCP; forbid edits.
+          claude_args: >-
+            --model claude-sonnet-4-5
+            --allowedTools "Read,mcp__github_inline_comment__create_inline_comment,Bash(git diff:*)"
+            --output-format json
+            --json-schema '{"type":"object","properties":{"block":{"type":"boolean","description":"true iff any blocking (Never Do) violation was found"},"summary":{"type":"string"},"violations":{"type":"array","items":{"type":"object","properties":{"rule":{"type":"string"},"location":{"type":"string"},"severity":{"type":"string","enum":["block","note"]},"suggestion":{"type":"string"}}}}},"required":["block","summary","violations"]}'
+
+      # Blocking gate: fail the job iff Claude found a "Never Do" violation.
+      # Delete this step to make the judge advisory-only.
+      #
+      # NOTE: do NOT use fromJSON() in `env:` here. GitHub Actions evaluates
+      # `env:` template expressions while building the job graph, BEFORE the
+      # `if:` condition gates the step — so fromJSON('') on an empty
+      # structured_output (e.g. when the judge step was skipped) throws a
+      # template error and fails the job. Parse the JSON in-shell instead.
+      - name: Enforce block on hard violations
+        id: enforce-block
+        if: steps.prose.outputs.prose == 'true'
+        env:
+          STRUCTURED_OUTPUT: ${{ steps.judge.outputs.structured_output }}
+        run: |
+          # If the judge didn't run or produced no structured output, pass.
+          if [ -z "$STRUCTURED_OUTPUT" ]; then
+            echo "ℹ️  No structured judge output (skipped or no API key). Passing."
+            exit 0
+          fi
+          # Parse with python (preinstalled on ubuntu-latest); tolerant of the
+          # JSON the action emits. Two separate calls avoid multiline-summary issues.
+          BLOCK="$(printf '%s' "$STRUCTURED_OUTPUT" | python3 -c 'import json,sys
+          try:
+              print(str(json.load(sys.stdin).get("block", False)).lower())
+          except Exception:
+              print("false")')"
+          SUMMARY="$(printf '%s' "$STRUCTURED_OUTPUT" | python3 -c 'import json,sys
+          try:
+              print((json.load(sys.stdin).get("summary") or "<none>").replace("\n"," "))
+          except Exception as e:
+              print("parse-error: %s" % e)')"
+          echo "Claude summary: $SUMMARY"
+          if [ "$BLOCK" = "true" ]; then
+            echo "::error::Claude editorial review flagged blocking violation(s). See the PR review for details."
+            echo "::error::To make this check advisory-only, delete the 'Enforce block' step in .github/workflows/pr-checks.yml."
+            exit 1
+          fi
+          echo "✅ No blocking editorial violations."
