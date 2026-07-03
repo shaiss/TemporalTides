@@ -33,7 +33,7 @@ repo root** — there is no content sync step. Key details are configured in
 [`.vitepress/config.js`](.vitepress/config.js):
 
 - `srcDir` is `./`, so Markdown anywhere in the repo can become a page.
-- `srcExclude` keeps internal-only directories (`deprecated/`, `scripts/`, `docs/superpowers/`,
+- `srcExclude` keeps internal-only directories (`deprecated/`, `scripts/`, `docs/`,
   `AGENTS.md`, `CLAUDE.md`, etc.) out of the public site.
 - The **sidebar is maintained by hand** — a new page won't appear in navigation until you
   add a sidebar entry in `config.js`.
