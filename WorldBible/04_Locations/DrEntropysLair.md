@@ -1126,7 +1126,7 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 ### Notable Figures
 
 **Dr. Entropy (Primary Antagonist):**
-- **Real Name:** [Unknown, rejected identity]
+- **Real Name:** Marcus Theron (birth name; rejected)
 - **Age:** Appears 50s (actual unknown, temporal effects)
 - **Background:** Former Temporal Research Council scientist, radicalized
 - **Ideology:** Entropy increases evolution, order causes death

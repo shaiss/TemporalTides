@@ -116,7 +116,6 @@ All dates referenced relative to establishment of the Chronometric Baseline at t
 **322 AC:**
 - Maya born (20 years ago)
 - Dr. Mental establishes practice specializing in neuro-temporal psychology
-- Begins documenting neuro-temporal abilities systematically
 
 **323 AC:**
 - Eli born (19 years ago)
@@ -131,6 +130,9 @@ All dates referenced relative to establishment of the Chronometric Baseline at t
 - Vibrion's transformation by lightning strike
 - Development of his vibrational manipulation abilities
 - First contact with Dr. Volt (begins mentorship)
+
+**327 AC:**
+- Dr. Mental begins documenting neuro-temporal abilities systematically
 
 **328 AC:**
 - Dr. Entropy begins research into controlled entropy increase
