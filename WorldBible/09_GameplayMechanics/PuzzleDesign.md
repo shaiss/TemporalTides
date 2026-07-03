@@ -104,4 +104,4 @@ Puzzles in Temporal Tides are rooted in temporal mechanics and character abiliti
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

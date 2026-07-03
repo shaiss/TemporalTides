@@ -353,11 +353,11 @@ Visitors from baseline or dilated zones describe *temporal overload* — or exhi
 ---
 
 **Cross-References:**
-- [Eli Carter](../../03_Characters/Heroes/Eli.md) - Origin; primary connection
-- [Anne Parker](../../03_Characters/Heroes/Anne.md) - Refuge; growth
+- [Eli Carter](../03_Characters/Heroes/Eli.md) - Origin; primary connection
+- [Anne Parker](../03_Characters/Heroes/Anne.md) - Refuge; growth
 - [Contemplative Sanctuaries](ContemplativeSanctuaries.md) - Thematic opposite
 - [The Interchange](TheInterchange.md) - Fast Market; Eli's recruitment
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Accelerated zone mechanics
+- [Temporal Physics](../01_UniverseFundamentals/02_TemporalPhysics.md) - Accelerated zone mechanics
 
 ---
 

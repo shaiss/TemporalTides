@@ -2107,25 +2107,25 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 ## Cross-References
 
 **Universe Fundamentals:**
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Gradient mechanics, RFR measurements
-- [The Nature of Time](../../01_UniverseFundamentals/01_NatureOfTime.md) - Time perception classes
-- [Energy Systems](../../01_UniverseFundamentals/03_EnergySystems.md) - Stabilization arrays technology
+- [Temporal Physics](../01_UniverseFundamentals/02_TemporalPhysics.md) - Gradient mechanics, RFR measurements
+- [The Nature of Time](../01_UniverseFundamentals/01_NatureOfTime.md) - Time perception classes
+- [Energy Systems](../01_UniverseFundamentals/03_EnergySystems.md) - Stabilization arrays technology
 
 **Civilizational Elements:**
-- [Technology](../../02_CivilizationalElements/02_Technology.md) - Gradient stabilization, chronometric devices
-- [Cultural Framework](../../02_CivilizationalElements/03_CulturalFramework.md) - Economic systems, trade norms
-- [Terminology](../../02_CivilizationalElements/04_Terminology.md) - Chronometric standardization, RFR
-- [Universal Timeline](../../02_CivilizationalElements/01_UniversalTimeline.md) - Construction era (280-330 AC)
+- [Technology](../02_CivilizationalElements/02_Technology.md) - Gradient stabilization, chronometric devices
+- [Cultural Framework](../02_CivilizationalElements/03_CulturalFramework.md) - Economic systems, trade norms
+- [Terminology](../02_CivilizationalElements/04_Terminology.md) - Chronometric standardization, RFR
+- [Universal Timeline](../02_CivilizationalElements/01_UniversalTimeline.md) - Construction era (280-330 AC)
 
 **Characters:**
-- [Eli](../../03_Characters/Heroes/Eli.md) - Former navigator, strongest connection
-- [Vibrion](../../03_Characters/Heroes/Vibrion.md) - Regular customer, recruited Eli here
-- [Anne](../../03_Characters/Heroes/Anne.md) - Strategic planner, market intelligence
-- [Maya](../../03_Characters/Heroes/Maya.md) - Pattern analyst, economic rhythms
-- [Leo](../../03_Characters/Heroes/Leo.md) - Economic systems analyst
-- [Dave](../../03_Characters/Heroes/Dave.md) - Empathic intelligence gathering
-- [Iris](../../03_Characters/Heroes/Iris.md) - Multi-layer economic perception
-- [Dr. Volt](../../03_Characters/Mentors/DrVolt.md) - Stabilization technology inventor
+- [Eli](../03_Characters/Heroes/Eli.md) - Former navigator, strongest connection
+- [Vibrion](../03_Characters/Heroes/Vibrion.md) - Regular customer, recruited Eli here
+- [Anne](../03_Characters/Heroes/Anne.md) - Strategic planner, market intelligence
+- [Maya](../03_Characters/Heroes/Maya.md) - Pattern analyst, economic rhythms
+- [Leo](../03_Characters/Heroes/Leo.md) - Economic systems analyst
+- [Dave](../03_Characters/Heroes/Dave.md) - Empathic intelligence gathering
+- [Iris](../03_Characters/Heroes/Iris.md) - Multi-layer economic perception
+- [Dr. Volt](../03_Characters/Mentors/DrVolt.md) - Stabilization technology inventor
 
 **Other Locations:**
 - [The Time Nexus](TimeNexus.md) - Complementary hub, scientific/spiritual center
@@ -2134,15 +2134,15 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 - [Silent Hollow](SilentHollow.md) - Slow Market connections, Dave's origin
 
 **Factions:**
-- [The Team](../../05_Factions/TheTeam.md) - Regular visitors, Eli's background
-- [Temporal Research Council](../../05_Factions/TemporalResearchCouncil.md) - Regulatory relationship
-- [Entropy Forces](../../05_Factions/EntropyForces.md) - Economic attack target
+- [The Team](../05_Factions/TheTeam.md) - Regular visitors, Eli's background
+- [Temporal Research Council](../05_Factions/TemporalResearchCouncil.md) - Regulatory relationship
+- [Entropy Forces](../05_Factions/EntropyForces.md) - Economic attack target
 
 **Guidelines:**
-- [Location Development Guidelines](../../../.cursor/rules/locations-worldbuilding.mdc) - AC-inspired economic models
-- [Narrative Structure](../../../.cursor/rules/narrative-structure.mdc) - Plot integration
+- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - AC-inspired economic models
+- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Plot integration
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*
 

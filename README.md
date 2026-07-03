@@ -14,7 +14,7 @@ npm run docs:dev
 
 **Then visit**: http://localhost:5173
 
-📚 **[Read Setup Guide →](VITEPRESS_SETUP.md)** | 🎯 **[Quick Start →](QUICK_START.md)** | ✅ **[Test Report →](VITEPRESS_TEST_REPORT.md)**
+📚 **[Read Setup Guide →](docs/reports/VITEPRESS_SETUP.md)** | 🎯 **[Quick Start →](QUICK_START.md)** | ✅ **[Test Report →](docs/reports/VITEPRESS_TEST_REPORT.md)**
 
 ---
 
@@ -24,7 +24,7 @@ Temporal Tides is a comprehensive world bible for a future game/narrative experi
 
 **Version:** 1.0  
 **Status:** Active Development  
-**Last Updated:** February 22, 2026  
+**Last Updated:** July 3, 2026  
 **Documentation:** VitePress (54 pages, searchable, mobile-friendly)
 
 ---
@@ -91,17 +91,19 @@ TemporalTides/
 │   ├── terminology-consistency.mdc
 │   └── narrative-structure.mdc
 │
-├── assets/
-│   └── character_portraits/             # Character visual references
-│       ├── Vibrion.jpg
-│       ├── Leo_Thompson.jpg
-│       ├── Anne_Parker.jpg
-│       ├── Maya_Johnson.jpg
-│       ├── Eli_Carter.jpg
-│       ├── Dave_Miller.jpg
-│       ├── Iris_Green.jpg
-│       ├── Dr._Volt.jpg
-│       └── Dr._Mental.jpg
+├── .vitepress/                          # VitePress site config & theme
+│
+├── public/
+│   └── assets/
+│       └── character_portraits/         # Character visual references (10 images)
+│
+├── References/                          # External reference material
+│
+├── docs/
+│   ├── reports/                         # Historical setup & editorial reports
+│   └── superpowers/                     # Design specs & implementation plans
+│
+├── scripts/                             # Helper scripts (launcher, build check, link check)
 │
 └── deprecated/                          # Previous versions (reference only)
     ├── Temporal Tides 8cc8159a047d485ca20450e426f88bb8.md
@@ -368,7 +370,7 @@ More than entertainment, this is an exploration of consciousness, time, and the 
 
 - **Start Here:** [WorldBible/00_INDEX.md](WorldBible/00_INDEX.md)
 - **Development Status:** [WorldBible/_MIGRATION_STATUS.md](WorldBible/_MIGRATION_STATUS.md)
-- **Character Portraits:** [assets/character_portraits/](assets/character_portraits/)
+- **Character Portraits:** [public/assets/character_portraits/](public/assets/character_portraits/)
 - **Development Rules:** [.cursor/rules/](.cursor/rules/)
 
 ---

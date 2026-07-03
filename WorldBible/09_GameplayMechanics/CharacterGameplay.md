@@ -119,4 +119,4 @@ Each character plays differently. Switching characters is not cosmetic — it fu
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

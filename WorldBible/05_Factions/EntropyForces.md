@@ -146,11 +146,11 @@
 ---
 
 **Cross-References:**
-- [Dr. Entropy](../../03_Characters/Antagonists/DrEntropy.md) - Leader
-- [Enigma Volt](../../03_Characters/Antagonists/EnigmaVolt.md) - Field commander
-- [Dr. Entropy's Lair](../../04_Locations/DrEntropysLair.md) - Headquarters
+- [Dr. Entropy](../03_Characters/Antagonists/DrEntropy.md) - Leader
+- [Enigma Volt](../03_Characters/Antagonists/EnigmaVolt.md) - Field commander
+- [Dr. Entropy's Lair](../04_Locations/DrEntropysLair.md) - Headquarters
 - [The Team](TheTeam.md) - Primary opposition
-- [Chronos Catalyst](../../02_CivilizationalElements/02_Technology.md) - Primary weapon
+- [Chronos Catalyst](../02_CivilizationalElements/02_Technology.md) - Primary weapon
 
 ---
 

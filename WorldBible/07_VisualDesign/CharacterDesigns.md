@@ -51,4 +51,4 @@ Each character has established visual design in their dossier. This document con
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

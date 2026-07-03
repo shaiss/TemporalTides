@@ -112,4 +112,4 @@ Explore Zone → Encounter Challenge → Switch Character → Solve/Fight → Pr
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

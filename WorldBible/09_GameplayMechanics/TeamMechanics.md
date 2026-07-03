@@ -122,4 +122,4 @@ Team mechanics translate the narrative theme — neurodiversity as strength — 
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

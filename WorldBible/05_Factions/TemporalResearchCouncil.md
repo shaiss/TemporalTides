@@ -155,11 +155,11 @@
 ---
 
 **Cross-References:**
-- [Chronopolis Central](../../04_Locations/ChronopolisCentral.md) - Headquarters
+- [Chronopolis Central](../04_Locations/ChronopolisCentral.md) - Headquarters
 - [The Team](TheTeam.md) - Uneasy alliance
-- [Dr. Entropy](../../03_Characters/Antagonists/DrEntropy.md) - Primary threat
-- [Dr. Volt](../../03_Characters/Mentors/DrVolt.md) - Former employee
-- [Anne Parker](../../03_Characters/Heroes/Anne.md) - Origin; fled
+- [Dr. Entropy](../03_Characters/Antagonists/DrEntropy.md) - Primary threat
+- [Dr. Volt](../03_Characters/Mentors/DrVolt.md) - Former employee
+- [Anne Parker](../03_Characters/Heroes/Anne.md) - Origin; fled
 
 ---
 

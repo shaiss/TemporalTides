@@ -153,4 +153,4 @@ Color is identity in Temporal Tides. Each character and temporal zone has a dist
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

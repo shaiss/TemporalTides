@@ -127,4 +127,4 @@ Each character has a musical motif reflecting their personality, condition, and 
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

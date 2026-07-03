@@ -115,8 +115,8 @@ When controlling/following a character, their motif leads:
 **Cross-References:**
 - [CharacterThemes](CharacterThemes.md) — Per-character motifs
 - [TemporalSoundscape](TemporalSoundscape.md) — Environmental audio
-- [StoryStructure](../../06_Narrative/StoryStructure.md) — Narrative beats
+- [StoryStructure](../06_Narrative/StoryStructure.md) — Narrative beats
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

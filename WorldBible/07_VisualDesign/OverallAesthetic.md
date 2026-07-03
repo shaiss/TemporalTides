@@ -63,4 +63,4 @@ Temporal Tides combines **cinematic realism** with **subtle fantastical elements
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

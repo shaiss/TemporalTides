@@ -90,8 +90,8 @@ Before finalizing any world bible entry, verify:
 
 ## Key Documents to Reference
 
-- [Temporal Tides 8cc8159a047d485ca20450e426f88bb8.md](mdc:Temporal Tides 8cc8159a047d485ca20450e426f88bb8.md) - Main overview and character profiles
-- [World Bible 3 — Most complete b03cb096fcdb407f873d55f0723c8190.md](mdc:World Bible 3 — Most complete b03cb096fcdb407f873d55f0723c8190.md) - Current most complete world bible
+- [WorldBible/00_INDEX.md](mdc:WorldBible/00_INDEX.md) - Master navigation for `WorldBible/`, the single source of truth
+- Superseded compilations (original overview, World Bible 1–4) live in `deprecated/` — historical reference only, never canon
 
 ## Expansion Philosophy
 
