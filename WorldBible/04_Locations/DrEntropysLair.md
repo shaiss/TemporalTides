@@ -16,7 +16,7 @@ Dr. Entropy's Lair stands as the **antithesis of Chronopolis Central** and repre
 - **Chronos Catalyst Location:** Houses the universe's greatest temporal threat
 - **Final Confrontation Site:** Where Team will face ultimate challenge
 - **Chaos Laboratory:** Experimenting with controlled entropy increase
-- **Symbol of Opposition:** Everything the Temporal Council fears
+- **Symbol of Opposition:** Everything the Temporal Research Council fears
 - **Existential Question:** Is this place horrifying nightmare or philosophical truth?
 
 **Strategic Position:**
@@ -28,7 +28,7 @@ The Lair isn't just villain's hideout - it's **proof of concept** for Dr. Entrop
 **Dr. Entropy's Argument (Manifest Here):**
 - Perfect order is death (heat death of universe)
 - Change requires disorder (evolution through chaos)
-- Temporal Council oppresses through control
+- Temporal Research Council oppresses through control
 - Chaos liberates from stagnation
 - Entropy increase is natural, healthy, necessary
 
@@ -603,7 +603,7 @@ The Lair occupies the **CHAOS** extreme, opposite Chronopolis's ORDER:
 **Core Beliefs:**
 - "Perfect order is death" (heat death of universe proves)
 - "Change requires chaos" (evolution through disorder)
-- "Control oppresses" (Temporal Council is tyranny)
+- "Control oppresses" (Temporal Research Council is tyranny)
 - "Entropy liberates" (freedom from structure)
 - "Adaptation strengthens" (survival through trial)
 
@@ -819,8 +819,6 @@ This isn't decentralized governance (which AC explored). This is **rejection of 
 
 ---
 
-*[Continuing sections 5-11 in next write to manage file size...]*
-
 ## 5. Daily Life (Average Day)
 
 ### There Is No "Average Day" (By Design)
@@ -956,7 +954,7 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 - Accidental arrivals (wormhole accidents)
 - Can't escape (lost, confused, dissolving)
 - Dr. Entropy allows departure (if they ask and he notices)
-- Some past救助: Team's goal includes rescuing these
+- Some are still trapped: the Team's goal includes rescuing these
 
 **Origin Breakdown:**
 - Chronopolis refugees: 30% (fleeing oppression)
@@ -1128,9 +1126,9 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 ### Notable Figures
 
 **Dr. Entropy (Primary Antagonist):**
-- **Real Name:** [Unknown, rejected identity]
+- **Real Name:** Marcus Theron (birth name; rejected)
 - **Age:** Appears 50s (actual unknown, temporal effects)
-- **Background:** Former Temporal Council scientist, radicalized
+- **Background:** Former Temporal Research Council scientist, radicalized
 - **Ideology:** Entropy increases evolution, order causes death
 - **Motivation:** Genuinely believes he's saving universe (from itself)
 - **Personality:** Brilliant, charismatic, isolated, zealous
@@ -1146,7 +1144,7 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 - **Team Threat:** Can disable their communication, disrupt abilities
 - **Redemption Possible:** Maybe (not pure evil, just extreme)
 
-**[3-5 Inner Circle Members, Named]:**
+**Inner Circle Members:**
 
 **Fracture (Temporal Navigator):**
 - Survived longest besides Entropy (8 years)
@@ -1783,25 +1781,25 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 ## Cross-References
 
 **Universe Fundamentals:**
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Chaos mechanics, entropy, anomalies
-- [Energy Systems](../../01_UniverseFundamentals/03_EnergySystems.md) - Chronos Catalyst, bioelectric manipulation
-- [Cosmology](../../01_UniverseFundamentals/04_Cosmology.md) - Reality layers, timeline fractures
-- [Philosophy](../../01_UniverseFundamentals/05_Philosophy.md) - Entropy ideology, temporal ethics
+- [Temporal Physics](../01_UniverseFundamentals/02_TemporalPhysics.md) - Chaos mechanics, entropy, anomalies
+- [Energy Systems](../01_UniverseFundamentals/03_EnergySystems.md) - Chronos Catalyst, bioelectric manipulation
+- [Cosmology](../01_UniverseFundamentals/04_Cosmology.md) - Reality layers, timeline fractures
+- [Philosophy](../01_UniverseFundamentals/05_Philosophy.md) - Entropy ideology, temporal ethics
 
 **Civilizational Elements:**
-- [Universal Timeline](../../02_CivilizationalElements/01_UniversalTimeline.md) - Lair establishment, confrontations
-- [Technology](../../02_CivilizationalElements/02_Technology.md) - Chronos Catalyst, stabilizers
-- [Cultural Framework](../../02_CivilizationalElements/03_CulturalFramework.md) - Chaos extreme, anti-governance
+- [Universal Timeline](../02_CivilizationalElements/01_UniversalTimeline.md) - Lair establishment, confrontations
+- [Technology](../02_CivilizationalElements/02_Technology.md) - Chronos Catalyst, stabilizers
+- [Cultural Framework](../02_CivilizationalElements/03_CulturalFramework.md) - Chaos extreme, anti-governance
 
 **Characters:**
-- [Dr. Entropy](../../03_Characters/Antagonists/DrEntropy.md) - Creator, ideology, confrontation
-- [Enigma Volt](../../03_Characters/Antagonists/EnigmaVolt.md) - Lieutenant, defender
-- [Vibrion](../../03_Characters/Heroes/Vibrion.md) - Final confrontation, Catalyst disabling
-- [Anne](../../03_Characters/Heroes/Anne.md) - Character breakthrough, worst environment
-- [Iris](../../03_Characters/Heroes/Iris.md) - Navigation essential, validation
-- [Leo](../../03_Characters/Heroes/Leo.md) - Pattern recognition, critical insight
-- [Maya](../../03_Characters/Heroes/Maya.md) - Catalyst rhythm discovery
-- [Dr. Volt](../../03_Characters/Mentors/DrVolt.md) - Former colleague, intelligence provider
+- [Dr. Entropy](../03_Characters/Antagonists/DrEntropy.md) - Creator, ideology, confrontation
+- [Enigma Volt](../03_Characters/Antagonists/EnigmaVolt.md) - Lieutenant, defender
+- [Vibrion](../03_Characters/Heroes/Vibrion.md) - Final confrontation, Catalyst disabling
+- [Anne](../03_Characters/Heroes/Anne.md) - Character breakthrough, worst environment
+- [Iris](../03_Characters/Heroes/Iris.md) - Navigation essential, validation
+- [Leo](../03_Characters/Heroes/Leo.md) - Pattern recognition, critical insight
+- [Maya](../03_Characters/Heroes/Maya.md) - Catalyst rhythm discovery
+- [Dr. Volt](../03_Characters/Mentors/DrVolt.md) - Former colleague, intelligence provider
 
 **Other Locations:**
 - [Chronopolis Central](ChronopolisCentral.md) - Ideological opposite (Order vs. Chaos)
@@ -1809,14 +1807,14 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 - [Fractured Wastes](FracturedWastes.md) - Natural chaos zones (related environment)
 
 **Factions:**
-- [Entropy Forces](../../05_Factions/EntropyForces.md) - Organization, ideology
-- [The Team](../../05_Factions/TheTeam.md) - Final mission, confrontation
-- [Temporal Research Council](../../05_Factions/TemporalResearchCouncil.md) - Opposition, historical conflict
+- [Entropy Forces](../05_Factions/EntropyForces.md) - Organization, ideology
+- [The Team](../05_Factions/TheTeam.md) - Final mission, confrontation
+- [Temporal Research Council](../05_Factions/TemporalResearchCouncil.md) - Opposition, historical conflict
 
 **Guidelines:**
-- [Location Development Guidelines](../../../.cursor/rules/locations-worldbuilding.mdc) - Chaos spectrum extreme
-- [Narrative Structure](../../../.cursor/rules/narrative-structure.mdc) - Climax location, thematic resolution
+- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Chaos spectrum extreme
+- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Climax location, thematic resolution
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

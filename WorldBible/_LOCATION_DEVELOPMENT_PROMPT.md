@@ -52,13 +52,13 @@ I'm working on developing locations for the **Temporal Tides World Bible** - a p
 - Governance models, economic structures, daily life frameworks
 - Enhanced 11-section template
 
-**Reference Document:** `Refrences/LOCATION_DEVELOPMENT_REFERENCE.md`
+**Reference Document:** `References/LOCATION_DEVELOPMENT_REFERENCE.md`
 - 2,385 lines of detailed AC concept mappings
 - Specific location concepts ready to develop
 - Governance, economic, cultural templates
 - Architectural principles by spectrum type
 
-**Source Inspiration:** `Refrences/Accountability Collective.md`
+**Source Inspiration:** `References/Accountability Collective.md`
 - Original AC document with governance/society concepts
 - Centerverse (hub model), Independent Societies, Mixtopia concepts
 - "Average Day" examples, communal spaces, frontier territories
@@ -89,7 +89,7 @@ I'm working on developing locations for the **Temporal Tides World Bible** - a p
 
 **4. Chronopolis Central**
 - Anne's origin city
-- Temporal Council stronghold
+- Temporal Research Council stronghold
 - Ordered society (AC "Red Governed" inspiration)
 - Represents safe but controlled extreme
 - File: Create new `WorldBible/04_Locations/ChronopolisCentral.md`
@@ -165,14 +165,14 @@ I'm working on developing locations for the **Temporal Tides World Bible** - a p
 - Character connection established
 - Shows "safe but controlled" extreme
 - AC "Red Governed" inspiration
-- Temporal Council stronghold
+- Temporal Research Council stronghold
 
 ## 📖 What I Need From You
 
 Please help me develop [LOCATION NAME] using:
 - Enhanced location template from `.cursor/rules/locations-worldbuilding.mdc`
-- Detailed concepts from `Refrences/LOCATION_DEVELOPMENT_REFERENCE.md`
-- AC inspiration from `Refrences/Accountability Collective.md`
+- Detailed concepts from `References/LOCATION_DEVELOPMENT_REFERENCE.md`
+- AC inspiration from `References/Accountability Collective.md`
 - Existing character dossiers for connections (`WorldBible/03_Characters/Heroes/`)
 - Temporal physics from `WorldBible/01_UniverseFundamentals/`
 - Cultural framework from `WorldBible/02_CivilizationalElements/`
@@ -217,8 +217,8 @@ Let's build the Temporal Tides universe locations to the same professional stand
 
 **Files to Reference:**
 - `.cursor/rules/locations-worldbuilding.mdc` (enhanced rule)
-- `Refrences/LOCATION_DEVELOPMENT_REFERENCE.md` (2,385 lines of AC concepts)
-- `Refrences/Accountability Collective.md` (source inspiration)
+- `References/LOCATION_DEVELOPMENT_REFERENCE.md` (2,385 lines of AC concepts)
+- `References/Accountability Collective.md` (source inspiration)
 - `WorldBible/03_Characters/Heroes/*.md` (character connections)
 - `WorldBible/01_UniverseFundamentals/*.md` (physics/science)
 - `WorldBible/02_CivilizationalElements/*.md` (culture/timeline)

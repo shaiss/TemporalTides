@@ -150,7 +150,7 @@
 
 - [StoryStructure](StoryStructure.md) - Act structure
 - [Themes](Themes.md) - Thematic execution
-- [Character dossiers](../../03_Characters/) - Arc details
+- [Character dossiers](../03_Characters/) - Arc details
 
 ---
 

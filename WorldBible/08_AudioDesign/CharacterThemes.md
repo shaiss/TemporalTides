@@ -121,10 +121,10 @@ Each character has a musical motif reflecting their personality, condition, and 
 ---
 
 **Cross-References:**
-- [Character dossiers](../../03_Characters/) — Voice/Musical Theme sections
+- [Character dossiers](../03_Characters/) — Voice/Musical Theme sections
 - [MusicDirection](MusicDirection.md) — Overall direction
 - [TemporalSoundscape](TemporalSoundscape.md) — Environmental audio
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

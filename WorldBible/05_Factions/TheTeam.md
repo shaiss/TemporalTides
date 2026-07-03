@@ -26,7 +26,7 @@
 
 **Formation:**
 - **Inception:** 340-341 AC — Vibrion recognized Dr. Entropy's threat escalating; began seeking allies
-- **Formal assembly:** 342 AC — Seventh member (Dave) joined; core roster complete
+- **Formal assembly:** 342 AC — Iris (seventh and final member) joined; core roster complete
 - **Catalyst:** Dr. Entropy's operations becoming bolder; Nexus attack intelligence
 
 **Current Status:**
@@ -264,11 +264,11 @@
 ---
 
 **Cross-References:**
-- [Vibrion](../../03_Characters/Heroes/Vibrion.md) - Leader
-- [Leo](../../03_Characters/Heroes/Leo.md) | [Anne](../../03_Characters/Heroes/Anne.md) | [Maya](../../03_Characters/Heroes/Maya.md) | [Eli](../../03_Characters/Heroes/Eli.md) | [Dave](../../03_Characters/Heroes/Dave.md) | [Iris](../../03_Characters/Heroes/Iris.md) - Core members
-- [Dr. Volt](../../03_Characters/Mentors/DrVolt.md) | [Dr. Mental](../../03_Characters/Mentors/DrMental.md) - Advisors
-- [Time Nexus](../../04_Locations/TimeNexus.md) - Headquarters
-- [Dr. Entropy](../../03_Characters/Antagonists/DrEntropy.md) - Primary opposition
+- [Vibrion](../03_Characters/Heroes/Vibrion.md) - Leader
+- [Leo](../03_Characters/Heroes/Leo.md) | [Anne](../03_Characters/Heroes/Anne.md) | [Maya](../03_Characters/Heroes/Maya.md) | [Eli](../03_Characters/Heroes/Eli.md) | [Dave](../03_Characters/Heroes/Dave.md) | [Iris](../03_Characters/Heroes/Iris.md) - Core members
+- [Dr. Volt](../03_Characters/Mentors/DrVolt.md) | [Dr. Mental](../03_Characters/Mentors/DrMental.md) - Advisors
+- [Time Nexus](../04_Locations/TimeNexus.md) - Headquarters
+- [Dr. Entropy](../03_Characters/Antagonists/DrEntropy.md) - Primary opposition
 - [Entropy Forces](EntropyForces.md) - Opposing organization
 
 ---

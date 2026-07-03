@@ -55,7 +55,7 @@ Primary antagonist. Operates from hidden Lair in deliberately destabilized tempo
 
 **Philosophy and Motivation:**
 
-**Central Belief:** The universe is dying of order. Heat death is the end state of maximum entropy — but before that endpoint, *insufficient* entropy is equally fatal. The Temporal Council's stabilization projects are slowing time's natural flow toward creative disorder. Every anchor, every stabilizer, every "safety measure" is a tourniquet on the universe's evolutionary artery.
+**Central Belief:** The universe is dying of order. Heat death is the end state of maximum entropy — but before that endpoint, *insufficient* entropy is equally fatal. The Temporal Research Council's stabilization projects are slowing time's natural flow toward creative disorder. Every anchor, every stabilizer, every "safety measure" is a tourniquet on the universe's evolutionary artery.
 
 **The Argument:**
 - Evolution requires mutation; mutation requires disorder

@@ -1042,7 +1042,7 @@ Shows that **chaos isn't always liberating**:
 
 **Notable Achievements:**
 - Harmony Symphony (famous orchestra)
-- Valley philosophical school (influenced Temporal Council ethics)
+- Valley philosophical school (influenced Temporal Research Council ethics)
 - Agricultural innovations (feeding universe)
 - Architectural marvels (now ruins)
 
@@ -1761,27 +1761,27 @@ Despite horror, the Wastes chapter ends with:
 ## Cross-References
 
 **Universe Fundamentals:**
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Type 5 Fractured zones, catastrophic failure
-- [The Nature of Time](../../01_UniverseFundamentals/01_NatureOfTime.md) - Time perception classes, all active here
-- [Cosmology](../../01_UniverseFundamentals/04_Cosmology.md) - Reality layer collapse, timeline fractures
-- [Energy Systems](../../01_UniverseFundamentals/03_EnergySystems.md) - Entropy extreme, paradox crystals
-- [Philosophy](../../01_UniverseFundamentals/05_Philosophy.md) - Meaninglessness, temporal ethics
+- [Temporal Physics](../01_UniverseFundamentals/02_TemporalPhysics.md) - Type 5 Fractured zones, catastrophic failure
+- [The Nature of Time](../01_UniverseFundamentals/01_NatureOfTime.md) - Time perception classes, all active here
+- [Cosmology](../01_UniverseFundamentals/04_Cosmology.md) - Reality layer collapse, timeline fractures
+- [Energy Systems](../01_UniverseFundamentals/03_EnergySystems.md) - Entropy extreme, paradox crystals
+- [Philosophy](../01_UniverseFundamentals/05_Philosophy.md) - Meaninglessness, temporal ethics
 
 **Civilizational Elements:**
-- [Universal Timeline](../../02_CivilizationalElements/01_UniversalTimeline.md) - The Great Fracture (78 AC)
-- [Cultural Framework](../../02_CivilizationalElements/03_CulturalFramework.md) - Memorial culture, trauma
-- [Technology](../../02_CivilizationalElements/02_Technology.md) - Containment arrays, failed devices
+- [Universal Timeline](../02_CivilizationalElements/01_UniversalTimeline.md) - The Great Fracture (78 AC)
+- [Cultural Framework](../02_CivilizationalElements/03_CulturalFramework.md) - Memorial culture, trauma
+- [Technology](../02_CivilizationalElements/02_Technology.md) - Containment arrays, failed devices
 
 **Characters:**
-- [Vibrion](../../03_Characters/Heroes/Vibrion.md) - Parents died rescuing, personal connection
-- [Iris](../../03_Characters/Heroes/Iris.md) - Navigation essential, multi-layer perception
-- [Leo](../../03_Characters/Heroes/Leo.md) - Fragmented perception effective, pattern discovery
-- [Anne](../../03_Characters/Heroes/Anne.md) - Worst environment, character trial
-- [Maya](../../03_Characters/Heroes/Maya.md) - Pattern Sense critical, sensory overload
-- [Dave](../../03_Characters/Heroes/Dave.md) - Empathic devastation, ancient suffering
-- [Eli](../../03_Characters/Heroes/Eli.md) - Rescue specialist, learns humility
-- [Dr. Volt](../../03_Characters/Mentors/DrVolt.md) - Containment designer, researcher
-- [Dr. Entropy](../../03_Characters/Antagonists/DrEntropy.md) - Studies natural chaos, gathers materials
+- [Vibrion](../03_Characters/Heroes/Vibrion.md) - Parents died rescuing, personal connection
+- [Iris](../03_Characters/Heroes/Iris.md) - Navigation essential, multi-layer perception
+- [Leo](../03_Characters/Heroes/Leo.md) - Fragmented perception effective, pattern discovery
+- [Anne](../03_Characters/Heroes/Anne.md) - Worst environment, character trial
+- [Maya](../03_Characters/Heroes/Maya.md) - Pattern Sense critical, sensory overload
+- [Dave](../03_Characters/Heroes/Dave.md) - Empathic devastation, ancient suffering
+- [Eli](../03_Characters/Heroes/Eli.md) - Rescue specialist, learns humility
+- [Dr. Volt](../03_Characters/Mentors/DrVolt.md) - Containment designer, researcher
+- [Dr. Entropy](../03_Characters/Antagonists/DrEntropy.md) - Studies natural chaos, gathers materials
 
 **Other Locations:**
 - [Dr. Entropy's Lair](DrEntropysLair.md) - Intentional vs. natural chaos comparison
@@ -1790,14 +1790,14 @@ Despite horror, the Wastes chapter ends with:
 - [Gradient Frontier](GradientFrontier.md) - Neighboring unstable zone, approach route
 
 **Factions:**
-- [The Team](../../05_Factions/TheTeam.md) - Rescue and training missions
-- [Temporal Research Council](../../05_Factions/TemporalResearchCouncil.md) - Containment, research, failure
-- [Entropy Forces](../../05_Factions/EntropyForces.md) - Dr. Entropy's study site
+- [The Team](../05_Factions/TheTeam.md) - Rescue and training missions
+- [Temporal Research Council](../05_Factions/TemporalResearchCouncil.md) - Containment, research, failure
+- [Entropy Forces](../05_Factions/EntropyForces.md) - Dr. Entropy's study site
 
 **Guidelines:**
-- [Location Development Guidelines](../../../.cursor/rules/locations-worldbuilding.mdc) - Chaos spectrum extreme
-- [Narrative Structure](../../../.cursor/rules/narrative-structure.mdc) - Stakes visualization, character testing
+- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Chaos spectrum extreme
+- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Stakes visualization, character testing
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*

@@ -24,7 +24,7 @@ Chronopolis Central stands as the **capital of temporal civilization** - not thr
 
 Chronopolis represents the **ORDERED** extreme on the societal spectrum. It proves that centralized control *can* create safety, stability, and prosperity - but at costs of freedom, spontaneity, and diversity. Understanding Chronopolis is essential to understanding:
 - Why Anne is how she is (product of environment)
-- What the Temporal Council represents (protective authority)
+- What the Temporal Research Council represents (protective authority)
 - Why autonomous zones resist (rejection of this model)
 - What Dr. Entropy opposes (excessive control stifles)
 
@@ -76,7 +76,7 @@ Despite being **baseline 1.0 RFR**, time *feels* accelerated in Chronopolis:
 Chronopolis embodies the **Red (Governed/Controlled) extreme** of the Rainbow-Red spectrum:
 
 **Command and Control Model:**
-- Centralized authority (Temporal Council)
+- Centralized authority (Temporal Research Council)
 - Top-down decision making
 - Safety prioritized over freedom
 - Heavy surveillance "for protection"
@@ -534,7 +534,7 @@ Every aspect intentional:
 Chronopolis occupies the **ORDERED** extreme of the societal spectrum:
 
 **Characteristics:**
-- Heavy Temporal Council direct oversight
+- Heavy Temporal Research Council direct oversight
 - Top-down decision making
 - Comprehensive regulation "for safety"
 - Surveillance and monitoring ubiquitous
@@ -1514,7 +1514,7 @@ Anne discovered some underground culture as teenager (felt less alone), but fear
 - Dr. Entropy opposing entire philosophy
 - Team operating independently (Council frustration)
 
-### Relationship to Temporal Council
+### Relationship to Temporal Research Council
 
 **Chronopolis IS Council stronghold:**
 - Headquarters here (Nexus Tower)
@@ -1658,7 +1658,7 @@ Anne discovered some underground culture as teenager (felt less alone), but fear
 
 ### Strategic Value to Factions
 
-**Why Temporal Council Needs It:**
+**Why Temporal Research Council Needs It:**
 - Physical headquarters (seat of power)
 - Legitimacy (major city supports them)
 - Resources (tax base, talent pool)
@@ -2282,23 +2282,23 @@ Chronopolis is **NOT a major gameplay hub** (oppressive, players want to leave):
 ## Cross-References
 
 **Universe Fundamentals:**
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Stabilization arrays, baseline RFR
-- [The Nature of Time](../../01_UniverseFundamentals/01_NatureOfTime.md) - Class B perception (Anne's)
-- [Philosophy](../../01_UniverseFundamentals/05_Philosophy.md) - Ethics of control, temporal authority
+- [Temporal Physics](../01_UniverseFundamentals/02_TemporalPhysics.md) - Stabilization arrays, baseline RFR
+- [The Nature of Time](../01_UniverseFundamentals/01_NatureOfTime.md) - Class B perception (Anne's)
+- [Philosophy](../01_UniverseFundamentals/05_Philosophy.md) - Ethics of control, temporal authority
 
 **Civilizational Elements:**
-- [Universal Timeline](../../02_CivilizationalElements/01_UniversalTimeline.md) - Chronopolis founding, Council formation
-- [Technology](../../02_CivilizationalElements/02_Technology.md) - Surveillance, stabilization, monitoring
-- [Cultural Framework](../../02_CivilizationalElements/03_CulturalFramework.md) - Ordered society model
-- [Terminology](../../02_CivilizationalElements/04_Terminology.md) - Chronometric standard, Council
+- [Universal Timeline](../02_CivilizationalElements/01_UniversalTimeline.md) - Chronopolis founding, Council formation
+- [Technology](../02_CivilizationalElements/02_Technology.md) - Surveillance, stabilization, monitoring
+- [Cultural Framework](../02_CivilizationalElements/03_CulturalFramework.md) - Ordered society model
+- [Terminology](../02_CivilizationalElements/04_Terminology.md) - Chronometric standard, Council
 
 **Characters:**
-- [Anne](../../03_Characters/Heroes/Anne.md) - Origin city, formative environment, family
-- [Eli](../../03_Characters/Heroes/Eli.md) - Brief traumatic residence, fled for freedom
-- [Vibrion](../../03_Characters/Heroes/Vibrion.md) - Recruited Anne here, Council meetings
-- [Iris](../../03_Characters/Heroes/Iris.md) - Hospitalization trauma
-- [Dave](../../03_Characters/Heroes/Dave.md) - Medical crisis experience
-- [Dr. Volt](../../03_Characters/Mentors/DrVolt.md) - Designed stabilization (regrets)
+- [Anne](../03_Characters/Heroes/Anne.md) - Origin city, formative environment, family
+- [Eli](../03_Characters/Heroes/Eli.md) - Brief traumatic residence, fled for freedom
+- [Vibrion](../03_Characters/Heroes/Vibrion.md) - Recruited Anne here, Council meetings
+- [Iris](../03_Characters/Heroes/Iris.md) - Hospitalization trauma
+- [Dave](../03_Characters/Heroes/Dave.md) - Medical crisis experience
+- [Dr. Volt](../03_Characters/Mentors/DrVolt.md) - Designed stabilization (regrets)
 
 **Other Locations:**
 - [The Time Nexus](TimeNexus.md) - Contrast (freedom vs. control), Anne's escape
@@ -2307,16 +2307,16 @@ Chronopolis is **NOT a major gameplay hub** (oppressive, players want to leave):
 - [Baseline Metropolitan](BaselineMetropolitan.md) - Sister city, friendlier version
 
 **Factions:**
-- [Temporal Research Council](../../05_Factions/TemporalResearchCouncil.md) - Headquarters, power base
-- [The Team](../../05_Factions/TheTeam.md) - Complex relationship, Anne's origin
-- [Entropy Forces](../../05_Factions/EntropyForces.md) - Ideological enemy, possible target
+- [Temporal Research Council](../05_Factions/TemporalResearchCouncil.md) - Headquarters, power base
+- [The Team](../05_Factions/TheTeam.md) - Complex relationship, Anne's origin
+- [Entropy Forces](../05_Factions/EntropyForces.md) - Ideological enemy, possible target
 
 **Guidelines:**
-- [Location Development Guidelines](../../../.cursor/rules/locations-worldbuilding.mdc) - Order-Chaos spectrum extreme
-- [Character Development](../../../.cursor/rules/character-development.mdc) - Anne's background
-- [Narrative Structure](../../../.cursor/rules/narrative-structure.mdc) - Thematic representation
+- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Order-Chaos spectrum extreme
+- [Character Development](../../.cursor/rules/character-development.mdc) - Anne's background
+- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Thematic representation
 
 ---
 
-*[Return to Index](../../00_INDEX.md)*
+*[Return to Index](../00_INDEX.md)*
 

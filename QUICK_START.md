@@ -13,35 +13,26 @@ Then open in your browser: **http://localhost:5173**
 
 ## 📝 Edit Content
 
-### Option 1: Edit docs/ directly (recommended)
+The site builds directly from the repo root — edit `WorldBible/` and changes appear instantly. No sync step.
+
 ```bash
 # Edit any file
-vim docs/WorldBible/03_Characters/Heroes/NewCharacter.md
+vim WorldBible/03_Characters/Heroes/NewCharacter.md
 
 # Save - changes appear instantly in browser!
 ```
 
-### Option 2: Edit WorldBible/ and sync
-```bash
-# Edit original files
-vim WorldBible/03_Characters/Heroes/NewCharacter.md
-
-# Sync to docs
-./scripts/sync-worldbible.sh
-```
+**Adding a new page?** Also add it to the sidebar in `.vitepress/config.js` — the sidebar is manually maintained, so new pages won't appear in navigation until listed there.
 
 ---
 
 ## 🎨 Add Images
 
 ```bash
-# 1. Put image in assets folder
-cp myimage.jpg assets/character_portraits/
+# 1. Put image in the public assets folder
+cp myimage.jpg public/assets/character_portraits/
 
-# 2. Sync to docs
-./scripts/sync-worldbible.sh
-
-# 3. Reference in markdown (absolute path)
+# 2. Reference in markdown (absolute path — served from public/)
 ![Character](/assets/character_portraits/myimage.jpg)
 ```
 
@@ -63,7 +54,7 @@ npm run docs:build
 npm run docs:preview
 ```
 
-Output: `docs/.vitepress/dist/` (ready to deploy!)
+Output: `.vitepress/dist/` (ready to deploy!)
 
 ---
 
@@ -75,16 +66,17 @@ Output: `docs/.vitepress/dist/` (ready to deploy!)
 | `npm run docs:build` | Build for production |
 | `npm run docs:preview` | Preview production build |
 | `npm start` | Same as docs:dev |
+| `./scripts/check-links.sh` | Report broken internal links in WorldBible/ |
 
 ---
 
 ## 📁 Where Things Are
 
-- **Content**: `docs/WorldBible/`
-- **Images**: `docs/public/assets/character_portraits/`
-- **Homepage**: `docs/index.md`
-- **Config**: `docs/.vitepress/config.js`
-- **Styles**: `docs/.vitepress/theme/custom.css`
+- **Content**: `WorldBible/`
+- **Images**: `public/assets/character_portraits/`
+- **Homepage**: `index.md`
+- **Config**: `.vitepress/config.js`
+- **Styles**: `.vitepress/theme/custom.css`
 
 ---
 
@@ -99,9 +91,9 @@ Output: `docs/.vitepress/dist/` (ready to deploy!)
 
 ## 📚 Full Documentation
 
-- **Setup Guide**: `VITEPRESS_SETUP.md`
-- **Test Report**: `VITEPRESS_TEST_REPORT.md`
-- **Comparison**: `DOCUMENTATION_PLATFORM_COMPARISON.md`
+- **Setup Guide**: `docs/reports/VITEPRESS_SETUP.md`
+- **Test Report**: `docs/reports/VITEPRESS_TEST_REPORT.md`
+- **Comparison**: `docs/reports/DOCUMENTATION_PLATFORM_COMPARISON.md`
 
 ---
 

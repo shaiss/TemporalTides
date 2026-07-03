@@ -6,7 +6,7 @@ All documentation for your Temporal Tides VitePress installation.
 
 ## 🚀 Start Here
 
-**New to VitePress?** → [QUICK_START.md](QUICK_START.md)  
+**New to VitePress?** → [QUICK_START.md](../../QUICK_START.md)  
 **Want all details?** → [VITEPRESS_SETUP.md](VITEPRESS_SETUP.md)
 
 ---
@@ -15,10 +15,10 @@ All documentation for your Temporal Tides VitePress installation.
 
 | Document | Purpose | Read Time |
 |----------|---------|-----------|
-| **[QUICK_START.md](QUICK_START.md)** | Get started in 60 seconds | 1 min |
+| **[QUICK_START.md](../../QUICK_START.md)** | Get started in 60 seconds | 1 min |
 | **[VITEPRESS_SUMMARY.md](VITEPRESS_SUMMARY.md)** | Executive summary | 3 min |
 | **[TESTING_CHECKLIST.md](TESTING_CHECKLIST.md)** | Verify everything works | 5 min |
-| **[RUN_VITEPRESS.sh](scripts/RUN_VITEPRESS.sh)** | Quick launcher script | - |
+| **[RUN_VITEPRESS.sh](../../scripts/RUN_VITEPRESS.sh)** | Quick launcher script | - |
 
 ---
 
@@ -38,7 +38,7 @@ All documentation for your Temporal Tides VitePress installation.
 ### I want to...
 
 **Get started immediately**  
-→ [QUICK_START.md](QUICK_START.md)
+→ [QUICK_START.md](../../QUICK_START.md)
 
 **Understand what VitePress does**  
 → [VITEPRESS_SUMMARY.md](VITEPRESS_SUMMARY.md)
@@ -63,7 +63,7 @@ All documentation for your Temporal Tides VitePress installation.
 ## 🎓 By Experience Level
 
 ### Beginner
-1. [QUICK_START.md](QUICK_START.md) - Get running
+1. [QUICK_START.md](../../QUICK_START.md) - Get running
 2. [TESTING_CHECKLIST.md](TESTING_CHECKLIST.md) - Verify it works
 3. [VITEPRESS_SUMMARY.md](VITEPRESS_SUMMARY.md) - Understand what you have
 
@@ -73,8 +73,8 @@ All documentation for your Temporal Tides VitePress installation.
 3. [DOCUMENTATION_PLATFORM_COMPARISON.md](DOCUMENTATION_PLATFORM_COMPARISON.md) - Understand the choice
 
 ### Advanced
-1. `docs/.vitepress/config.js` - Main configuration
-2. `docs/.vitepress/theme/custom.css` - Styling
+1. `.vitepress/config.js` - Main configuration
+2. `.vitepress/theme/custom.css` - Styling
 3. [VITEPRESS_SETUP.md](VITEPRESS_SETUP.md) - Advanced customization section
 
 ---
@@ -87,7 +87,7 @@ All documentation for your Temporal Tides VitePress installation.
 | **Total Word Count** | ~15,000 words |
 | **Code Examples** | 100+ snippets |
 | **Tests Documented** | 37 tests |
-| **Helper Scripts** | 4 scripts |
+| **Helper Scripts** | 3 scripts |
 | **Coverage** | Complete (100%) |
 
 ---
@@ -103,10 +103,10 @@ npm run docs:preview  # Preview built site
 ```
 
 ### Essential Files
-- **Config**: `docs/.vitepress/config.js`
-- **Homepage**: `docs/index.md`
-- **Content**: `docs/WorldBible/`
-- **Styles**: `docs/.vitepress/theme/custom.css`
+- **Config**: `.vitepress/config.js`
+- **Homepage**: `index.md`
+- **Content**: `WorldBible/`
+- **Styles**: `.vitepress/theme/custom.css`
 
 ---
 
@@ -152,7 +152,7 @@ npm run docs:preview  # Preview built site
 ## 🎯 Learning Path
 
 ### Day 1: Get Started
-1. Read [QUICK_START.md](QUICK_START.md) (1 min)
+1. Read [QUICK_START.md](../../QUICK_START.md) (1 min)
 2. Run `npm run docs:dev` (30 sec)
 3. Browse your site (5 min)
 4. Make a test edit (2 min)
@@ -183,7 +183,7 @@ npm run docs:preview  # Preview built site
 ## 📦 File Manifest
 
 ### Documentation (7 files)
-- QUICK_START.md
+- QUICK_START.md (repo root)
 - VITEPRESS_SUMMARY.md  
 - TESTING_CHECKLIST.md
 - VITEPRESS_SETUP.md
@@ -191,16 +191,15 @@ npm run docs:preview  # Preview built site
 - SETUP_COMPLETE.md
 - DOCUMENTATION_PLATFORM_COMPARISON.md
 
-### Scripts (4 files)
+### Scripts (3 files)
 - scripts/RUN_VITEPRESS.sh
-- scripts/sync-worldbible.sh
 - scripts/build-and-check.sh
 - scripts/check-links.sh
 
 ### Configuration (3 files)
-- docs/.vitepress/config.js
-- docs/.vitepress/theme/index.js
-- docs/.vitepress/theme/custom.css
+- .vitepress/config.js
+- .vitepress/theme/index.js
+- .vitepress/theme/custom.css
 
 ---
 
@@ -223,7 +222,7 @@ All documentation is **complete** and **ready to use**:
 
 Everything is documented. Pick your starting point:
 
-**Fastest**: [QUICK_START.md](QUICK_START.md)  
+**Fastest**: [QUICK_START.md](../../QUICK_START.md)  
 **Complete**: [VITEPRESS_SETUP.md](VITEPRESS_SETUP.md)  
 **Verify**: [TESTING_CHECKLIST.md](TESTING_CHECKLIST.md)
 

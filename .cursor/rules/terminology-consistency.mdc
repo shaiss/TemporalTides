@@ -197,7 +197,7 @@ Example: "The Accelerated Quarter flows at 3x baseline, meaning one hour spent t
 
 When contradictions arise, priority order:
 
-1. **Core Documents** - The main Temporal Tides overview and World Bible 3
+1. **Core Documents** - `WorldBible/` (the single source of truth; start at `00_INDEX.md`)
 2. **Character Profiles** - Established character information
 3. **Published Story Content** - Any narrative content that's been finalized
 4. **Supplementary Materials** - Additional lore and background

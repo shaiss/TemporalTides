@@ -382,8 +382,8 @@ The Sanctuaries embody **Contemplative Haven** — communities designed for thos
 **Major Events:**
 - 180 AC: Formal autonomy recognized (Council treaty)
 - 250 AC: Inter-sanctuary council established
-- 310 AC: Dave born in Silent Hollow
-- 340 AC: Dave leaves for Team (rare; most don't)
+- 324 AC: Dave born in Silent Hollow
+- 342 AC: Dave leaves for Team (rare; most don't)
 - Present: Stable; unchanged; content
 
 **Relationship to Council:**
@@ -491,11 +491,11 @@ The Sanctuaries embody **Contemplative Haven** — communities designed for thos
 ---
 
 **Cross-References:**
-- [Dave Miller](../../03_Characters/Heroes/Dave.md) - Origin; primary character connection
-- [Dr. Mental](../../03_Characters/Mentors/DrMental.md) - Colleague network; visits
+- [Dave Miller](../03_Characters/Heroes/Dave.md) - Origin; primary character connection
+- [Dr. Mental](../03_Characters/Mentors/DrMental.md) - Colleague network; visits
 - [Accelerated Quarter](AcceleratedQuarter.md) - Thematic opposite
-- [Temporal Physics](../../01_UniverseFundamentals/02_TemporalPhysics.md) - Dilated zone mechanics
-- [Cultural Framework](../../02_CivilizationalElements/03_CulturalFramework.md) - Neurodivergent design
+- [Temporal Physics](../01_UniverseFundamentals/02_TemporalPhysics.md) - Dilated zone mechanics
+- [Cultural Framework](../02_CivilizationalElements/03_CulturalFramework.md) - Neurodivergent design
 
 ---
 
