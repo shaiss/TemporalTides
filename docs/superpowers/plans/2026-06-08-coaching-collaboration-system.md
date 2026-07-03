@@ -12,6 +12,18 @@
 
 ---
 
+## ⚠️ REVISION — 2026-07-03: `AGENTS.md` is the canonical guidance file; `CLAUDE.md` is now a pointer
+
+This repo was originally Claude Code + Cursor only, so the always-on guidance file was named `CLAUDE.md`. It has since been renamed to **`AGENTS.md`** (tool-neutral, read by ZCode, Claude Code, and others) to avoid maintaining per-tool duplicates. **`CLAUDE.md` is reduced to a one-line pointer** to `AGENTS.md`, kept only so Claude Code (which auto-loads `CLAUDE.md`) still finds the guidance. Cursor rules (`.cursor/rules/*.mdc`) are unchanged.
+
+- **Task 5 below still describes creating the always-on guidance** under the filename `CLAUDE.md`. Where the task says `CLAUDE.md`, create/edit **`AGENTS.md`** instead. The four-section structure, the three verbatim rules, and the hat map are unchanged — only the filename moves.
+- **Do not overwrite `CLAUDE.md` with guidance content.** It must remain a pointer. If the task asks to write the four sections "into `CLAUDE.md`," write them into `AGENTS.md`.
+- **VitePress:** `AGENTS.md` (and `CLAUDE.md`) are listed in `srcExclude` in `.vitepress/config.js` so neither is published to the site.
+
+Where sections below say `CLAUDE.md` as the always-on guidance home, read `AGENTS.md`.
+
+---
+
 ## ⚠️ REVISION — 2026-06-09: `WorldBible/` is the single source of truth
 
 This supersedes the `CANON.md`-based architecture described below. On review, `canon/CANON.md` proved to be a **third, lossy copy** of canon that already lives in `WorldBible/`, so it is **retired**. Per Shai's call:

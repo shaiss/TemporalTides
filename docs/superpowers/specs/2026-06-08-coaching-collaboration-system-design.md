@@ -9,6 +9,14 @@
 
 ---
 
+## ⚠️ REVISION — 2026-07-03: `AGENTS.md` is the canonical guidance file; `CLAUDE.md` is now a pointer
+
+The repo now treats **`AGENTS.md`** as the canonical, tool-neutral always-on guidance file (read by ZCode, Claude Code, and other agents) instead of maintaining per-tool duplicates. **`CLAUDE.md`** is reduced to a one-line pointer to `AGENTS.md`, kept only so Claude Code (which auto-loads `CLAUDE.md`) still finds the guidance. The Working Agreement, hat map, and structure described below are unchanged — only the filename of the always-on file moves. Cursor rules (`.cursor/rules/*.mdc`) are unchanged.
+
+Where this spec says `CLAUDE.md` as the always-on guidance home, read `AGENTS.md`.
+
+---
+
 ## ⚠️ REVISION — 2026-06-09: `WorldBible/` is the single source of truth
 
 Supersedes the `CANON.md` design below. `canon/CANON.md` was a third, lossy copy of canon already in `WorldBible/`, and is **retired**. New architecture (Shai's call):
