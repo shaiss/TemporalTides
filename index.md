@@ -1,5 +1,6 @@
 ---
 layout: home
+pageClass: home-landing
 
 hero:
   name: "Temporal Tides"
@@ -57,70 +58,174 @@ features:
     linkText: Gameplay Mechanics
 ---
 
-## 🎯 The Three Pillars
+<div class="tt-home">
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<section class="tt-section">
+<h2><span class="tt-heading-mark" aria-hidden="true">🎯</span> The Three Pillars</h2>
+<p class="tt-section-lede">Everything in Temporal Tides serves these three foundations.</p>
 
-<div style="padding: 1.5rem; border: 2px solid var(--vp-c-brand-1); border-radius: 8px;">
-  <h3 style="margin-top: 0;">🕐 Time Perception</h3>
-  <p>Explore subjective temporal experience and how different minds perceive the flow of time.</p>
+<div class="tt-pillars-grid">
+  <div class="tt-pillar">
+    <div class="tt-pillar-icon" aria-hidden="true">🕐</div>
+    <h3>Time Perception</h3>
+    <p>Explore subjective temporal experience and how different minds perceive the flow of time.</p>
+  </div>
+  <div class="tt-pillar">
+    <div class="tt-pillar-icon" aria-hidden="true">🧠</div>
+    <h3>Mental Health Representation</h3>
+    <p>Respectful, authentic portrayal of neurodiversity as genuine strength.</p>
+  </div>
+  <div class="tt-pillar">
+    <div class="tt-pillar-icon" aria-hidden="true">❤️</div>
+    <h3>Empathy &amp; Understanding</h3>
+    <p>Foster connection and understanding across different experiences of reality.</p>
+  </div>
+</div>
+</section>
+
+<section class="tt-section">
+<h2><span class="tt-heading-mark" aria-hidden="true">📊</span> World Bible Status</h2>
+<p class="tt-section-lede">A living canon — fundamentals are complete; characters and supporting systems are expanding.</p>
+
+<div class="tt-status-panel">
+  <div class="tt-status-meta">
+    <span class="tt-status-badge">Overall ~50%</span>
+    <p class="tt-status-note">Actively expanding</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Progress</th>
+        <th>Files</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>✅ Universe Fundamentals</td>
+        <td>100%</td>
+        <td>5/5 Complete</td>
+      </tr>
+      <tr>
+        <td>✅ Civilizational Elements</td>
+        <td>100%</td>
+        <td>4/4 Complete</td>
+      </tr>
+      <tr>
+        <td>🟡 Characters</td>
+        <td>58%</td>
+        <td>7/12 Heroes Complete</td>
+      </tr>
+      <tr>
+        <td>📝 Locations</td>
+        <td>Framework</td>
+        <td>6 files</td>
+      </tr>
+      <tr>
+        <td>📝 Factions</td>
+        <td>Framework</td>
+        <td>3 files</td>
+      </tr>
+      <tr>
+        <td>📝 Narrative</td>
+        <td>Framework</td>
+        <td>4 files</td>
+      </tr>
+      <tr>
+        <td>📝 Visual Design</td>
+        <td>Framework</td>
+        <td>4 files</td>
+      </tr>
+      <tr>
+        <td>📝 Audio Design</td>
+        <td>Framework</td>
+        <td>3 files</td>
+      </tr>
+      <tr>
+        <td>📝 Gameplay</td>
+        <td>Framework</td>
+        <td>4 files</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<section class="tt-section">
+<h2><span class="tt-heading-mark" aria-hidden="true">🚀</span> Quick Navigation</h2>
+<p class="tt-section-lede">Jump into the canon from the paths most people need first.</p>
+
+<div class="tt-nav-grid">
+  <a class="tt-nav-card" href="./WorldBible/00_INDEX">
+    <strong>World Bible Index</strong>
+    <span>Master navigation and status</span>
+  </a>
+  <a class="tt-nav-card" href="./WorldBible/01_UniverseFundamentals/01_NatureOfTime">
+    <strong>Universe Fundamentals</strong>
+    <span>How time works in this universe</span>
+  </a>
+  <a class="tt-nav-card" href="./WorldBible/03_Characters/Heroes/Iris">
+    <strong>Meet the Heroes</strong>
+    <span>Seven unique perspectives</span>
+  </a>
+  <a class="tt-nav-card" href="./WorldBible/04_Locations/TimeNexus">
+    <strong>Key Locations</strong>
+    <span>Explore temporal zones</span>
+  </a>
+  <a class="tt-nav-card" href="./WorldBible/06_Narrative/StoryStructure">
+    <strong>Story Structure</strong>
+    <span>Narrative design</span>
+  </a>
+</div>
+</section>
+
+<section class="tt-section">
+<h2><span class="tt-heading-mark" aria-hidden="true">💫</span> What Makes Temporal Tides Special?</h2>
+<p class="tt-section-lede">The same strengths — presented for scanning on a phone or a wide screen.</p>
+
+<div class="tt-specials">
+  <div class="tt-special">
+    <span class="tt-special-dot" aria-hidden="true"></span>
+    <div>
+      <strong>Authentic Neurodiversity</strong>
+      <p>Mental health conditions as genuine superpowers with scientific basis</p>
+    </div>
+  </div>
+  <div class="tt-special">
+    <span class="tt-special-dot" aria-hidden="true"></span>
+    <div>
+      <strong>Deep Temporal Mechanics</strong>
+      <p>Physics that supports both gameplay and philosophical exploration</p>
+    </div>
+  </div>
+  <div class="tt-special">
+    <span class="tt-special-dot" aria-hidden="true"></span>
+    <div>
+      <strong>Character-Driven</strong>
+      <p>Seven unique ways of perceiving time and reality</p>
+    </div>
+  </div>
+  <div class="tt-special">
+    <span class="tt-special-dot" aria-hidden="true"></span>
+    <div>
+      <strong>Educational Potential</strong>
+      <p>Fosters empathy and understanding</p>
+    </div>
+  </div>
+  <div class="tt-special">
+    <span class="tt-special-dot" aria-hidden="true"></span>
+    <div>
+      <strong>Modular Design</strong>
+      <p>Easy to expand and adapt</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="tt-quote">
+  <blockquote>“Time flows differently for each of us.”</blockquote>
+  <p>In Temporal Tides, that's not a bug—it's a feature.</p>
 </div>
 
-<div style="padding: 1.5rem; border: 2px solid var(--vp-c-brand-1); border-radius: 8px;">
-  <h3 style="margin-top: 0;">🧠 Mental Health Representation</h3>
-  <p>Respectful, authentic portrayal of neurodiversity as genuine strength.</p>
-</div>
-
-<div style="padding: 1.5rem; border: 2px solid var(--vp-c-brand-1); border-radius: 8px;">
-  <h3 style="margin-top: 0;">❤️ Empathy & Understanding</h3>
-  <p>Foster connection and understanding across different experiences of reality.</p>
-</div>
-
-</div>
-
-## 📊 World Bible Status
-
-| Section | Progress | Files |
-|---------|----------|-------|
-| ✅ Universe Fundamentals | 100% | 5/5 Complete |
-| ✅ Civilizational Elements | 100% | 4/4 Complete |
-| 🟡 Characters | 58% | 7/12 Heroes Complete |
-| 📝 Locations | Framework | 6 files |
-| 📝 Factions | Framework | 3 files |
-| 📝 Narrative | Framework | 4 files |
-| 📝 Visual Design | Framework | 4 files |
-| 📝 Audio Design | Framework | 3 files |
-| 📝 Gameplay | Framework | 4 files |
-
-**Overall Completion: ~50%** - Actively expanding!
-
----
-
-## 🚀 Quick Navigation
-
-- **[World Bible Index](/WorldBible/00_INDEX)** - Master navigation and status
-- **[Universe Fundamentals](/WorldBible/01_UniverseFundamentals/01_NatureOfTime)** - How time works in this universe
-- **[Meet the Heroes](/WorldBible/03_Characters/Heroes/Iris)** - Seven unique perspectives
-- **[Key Locations](/WorldBible/04_Locations/TimeNexus)** - Explore temporal zones
-- **[Story Structure](/WorldBible/06_Narrative/StoryStructure)** - Narrative design
-
----
-
-## 💫 What Makes Temporal Tides Special?
-
-**Authentic Neurodiversity** - Mental health conditions as genuine superpowers with scientific basis
-
-**Deep Temporal Mechanics** - Physics that supports both gameplay and philosophical exploration
-
-**Character-Driven** - Seven unique ways of perceiving time and reality
-
-**Educational Potential** - Fosters empathy and understanding
-
-**Modular Design** - Easy to expand and adapt
-
----
-
-<div style="text-align: center; margin: 3rem 0; padding: 2rem; background: var(--vp-c-bg-soft); border-radius: 8px;">
-  <h2 style="margin-top: 0;">"Time flows differently for each of us."</h2>
-  <p style="font-size: 1.1em; color: var(--vp-c-text-2);">In Temporal Tides, that's not a bug—it's a feature.</p>
 </div>
