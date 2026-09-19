@@ -475,7 +475,9 @@ button.DocSearch-Button,
 
 /* Status */
 .tt-status-panel {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   border-radius: var(--tt-radius-lg);
   border: 1px solid var(--vp-c-divider);
   background: var(--vp-c-bg-soft);
@@ -513,11 +515,10 @@ button.DocSearch-Button,
 .tt-status-panel table {
   margin: 0;
   width: 100%;
+  min-width: 28rem;
 }
 
 .tt-home .tt-status-panel table {
-  display: table;
-  width: 100%;
   border-collapse: collapse;
   font-size: 0.92rem;
 }
