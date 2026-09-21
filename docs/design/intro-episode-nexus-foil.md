@@ -1,6 +1,6 @@
 # FOIL — Nexus Intro Episode (beat sheet)
 
-> **Status:** FOIL — not canon until the admiral redlines and accepts.
+> **Status:** DESIGN LOCKED for Ink/Twine MVP scaffold (2026-09-21) — admiral redlines crested; Three.js still deferred.
 > **Working Agreement:** Admiral authors lore and creative decisions. Tide/Dial propose foils and scribe after acceptance.
 > **Operating model:** This PR is the province of ideas — admiral comments; agents react in-thread; crest what the admiral guards.
 
@@ -18,9 +18,9 @@ First deliverable for Temporal Tides: an **intro episode** that teaches the worl
 | Character | Ability (published dossier) | Role in intro |
 |-----------|----------------------------|---------------|
 | Anne | Foresight | Hazard / timing overlay |
-| Maya | Pattern Sense | Sequence / order restoration |
-| Eli | Kinetic Rush | Timed window / rush span |
-| Vibrion | Vibrational Manipulation | Energy gate / leadership frame |
+| Maya | Pattern Sense | Marks patterns others can’t see (sequence / levers) |
+| Eli | Kinetic Rush | Completes Maya’s sequence faster via timeline bend |
+| Vibrion | Vibrational Manipulation | Electrical/world components; energy gate / leadership |
 
 Out of MVP: Dave, Iris, full combat systems, Lair campaign, multiplayer netcode. Co-op = ability co-op in single-player via character switch.
 
@@ -38,7 +38,7 @@ One active character at a time. Same Nexus chamber; visible choices/tags change 
 |---|------|---------------------|-----|---------------|
 | 0 | Arrive / stakes whisper | Narrative | Vibrion frame | Time is subjective; Entropy shadow (light touch) |
 | 1 | Hazard corridor | Perception / hazard | **Anne** | Foresight reveals trap options others don’t see |
-| 2 | Echo out of order | Sequence | **Maya** | Pattern Sense restores correct temporal order |
+| 2 | Echo out of order | Sequence | **Maya** | Pattern Sense *marks* patterns others can’t see (e.g. lever sequence via relative strain/markings) — not only “restore temporal order” |
 | 3 | Closing window | Speed / coordination prep | **Eli** | Completes Maya’s identified sequence faster by bending his temporal timeline (Kinetic Rush) |
 | 4 | Dead panel | Energy | **Vibrion** | Connected to the world’s electrical components; partners with Eli when a lever is stuck or a decision is needed because Maya can’t identify that pattern |
 | 5 | **Coordination gate** | Coordination (must fail solo) | All four | Interaction example: Anne marks timing → Maya locks sequence → Eli hits the window → Vibrion powers the seal |
@@ -64,20 +64,19 @@ Puzzle type names map to existing Part IX docs (`PuzzleDesign.md`, `TeamMechanic
 
 ## After acceptance
 
-1. Admiral redlines via PR comments; Tide/Dial respond in-thread
-2. Ink/Twine scaffold (eng via Dial / CloudAgent)
+1. Admiral redlines via PR comments; Tide/Dial respond in-thread — **done for this FOIL**
+2. Ink/Twine scaffold (eng via Dial / CloudAgent) — **next**
 3. Playtest → freeze puzzle logic
 4. Three.js vertical slice only when admiral calls playable build
 
 ## Crested from admiral comments
 
-Crested **2026-09-21**. FOIL status unchanged — not canon until the admiral accepts the whole document.
+Crested **2026-09-21**. Design locked for MVP Ink scaffold.
 
-- Cast: Vibrion ability column set to `Vibrational Manipulation` (published dossier; CodeRabbit).
+- Cast: Vibrion ability column → `Vibrational Manipulation` (published dossier; CodeRabbit).
+- Beat 2: Maya *marks* patterns others can’t see (lever strain/markings), not only “restore temporal order.”
 - Beat 3: Eli completes Maya’s identified sequence faster by bending his temporal timeline (Kinetic Rush).
 - Beat 4: Vibrion is connected to the world’s electrical components and partners with Eli when a lever is stuck or a decision is needed because Maya can’t identify that pattern.
-- Beat 5: Kept as an interaction example. Added: do not introduce conflict for conflict’s sake; conflict arises from the friction of different temporal timelines; synchronizing clocks becomes key.
+- Beat 5: Kept as an interaction example. Conflict arises from divergent temporal timelines; synchronizing clocks becomes key — no conflict-for-conflict.
 - Beat 6: Maya helps them see the pattern, with Vibrion’s leadership.
 - Success criteria: target playtime ~10–15 minutes.
-
-Left alone: **beat 2 (Maya)**. The admiral is editing that wording on this PR. Tide did not rewrite it.
