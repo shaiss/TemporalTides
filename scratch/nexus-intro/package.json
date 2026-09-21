@@ -3,8 +3,9 @@
   "private": true,
   "description": "Optional inkjs preview for Nexus intro Ink scratch (not part of root docs build)",
   "scripts": {
-    "compile": "inklecate -o story.json nexus-intro.ink",
-    "preview": "npm run compile && npx --yes serve preview -p 4173"
+    "compile": "node node_modules/inkjs/bin/inkjs-compiler.js -o story.json nexus-intro.ink && node -e \"const fs=require('fs');let t=fs.readFileSync('story.json','utf8');if(t.charCodeAt(0)===0xfeff)t=t.slice(1);fs.writeFileSync('story.json',t);\"",
+    "preview": "npm run compile && npx --yes serve . -p 4173",
+    "start": "npm run preview"
   },
   "devDependencies": {
     "inkjs": "^2.2.3"
