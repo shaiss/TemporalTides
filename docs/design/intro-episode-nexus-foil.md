@@ -20,7 +20,7 @@ First deliverable for Temporal Tides: an **intro episode** that teaches the worl
 | Anne | Foresight | Hazard / timing overlay |
 | Maya | Pattern Sense | Sequence / order restoration |
 | Eli | Kinetic Rush | Timed window / rush span |
-| Vibrion | Vibrational / energy manipulation | Energy gate / leadership frame |
+| Vibrion | Vibrational Manipulation | Energy gate / leadership frame |
 
 Out of MVP: Dave, Iris, full combat systems, Lair campaign, multiplayer netcode. Co-op = ability co-op in single-player via character switch.
 
@@ -39,19 +39,21 @@ One active character at a time. Same Nexus chamber; visible choices/tags change 
 | 0 | Arrive / stakes whisper | Narrative | Vibrion frame | Time is subjective; Entropy shadow (light touch) |
 | 1 | Hazard corridor | Perception / hazard | **Anne** | Foresight reveals trap options others don’t see |
 | 2 | Echo out of order | Sequence | **Maya** | Pattern Sense restores correct temporal order |
-| 3 | Closing window | Speed / coordination prep | **Eli** | Rush clears a timed span others miss |
-| 4 | Dead panel | Energy | **Vibrion** | Charge/route energy to open a path |
-| 5 | **Coordination gate** | Coordination (must fail solo) | All four | Anne marks timing → Maya locks sequence → Eli hits the window → Vibrion powers the seal |
-| 6 | Resonance tease | Team / exit | All | Synergy works; Entropy isn’t solved — episode ends |
+| 3 | Closing window | Speed / coordination prep | **Eli** | Completes Maya’s identified sequence faster by bending his temporal timeline (Kinetic Rush) |
+| 4 | Dead panel | Energy | **Vibrion** | Connected to the world’s electrical components; partners with Eli when a lever is stuck or a decision is needed because Maya can’t identify that pattern |
+| 5 | **Coordination gate** | Coordination (must fail solo) | All four | Interaction example: Anne marks timing → Maya locks sequence → Eli hits the window → Vibrion powers the seal |
+| 6 | Resonance tease | Team / exit | All | Maya helps them see the pattern, with Vibrion’s leadership; Entropy isn’t solved — episode ends |
 
 Puzzle type names map to existing Part IX docs (`PuzzleDesign.md`, `TeamMechanics.md`, `CoreLoop.md`, `CharacterGameplay.md`). Do not invent new ability names.
+
+**Beat 5 (interaction example):** Do not introduce conflict for conflict’s sake. Conflict arises naturally from the friction of different temporal timelines; synchronizing clocks becomes key.
 
 ## Success criteria (Ink/Twine scratch)
 
 - Player cannot clear beat 5 without switching through all four modes in a valid order
 - Each solo beat (1–4) completable in that character’s mode only
 - Hint after idle threshold (accessibility per CoreLoop)
-- Target playtime ~15–25 minutes
+- Target playtime ~10–15 minutes
 
 ## Hard content rules
 
@@ -66,3 +68,16 @@ Puzzle type names map to existing Part IX docs (`PuzzleDesign.md`, `TeamMechanic
 2. Ink/Twine scaffold (eng via Dial / CloudAgent)
 3. Playtest → freeze puzzle logic
 4. Three.js vertical slice only when admiral calls playable build
+
+## Crested from admiral comments
+
+Crested **2026-09-21**. FOIL status unchanged — not canon until the admiral accepts the whole document.
+
+- Cast: Vibrion ability column set to `Vibrational Manipulation` (published dossier; CodeRabbit).
+- Beat 3: Eli completes Maya’s identified sequence faster by bending his temporal timeline (Kinetic Rush).
+- Beat 4: Vibrion is connected to the world’s electrical components and partners with Eli when a lever is stuck or a decision is needed because Maya can’t identify that pattern.
+- Beat 5: Kept as an interaction example. Added: do not introduce conflict for conflict’s sake; conflict arises from the friction of different temporal timelines; synchronizing clocks becomes key.
+- Beat 6: Maya helps them see the pattern, with Vibrion’s leadership.
+- Success criteria: target playtime ~10–15 minutes.
+
+Left alone: **beat 2 (Maya)**. The admiral is editing that wording on this PR. Tide did not rewrite it.
