@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexus intro — Ink scratch preview</title>
+  <style>
+    :root {
+      --temporal-primary: #646cff;
+      --temporal-secondary: #747bff;
+      --chamber-bg: #0c0e1a;
+      --chamber-panel: #141828;
+      --chamber-border: rgba(100, 108, 255, 0.35);
+      --text: #e8eaf6;
+      --text-muted: #9aa3c7;
+      --entropy-shadow: rgba(0, 0, 0, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse 120% 80% at 50% 0%, rgba(116, 123, 255, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(100, 108, 255, 0.08), transparent 40%),
+        var(--chamber-bg);
+      line-height: 1.55;
+    }
+
+    .shell {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 2.5rem;
+    }
+
+    header {
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--temporal-secondary);
+      margin: 0 0 0.35rem;
+    }
+
+    .meta {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin: 0;
+    }
+
+    .chamber {
+      background: var(--chamber-panel);
+      border: 1px solid var(--chamber-border);
+      border-radius: 12px;
+      box-shadow:
+        0 0 0 1px var(--entropy-shadow) inset,
+        0 12px 40px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+    }
+
+    .hud {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--chamber-border);
+      background: linear-gradient(90deg, rgba(100, 108, 255, 0.12), rgba(116, 123, 255, 0.06));
+    }
+
+    .hud-beat {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--temporal-secondary);
+      margin-bottom: 0.35rem;
+    }
+
+    .hud-cue {
+      font-size: 0.9rem;
+      color: var(--text);
+      min-height: 1.4em;
+    }
+
+    .mode-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--chamber-border);
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(100, 108, 255, 0.25);
+      color: var(--text-muted);
+      background: rgba(12, 14, 26, 0.6);
+      transition: border-color 0.15s, color 0.15s, box-shadow 0.15s;
+    }
+
+    .chip.active {
+      color: var(--text);
+      border-color: var(--temporal-primary);
+      background: linear-gradient(135deg, rgba(100, 108, 255, 0.35), rgba(116, 123, 255, 0.2));
+      box-shadow: 0 0 12px rgba(100, 108, 255, 0.35);
+    }
+
+    .chip .ability {
+      display: block;
+      font-weight: 400;
+      font-size: 0.65rem;
+      opacity: 0.85;
+      margin-top: 0.1rem;
+    }
+
+    #story {
+      white-space: pre-wrap;
+      padding: 1.25rem 1rem 0.5rem;
+      min-height: 8rem;
+      font-size: 1.05rem;
+    }
+
+    #choices {
+      padding: 0.5rem 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    #choices button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      font: inherit;
+      font-size: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(116, 123, 255, 0.45);
+      background: linear-gradient(180deg, rgba(100, 108, 255, 0.22), rgba(100, 108, 255, 0.08));
+      color: var(--text);
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.08s, box-shadow 0.15s;
+    }
+
+    #choices button:hover {
+      border-color: var(--temporal-secondary);
+      box-shadow: 0 0 16px rgba(100, 108, 255, 0.25);
+    }
+
+    #choices button:active {
+      transform: scale(0.99);
+    }
+
+    #choices button.mode-choice {
+      border-style: dashed;
+      background: rgba(116, 123, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <h1>Time Nexus — intro scratch</h1>
+      <p class="meta">Hosted FOIL preview · ability-mode scratch</p>
+    </header>
+
+    <div class="chamber">
+      <div class="hud" aria-live="polite">
+        <div class="hud-beat" id="hud-beat">Beat —</div>
+        <div class="hud-cue" id="hud-cue">One lens at a time.</div>
+      </div>
+      <div class="mode-chips" id="mode-chips" aria-label="Active ability modes"></div>
+      <div id="story"></div>
+      <div id="choices"></div>
+    </div>
+  </div>
+
+  <script src="./ink.js"></script>
+  <script>
+    const MODES = [
+      { id: 'anne', label: 'Anne', ability: 'Foresight' },
+      { id: 'maya', label: 'Maya', ability: 'Pattern Sense' },
+      { id: 'eli', label: 'Eli', ability: 'Kinetic Rush' },
+      { id: 'vibrion', label: 'Vibrion', ability: 'Vibrational Manipulation' },
+    ];
+
+    const BEAT_CUES = {
+      '0': 'One lens at a time. · Wide chamber, clocks slightly out of sync.',
+      '1': 'Hazard options only Anne sees · Foresight overlay on the corridor.',
+      '2': 'She marks the pattern · sequence readable in Maya\'s lens.',
+      '3': 'Faster than careful hands · Eli\'s window on Maya\'s sequence.',
+      '4': 'Connected to the world\'s components · Vibrion on the dead panel.',
+      '5': 'Four clock faces disagree · sync clocks in order — Anne → Maya → Eli → Vibrion.',
+      '6': 'Resonance, not victory · team pattern under Vibrion\'s frame.',
+    };
+
+    const MODE_CUES = {
+      anne: 'HUD: Foresight — timing / hazard overlay',
+      maya: 'HUD: Pattern Sense — strain marks & sequence',
+      eli: 'HUD: Kinetic Rush — sync window / rush',
+      vibrion: 'HUD: Vibrational Manipulation — world-grid coupling',
+    };
+
+    const storyEl = document.getElementById('story');
+    const choicesEl = document.getElementById('choices');
+    const hudBeatEl = document.getElementById('hud-beat');
+    const hudCueEl = document.getElementById('hud-cue');
+    const chipsEl = document.getElementById('mode-chips');
+
+    let currentBeat = null;
+    let tagMode = null;
+    let modeSwitchUi = false;
+
+    function renderChips(activeId) {
+      chipsEl.innerHTML = '';
+      MODES.forEach((m) => {
+        const span = document.createElement('span');
+        span.className = 'chip' + (m.id === activeId ? ' active' : '');
+        span.innerHTML = `${m.label}<span class="ability">${m.ability}</span>`;
+        chipsEl.appendChild(span);
+      });
+    }
+
+    function readActive(story) {
+      try {
+        const v = story.variablesState['active'];
+        return v != null ? String(v) : 'vibrion';
+      } catch {
+        return 'vibrion';
+      }
+    }
+
+    function applyTags(tags) {
+      (tags || []).forEach((raw) => {
+        const tag = raw.trim();
+        if (tag.startsWith('beat:')) currentBeat = tag.slice(5);
+        if (tag.startsWith('mode:')) tagMode = tag.slice(5);
+        if (tag === 'ui:mode_switch') modeSwitchUi = true;
+      });
+    }
+
+    function refreshHud(story) {
+      const active = readActive(story);
+      renderChips(active);
+
+      const beatLabel = currentBeat != null ? `Beat ${currentBeat}` : 'Beat —';
+      hudBeatEl.textContent = beatLabel;
+
+      let cue = BEAT_CUES[currentBeat] || 'Time Nexus chamber — switch lens to see different choices.';
+      if (modeSwitchUi) {
+        cue = `Switch lens · ${MODE_CUES[active] || active}`;
+      } else if (tagMode && MODE_CUES[tagMode]) {
+        cue = MODE_CUES[tagMode];
+      } else if (MODE_CUES[active]) {
+        cue = `${cue.split(' · ')[0]} · ${MODE_CUES[active].replace('HUD: ', '')}`;
+      }
+      hudCueEl.textContent = cue;
+    }
+
+    fetch('./story.json')
+      .then((r) => {
+        if (!r.ok) throw new Error('Missing story.json');
+        return r.json();
+      })
+      .then((storyContent) => {
+        const story = new inkjs.Story(storyContent);
+
+        function continueStory() {
+          modeSwitchUi = false;
+          while (story.canContinue) {
+            storyEl.textContent += story.Continue();
+            applyTags(story.currentTags);
+          }
+          refreshHud(story);
+
+          choicesEl.innerHTML = '';
+          story.currentChoices.forEach((choice, i) => {
+            const btn = document.createElement('button');
+            btn.textContent = choice.text;
+            const isMode = /Anne —|Maya —|Eli —|Vibrion —|Switch active|Keep current/i.test(choice.text);
+            if (isMode) btn.classList.add('mode-choice');
+            btn.onclick = () => {
+              story.ChooseChoiceIndex(i);
+              continueStory();
+            };
+            choicesEl.appendChild(btn);
+          });
+        }
+
+        continueStory();
+      })
+      .catch((err) => {
+        storyEl.textContent = err.message;
+      });
+  </script>
+</body>
+</html>

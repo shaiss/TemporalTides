@@ -29,6 +29,8 @@ inklecate nexus-intro.ink   # interactive terminal play (if inklecate on PATH)
 
 A committed `story.json` is included so preview works without a local compiler. Regenerate after editing `nexus-intro.ink`.
 
+On deploy, a self-contained copy is also served at **`/play/nexus-intro/`** (from `public/play/nexus-intro/`).
+
 Root VitePress docs are unaffected; this `package.json` lives only under `scratch/nexus-intro/`.
 
 ## Cast and abilities (dossier names only)
