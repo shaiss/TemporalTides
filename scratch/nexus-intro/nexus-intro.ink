@@ -195,16 +195,16 @@ The panel stays dead. Vibrion must be active for this energy beat.
 -> beat_4
 
 === beat_4_done ===
-The panel lives. Beyond it: the coordination gate — clocks disagree.
+The panel lives. Beyond it: the coordination gate — four clock faces disagree, each timeline keeping its own tempo.
 
 -> mode_switch(-> beat_5)
 
 // —— Beat 5: Coordination gate (all four; must fail solo) ——
 === beat_5 ===
 # beat:5
-Timeline friction, not drama for its own sake: four temporal clocks refuse to sync. The seal only listens to a valid sequence across lenses.
+Four clock faces hang over the gate, out of sync. Friction from different timelines — sync the clocks; do not invent drama.
 
-Anne marks timing. Maya locks sequence. Eli hits the window. Vibrion powers the seal.
+The seal listens only to a cross-lens sequence: Anne ticks timing → Maya locks against that tick → Eli hits the sync window → Vibrion couples power from the world grid.
 
 { beat5_clear:
     -> beat_6
@@ -248,42 +248,42 @@ Anne marks timing. Maya locks sequence. Eli hits the window. Vibrion powers the 
 
 === beat_5_anne ===
 ~ beat5_step = 1
-Anne's overlay ticks. The clocks inch toward agreement — Maya must lock next.
+Anne's Foresight marks the first timing tick. Three clocks still drift — switch to Maya and lock the sequence to that tick.
 
 -> mode_switch(-> beat_5)
 
 === beat_5_maya ===
 ~ beat5_step = 2
-The sequence locks on Maya's marks. Eli must hit the window.
+Maya's marks pin the lever sequence to Anne's tick. The sync window opens — Eli must hit it before the clocks slip again.
 
 -> mode_switch(-> beat_5)
 
 === beat_5_eli ===
 ~ beat5_step = 3
-Rush carries the beat through the window. Vibrion must power the seal.
+Kinetic Rush closes the sync window on Maya's locked beat. Vibrion must couple to the world grid and power the seal.
 
 -> mode_switch(-> beat_5)
 
 === beat_5_vibrion ===
 ~ beat5_step = 4
 ~ beat5_clear = true
-The seal takes Vibrion's coupling. Clocks sync — friction resolved, not fought.
+Vibrational Manipulation meets the seal. The four clocks align — timeline friction eases into sync, not surrender.
 
 -> beat_6
 
 === beat_5_wrong_order ===
-The clocks slip. Complete the current step with the correct active lens, in order: Anne → Maya → Eli → Vibrion.
+The clocks stutter: this step needs a different lens and order. Sync in sequence — Anne (tick) → Maya (lock) → Eli (window) → Vibrion (seal).
 
 -> beat_5
 
 === beat_5_solo_fail ===
-One lens cannot close the gate. Timeline friction wins until you switch through all four modes in sequence.
+One lens cannot bully four disagreeing clocks into agreement. Switch through every mode in order until each timeline has spoken.
 
 -> beat_5
 
 === beat_5_hint ===
 ~ idle_hint_shown = true
-(Hint stub) Sync clocks in order: Anne (timing) → Maya (sequence) → Eli (window) → Vibrion (seal). Switch active character between steps.
+(Hint stub) Desynced clocks, not a brawl — sync in order: Anne (timing tick) → Maya (sequence lock) → Eli (sync window) → Vibrion (seal power). Switch active character between steps.
 
 -> beat_5
 
