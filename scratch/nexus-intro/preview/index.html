@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexus intro — Ink scratch preview</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem; }
+    #story { white-space: pre-wrap; margin-bottom: 1rem; }
+    #choices button { display: block; margin: 0.25rem 0; text-align: left; }
+    .meta { color: #666; font-size: 0.875rem; }
+  </style>
+</head>
+<body>
+  <p class="meta">Scratch preview — compile <code>story.json</code> with <code>npm run compile</code> in parent folder.</p>
+  <div id="story"></div>
+  <div id="choices"></div>
+  <script src="../node_modules/inkjs/dist/ink.js"></script>
+  <script>
+    const storyEl = document.getElementById('story');
+    const choicesEl = document.getElementById('choices');
+
+    fetch('../story.json')
+      .then(r => {
+        if (!r.ok) throw new Error('Missing story.json — run npm run compile');
+        return r.json();
+      })
+      .then(storyContent => {
+        const story = new inkjs.Story(storyContent);
+        function continueStory() {
+          while (story.canContinue) {
+            storyEl.textContent += story.Continue();
+          }
+          choicesEl.innerHTML = '';
+          story.currentChoices.forEach((choice, i) => {
+            const btn = document.createElement('button');
+            btn.textContent = choice.text;
+            btn.onclick = () => { story.ChooseChoiceIndex(i); continueStory(); };
+            choicesEl.appendChild(btn);
+          });
+        }
+        continueStory();
+      })
+      .catch(err => { storyEl.textContent = err.message; });
+  </script>
+</body>
+</html>
