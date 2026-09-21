@@ -11,7 +11,7 @@ export default defineConfig({
   srcDir: './',
   
   // Exclude directories from build (internal-only docs must not become public pages)
-  srcExclude: ['deprecated/**', 'scripts/**', 'logs/**', 'node_modules/**', '.vitepress/cache/**', '.git/**', '.cursor/**', 'AGENTS.md', 'CLAUDE.md', 'docs/**'],
+  srcExclude: ['deprecated/**', 'scripts/**', 'logs/**', 'scratch/**', 'play/**', 'node_modules/**', '.vitepress/cache/**', '.git/**', '.cursor/**', 'AGENTS.md', 'CLAUDE.md', 'docs/**'],
   
   // Clean URLs (removes .html extension)
   cleanUrls: true,

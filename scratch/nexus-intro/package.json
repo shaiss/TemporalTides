@@ -1,0 +1,15 @@
+{
+  "name": "@temporal-tides/nexus-intro-scratch",
+  "private": true,
+  "description": "Optional inkjs preview for Nexus intro Ink scratch (not part of root docs build)",
+  "scripts": {
+    "compile": "inklecate -o story.json nexus-intro.ink",
+    "preview": "npm run compile && npx --yes serve preview -p 4173"
+  },
+  "devDependencies": {
+    "inkjs": "^2.2.3"
+  },
+  "dependencies": {
+    "inklecate": "^1.8.1"
+  }
+}
