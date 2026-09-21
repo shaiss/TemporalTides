@@ -301,16 +301,16 @@ Entropy is not solved. The episode ends on resonance, not victory over the shado
 # ui:mode_switch
 Active character: {active}
 
-* {active != "anne"} [Anne — Foresight]
++ {active != "anne"} [Anne — Foresight]
     ~ active = "anne"
     -> return_knot
-* {active != "maya"} [Maya — Pattern Sense]
++ {active != "maya"} [Maya — Pattern Sense]
     ~ active = "maya"
     -> return_knot
-* {active != "eli"} [Eli — Kinetic Rush]
++ {active != "eli"} [Eli — Kinetic Rush]
     ~ active = "eli"
     -> return_knot
-* {active != "vibrion"} [Vibrion — Vibrational Manipulation]
++ {active != "vibrion"} [Vibrion — Vibrational Manipulation]
     ~ active = "vibrion"
     -> return_knot
-* [Keep current: {active}] -> return_knot
++ [Keep current: {active}] -> return_knot
