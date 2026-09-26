@@ -14,6 +14,9 @@
       --text: #e8eaf6;
       --text-muted: #9aa3c7;
       --entropy-shadow: rgba(0, 0, 0, 0.45);
+      --bubble-narrative: rgba(100, 108, 255, 0.12);
+      --bubble-you: rgba(116, 123, 255, 0.28);
+      --bubble-system: rgba(12, 14, 26, 0.85);
     }
 
     * { box-sizing: border-box; }
@@ -63,12 +66,16 @@
         0 0 0 1px var(--entropy-shadow) inset,
         0 12px 40px rgba(0, 0, 0, 0.35);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      max-height: min(78vh, 52rem);
     }
 
     .hud {
       padding: 0.75rem 1rem;
       border-bottom: 1px solid var(--chamber-border);
       background: linear-gradient(90deg, rgba(100, 108, 255, 0.12), rgba(116, 123, 255, 0.06));
+      flex-shrink: 0;
     }
 
     .hud-beat {
@@ -91,6 +98,7 @@
       gap: 0.4rem;
       padding: 0.65rem 1rem;
       border-bottom: 1px solid var(--chamber-border);
+      flex-shrink: 0;
     }
 
     .chip {
@@ -120,18 +128,81 @@
       margin-top: 0.1rem;
     }
 
-    #story {
+    #transcript {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      padding: 1rem 1rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      min-height: 10rem;
+      scroll-behavior: smooth;
+    }
+
+    .bubble {
+      max-width: 92%;
+      padding: 0.7rem 0.9rem;
+      border-radius: 12px;
+      font-size: 1.02rem;
       white-space: pre-wrap;
-      padding: 1.25rem 1rem 0.5rem;
-      min-height: 8rem;
-      font-size: 1.05rem;
+      word-break: break-word;
+    }
+
+    .bubble.narrative {
+      align-self: flex-start;
+      background: var(--bubble-narrative);
+      border: 1px solid rgba(100, 108, 255, 0.22);
+      border-bottom-left-radius: 4px;
+    }
+
+    .bubble.you {
+      align-self: flex-end;
+      background: var(--bubble-you);
+      border: 1px solid rgba(116, 123, 255, 0.5);
+      border-bottom-right-radius: 4px;
+      text-align: left;
+    }
+
+    .bubble.you .who {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--temporal-secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .bubble.system {
+      align-self: center;
+      max-width: 85%;
+      background: var(--bubble-system);
+      border: 1px dashed rgba(154, 163, 199, 0.35);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      text-align: center;
+      padding: 0.45rem 0.75rem;
+    }
+
+    .composer {
+      flex-shrink: 0;
+      border-top: 1px solid var(--chamber-border);
+      background: rgba(12, 14, 26, 0.45);
+      padding: 0.65rem 1rem 1.1rem;
+    }
+
+    .composer-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 0.45rem;
     }
 
     #choices {
-      padding: 0.5rem 1rem 1.25rem;
       display: flex;
       flex-direction: column;
-      gap: 0.55rem;
+      gap: 0.5rem;
     }
 
     #choices button {
@@ -162,13 +233,21 @@
       border-style: dashed;
       background: rgba(116, 123, 255, 0.1);
     }
+
+    #choices:empty::after {
+      content: "End of scratch preview.";
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 0.35rem 0;
+    }
   </style>
 </head>
 <body>
   <div class="shell">
     <header>
       <h1>Time Nexus — intro scratch</h1>
-      <p class="meta">FOIL preview · same chamber, different lens · compile via <code>npm run compile</code></p>
+      <p class="meta">FOIL preview · chat transcript · compile via <code>npm run compile</code></p>
     </header>
 
     <div class="chamber">
@@ -177,8 +256,11 @@
         <div class="hud-cue" id="hud-cue">One lens at a time.</div>
       </div>
       <div class="mode-chips" id="mode-chips" aria-label="Active ability modes"></div>
-      <div id="story"></div>
-      <div id="choices"></div>
+      <div id="transcript" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <div class="composer">
+        <div class="composer-label">Your move</div>
+        <div id="choices"></div>
+      </div>
     </div>
   </div>
 
@@ -190,6 +272,8 @@
       { id: 'eli', label: 'Eli', ability: 'Kinetic Rush' },
       { id: 'vibrion', label: 'Vibrion', ability: 'Vibrational Manipulation' },
     ];
+
+    const MODE_LABEL = Object.fromEntries(MODES.map((m) => [m.id, m.label]));
 
     const BEAT_CUES = {
       '0': 'One lens at a time. · Wide chamber, clocks slightly out of sync.',
@@ -208,15 +292,15 @@
       vibrion: 'HUD: Vibrational Manipulation — world-grid coupling',
     };
 
-    const storyEl = document.getElementById('story');
+    const transcriptEl = document.getElementById('transcript');
     const choicesEl = document.getElementById('choices');
     const hudBeatEl = document.getElementById('hud-beat');
     const hudCueEl = document.getElementById('hud-cue');
     const chipsEl = document.getElementById('mode-chips');
 
     let currentBeat = null;
-    let tagMode = null;
     let modeSwitchUi = false;
+    let lastSystemKey = null;
 
     function renderChips(activeId) {
       chipsEl.innerHTML = '';
@@ -241,7 +325,6 @@
       (tags || []).forEach((raw) => {
         const tag = raw.trim();
         if (tag.startsWith('beat:')) currentBeat = tag.slice(5);
-        if (tag.startsWith('mode:')) tagMode = tag.slice(5);
         if (tag === 'ui:mode_switch') modeSwitchUi = true;
       });
     }
@@ -250,18 +333,73 @@
       const active = readActive(story);
       renderChips(active);
 
-      const beatLabel = currentBeat != null ? `Beat ${currentBeat}` : 'Beat —';
-      hudBeatEl.textContent = beatLabel;
+      hudBeatEl.textContent = currentBeat != null ? `Beat ${currentBeat}` : 'Beat —';
 
+      // Prefer live `active` over sticky beat-entry mode tags (fixes ability-label lag).
       let cue = BEAT_CUES[currentBeat] || 'Time Nexus chamber — switch lens to see different choices.';
       if (modeSwitchUi) {
         cue = `Switch lens · ${MODE_CUES[active] || active}`;
-      } else if (tagMode && MODE_CUES[tagMode]) {
-        cue = MODE_CUES[tagMode];
       } else if (MODE_CUES[active]) {
         cue = `${cue.split(' · ')[0]} · ${MODE_CUES[active].replace('HUD: ', '')}`;
       }
       hudCueEl.textContent = cue;
+    }
+
+    function scrollTranscript() {
+      transcriptEl.scrollTop = transcriptEl.scrollHeight;
+    }
+
+    function appendBubble(text, kind) {
+      const el = document.createElement('div');
+      el.className = 'bubble ' + kind;
+      if (kind === 'you') {
+        const who = document.createElement('span');
+        who.className = 'who';
+        who.textContent = 'You';
+        el.appendChild(who);
+        el.appendChild(document.createTextNode(text));
+      } else {
+        el.textContent = text;
+      }
+      transcriptEl.appendChild(el);
+      scrollTranscript();
+    }
+
+    function appendSystemOnce(key, text) {
+      if (lastSystemKey === key) return;
+      lastSystemKey = key;
+      appendBubble(text, 'system');
+    }
+
+    function classifyChunk(chunk) {
+      const activeMatch = chunk.match(/^Active character:\s*(.+)$/i);
+      if (activeMatch) {
+        const id = activeMatch[1].trim().toLowerCase();
+        const label = MODE_LABEL[id] || activeMatch[1].trim();
+        return { kind: 'system', text: `Lens switch · currently ${label}`, key: 'active:' + id };
+      }
+      return { kind: 'narrative', text: chunk };
+    }
+
+    function appendContinueOutput(raw) {
+      const chunks = String(raw || '')
+        .split(/\n+/)
+        .map((s) => s.trim())
+        .filter(Boolean);
+
+      chunks.forEach((chunk) => {
+        const classified = classifyChunk(chunk);
+        if (classified.kind === 'system') {
+          appendSystemOnce(classified.key, classified.text);
+        } else {
+          lastSystemKey = null;
+          appendBubble(classified.text, 'narrative');
+        }
+      });
+    }
+
+    function isModeChoice(text) {
+      return /Anne —|Maya —|Eli —|Vibrion —|Switch active|Keep current/i.test(text);
     }
 
     fetch('../story.json')
@@ -275,18 +413,25 @@
         function continueStory() {
           modeSwitchUi = false;
           while (story.canContinue) {
-            storyEl.textContent += story.Continue();
+            const line = story.Continue();
             applyTags(story.currentTags);
+            appendContinueOutput(line);
           }
+
+          if (modeSwitchUi) {
+            appendSystemOnce('mode-switch-prompt', 'Choose a lens — mode chips above show who is active.');
+          }
+
           refreshHud(story);
 
           choicesEl.innerHTML = '';
           story.currentChoices.forEach((choice, i) => {
             const btn = document.createElement('button');
             btn.textContent = choice.text;
-            const isMode = /Anne —|Maya —|Eli —|Vibrion —|Switch active|Keep current/i.test(choice.text);
-            if (isMode) btn.classList.add('mode-choice');
+            if (isModeChoice(choice.text)) btn.classList.add('mode-choice');
             btn.onclick = () => {
+              appendBubble(choice.text, 'you');
+              lastSystemKey = null;
               story.ChooseChoiceIndex(i);
               continueStory();
             };
@@ -297,7 +442,7 @@
         continueStory();
       })
       .catch((err) => {
-        storyEl.textContent = err.message;
+        appendBubble(err.message, 'system');
       });
   </script>
 </body>
