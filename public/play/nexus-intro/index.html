@@ -247,7 +247,7 @@
   <div class="shell">
     <header>
       <h1>Time Nexus — intro scratch</h1>
-      <p class="meta">FOIL preview · chat transcript · compile via <code>npm run compile</code></p>
+      <p class="meta">Hosted FOIL preview · ability-mode scratch · chat transcript</p>
     </header>
 
     <div class="chamber">
@@ -264,7 +264,7 @@
     </div>
   </div>
 
-  <script src="../node_modules/inkjs/dist/ink.js"></script>
+  <script src="./ink.js"></script>
   <script>
     const MODES = [
       { id: 'anne', label: 'Anne', ability: 'Foresight' },
@@ -402,9 +402,9 @@
       return /Anne —|Maya —|Eli —|Vibrion —|Switch active|Keep current/i.test(text);
     }
 
-    fetch('../story.json')
+    fetch('./story.json')
       .then((r) => {
-        if (!r.ok) throw new Error('Missing story.json — run npm run compile');
+        if (!r.ok) throw new Error('Missing story.json');
         return r.json();
       })
       .then((storyContent) => {
