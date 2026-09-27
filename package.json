@@ -7,6 +7,7 @@
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
+    "build:vercel": "npm run docs:build && node scripts/build-nexus-play.mjs",
     "docs:preview": "vitepress preview",
     "docs:serve": "vitepress serve --port 4173",
     "start": "npm run docs:dev",

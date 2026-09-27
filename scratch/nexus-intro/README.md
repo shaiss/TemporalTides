@@ -15,6 +15,17 @@ npm install && npm start
 
 `npm start` compiles Ink (`story.json`, inkVersion 21) and serves the **Vite + Three.js + inkjs** app at **http://localhost:4173/**.
 
+### Hosted HITL (Vercel)
+
+Every Vercel deploy (including **PR previews**) bundles the same playable at **`/play/`** on the deployment origin — docs stay at `/`.
+
+- **This PR (#21) preview:** after deploy, open  
+  `https://<preview-host>.vercel.app/play/`  
+  (example pattern: `https://temporal-tides-<hash>-shaiss-projects.vercel.app/play/`).
+- **Production** (`temporaltides.com` or the project’s production alias): `/play/` ships after this branch merges to `main` and production redeploys.
+
+No clone required — Ink + chamber run entirely from static assets under `/play/`.
+
 - Locked wide camera (no OrbitControls / free roam).
 - Same chamber; per-mode overlay groups (Anne / Maya / Eli / Vibrion) driven by Ink `active`.
 - Beat / HUD cues from Ink tags (`# beat:N`, `# mode:…`, `# ui:mode_switch`).

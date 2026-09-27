@@ -1,9 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run docs:build",
+  "buildCommand": "npm run build:vercel",
   "outputDirectory": ".vitepress/dist",
   "framework": null,
   "installCommand": "npm install",
+  "rewrites": [
+    {
+      "source": "/play",
+      "destination": "/play/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
