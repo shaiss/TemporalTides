@@ -117,7 +117,7 @@ export class InkController {
   }
 
   async load() {
-    const storyUrl = new URL('story.json', import.meta.env.BASE_URL).href;
+    const storyUrl = `${import.meta.env.BASE_URL}story.json`;
     const res = await fetch(storyUrl);
     if (!res.ok) throw new Error('Missing story.json — run npm run compile');
     const content = await res.json();
