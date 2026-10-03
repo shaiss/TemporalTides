@@ -70,7 +70,8 @@ Goal: prove the coordination gate **cannot** clear in a single active mode (cloc
 | `story.json` | Compiled Ink (committed) |
 | `index.html` | Vite entry |
 | `src/main.js` | inkjs + UI wiring |
-| `src/chamber.js` | Three.js room / overlays / clocks |
+| `src/room.js` | Chamber shell materials, emissive edges, base lighting + shadows |
+| `src/chamber.js` | Three.js overlays / clocks / scene wiring |
 | `src/inkStory.js` | Tag + variable bridge |
 | `preview/index.html` | Legacy ink-only preview |
 

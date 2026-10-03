@@ -1,4 +1,10 @@
 import * as THREE from 'three';
+import {
+  applyRoomShadows,
+  buildRoomShell,
+  configureRoomRenderer,
+  installRoomBaseLighting,
+} from './room.js';
 
 const PRIMARY = 0x646cff;
 const SECONDARY = 0x747bff;
@@ -18,6 +24,7 @@ export class NexusChamber {
     this.renderer.setClearColor(0x080a12, 1);
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.15;
+    configureRoomRenderer(this.renderer);
 
     this.scene = new THREE.Scene();
     this.scene.fog = new THREE.FogExp2(0x080a12, 0.028);
@@ -35,8 +42,10 @@ export class NexusChamber {
     this.clocks = [];
     this.modeLights = {};
 
-    this._buildLights();
-    this._buildRoom();
+    installRoomBaseLighting(this.scene);
+    this._buildSceneLights();
+    const { gateFrame } = buildRoomShell(this.scene);
+    this.gateFrame = gateFrame;
     this._buildProps();
     this._buildOverlays();
     this._buildClocks();
@@ -66,13 +75,7 @@ export class NexusChamber {
     });
   }
 
-  _buildLights() {
-    this.scene.add(new THREE.HemisphereLight(SECONDARY, 0x060810, 0.45));
-
-    const key = new THREE.DirectionalLight(0xffffff, 0.85);
-    key.position.set(5, 10, 8);
-    this.scene.add(key);
-
+  _buildSceneLights() {
     this.gateLight = new THREE.SpotLight(PRIMARY, 0, 18, Math.PI / 5, 0.4);
     this.gateLight.position.set(0, 5.5, 2);
     this.gateLight.target.position.set(0, 2.5, -6);
@@ -91,37 +94,6 @@ export class NexusChamber {
       this.scene.add(light);
       this.modeLights[id] = light;
     });
-  }
-
-  _buildRoom() {
-    const floor = new THREE.Mesh(
-      new THREE.PlaneGeometry(22, 16),
-      this._mat(0x121620),
-    );
-    floor.rotation.x = -Math.PI / 2;
-    this.scene.add(floor);
-
-    const wallMat = this._mat(0x0e121c);
-    const back = new THREE.Mesh(new THREE.PlaneGeometry(22, 7), wallMat);
-    back.position.set(0, 3.5, -8);
-    this.scene.add(back);
-
-    const left = new THREE.Mesh(new THREE.PlaneGeometry(16, 7), wallMat);
-    left.position.set(-11, 3.5, 0);
-    left.rotation.y = Math.PI / 2;
-    this.scene.add(left);
-
-    const right = new THREE.Mesh(new THREE.PlaneGeometry(16, 7), wallMat);
-    right.position.set(11, 3.5, 0);
-    right.rotation.y = -Math.PI / 2;
-    this.scene.add(right);
-
-    this.gateFrame = new THREE.Mesh(
-      new THREE.BoxGeometry(6.5, 4.8, 0.35),
-      this._mat(0x1a2030, PRIMARY, 0.08),
-    );
-    this.gateFrame.position.set(0, 2.4, -7.1);
-    this.scene.add(this.gateFrame);
   }
 
   _buildGateFocus() {
@@ -151,6 +123,7 @@ export class NexusChamber {
       this._mat(0x1a2030),
     );
     corridor.position.set(-4.2, 0.06, 0.5);
+    applyRoomShadows(corridor);
     this.scene.add(corridor);
 
     this.trapMeshes = [];
@@ -160,6 +133,7 @@ export class NexusChamber {
         this._mat(0x252a3d),
       );
       trap.position.set(-4.2 + (i - 1) * 1.1, 0.18, 2.8 - i * 1.4);
+      applyRoomShadows(trap);
       this.scene.add(trap);
       this.trapMeshes.push(trap);
     }
@@ -172,6 +146,7 @@ export class NexusChamber {
       );
       lever.position.set(2.8 + i * 0.75, 0.7, 1.8);
       lever.rotation.z = (i % 2 === 0 ? 0.3 : -0.25);
+      applyRoomShadows(lever);
       this.scene.add(lever);
       this.leverMeshes.push(lever);
     }
@@ -181,6 +156,7 @@ export class NexusChamber {
       this._mat(0x1a1f2e),
     );
     this.panelMesh.position.set(5.2, 1.5, -0.5);
+    applyRoomShadows(this.panelMesh);
     this.scene.add(this.panelMesh);
   }
 
