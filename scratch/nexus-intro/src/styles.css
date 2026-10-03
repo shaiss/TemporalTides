@@ -55,68 +55,6 @@ body {
   );
 }
 
-.lens-filter {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  mix-blend-mode: screen;
-}
-
-#app[data-mode="anne"] .lens-filter {
-  opacity: 0.55;
-  background:
-    radial-gradient(ellipse 45% 70% at 22% 55%, rgba(100, 180, 255, 0.45), transparent 70%),
-    linear-gradient(105deg, rgba(100, 108, 255, 0.2) 0%, transparent 55%);
-}
-
-#app[data-mode="maya"] .lens-filter {
-  opacity: 0.5;
-  background:
-    repeating-linear-gradient(
-      -12deg,
-      transparent,
-      transparent 18px,
-      rgba(116, 123, 255, 0.12) 18px,
-      rgba(116, 123, 255, 0.12) 19px
-    ),
-    radial-gradient(ellipse 50% 45% at 62% 58%, rgba(116, 123, 255, 0.35), transparent 72%);
-}
-
-#app[data-mode="eli"] .lens-filter {
-  opacity: 0.48;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent 40px,
-      rgba(116, 123, 255, 0.18) 40px,
-      rgba(116, 123, 255, 0.18) 44px
-    );
-  animation: eli-scan 0.45s linear infinite;
-}
-
-#app[data-mode="vibrion"] .lens-filter {
-  opacity: 0.42;
-  background:
-    linear-gradient(rgba(100, 108, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(100, 108, 255, 0.08) 1px, transparent 1px);
-  background-size: 28px 28px;
-  animation: vibrion-pulse 2.2s ease-in-out infinite;
-}
-
-@keyframes eli-scan {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 80px 0, 0 0; }
-}
-
-@keyframes vibrion-pulse {
-  0%, 100% { opacity: 0.38; }
-  50% { opacity: 0.52; }
-}
-
 .sr-only {
   position: absolute;
   width: 1px;

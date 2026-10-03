@@ -1,8 +1,17 @@
 import * as THREE from 'three';
+import {
+  LENS_PRIMARY,
+  LENS_SECONDARY,
+  LENS_ACCENT,
+  buildLensOverlays,
+  applyActiveLens,
+  tickLensAnimation,
+  createOverlayMaterialFactory,
+} from './lenses.js';
 
-const PRIMARY = 0x646cff;
-const SECONDARY = 0x747bff;
-const ACCENT = 0x9aa8ff;
+const PRIMARY = LENS_PRIMARY;
+const SECONDARY = LENS_SECONDARY;
+const ACCENT = LENS_ACCENT;
 
 export class NexusChamber {
   constructor(canvas) {
@@ -28,26 +37,15 @@ export class NexusChamber {
     this.camera.position.copy(this.baseCameraPos);
     this.camera.lookAt(0, 1.4, -2);
 
-    this.overlayAnne = new THREE.Group();
-    this.overlayMaya = new THREE.Group();
-    this.overlayEli = new THREE.Group();
-    this.overlayVibrion = new THREE.Group();
     this.clocks = [];
     this.modeLights = {};
 
     this._buildLights();
     this._buildRoom();
     this._buildProps();
-    this._buildOverlays();
+    this._buildLensLayer();
     this._buildClocks();
     this._buildGateFocus();
-
-    this.scene.add(
-      this.overlayAnne,
-      this.overlayMaya,
-      this.overlayEli,
-      this.overlayVibrion,
-    );
 
     this._onResize();
     window.addEventListener('resize', () => this._onResize());
@@ -184,116 +182,13 @@ export class NexusChamber {
     this.scene.add(this.panelMesh);
   }
 
-  _buildOverlays() {
-    const trapGlow = this._mat(0xaaccff, 0x88bbff, 1.4);
-    for (let i = 0; i < 3; i++) {
-      const base = new THREE.Vector3(-4.2 + (i - 1) * 1.1, 0.35, 2.8 - i * 1.4);
-
-      const slab = new THREE.Mesh(new THREE.BoxGeometry(1.05, 0.06, 1.05), trapGlow);
-      slab.position.copy(base);
-      this.overlayAnne.add(slab);
-
-      const pillar = new THREE.Mesh(
-        new THREE.BoxGeometry(0.12, 2.2, 0.12),
-        this._mat(0x646cff, PRIMARY, 1.2, { transparent: true, opacity: 0.75 }),
-      );
-      pillar.position.set(base.x, 1.2, base.z);
-      this.overlayAnne.add(pillar);
-
-      const ring = new THREE.Mesh(
-        new THREE.TorusGeometry(0.55, 0.05, 10, 32),
-        trapGlow,
-      );
-      ring.rotation.x = Math.PI / 2;
-      ring.position.set(base.x, 0.55, base.z);
-      this.overlayAnne.add(ring);
-
-      const tick = new THREE.Mesh(
-        new THREE.BoxGeometry(0.08, 0.08, 1.4),
-        this._mat(ACCENT, ACCENT, 1),
-      );
-      tick.position.set(base.x - 0.6, 0.5, base.z);
-      this.overlayAnne.add(tick);
-    }
-
-    const markMat = this._mat(0x747bff, SECONDARY, 1.3);
-    const leverXs = [2.8, 3.55, 4.3, 5.05];
-    for (let i = 0; i < 4; i++) {
-      const x = leverXs[i];
-      const mark = new THREE.Mesh(new THREE.SphereGeometry(0.22, 14, 14), markMat);
-      mark.position.set(x, 1.35, 1.95);
-      this.overlayMaya.add(mark);
-
-      const num = new THREE.Mesh(
-        new THREE.BoxGeometry(0.18, 0.18, 0.04),
-        this._mat(0xffffff, 0xffffff, 0.8),
-      );
-      num.position.set(x, 1.65, 1.92);
-      this.overlayMaya.add(num);
-
-      if (i < 3) {
-        const link = new THREE.Mesh(
-          new THREE.BoxGeometry(0.75, 0.06, 0.06),
-          markMat,
-        );
-        link.position.set(x + 0.38, 1.1, 1.88);
-        this.overlayMaya.add(link);
-      }
-    }
-
-    this.eliStreaks = [];
-    const rushMat = new THREE.MeshBasicMaterial({
-      color: ACCENT,
-      transparent: true,
-      opacity: 0.55,
-    });
-    for (let s = 0; s < 4; s++) {
-      const streak = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.1, 0.35), rushMat.clone());
-      streak.position.set(3.5 + s * 0.15, 0.75 + s * 0.12, 1.9);
-      this.overlayEli.add(streak);
-      this.eliStreaks.push(streak);
-    }
-    this.eliWindow = new THREE.Mesh(
-      new THREE.BoxGeometry(3.8, 0.08, 2.2),
-      this._mat(SECONDARY, SECONDARY, 0.9, { transparent: true, opacity: 0.35 }),
-    );
-    this.eliWindow.position.set(3.9, 1.05, 1.85);
-    this.overlayEli.add(this.eliWindow);
-
-    const gridMat = new THREE.LineBasicMaterial({ color: PRIMARY, transparent: true, opacity: 0.85 });
-    const grid = new THREE.Group();
-    for (let i = -5; i <= 5; i++) {
-      const h = new THREE.BufferGeometry().setFromPoints([
-        new THREE.Vector3(i * 0.22, -1.1, 0),
-        new THREE.Vector3(i * 0.22, 1.1, 0),
-      ]);
-      const v = new THREE.BufferGeometry().setFromPoints([
-        new THREE.Vector3(-0.75, i * 0.22, 0),
-        new THREE.Vector3(0.75, i * 0.22, 0),
-      ]);
-      grid.add(new THREE.Line(h, gridMat));
-      grid.add(new THREE.Line(v, gridMat));
-    }
-    grid.position.copy(this.panelMesh.position);
-    grid.position.x += 0.02;
-    this.overlayVibrion.add(grid);
-
-    const hum = new THREE.Mesh(
-      new THREE.BoxGeometry(1.7, 2.1, 0.06),
-      this._mat(0x646cff, PRIMARY, 1.1),
-    );
-    hum.position.copy(this.panelMesh.position);
-    hum.position.z += 0.14;
-    this.overlayVibrion.add(hum);
-
-    for (let i = -3; i <= 3; i++) {
-      const beam = new THREE.Mesh(
-        new THREE.BoxGeometry(0.04, 0.04, 4),
-        this._mat(PRIMARY, PRIMARY, 0.9, { transparent: true, opacity: 0.4 }),
-      );
-      beam.position.set(this.panelMesh.position.x, 0.15, this.panelMesh.position.z + i * 0.9);
-      this.overlayVibrion.add(beam);
-    }
+  _buildLensLayer() {
+    const overlayMat = createOverlayMaterialFactory();
+    const { groups, anim } = buildLensOverlays(overlayMat);
+    this.lensGroups = groups;
+    this.lensAnim = anim;
+    Object.values(groups).forEach((g) => this.scene.add(g));
+    applyActiveLens(groups, this.activeMode);
   }
 
   _buildClocks() {
@@ -337,44 +232,10 @@ export class NexusChamber {
   }
 
   _updateOverlayVisibility() {
-    const sets = {
-      anne: this.overlayAnne,
-      maya: this.overlayMaya,
-      eli: this.overlayEli,
-      vibrion: this.overlayVibrion,
-    };
-    Object.entries(sets).forEach(([id, group]) => {
-      const on = id === this.activeMode;
-      group.visible = on;
-      group.traverse((child) => {
-        if (child.isMesh && child.material) {
-          const mats = Array.isArray(child.material) ? child.material : [child.material];
-          mats.forEach((m) => {
-            if (m.emissiveIntensity !== undefined) {
-              m.emissiveIntensity = on ? Math.max(m.emissiveIntensity, 0.8) : m.emissiveIntensity;
-            }
-          });
-        }
-      });
-    });
-
+    applyActiveLens(this.lensGroups, this.activeMode);
     Object.entries(this.modeLights).forEach(([id, light]) => {
-      light.intensity = id === this.activeMode ? 1.8 : 0;
+      light.intensity = id === this.activeMode ? 0.55 : 0;
     });
-
-    this.trapMeshes?.forEach((m) => {
-      m.material.emissiveIntensity = this.activeMode === 'anne' ? 0.05 : 0;
-      m.material.color.setHex(this.activeMode === 'anne' ? 0x2a3048 : 0x252a3d);
-    });
-    this.leverMeshes?.forEach((m) => {
-      m.material.emissive.setHex(this.activeMode === 'maya' ? SECONDARY : 0x000000);
-      m.material.emissiveIntensity = this.activeMode === 'maya' ? 0.25 : 0;
-    });
-    if (this.panelMesh?.material) {
-      const vib = this.activeMode === 'vibrion';
-      this.panelMesh.material.emissiveIntensity = vib ? 0.45 : 0.02;
-      this.panelMesh.material.emissive.setHex(vib ? PRIMARY : 0x000000);
-    }
   }
 
   _onResize() {
@@ -428,22 +289,7 @@ export class NexusChamber {
       this.clockGroup.scale.lerp(new THREE.Vector3(s, s, s), 0.05);
     }
 
-    if (this.eliStreaks) {
-      this.eliStreaks.forEach((streak, i) => {
-        streak.position.x = 3.2 + i * 0.2 + Math.sin(t * 10 + i) * 0.35;
-        streak.material.opacity = 0.35 + Math.abs(Math.sin(t * 7 + i)) * 0.45;
-      });
-    }
-    if (this.eliWindow && this.activeMode === 'eli') {
-      const squeeze = 0.85 + Math.sin(t * 5) * 0.08;
-      this.eliWindow.scale.x = squeeze;
-    }
-
-    this.overlayAnne.children.forEach((child, i) => {
-      if (child.isMesh && child.geometry?.type === 'TorusGeometry') {
-        child.rotation.z = t * 0.8 + i;
-      }
-    });
+    tickLensAnimation(this.lensAnim, this.activeMode, t);
 
     this.renderer.render(this.scene, this.camera);
   }
