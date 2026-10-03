@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { NexusBeat5Clocks } from './clocks.js';
 
 const PRIMARY = 0x646cff;
 const SECONDARY = 0x747bff;
@@ -32,15 +33,14 @@ export class NexusChamber {
     this.overlayMaya = new THREE.Group();
     this.overlayEli = new THREE.Group();
     this.overlayVibrion = new THREE.Group();
-    this.clocks = [];
     this.modeLights = {};
 
     this._buildLights();
     this._buildRoom();
     this._buildProps();
     this._buildOverlays();
-    this._buildClocks();
     this._buildGateFocus();
+    this.beat5Clocks = new NexusBeat5Clocks(this.scene, this._mat.bind(this));
 
     this.scene.add(
       this.overlayAnne,
@@ -296,43 +296,16 @@ export class NexusChamber {
     }
   }
 
-  _buildClocks() {
-    this.clockGroup = new THREE.Group();
-    this.clockGroup.position.set(0, 3.8, -6.5);
-    const positions = [-2.2, -0.75, 0.75, 2.2];
-    positions.forEach((x, i) => {
-      const face = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.62, 0.62, 0.14, 28),
-        this._mat(0x222838, PRIMARY, 0.35),
-      );
-      face.rotation.x = Math.PI / 2;
-      face.position.set(x, 0, 0);
-
-      const rim = new THREE.Mesh(
-        new THREE.TorusGeometry(0.64, 0.04, 8, 32),
-        this._mat(SECONDARY, SECONDARY, 0.8),
-      );
-      rim.rotation.x = Math.PI / 2;
-      rim.position.set(x, 0.02, 0);
-
-      const hand = new THREE.Mesh(
-        new THREE.BoxGeometry(0.05, 0.5, 0.05),
-        this._mat(0x747bff, ACCENT, 1.2),
-      );
-      hand.position.set(x, 0.1, 0);
-      hand.geometry.translate(0, 0.25, 0);
-
-      this.clockGroup.add(face, rim, hand);
-      this.clocks.push({ hand, rim, baseSpeed: 0.85 + i * 0.4, phase: i * 1.9 });
-    });
-    this.scene.add(this.clockGroup);
-  }
-
   syncFromInk(state) {
     this.activeMode = state.active;
     this.targetBeat = state.currentBeat;
     this.beat5Step = state.beat5Step;
     this.beat5Clear = state.beat5Clear;
+    this.beat5Clocks?.sync({
+      targetBeat: state.currentBeat,
+      beat5Step: state.beat5Step,
+      beat5Clear: state.beat5Clear,
+    });
     this._updateOverlayVisibility();
   }
 
@@ -396,20 +369,7 @@ export class NexusChamber {
     this.camera.lookAt(0, onBeat5 ? 2.6 : 1.3, onBeat5 ? -5.5 : -1.5);
 
     const syncFactor = this.beat5Clear ? 1 : Math.min(this.beat5Step / 4, 0.9);
-    this.clocks.forEach((c, i) => {
-      const desync = this.beat5Clear ? 0 : 1 - syncFactor;
-      const speed = c.baseSpeed * desync + 0.08;
-      const wobble = Math.sin(t * 3 + c.phase) * 0.15 * desync;
-      c.hand.rotation.z = t * speed + c.phase * desync + wobble;
-      if (this.beat5Clear) {
-        c.hand.rotation.z = 0;
-      }
-      if (c.rim?.material) {
-        c.rim.material.emissiveIntensity = onBeat5
-          ? 0.5 + (this.beat5Clear ? 0.6 : Math.sin(t * 4 + i) * 0.35)
-          : 0.25;
-      }
-    });
+    this.beat5Clocks?.update(t);
 
     if (this.gateLight) {
       const pulse = this.beat5Clear ? 2.4 : 0.9 + Math.sin(t * 2.5) * 0.35;
@@ -423,11 +383,6 @@ export class NexusChamber {
     if (this.gatePortal) {
       this.gatePortal.material.opacity = onBeat5 ? 0.15 + syncFactor * 0.2 : 0.06;
     }
-    if (this.clockGroup) {
-      const s = onBeat5 ? 1.12 : 1;
-      this.clockGroup.scale.lerp(new THREE.Vector3(s, s, s), 0.05);
-    }
-
     if (this.eliStreaks) {
       this.eliStreaks.forEach((streak, i) => {
         streak.position.x = 3.2 + i * 0.2 + Math.sin(t * 10 + i) * 0.35;
