@@ -27,7 +27,7 @@ Every Vercel deploy (including **PR previews**) bundles the same playable at **`
 No clone required — Ink + chamber run entirely from static assets under `/play/`.
 
 - Locked wide camera (no OrbitControls / free roam).
-- Same chamber; per-mode overlay groups (Anne / Maya / Eli / Vibrion) driven by Ink `active`.
+- Same chamber; per-mode **3D overlay groups** in `src/lenses.js` (Anne / Maya / Eli / Vibrion) driven by Ink `active` — no full-screen lens tint.
 - Beat / HUD cues from Ink tags (`# beat:N`, `# mode:…`, `# ui:mode_switch`).
 - Entropy = CSS edge vignette only.
 - Beat 5: four clocks animate desynced until `beat5_step` / `beat5_clear` from Ink; optional camera nudge toward the gate on beat 5.
@@ -70,7 +70,11 @@ Goal: prove the coordination gate **cannot** clear in a single active mode (cloc
 | `story.json` | Compiled Ink (committed) |
 | `index.html` | Vite entry |
 | `src/main.js` | inkjs + UI wiring |
-| `src/chamber.js` | Three.js room / overlays / clocks |
+| `src/room.js` | Chamber shell materials, emissive edges, base lighting + shadows |
+| `src/lenses.js` | Per-mode 3D overlays (Anne / Maya / Eli / Vibrion) |
+| `src/clocks.js` | Beat-5 hero clocks (desync + step accent) |
+| `src/cameraBeat.js` | Beat-5 camera push (wide ↔ clock wall) |
+| `src/chamber.js` | Scene wiring: Ink hooks → room / lenses / clocks / camera |
 | `src/inkStory.js` | Tag + variable bridge |
 | `preview/index.html` | Legacy ink-only preview |
 
@@ -81,6 +85,23 @@ Goal: prove the coordination gate **cannot** clear in a single active mode (cloc
 - `idle_hint_shown` — stub for idle-threshold hint (CoreLoop accessibility placeholder)
 
 Mode chips in the UI are **display-only**; switching lens still happens only through Ink choices.
+
+## Verify mode lenses (issue #23)
+
+1. `cd scratch/nexus-intro && npm install && npm start` → http://localhost:4173/
+2. At beat 0, use **Switch active character** (or play to a beat with mode choices) and cycle **Anne → Maya → Eli → Vibrion** via Ink choices only (chips do not switch mode).
+3. For each mode, pause on a still and compare the chamber (ignore chip labels):
+
+| Mode | What you should see in the room |
+|------|----------------------------------|
+| **Anne** | Left corridor: sharp trap wedges, square cold rims, vertical spikes — cold `#646cff` / ice rim |
+| **Maya** | Octahedron marks + torus echoes on levers, traps, corridor, and panel; linked bars between props |
+| **Eli** | Horizontal motion streaks on levers and traps; closing-window band on the lever row |
+| **Vibrion** | Floor-sitting perspective grid across the chamber plus panel grid and vertical coupling beams |
+
+4. Only one overlay set is visible at a time; entropy stays the CSS edge vignette (unchanged).
+
+Production bundle: after merge, same check at **`/play/`** on the Vercel deployment.
 
 ## inkVersion / inkjs
 
