@@ -4,6 +4,9 @@
   --chamber-bg: #0c0e1a;
   --text: #e8eaf6;
   --text-muted: #9aa3c7;
+  --chrome-top-pad: 0.65rem;
+  --chrome-side-pad: 0.85rem;
+  --choice-min-tap: 44px;
 }
 
 * {
@@ -14,16 +17,19 @@ html,
 body {
   margin: 0;
   height: 100%;
+  height: 100dvh;
   overflow: hidden;
   font-family: "Segoe UI", system-ui, sans-serif;
   color: var(--text);
   background: var(--chamber-bg);
+  -webkit-text-size-adjust: 100%;
 }
 
 #app {
   position: relative;
   width: 100%;
   height: 100%;
+  height: 100dvh;
   isolation: isolate;
 }
 
@@ -33,6 +39,7 @@ body {
   width: 100%;
   height: 100%;
   display: block;
+  touch-action: none;
 }
 
 .entropy-vignette {
@@ -74,10 +81,11 @@ body {
   right: 0;
   z-index: 4;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 0.65rem 0.85rem;
+  padding: var(--chrome-top-pad) var(--chrome-side-pad);
+  padding-top: max(var(--chrome-top-pad), env(safe-area-inset-top, 0px));
   pointer-events: none;
 }
 
@@ -86,10 +94,14 @@ body {
   min-width: 0;
   max-width: min(52rem, 72vw);
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 .beat-pill {
   display: inline-block;
+  align-self: flex-start;
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -99,7 +111,7 @@ body {
   border-radius: 4px;
   background: rgba(12, 14, 26, 0.55);
   border: 1px solid rgba(100, 108, 255, 0.35);
-  margin-bottom: 0.35rem;
+  margin: 0;
 }
 
 .narrative-line {
@@ -117,8 +129,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-content: flex-start;
   gap: 0.3rem;
-  pointer-events: auto;
+  pointer-events: none;
+  flex-shrink: 0;
   max-width: 42%;
 }
 
@@ -158,7 +172,8 @@ body {
   right: 0;
   bottom: 0;
   z-index: 4;
-  padding: 0 0.65rem 0.65rem;
+  padding: 0 var(--chrome-side-pad) var(--chrome-side-pad);
+  padding-bottom: max(var(--chrome-side-pad), env(safe-area-inset-bottom, 0px));
   pointer-events: none;
   background: linear-gradient(to top, rgba(8, 10, 18, 0.92) 0%, rgba(8, 10, 18, 0.55) 55%, transparent 100%);
 }
@@ -169,19 +184,26 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.4rem;
-  justify-content: center;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 100%;
   max-height: min(28vh, 9.5rem);
   overflow-y: auto;
-  padding: 0.35rem 0.15rem 0.15rem;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.35rem 0 0.15rem;
+  touch-action: manipulation;
 }
 
 .choice-rail button {
   flex: 1 1 min(100%, 16rem);
   max-width: 22rem;
+  min-height: var(--choice-min-tap);
   text-align: left;
   font: inherit;
   font-size: 0.82rem;
-  padding: 0.55rem 0.75rem;
+  line-height: 1.35;
+  padding: 0.65rem 0.85rem;
   border-radius: 8px;
   border: 1px solid rgba(116, 123, 255, 0.5);
   background: rgba(20, 24, 40, 0.88);
@@ -189,6 +211,11 @@ body {
   color: var(--text);
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(100, 108, 255, 0.25);
 }
 
 .choice-rail button:hover {
@@ -196,31 +223,95 @@ body {
   box-shadow: 0 0 16px rgba(100, 108, 255, 0.35);
 }
 
+.choice-rail button:active {
+  transform: scale(0.99);
+  border-color: var(--temporal-primary);
+}
+
 .choice-rail button.mode-choice {
   border-style: dashed;
   border-color: rgba(116, 123, 255, 0.65);
 }
 
+/* Phone-width: chamber stays full-bleed; chrome compresses to top/bottom thumb zones */
 @media (max-width: 720px) {
-  .chrome-top {
-    flex-direction: column;
-    align-items: stretch;
+  :root {
+    --chrome-top-pad: 0.4rem;
+    --chrome-side-pad: 0.5rem;
   }
 
-  .mode-chips {
-    max-width: 100%;
-    justify-content: flex-start;
+  .chrome-top {
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .chrome-top-inner {
+    max-width: none;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .beat-pill {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.4rem;
   }
 
   .narrative-line {
-    white-space: normal;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    font-size: 0.72rem;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mode-chips {
+    max-width: min(46%, 11.5rem);
+    gap: 0.15rem;
+    justify-content: flex-end;
+  }
+
+  .chip {
+    font-size: 0.48rem;
+    padding: 0.12rem 0.32rem;
+    line-height: 1.15;
+  }
+
+  .chip.active {
+    transform: none;
+  }
+
+  .chip .ability {
+    display: none;
+  }
+
+  .chrome-bottom {
+    padding-left: max(var(--chrome-side-pad), env(safe-area-inset-left, 0px));
+    padding-right: max(var(--chrome-side-pad), env(safe-area-inset-right, 0px));
+  }
+
+  .choice-rail {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-height: min(42vh, 16rem);
+    gap: 0.45rem;
   }
 
   .choice-rail button {
-    flex: 1 1 100%;
+    flex: 0 0 auto;
+    width: 100%;
     max-width: none;
+    min-height: var(--choice-min-tap);
+    font-size: 0.88rem;
+    padding: 0.75rem 0.9rem;
+  }
+}
+
+@media (max-width: 720px) and (orientation: landscape) {
+  .choice-rail {
+    max-height: min(36vh, 8.5rem);
+  }
+
+  .mode-chips {
+    max-width: min(40%, 10rem);
   }
 }
