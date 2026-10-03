@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { CameraBeat } from './cameraBeat.js';
 
 const PRIMARY = 0x646cff;
 const SECONDARY = 0x747bff;
@@ -23,9 +24,8 @@ export class NexusChamber {
     this.scene.fog = new THREE.FogExp2(0x080a12, 0.028);
 
     this.camera = new THREE.PerspectiveCamera(48, 1, 0.1, 80);
-    this.baseCameraPos = new THREE.Vector3(0.3, 3.8, 10.8);
-    this.beat5CameraPos = new THREE.Vector3(0, 2.9, 7.4);
-    this.camera.position.copy(this.baseCameraPos);
+    this.cameraBeat = new CameraBeat(this.camera);
+    this.camera.position.set(0.3, 3.8, 10.8);
     this.camera.lookAt(0, 1.4, -2);
 
     this.overlayAnne = new THREE.Group();
@@ -333,6 +333,13 @@ export class NexusChamber {
     this.targetBeat = state.currentBeat;
     this.beat5Step = state.beat5Step;
     this.beat5Clear = state.beat5Clear;
+    const inBeatFive =
+      this.targetBeat === 5 || this.targetBeat === '5';
+    this.cameraBeat.syncFromInk({
+      beat5Step: this.beat5Step,
+      beat5Clear: this.beat5Clear,
+      inBeatFive,
+    });
     this._updateOverlayVisibility();
   }
 
@@ -391,9 +398,7 @@ export class NexusChamber {
     const t = this.clock.getElapsedTime();
 
     const onBeat5 = this.targetBeat === '5' || this.targetBeat === 5;
-    const targetPos = onBeat5 ? this.beat5CameraPos : this.baseCameraPos;
-    this.camera.position.lerp(targetPos, onBeat5 ? 0.035 : 0.02);
-    this.camera.lookAt(0, onBeat5 ? 2.6 : 1.3, onBeat5 ? -5.5 : -1.5);
+    this.cameraBeat.update();
 
     const syncFactor = this.beat5Clear ? 1 : Math.min(this.beat5Step / 4, 0.9);
     this.clocks.forEach((c, i) => {
