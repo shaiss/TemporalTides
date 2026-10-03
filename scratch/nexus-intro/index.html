@@ -7,27 +7,23 @@
   <link rel="stylesheet" href="/src/styles.css" />
 </head>
 <body>
-  <div id="app">
+  <div id="app" data-mode="vibrion" data-beat="">
     <canvas id="chamber-canvas" aria-hidden="true"></canvas>
     <div class="entropy-vignette" aria-hidden="true"></div>
+    <div class="lens-filter" id="lens-filter" aria-hidden="true"></div>
 
-    <div class="overlay-ui">
-      <header class="top-bar">
-        <h1>Time Nexus — intro spike</h1>
-        <p class="meta">Ink rules · Three.js eyes · locked wide camera</p>
-      </header>
-
-      <div class="hud" aria-live="polite">
-        <div class="hud-beat" id="hud-beat">Beat —</div>
-        <div class="hud-cue" id="hud-cue">One lens at a time.</div>
+    <div class="chrome-top">
+      <div class="chrome-top-inner">
+        <span class="beat-pill" id="hud-beat">Beat —</span>
+        <p class="narrative-line" id="narrative-line" aria-live="polite">One lens at a time.</p>
       </div>
-
       <div class="mode-chips" id="mode-chips" aria-label="Active ability modes (display only)"></div>
+    </div>
 
-      <div class="story-panel">
-        <div id="story"></div>
-        <div id="choices" class="choice-rail"></div>
-      </div>
+    <p id="story" class="sr-only" aria-live="polite"></p>
+
+    <div class="chrome-bottom">
+      <div id="choices" class="choice-rail"></div>
     </div>
   </div>
   <script type="module" src="/src/main.js"></script>

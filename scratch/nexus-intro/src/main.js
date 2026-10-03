@@ -2,10 +2,11 @@ import { InkController, MODES } from './inkStory.js';
 import { NexusChamber } from './chamber.js';
 
 const storyEl = document.getElementById('story');
+const narrativeEl = document.getElementById('narrative-line');
 const choicesEl = document.getElementById('choices');
 const hudBeatEl = document.getElementById('hud-beat');
-const hudCueEl = document.getElementById('hud-cue');
 const chipsEl = document.getElementById('mode-chips');
+const appEl = document.getElementById('app');
 const canvas = document.getElementById('chamber-canvas');
 
 const chamber = new NexusChamber(canvas);
@@ -25,8 +26,16 @@ function renderChips(activeId) {
 
 function renderUi(state) {
   storyEl.textContent = state.storyText;
+  const line = state.narrativeLine || state.hudCue;
+  narrativeEl.textContent = line;
   hudBeatEl.textContent = state.currentBeat != null ? `Beat ${state.currentBeat}` : 'Beat —';
-  hudCueEl.textContent = state.hudCue;
+  appEl.dataset.mode = state.active;
+  appEl.dataset.beat = state.currentBeat ?? '';
+  if (state.currentBeat === '5' || state.currentBeat === 5) {
+    appEl.classList.add('beat-five');
+  } else {
+    appEl.classList.remove('beat-five');
+  }
   renderChips(state.active);
   chamber.syncFromInk(state);
 
@@ -44,5 +53,5 @@ function renderUi(state) {
 ink.subscribe(renderUi);
 
 ink.load().catch((err) => {
-  storyEl.textContent = err.message;
+  narrativeEl.textContent = err.message;
 });

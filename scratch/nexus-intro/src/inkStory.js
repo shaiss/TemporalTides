@@ -28,6 +28,7 @@ export class InkController {
   constructor() {
     this.story = null;
     this.storyText = '';
+    this.latestPassage = '';
     this.currentBeat = null;
     this.tagMode = null;
     this.modeSwitchUi = false;
@@ -68,6 +69,13 @@ export class InkController {
     });
   }
 
+  getNarrativeLine() {
+    const raw = this.latestPassage.replace(/\s+/g, ' ').trim();
+    if (!raw) return '';
+    const sentence = raw.match(/^[^.!?]+[.!?]?/)?.[0]?.trim() || raw;
+    return sentence.length > 120 ? `${sentence.slice(0, 117)}…` : sentence;
+  }
+
   getHudCue() {
     const active = this.readActive();
     let cue = BEAT_CUES[this.currentBeat] || 'Time Nexus chamber — switch lens to see different choices.';
@@ -90,6 +98,7 @@ export class InkController {
       : [];
     return {
       storyText: this.storyText,
+      narrativeLine: this.getNarrativeLine(),
       choices,
       active: this.readActive(),
       currentBeat: this.currentBeat,
@@ -103,10 +112,14 @@ export class InkController {
   continueStory() {
     if (!this.story) return;
     this.modeSwitchUi = false;
+    let turnText = '';
     while (this.story.canContinue) {
-      this.storyText += this.story.Continue();
+      const chunk = this.story.Continue();
+      this.storyText += chunk;
+      turnText += chunk;
       this.applyTags(this.story.currentTags);
     }
+    this.latestPassage = turnText.trim();
     this.notify();
   }
 
