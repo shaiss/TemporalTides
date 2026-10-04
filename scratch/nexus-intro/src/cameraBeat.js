@@ -35,10 +35,14 @@ export class CameraBeat {
   }
 
   /** Push while on beat 5; wide chamber before and after. */
-  _wantsPush() {
+  wantsBeatFivePush() {
     if (!this.inBeatFive) return false;
     if (this.beat5Clear) return false;
     return true;
+  }
+
+  _wantsPush() {
+    return this.wantsBeatFivePush();
   }
 
   update() {

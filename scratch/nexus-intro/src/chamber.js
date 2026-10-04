@@ -21,6 +21,44 @@ const PRIMARY = LENS_PRIMARY;
 const SECONDARY = LENS_SECONDARY;
 const ACCENT = LENS_ACCENT;
 
+/** Wide reference framing for the locked chamber camera (crop, not a second layout). */
+const REFERENCE_ASPECT = 16 / 9;
+const NARROW_WIDTH_PX = 720;
+
+/**
+ * Portrait / narrow viewports: center-crop the same fixed camera via view offset so
+ * the gate and clock wall stay readable without OrbitControls or a second scene.
+ */
+function applyChamberViewportFraming(camera, width, height, { beatFivePush = false } = {}) {
+  if (!width || !height) return;
+
+  const aspect = width / height;
+  const portrait = height > width;
+  const narrow = width <= NARROW_WIDTH_PX;
+  const needsCrop = (portrait || narrow) && aspect < REFERENCE_ASPECT;
+
+  camera.aspect = aspect;
+
+  if (!needsCrop) {
+    camera.clearViewOffset();
+    camera.updateProjectionMatrix();
+    return;
+  }
+
+  const fullHeight = height;
+  const fullWidth = Math.round(fullHeight * REFERENCE_ASPECT);
+  let x = Math.round((fullWidth - width) * 0.5);
+  let y = 0;
+
+  if (beatFivePush) {
+    y = Math.round(fullHeight * 0.08);
+    x = Math.round((fullWidth - width) * 0.52);
+  }
+
+  camera.setViewOffset(fullWidth, fullHeight, x, y, width, height);
+  camera.updateProjectionMatrix();
+}
+
 export class NexusChamber {
   constructor(canvas) {
     this.canvas = canvas;
@@ -56,8 +94,13 @@ export class NexusChamber {
     this._buildGateFocus();
     this.beat5Clocks = new NexusBeat5Clocks(this.scene, this._mat.bind(this));
 
+    this._boundResize = () => this._onResize();
     this._onResize();
-    window.addEventListener('resize', () => this._onResize());
+    window.addEventListener('resize', this._boundResize);
+    if (typeof ResizeObserver !== 'undefined') {
+      this._resizeObserver = new ResizeObserver(() => this._onResize());
+      this._resizeObserver.observe(this.canvas);
+    }
     this._animate();
   }
 
@@ -199,8 +242,13 @@ export class NexusChamber {
     const h = this.canvas.clientHeight;
     if (!w || !h) return;
     this.renderer.setSize(w, h, false);
-    this.camera.aspect = w / h;
-    this.camera.updateProjectionMatrix();
+    this._applyViewportFraming(w, h);
+  }
+
+  _applyViewportFraming(w, h) {
+    applyChamberViewportFraming(this.camera, w, h, {
+      beatFivePush: this.cameraBeat?.wantsBeatFivePush() ?? false,
+    });
   }
 
   _animate() {
@@ -228,11 +276,14 @@ export class NexusChamber {
 
     tickLensAnimation(this.lensAnim, this.activeMode, t);
 
+    this._applyViewportFraming(this.canvas.clientWidth, this.canvas.clientHeight);
+
     this.renderer.render(this.scene, this.camera);
   }
 
   dispose() {
-    window.removeEventListener('resize', () => this._onResize());
+    window.removeEventListener('resize', this._boundResize);
+    this._resizeObserver?.disconnect();
     this.renderer.dispose();
   }
 }
