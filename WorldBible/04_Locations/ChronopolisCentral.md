@@ -679,7 +679,7 @@ Chronopolis occupies the **ORDERED** extreme of the societal spectrum:
 - Students (large university population)
 - Retired (good pensions)
 - Temporarily between jobs (unemployment insurance)
-- Disabled (supported, but stigmatized)
+- People with disabilities (supported, but stigmatized)
 
 **Wealth Distribution:**
 
@@ -762,12 +762,12 @@ Chronopolis occupies the **ORDERED** extreme of the societal spectrum:
 
 **Marginal (5%):**
 - Long-term unemployed
-- Disabled (unable to work)
+- People with disabilities (unable to work)
 - Homeless (rare, but exist)
 - Mentally ill (institutionalized often)
 - **Characteristics:** Poverty (relative), social stigma, limited prospects
 - **Lifestyle:** Assisted housing, public support, marginalized
-- **Reality:** Better than many zones (safety net exists) but still suffering
+- **Reality:** Better than many zones (safety net exists), but hardship remains
 
 **Mobility:**
 
@@ -1087,7 +1087,7 @@ Despite **1.0 RFR baseline**, time feels accelerated:
 - **Upper-Middle (20%):** 1,000,000 - Professionals, managers, academics
 - **Middle (50%):** 2,500,000 - Government workers, teachers, skilled trades
 - **Working (20%):** 1,000,000 - Service, industrial, entry-level
-- **Marginal (5%):** 250,000 - Unemployed, disabled, homeless
+- **Marginal (5%):** 250,000 - People who are unemployed, people with disabilities, people experiencing homelessness
 
 **Zone Origin Distribution:**
 - **Native Chronopolis:** 60% (born here, multigenerational)
