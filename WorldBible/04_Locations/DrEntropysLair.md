@@ -274,47 +274,46 @@ Unlike every other location (stable RFR), the Lair has **variable, unpredictable
 
 ### Temporal History: How It Became This
 
-**Location Discovery (189 AC):**
-- Dr. Entropy discovered natural temporal instability zone
+**Location Discovery (333 AC):**
+- After Council exile (332 AC), Dr. Entropy discovered a natural temporal instability zone on the Fractured Wastes frontier
 - Minor compared to current state
-- Frontier territory (ungoverned, remote)
-- Chose deliberately (privacy, experimentation freedom)
+- Ungoverned, remote — chosen deliberately for privacy and experimentation freedom
 
-**Early Experiments (190-220 AC):**
-- Testing entropy increase theories
-- Small-scale Chronos Catalyst prototypes
+**Early Experiments (333-336 AC):**
+- Testing entropy-increase theories (building on secret work begun 328 AC)
+- Small-scale entropy-device prototypes (pre-Catalyst)
 - Mapping natural chaos patterns
 - Recruiting followers (some came, some stayed)
-- Council unaware (or willfully ignorant)
+- Council unaware of exact location (or underestimating threat)
 
-**First Council Attack (227 AC):**
-- Council discovered location
+**First Council Probe (339 AC):**
+- Council intelligence linked anomalies to Theron's signatures
 - Attempted shutdown (failed)
 - Dr. Entropy's defenses activated
 - Temporal anomalies repelled attackers
 - Standoff established
 
-**Catalyst Development (220-330 AC):**
-- Decades of refinement
-- Growing power and control
+**Chronos Catalyst Development (340-342 AC):**
+- Formal Catalyst development begins (340 AC; see Universal Timeline)
+- Growing power and control at the Lair site
 - Increased entropy levels gradually
-- Built protective infrastructure
+- Protective infrastructure expanded
 - Philosophy solidified through practice
 
-**Current Era (330-342 AC):**
-- Full Catalyst activation (340 AC)
+**Current Era (342 AC):**
+- Catalyst approaching full deployment threshold
 - Entropy increase accelerating
 - Universal threat growing
 - Team's mission: Stop before point of no return
-- Final confrontation imminent (342 AC)
+- Final confrontation imminent
 
 **Rate of Change:**
 
 The Lair grows more chaotic over time:
-- 189 AC: Mild instability (1.0 ± 0.3 RFR)
-- 220 AC: Moderate chaos (0.5-2.0 RFR)
-- 280 AC: High entropy (0.3-3.0 RFR)
-- 340 AC: Extreme chaos (0.1-5.0 RFR, current)
+- 333 AC: Mild instability (1.0 ± 0.3 RFR)
+- 336 AC: Moderate chaos (0.5-2.0 RFR)
+- 339 AC: High entropy (0.3-3.0 RFR)
+- 340 AC onward: Extreme chaos (0.1-5.0 RFR, current)
 - Projected 345 AC: Universal cascade (if not stopped)
 
 ### Dangers and Benefits
@@ -1174,102 +1173,82 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 
 ## 7. History & Origin
 
-### Dr. Entropy's Radicalization (150-189 AC)
+### Dr. Entropy's Radicalization (284 AC–332 AC)
 
-**Early Career (150-170 AC):**
-- Brilliant Council physicist
-- Temporal entropy specialist
-- Colleague of Dr. Volt
-- Published groundbreaking papers
-- Respected, successful, promising
+**Early Career (310–328 AC):**
+- Brilliant Council physicist (Marcus Theron, born 284 AC)
+- Temporal entropy specialist; colleague of Dr. Volt
+- Published provocative papers; respected but considered extreme
+- Ideology forming: Council "stability" as artificial restraint
 
-**The Shift (170-180 AC):**
-- Observed Council overreach
-- Saw surveillance expand
-- Watched dissent suppressed
-- Read philosophy (entropy, chaos theory, anarchism)
-- Began questioning (ideology forming)
+**Secret Research (328 AC):**
+- Began unauthorized entropy-increase experiments (Universal Timeline)
+- Conducted in secret while maintaining Council post
 
-**The Break (180-189 AC):**
-- Proposed radical theories (entropy increase beneficial)
-- Council rejected (dangerous ideas)
-- Denied funding, ostracized
-- Surveillance increased (Council watching him)
-- Decided: Proof through action needed
-- Left Council (189 AC, stole research)
+**The Break (332 AC):**
+- Council discovered secret research; confiscated materials
+- Credentials revoked; permanent ban from temporal facilities
+- Radicalized: proof through action needed
+- Disappeared from public record
 
-### Lair Establishment (189-220 AC)
+### Lair Establishment (333–337 AC)
 
-**Discovery (189 AC):**
-- Found natural temporal instability zone
-- Frontier territory (ungoverned)
+**Discovery (333 AC):**
+- Found natural temporal instability zone (Fractured Wastes frontier)
 - Potential for amplification (perfect laboratory)
 - Established base (primitive initially)
 
-**Early Experiments (190-210 AC):**
-- Testing entropy increase theories
-- Small-scale success (local destabilization)
-- Attracting like-minded (first followers)
-- Building ideology (philosophy solidifying)
-- No Council interference (ignored or unaware)
+**Early Experiments (333–336 AC):**
+- Testing entropy-increase theories and early devices
+- Small-scale local destabilization successes
+- Attracting like-minded followers; ideology solidifying
+- Council unaware of precise location
 
-**Catalyst Development Begins (210 AC):**
-- Theoretical foundation laid
-- Component gathering (years of work)
-- Ancient temporal tech studied (incorporating mysteries)
-- Obsession growing (life's work)
-
-**First Followers (210-220 AC):**
-- Word spreading (underground networks)
-- Council defectors (share his views)
-- Philosophers and extremists (seeking freedom)
+**First Followers (335–337 AC):**
+- Underground recruitment; some Council defectors
 - High attrition (many couldn't handle chaos)
 - Core group forming (inner circle genesis)
 
-### Council Confrontation (227 AC)
+**Public Reemergence (337 AC):**
+- Adopted identity "Dr. Entropy"
+- Threat acknowledged across zones
+
+### Council Confrontation (339 AC)
 
 **Discovery:**
-- Council learned of Lair location
-- Surveillance detected anomalies
-- Dr. Volt recognized signatures (his former colleague)
-- Deemed threat (intervention ordered)
+- Council linked anomalies to Theron's signatures
+- Dr. Volt recognized patterns (former colleague)
+- Intervention ordered
 
-**First Attack:**
-- Council security force dispatched
+**First Probe:**
+- Security force dispatched to Lair approaches
 - Attempted capture/shutdown
 - Underestimated defenses (chaos repelled them)
 - Casualties (several dissolved, lost)
 - Retreat (failure acknowledged)
 
 **Standoff Established:**
-- Council couldn't eliminate (too dangerous)
-- Dr. Entropy won't attack (yet, building Catalyst)
-- Mutual avoidance (cold war)
-- Surveillance continues (monitoring)
+- Council couldn't eliminate site (too dangerous)
+- Dr. Entropy focused on Catalyst completion (340 AC onward)
+- Mutual avoidance; continued surveillance
 
 **Dr. Volt's Guilt:**
-- Former friend became enemy
-- Partly his fault (taught Entropy, enabled)
-- Regret grows (should have seen signs)
-- Personal stakes (must stop him)
+- Learned of 332 AC ban from Nexus; partly blames himself for not intervening sooner
+- Personal stakes (must stop former friend)
 
-### Catalyst Completion (220-340 AC)
+### Chronos Catalyst (340–342 AC)
 
-**Decades of Work:**
-- Refinement continuous (incremental progress)
+**Development arc:**
+- Formal Catalyst development begins 340 AC (Universal Timeline)
 - Entropy increase gradual (Lair growing more chaotic)
 - Followers come and go (high turnover)
-- Ideology solidifying (philosophy deepening)
-- Waiting for perfect moment (universal cascade)
+- Ideology deepening; deployment window narrowing
 
 **Key Milestones:**
 
-**250 AC:** First stable entropy amplification
-**280 AC:** Wormhole generation capability
-**300 AC:** Timeline fracture control achieved
-**320 AC:** Multi-layer reality manipulation
-**335 AC:** Paradox zone creation (controlled)
-**340 AC:** Full activation threshold (universe-threatening)
+**340 AC:** Chronos Catalyst development begins; multi-layer manipulation prototypes
+**341 AC:** Paradox-zone control tests (controlled)
+**342 AC:** Approaching full activation threshold (universe-threatening)
 
 ### Current Era (340-342 AC)
 

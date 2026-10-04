@@ -41,7 +41,7 @@ Those who have met the Mentor describe:
 
 **For the Team:**
 - Guided Vibrion to key temporal anomalies early in his career
-- Provided warning before Dr. Entropy's first Nexus attack (189 AC)
+- Provided warning before Dr. Entropy's first Nexus attack (338 AC)
 - Pointed Leo toward critical research that advanced Catalyst understanding
 - Appeared to Iris during breakdown, offered stabilizing words (content unreported)
 - Gave Dave information about Empathic Resonance limitations that proved accurate
