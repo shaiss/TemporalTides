@@ -821,7 +821,7 @@ Appeals to:
 - [Anne](Anne.md) - Strategy + execution partnership
 - [Maya](Maya.md) - Musical rhythm connection
 - [The Team](../../05_Factions/TheTeam.md) - Rapid response role
-- [Character Development Guidelines](../../../.cursor/rules/character-development.mdc)
+- [Writing Guidelines](../../06_Narrative/WritingGuidelines.md) - Representation and voice guardrails
 
 ---
 

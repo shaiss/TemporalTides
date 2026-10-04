@@ -1812,8 +1812,7 @@ Here: "10 minutes objective might feel like 10 seconds, or 3 hours, or simultane
 - [Temporal Research Council](../05_Factions/TemporalResearchCouncil.md) - Opposition, historical conflict
 
 **Guidelines:**
-- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Chaos spectrum extreme
-- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Climax location, thematic resolution
+- [Story Structure](../06_Narrative/StoryStructure.md) - Climax location, thematic resolution
 
 ---
 

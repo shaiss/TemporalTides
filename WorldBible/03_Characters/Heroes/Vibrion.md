@@ -316,7 +316,7 @@ Discovery arc (learning what kind of leader he needs to be) combined with empowe
 ---
 
 **Cross-References:**
-- [Energy Systems](../../01_UniverseFundamentals/03_EnergySystems.md) - Vibrional frequencies explained
+- [Energy Systems](../../01_UniverseFundamentals/03_EnergySystems.md) - Vibrational frequencies explained
 - [Technology](../../02_CivilizationalElements/02_Technology.md) - Alloy Chain Mesh costume
 - [Dr. Volt](../Mentors/DrVolt.md) - Mentor relationship
 - [Dr. Entropy](../Antagonists/DrEntropy.md) - Primary antagonist

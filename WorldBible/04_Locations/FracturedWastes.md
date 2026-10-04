@@ -1795,8 +1795,7 @@ Despite horror, the Wastes chapter ends with:
 - [Entropy Forces](../05_Factions/EntropyForces.md) - Dr. Entropy's study site
 
 **Guidelines:**
-- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Chaos spectrum extreme
-- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Stakes visualization, character testing
+- [Story Structure](../06_Narrative/StoryStructure.md) - Stakes visualization, character testing
 
 ---
 

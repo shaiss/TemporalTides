@@ -145,7 +145,7 @@ Temporal Tides uses the **Non-Linear Resonance Model** — a four-act structure 
 
 ## Cross-References
 
-- [Narrative Structure Rules](../../.cursor/rules/narrative-structure.mdc)
+- [Writing Guidelines](WritingGuidelines.md) - Dialogue, pacing, representation guardrails
 - [Themes](Themes.md)
 - [ChapterBreakdown](ChapterBreakdown.md)
 - [Characters](../03_Characters/) - Arc details

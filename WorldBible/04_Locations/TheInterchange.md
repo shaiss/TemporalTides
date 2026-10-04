@@ -2130,7 +2130,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 **Other Locations:**
 - [The Time Nexus](TimeNexus.md) - Complementary hub, scientific/spiritual center
 - [Chronopolis Central](ChronopolisCentral.md) - Largest trading partner, regulatory tension
-- [Velocity City](VelocityCity.md) - Fast Market connections, Eli's origin
+- [Accelerated Quarter (Velocity City)](AcceleratedQuarter.md) - Fast Market connections, Eli's origin
 - [Silent Hollow](SilentHollow.md) - Slow Market connections, Dave's origin
 
 **Factions:**
@@ -2139,8 +2139,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 - [Entropy Forces](../05_Factions/EntropyForces.md) - Economic attack target
 
 **Guidelines:**
-- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - AC-inspired economic models
-- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Plot integration
+- [Story Structure](../06_Narrative/StoryStructure.md) - Plot integration
 
 ---
 

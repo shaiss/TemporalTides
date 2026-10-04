@@ -193,7 +193,7 @@ Future-obsessed. Past is failure (Council, divorce, defeat). Present is means to
 - Height: 1.78 m (5'10")
 - Build: Thin, academic; decades of neglect of physical health
 - Features: Sharp jaw, gray hair (unmanaged), intense dark eyes
-- Bear: Short gray beard
+- Beard: Short gray beard
 - Skin: Pale (little sunlight in Lair); age lines
 - Presence: Sparse, economical movement; every gesture purposeful
 

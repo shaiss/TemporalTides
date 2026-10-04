@@ -1859,16 +1859,15 @@ Metropolitan proves balance possible:
 - [Chronopolis Central](ChronopolisCentral.md) - Sister city, governance contrast, friendly rivalry
 - [The Time Nexus](TimeNexus.md) - Allied hub, shared values (balance)
 - [The Interchange](TheInterchange.md) - Economic partnership, major trade
-- [Artist Quarter Autonomous Zones](VelocityCity.md) - Cultural exchange, mutual learning
+- [Accelerated Quarter (Velocity City core)](AcceleratedQuarter.md) - Cultural exchange, mutual learning
 
 **Factions:**
 - [The Team](../05_Factions/TheTeam.md) - Allied, supportive relationship
 - [Temporal Research Council](../05_Factions/TemporalResearchCouncil.md) - Cooperative tension
-- [Zone Independence Movement](../05_Factions/ZoneIndependence.md) - Democratic model inspiration
+- Zone Independence Movement — Democratic model inspiration
 
 **Guidelines:**
-- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Structured spectrum position
-- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Hope and balance themes
+- [Story Structure](../06_Narrative/StoryStructure.md) - Hope and balance themes
 
 ---
 
