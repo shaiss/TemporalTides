@@ -224,6 +224,8 @@ Lives in present with eye toward future. Learns from past but doesn't dwell. Bal
 - Skin: Faint bluish tint to veins (energy saturation effect)
 
 **Alloy Chain Mesh Costume:**
+- **Origin:** Created by Dr. Volt's team specifically for Vibrion (three years; forty-seven prototype iterations); currently unique, with no duplicates
+- **Properties:** Self-repairing at molecular level; regulates vibration reflection, thermal channeling, and energy flow (see [Technology](../../02_CivilizationalElements/02_Technology.md) §7.2)
 - **Pattern:** Medieval-inspired chain mail aesthetic
 - **Coverage:** Torso, shoulders, upper arms, upper legs
 - **Color:** Metallic silver with slight blue energy glow
