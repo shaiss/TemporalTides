@@ -1,6 +1,6 @@
 # The Fractured Wastes
 
-**Classification:** Hazardous Chaos Zone | **Temporal:** Extreme Variable (0.1-8.0 RFR, Chaotic) | **Spectrum:** Chaos (Natural Disorder) | **Access:** Extremely Dangerous
+**Classification:** Hazardous Chaos Zone | **Temporal:** Extreme Variable (0.1-5.0 RFR, Chaotic) | **Spectrum:** Chaos (Natural Disorder) | **Access:** Extremely Dangerous
 
 **Summary:** A vast region of naturally occurring temporal chaos where reality has fractured beyond recovery, serving as a warning of what happens when temporal stability catastrophically fails.
 
@@ -128,7 +128,7 @@ This is the ONE location that breaks Mixtopia principle:
 
 The Wastes exhibits extreme temporal chaos across all dimensions:
 
-**Measured Range:** 0.1 to 8.0 RFR (extreme variance)
+**Measured Range:** 0.1 to 5.0 RFR (extreme variance)
 **Spatial Variation:** Changes every meter (temporal cliffs everywhere)
 **Temporal Variation:** Shifts every second (instability constant)
 **Personal Variation:** Different body parts experience different rates (horrifying)

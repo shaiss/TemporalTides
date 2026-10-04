@@ -277,7 +277,7 @@ Chronopolis is **neither pure dystopia nor utopia**:
 - Surveillance infrastructure expanded
 - Cultural homogenization deepening
 - Autonomous zones increasingly resistant
-- Anne left for Time Nexus (341 AC)
+- Anne left for Time Nexus (late 342 AC)
 
 **Why It Succeeded:**
 
@@ -1496,7 +1496,7 @@ Anne discovered some underground culture as teenager (felt less alone), but fear
 **333 AC:** Anne starts school (pressure begins)
 **338 AC:** Foresight manifests (registered, monitored)
 **339 AC:** Anne wins achievement awards (anxious despite success)
-**341 AC:** Anne joins Team, moves to Time Nexus
+**Late 342 AC:** Anne joins Team, moves to Time Nexus
 **342 AC (Present):** Chronopolis peak population (5 million)
 
 **Current Tensions:**
