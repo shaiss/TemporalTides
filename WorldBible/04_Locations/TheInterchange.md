@@ -2131,7 +2131,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 - [The Time Nexus](TimeNexus.md) - Complementary hub, scientific/spiritual center
 - [Chronopolis Central](ChronopolisCentral.md) - Largest trading partner, regulatory tension
 - [Accelerated Quarter (Velocity City)](AcceleratedQuarter.md) - Fast Market connections, Eli's origin
-- [Silent Hollow](SilentHollow.md) - Slow Market connections, Dave's origin
+- [Contemplative Sanctuaries (Silent Hollow)](ContemplativeSanctuaries.md) - Slow Market connections, Dave's origin
 
 **Factions:**
 - [The Team](../05_Factions/TheTeam.md) - Regular visitors, Eli's background

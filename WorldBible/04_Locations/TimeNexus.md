@@ -2338,7 +2338,7 @@ The Nexus exists in micro-dimension, inaccessible through normal space travel. O
 **Other Locations:**
 - [Chronopolis Central](ChronopolisCentral.md) - Council stronghold, Council Portal connection
 - [The Interchange](TheInterchange.md) - Economic partner, trade hub
-- [Gradient Frontier](GradientFrontier.md) - Accessible via Frontier Portal
+- [Gradient Frontier (see Dr. Entropy's Lair)](DrEntropysLair.md) - Accessible via Frontier Portal
 - [The Fractured Wastes](FracturedWastes.md) - Chaos zones, Nexus's opposite
 
 **Factions:**

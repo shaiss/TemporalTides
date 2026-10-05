@@ -45,7 +45,7 @@
 - Subtext (unsaid matters)
 - Neurodivergent communication styles (authentic)
 
-**By Character:** See [Story Structure](StoryStructure.md) for dialogue techniques (Leo's literary refs; Anne's contingency planning; Maya's precision; Eli's rapid bursts; Dave's pauses; Iris's metaphor; Vibrion's electrical language)
+**By Character:** See the [character dossiers](../03_Characters/) for dialogue techniques (Leo's literary refs; Anne's contingency planning; Maya's precision; Eli's rapid bursts; Dave's pauses; Iris's metaphor; Vibrion's electrical language)
 
 ---
 
