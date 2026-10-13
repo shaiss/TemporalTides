@@ -84,15 +84,15 @@ No links or locks are drawn on screen. Characters say what is missing.
 | Sound toggle | Always |
 
 ## Ink
-
 - Ink stays the rules engine. Station gates and flags are as locked: corridor, levers, window, panel, and the four ordered gate steps.
-- The story is a hub. A room knot offers each uncleared station. Each station knot returns to the room on **Back** or on clear.
-- The active character is a variable the UI sets. There is no switch menu.
-- Lines are Ink content tagged by speaker, station and moment; the UI shows them as subtitles.
-- `npm test` covers the hub:
-  - each station clears only with its character(s)
-  - the gate cannot be cleared solo or out of order
-  - stations can be cleared in any order
+- There is no choice list. The UI sets three things — the active character (`lens`), where the player is (`at`), and the gate plan (`plan1`…`plan4`) — and runs a knot: `arrive`, `look`, `act`, `gate_begin`, `gate_step` (once per slot), `resonance`.
+- Two Ink functions decide what is lit: `can_enter(place)` and `can_act()`. The UI never decides who can do what.
+- Lines are Ink text tagged `#say:<character>` and `#id:<line id>`, plus `#fx:` cues (`done` ends a place, `fail`, `clear`, `entropy`). The UI shows them as subtitles.
+- `npm test` drives the same flow headlessly:
+  - each station clears only with its character(s), in its order
+  - of all 256 gate plans, only Anne → Maya → Eli → Vibrion seals, and only with the panel finished
+  - stations can be cleared in any order; backing out keeps progress; the gate can be failed and come back to
+  - look lines are always spoken by the active character
 
 ## Ability-mode rule, as this model reads it
 
@@ -103,7 +103,8 @@ The beat sheet's rule reads: *"One active character at a time. Same Nexus chambe
 The intent (one lens at a time, same room, different truth) is unchanged; only the wording moves from menu terms to world terms.
 
 ## Open decisions
+The open-room playable (`scratch/nexus-intro`) takes a provisional answer to each, so the decisions can be judged in play:
 
-1. **Gate availability:** open from the start, with Vibrion's line covering the dead panel (recommended), or only after the three solo stations are clear?
-2. **Corridor payoff:** is crossing the corridor self-contained, or should it lead to or leave something used elsewhere in the room?
-3. **Team staging:** do the three inactive characters appear in the chamber? The lines assume the team is together, as in storyboard Panel 6.
+1. **Gate availability:** open from the start, with Vibrion's line covering the dead panel (recommended), or only after the three solo stations are clear? *Playable: open from the start.*
+2. **Corridor payoff:** is crossing the corridor self-contained, or should it lead to or leave something used elsewhere in the room? *Playable: self-contained; Anne's safe line stays drawn on the floor.*
+3. **Team staging:** do the three inactive characters appear in the chamber? The lines assume the team is together, as in storyboard Panel 6. *Playable: not staged; the team is the portrait strip.*

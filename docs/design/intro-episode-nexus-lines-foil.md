@@ -54,6 +54,7 @@ Moments: **look** = the active character looks at a station; **can act** = their
 | look before power (cannot act) | Eli | Dead panel, stuck lever. I could shove that all day and nothing moves — nothing's even humming. Boring! | Eli: Engagement Required; Emotional Intensity (frustration with boredom); Eli: Speech Patterns (present tense) |
 | look after power (can act) | Eli | It's humming now! Okay, lever — one hard shove, right now. | Eli: Kinetic Rush Energy Surge (temporary strength) |
 | after acting | Eli | Free! That felt great. | Eli: Communication Style (enthusiastic) |
+| look (panel live, lever still jammed) | Maya | It is running now, in a steady cycle. The lever is jammed against it. That needs force, not observation. | Maya: Limitations (Requires Observation; physical limitations); Beat sheet beat 4: Eli partners when a lever is stuck |
 
 ## Coordination gate
 
@@ -70,6 +71,9 @@ Moments: **look** = the active character looks at a station; **can act** = their
 | plan repeats Anne's step | Anne | I already marked that tick. What if we're waiting on the wrong clock? Marking it twice won't change what comes next. | Anne: Verbal Tics ('What if [scenario]?'); Anne: Speech Patterns (questioning) |
 | one character in every slot | Vibrion | One of us can't bring four timelines into phase. It takes all four. | Beat sheet beat 5: must fail solo; friction of different timelines; Vibrion: Growth Arc (leadership empowers others) |
 | seal powers | Vibrion | They're in phase. Coupling now. | Vibrion: Speech Patterns (clear, direct) |
+| look / plan breaks at Vibrion (panel live, lever still jammed) | Vibrion | The panel's live, but that jammed lever is still cutting the feed. The seal gets nothing until it moves. | Beat sheet beat 4-5: gate seal draws on the panel; Vibrion: energy-flow perception |
+| plan breaks at Maya (already locked) | Maya | The sequence is already locked. Locking it again changes nothing. Something else has to happen next. | Maya: precise, analytical speech; Beat sheet beat 5 order |
+| plan breaks at Eli (already hit) | Eli | Already hit it! The window's open — I can't hit it twice. Who's next? | Eli: Speech Patterns (energetic, present tense); Beat sheet beat 5 order |
 
 ## Resonance ending
 
@@ -84,11 +88,14 @@ Two independent model judges (`gpt-5.5`, `gemini-3.1-pro-preview`) checked the l
 
 | Test | Method | Result |
 |---|---|---|
-| Distinct voices ("identifiable without tags", Writing Guidelines) | Each line shown alone, with no speaker or scene, alongside only the canon voice rules; judge names the speaker | 34/34 and 34/34 |
-| Canon compliance | All lines judged against writing restrictions, banned terms, representation rules, the beat sheet and each character's ability limits | 0 violations; 2 risks |
+| Distinct voices ("identifiable without tags", Writing Guidelines) | Each line shown alone, with no speaker or scene, alongside only the canon voice rules; judge names the speaker | 38/38 and 38/38 |
+| Canon compliance | All lines judged against writing restrictions, banned terms, representation rules, the beat sheet and each character's ability limits | 0 violations; 1 risk this run, 3 across the last two runs |
 
-- **Risk** `pan-vibrion` (`gpt-5.5`): Electrical coupling fits Vibrion, but 'from here' pushes against canon silence on range/line-of-sight limits for coupling to panels. Open for admiral redline.
-- **Risk** `pan-eli-early` (`gpt-5.5`): Mechanically defensible because Eli cannot engage Kinetic Rush on a dead, unpowered task, but 'Boring!' is close to a stereotyped ADHD shorthand if overused. Open for admiral redline.
+- **Risk** `corr-vibrion` (`gpt-5.5`): A brief glimpse is defensible from Vibrion’s limited precognition, but it sits near the boundary of undercutting Anne’s unique hazard read; the line mitigates this by making it insufficient to cross. Accepted: limited precognition is canon, and the line makes it insufficient to act on.
+- **Risk, earlier run** `pan-vibrion` (`gpt-5.5`): Electrical coupling fits Vibrion, but 'from here' pushes against canon silence on range/line-of-sight limits for coupling to panels. Open for admiral redline.
+- **Risk, earlier run** `pan-eli-early` (`gpt-5.5`): Mechanically defensible because Eli cannot engage Kinetic Rush on a dead, unpowered task, but 'Boring!' is close to a stereotyped ADHD shorthand if overused. Open for admiral redline.
+
+Judges are not deterministic: a borderline line can pass one run and be flagged the next, so risks from earlier runs stay listed until someone rules on them.
 
 ## Where the rules ran out
 
@@ -109,11 +116,15 @@ Writing these lines tested how far the canon keeps an author on model. These are
 | 11 | **Hand-off verbs** (Anne marks, Maya locks, Eli hits, Vibrion couples) come from the beat sheet, not the dossiers. | Used as the beat sheet words them. | Describe each hand-off in the ability sections. |
 
 ## Ink format
-
-Each line becomes tagged Ink content so the words live in one place:
+Each line is tagged Ink content so the words live in one place. The playable's `nexus-intro.ink` uses this shape:
 
 ```ink
-=== levers_look_maya ===
-# say:maya # at:levers # on:look
-Pulling one lever sounds a different one. The strain marks give the order: third, first, fifth, second, fourth.
+= look_corridor
+{ lens:
+- "anne": Okay, so. Left plate sparks in four seconds, then far right, then center. If we move on the gaps, we're through. #say:anne #id:corr-anne
+- "maya": Intervals: 2.1, 5.8, 0.9, 3.3 seconds. No repeating sequence yet. I would need much longer to observe one. #say:maya #id:corr-maya
+…
+}
 ```
+
+`#say` names the speaker, `#id` matches the ids in the tables above, and an optional `#fx` cues the room (`done`, `clear`, `fail`, `entropy`).
