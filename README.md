@@ -135,7 +135,7 @@ All content changes go through a branch and pull request — **never commit dire
    [`.vitepress/config.js`](.vitepress/config.js).
 3. **Verify the build passes** and check for broken links:
    ```bash
-   npm run docs:build
+   npm run build:vercel
    scripts/check-links.sh
    ```
 4. **Push and open a pull request** against `main`:
