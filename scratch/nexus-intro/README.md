@@ -15,16 +15,14 @@ npm install && npm start
 
 `npm start` compiles Ink (`story.json`, inkVersion 21) and serves the **Vite + Three.js + inkjs** app at **http://localhost:4173/**.
 
-### Hosted HITL (Vercel)
+### Hosted (Vercel)
 
-Every Vercel deploy (including **PR previews**) bundles the same playable at **`/play/`** on the deployment origin — docs stay at `/`.
+Every Vercel deployment bundles this playable at **`/play/`** on the deployment origin; docs stay at `/`.
 
-- **This PR (#21) preview:** after deploy, open  
-  `https://<preview-host>.vercel.app/play/`  
-  (example pattern: `https://temporal-tides-<hash>-shaiss-projects.vercel.app/play/`).
-- **Production** (`temporaltides.com` or the project’s production alias): `/play/` ships after this branch merges to `main` and production redeploys.
+- **Production:** [temporaltides.com/play/](https://temporaltides.com/play/)
+- **PR previews:** `https://<preview-host>.vercel.app/play/` (pattern: `https://temporal-tides-git-<branch>-shaiss-projects.vercel.app/play/`)
 
-No clone required — Ink + chamber run entirely from static assets under `/play/`.
+The root `npm run build:vercel` runs `scripts/build-nexus-play.mjs`, which builds this folder with `VITE_BASE=/play/` and copies `dist/` into `.vitepress/dist/play/`. No clone is required to play — Ink + chamber run entirely from static assets under `/play/`.
 
 - Locked wide camera (no OrbitControls / free roam).
 - Same chamber; per-mode **3D overlay groups** in `src/lenses.js` (Anne / Maya / Eli / Vibrion) driven by Ink `active` — no full-screen lens tint.
@@ -101,7 +99,7 @@ Mode chips in the UI are **display-only**; switching lens still happens only thr
 
 4. Only one overlay set is visible at a time; entropy stays the CSS edge vignette (unchanged).
 
-Production bundle: after merge, same check at **`/play/`** on the Vercel deployment.
+Hosted: same check at **`/play/`** on any Vercel deployment.
 
 ## inkVersion / inkjs
 
