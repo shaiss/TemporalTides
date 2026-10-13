@@ -238,7 +238,8 @@ export class NexusChamber {
   }
 
   _frame() {
-    const dt = Math.min(this.clock.getDelta(), DT_CAP);
+    const frameDt = this.clock.getDelta();
+    const dt = Math.min(frameDt, DT_CAP);
     const t = this.clock.elapsedTime;
     const s = this.state;
     const beat = s.currentBeat;
@@ -277,7 +278,7 @@ export class NexusChamber {
       subjectFrac: onBeat5 && !s.beat5Clear ? 0.36 : 0.4,
     });
 
-    this.post.render(dt);
+    this.post.render(dt, frameDt);
   }
 
   dispose() {

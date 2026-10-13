@@ -18,6 +18,7 @@ export class PointerPicker {
     this.ndc = new THREE.Vector2();
     this.down = null;
     this.hoverId = null;
+    this.hoverClearTimer = 0;
 
     canvas.addEventListener('pointermove', (e) => {
       if (e.pointerType !== 'mouse') return;
@@ -35,18 +36,32 @@ export class PointerPicker {
         return;
       }
       this.down = { x: e.clientX, y: e.clientY, t: performance.now(), id: e.pointerId };
-      if (e.pointerType !== 'mouse') this._setHover(this.pick(e.clientX, e.clientY));
+      if (e.pointerType !== 'mouse') {
+        this._cancelHoverClear();
+        this._setHover(this.pick(e.clientX, e.clientY));
+      }
     });
     canvas.addEventListener('pointerup', (e) => {
       const d = this.down;
       this.down = null;
-      if (e.pointerType !== 'mouse') setTimeout(() => this._setHover(null), 220);
+      if (e.pointerType !== 'mouse') {
+        this._cancelHoverClear();
+        this.hoverClearTimer = setTimeout(() => {
+          this.hoverClearTimer = 0;
+          this._setHover(null);
+        }, 220);
+      }
       if (!d || e.button !== 0 || e.pointerId !== d.id) return;
       const moved = Math.hypot(e.clientX - d.x, e.clientY - d.y);
       if (moved > TAP_SLOP_PX || performance.now() - d.t > TAP_MAX_MS) return;
       const id = this.pick(e.clientX, e.clientY);
       if (id) this.onTap?.(id, e);
     });
+  }
+
+  _cancelHoverClear() {
+    if (this.hoverClearTimer) clearTimeout(this.hoverClearTimer);
+    this.hoverClearTimer = 0;
   }
 
   _setHover(id) {

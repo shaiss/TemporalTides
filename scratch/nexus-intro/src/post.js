@@ -83,20 +83,23 @@ export class PostFX {
     this.bloomBoost = Math.max(this.bloomBoost, amount);
   }
 
-  render(dt) {
+  /** dt: capped animation step. frameDt: real wall-clock frame time (drives auto-downgrade). */
+  render(dt, frameDt = dt) {
     this.bloomBoost = Math.max(0, this.bloomBoost - dt * 1.6);
     this.bloom.strength = this.baseBloom + this.bloomBoost;
     this.composer.render(dt);
-    this._watchPerformance(dt);
+    this._watchPerformance(frameDt);
   }
 
-  _watchPerformance(dt) {
+  _watchPerformance(frameDt) {
     if (this.pinned) return;
-    this._elapsed += dt;
-    this._ema = this._ema * 0.95 + Math.min(dt, 0.25) * 0.05;
+    // Long gaps (background tab, debugger pause) are not sustained slowness — ignore them.
+    if (!(frameDt > 0) || frameDt > 2) return;
+    this._elapsed += frameDt;
+    this._ema = this._ema * 0.95 + Math.min(frameDt, 0.25) * 0.05;
     if (this._elapsed < 3) return;
-    if (this._ema > 1 / 32) this._slowTime += dt;
-    else this._slowTime = Math.max(0, this._slowTime - dt * 0.5);
+    if (this._ema > 1 / 32) this._slowTime += frameDt;
+    else this._slowTime = Math.max(0, this._slowTime - frameDt * 0.5);
     if (this._slowTime > 2.5) {
       const next = ORDER[ORDER.indexOf(this.tier) + 1];
       this._slowTime = 0;

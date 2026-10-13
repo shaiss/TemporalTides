@@ -154,7 +154,12 @@ async function capture(browser, kind) {
   console.log(`[${kind}] renderer=${gl} fps(swiftshader)=${log.fps} console_errors=${consoleLog.filter((l) => /error/i.test(l)).length}`);
 }
 
-const kinds = which === 'both' ? ['desktop', 'phone'] : [which];
+if (which !== 'both' && !Object.prototype.hasOwnProperty.call(VIEWPORTS, which)) {
+  console.error(`Unknown viewport "${which}". Use one of: both, ${Object.keys(VIEWPORTS).join(', ')}.`);
+  console.error('Usage: node tools/capture-beats.mjs <baseUrl> <outDir> [desktop|phone|both] [--tap]');
+  process.exit(2);
+}
+const kinds = which === 'both' ? Object.keys(VIEWPORTS) : [which];
 for (const k of kinds) {
   await run(k);
 }
