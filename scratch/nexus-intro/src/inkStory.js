@@ -24,6 +24,20 @@ export const MODE_CUES = {
   vibrion: 'HUD: Vibrational Manipulation — world-grid coupling',
 };
 
+/**
+ * Classify a choice by its Ink text so the UI can style it and map chamber props onto it.
+ * mode/keep = lens picks inside mode_switch; switch = open the mode switch; hint = idle hint stub;
+ * solo = beat-5 forced seal; action = everything that acts on the beat's prop.
+ */
+export function classifyChoice(text) {
+  if (/^(Anne|Maya|Eli|Vibrion) — /.test(text)) return 'mode';
+  if (/^Keep current/i.test(text)) return 'keep';
+  if (/Switch active character|^Switch to /i.test(text)) return 'switch';
+  if (/hint stub/i.test(text)) return 'hint';
+  if (/Force the seal closed/i.test(text)) return 'solo';
+  return 'action';
+}
+
 export class InkController {
   constructor() {
     this.story = null;
@@ -91,10 +105,10 @@ export class InkController {
 
   getState() {
     const choices = this.story
-      ? this.story.currentChoices.map((c) => ({
-        text: c.text,
-        isMode: /Anne —|Maya —|Eli —|Vibrion —|Switch active|Keep current/i.test(c.text),
-      }))
+      ? this.story.currentChoices.map((c) => {
+        const kind = classifyChoice(c.text);
+        return { text: c.text, kind, isMode: kind === 'mode' || kind === 'keep' || kind === 'switch' };
+      })
       : [];
     return {
       storyText: this.storyText,
@@ -103,15 +117,21 @@ export class InkController {
       active: this.readActive(),
       currentBeat: this.currentBeat,
       hudCue: this.getHudCue(),
+      beat1Clear: Boolean(this.readVar('beat1_clear', false)),
+      beat2Clear: Boolean(this.readVar('beat2_clear', false)),
+      beat3Clear: Boolean(this.readVar('beat3_clear', false)),
+      beat4Clear: Boolean(this.readVar('beat4_clear', false)),
       beat5Step: Number(this.readVar('beat5_step', 0)),
       beat5Clear: Boolean(this.readVar('beat5_clear', false)),
       modeSwitchUi: this.modeSwitchUi,
+      ended: Boolean(this.story && !this.story.canContinue && this.story.currentChoices.length === 0),
     };
   }
 
   continueStory() {
     if (!this.story) return;
     this.modeSwitchUi = false;
+    this.tagMode = null;
     let turnText = '';
     while (this.story.canContinue) {
       const chunk = this.story.Continue();
