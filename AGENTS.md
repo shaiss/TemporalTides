@@ -4,7 +4,7 @@ This file is the canonical project guidance for any coding agent (ZCode, Claude 
 
 ## What This Repository Is
 
-**Temporal Tides** is a world bible — a creative-writing/worldbuilding project for a narrative universe where time is subjective and mental health conditions are superpowers. There is no application code. The content is Markdown lore in `WorldBible/`, published as a VitePress documentation site (deployed on Vercel).
+**Temporal Tides** is a world bible — a creative-writing/worldbuilding project for a narrative universe where time is subjective and mental health conditions are superpowers. The content is Markdown lore in `WorldBible/`, published as a VitePress documentation site (deployed on Vercel). The only application code is the scratch Nexus intro playable in `scratch/nexus-intro/` (Vite + Three.js + inkjs, served at `/play/`); its prose is foil scratch, not canon.
 
 The owner (Shai) is the sole author of all lore. See **The Working Agreement** below before touching any creative content.
 
@@ -13,10 +13,11 @@ The owner (Shai) is the sole author of all lore. See **The Working Agreement** b
 ```bash
 npm run docs:dev        # Dev server at http://localhost:5173
 npm run docs:build      # Build site to .vitepress/dist (this is also what `npm test` runs)
+npm run build:vercel    # Production build: docs + scratch/nexus-intro bundle copied to .vitepress/dist/play/
 npm run docs:preview    # Preview the built site
 ```
 
-There is no linter and no unit tests — "testing" means the VitePress build succeeds. Vercel deploys via `vercel.json` (`buildCommand: npm run docs:build`, output `.vitepress/dist`).
+There is no linter and no unit tests — "testing" means the VitePress build succeeds. Vercel deploys via `vercel.json` (`buildCommand: npm run build:vercel`, output `.vitepress/dist`, `cleanUrls: true`). For changes under `scratch/nexus-intro/`, also run `npm run build` in that folder (or `npm run build:vercel` from the root).
 
 ## Git Workflow
 

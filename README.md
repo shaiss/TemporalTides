@@ -17,7 +17,10 @@ the site locally, and how to contribute changes.
 - **`WorldBible/`** — the source Markdown for the site (the single source of truth for content).
 - **`.vitepress/`** — [VitePress](https://vitepress.dev/) site config, theme, and the manually maintained sidebar.
 - **`public/`** — static assets (images, portraits, favicon, logo).
-- **`scripts/`** — helper scripts for running, building, and link-checking.
+- **`scratch/nexus-intro/`** — the Nexus intro playable prototype (Vite + Three.js + inkjs), served at
+  [`/play/`](https://temporaltides.com/play/). It has its own `package.json`; see its
+  [README](scratch/nexus-intro/README.md). Scratch prose is not canon.
+- **`scripts/`** — helper scripts for running, building, link-checking, and bundling the playable.
 - **`docs/`** — internal design specs and historical reports (not published to the site).
 - **`deprecated/`** — previous iterations kept for reference (excluded from the build).
 
@@ -50,8 +53,14 @@ The production site ([temporaltides.com](https://temporaltides.com/)) is deploye
 | Setting | Value |
 |---|---|
 | Install command | `npm install` |
-| Build command | `npm run docs:build` |
+| Build command | `npm run build:vercel` |
 | Output directory | `.vitepress/dist` |
+| Clean URLs | `true` (`/WorldBible/00_INDEX` serves `00_INDEX.html`) |
+
+`build:vercel` runs `docs:build`, then [`scripts/build-nexus-play.mjs`](scripts/build-nexus-play.mjs),
+which installs and builds `scratch/nexus-intro/` with `VITE_BASE=/play/` and copies the result to
+`.vitepress/dist/play/`. Every deployment, including PR previews, therefore serves the docs at `/`
+and the playable at `/play/`. Anything placed under `public/play/` is overwritten by that copy step.
 
 Assets under `/assets/` are served with a long-lived immutable cache header.
 
@@ -86,6 +95,7 @@ dark mode. The convenience script `scripts/RUN_VITEPRESS.sh` wraps this command.
 |---|---|
 | `npm run docs:dev` | Start the dev server with hot reload (port 5173). |
 | `npm run docs:build` | Build the static site into `.vitepress/dist`. |
+| `npm run build:vercel` | Production build: docs plus the `/play/` playable bundle. |
 | `npm run docs:preview` | Preview the production build locally. |
 | `npm run docs:serve` | Serve the built site on port 4173. |
 | `npm test` | Alias that runs `docs:build` — "testing" here means the build succeeds. |
@@ -96,6 +106,7 @@ dark mode. The convenience script `scripts/RUN_VITEPRESS.sh` wraps this command.
 |---|---|
 | `scripts/RUN_VITEPRESS.sh` | Launch the dev server. |
 | `scripts/build-and-check.sh` | Build the site and report the output size. |
+| `scripts/build-nexus-play.mjs` | Build `scratch/nexus-intro/` and copy it into `.vitepress/dist/play/`. |
 | `scripts/check-links.sh` | Report broken relative `.md` links in `WorldBible/`. |
 
 ### Link checking
@@ -124,7 +135,7 @@ All content changes go through a branch and pull request — **never commit dire
    [`.vitepress/config.js`](.vitepress/config.js).
 3. **Verify the build passes** and check for broken links:
    ```bash
-   npm run docs:build
+   npm run build:vercel
    scripts/check-links.sh
    ```
 4. **Push and open a pull request** against `main`:
