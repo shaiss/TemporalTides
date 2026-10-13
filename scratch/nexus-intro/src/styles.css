@@ -353,6 +353,7 @@ body {
   .choice-rail.shake,
   .choice-rail button,
   .narrative-line.enter,
+  .beat-pill.pop,
   .mode-chips.swap .chip.active {
     animation: none;
   }

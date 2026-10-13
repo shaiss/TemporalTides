@@ -17,7 +17,7 @@ const ORDER = ['high', 'medium', 'low'];
 
 export function detectQuality() {
   const pinned = new URLSearchParams(window.location.search).get('quality');
-  if (pinned && TIERS[pinned]) return { tier: pinned, pinned: true };
+  if (pinned && Object.prototype.hasOwnProperty.call(TIERS, pinned)) return { tier: pinned, pinned: true };
   const coarse = window.matchMedia?.('(pointer: coarse)').matches;
   const small = Math.min(window.innerWidth, window.innerHeight) < 600;
   return { tier: coarse || small ? 'medium' : 'high', pinned: false };

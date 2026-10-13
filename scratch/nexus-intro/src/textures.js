@@ -17,6 +17,22 @@ export function mulberry32(seed) {
   };
 }
 
+/** Rounded-rect path; uses native roundRect where available (iOS Safari < 16.4 lacks it). */
+function roundRectPath(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  if (typeof ctx.roundRect === 'function') {
+    ctx.roundRect(x, y, w, h, r);
+    return;
+  }
+  const rr = Math.max(0, Math.min(r, w / 2, h / 2));
+  ctx.moveTo(x + rr, y);
+  ctx.arcTo(x + w, y, x + w, y + h, rr);
+  ctx.arcTo(x + w, y + h, x, y + h, rr);
+  ctx.arcTo(x, y + h, x, y, rr);
+  ctx.arcTo(x, y, x + w, y, rr);
+  ctx.closePath();
+}
+
 function makeCanvas(w, h = w) {
   const c = document.createElement('canvas');
   c.width = w;
@@ -277,8 +293,7 @@ export function panelCellsTexture() {
         const x = pad + col * cw + 6;
         const y = pad + r * ch + 6;
         ctx.fillStyle = `rgba(255,255,255,${0.55 + ((r * 3 + col) % 4) * 0.12})`;
-        ctx.beginPath();
-        ctx.roundRect(x, y, cw - 12, ch - 12, 6);
+        roundRectPath(ctx, x, y, cw - 12, ch - 12, 6);
         ctx.fill();
       }
     }

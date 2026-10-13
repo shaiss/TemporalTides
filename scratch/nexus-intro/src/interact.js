@@ -24,15 +24,24 @@ export class PointerPicker {
       this._setHover(this.pick(e.clientX, e.clientY));
     });
     canvas.addEventListener('pointerleave', () => this._setHover(null));
+    canvas.addEventListener('pointercancel', () => {
+      this.down = null;
+      this._setHover(null);
+    });
     canvas.addEventListener('pointerdown', (e) => {
-      this.down = { x: e.clientX, y: e.clientY, t: performance.now() };
+      // Primary button only: right/middle clicks must not act on Ink choices. Touch and pen report 0.
+      if (e.button !== 0) {
+        this.down = null;
+        return;
+      }
+      this.down = { x: e.clientX, y: e.clientY, t: performance.now(), id: e.pointerId };
       if (e.pointerType !== 'mouse') this._setHover(this.pick(e.clientX, e.clientY));
     });
     canvas.addEventListener('pointerup', (e) => {
       const d = this.down;
       this.down = null;
       if (e.pointerType !== 'mouse') setTimeout(() => this._setHover(null), 220);
-      if (!d) return;
+      if (!d || e.button !== 0 || e.pointerId !== d.id) return;
       const moved = Math.hypot(e.clientX - d.x, e.clientY - d.y);
       if (moved > TAP_SLOP_PX || performance.now() - d.t > TAP_MAX_MS) return;
       const id = this.pick(e.clientX, e.clientY);

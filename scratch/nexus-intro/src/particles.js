@@ -20,6 +20,7 @@ export class TemporalMotes {
     if (this.points) {
       this.scene.remove(this.points);
       this.points.geometry.dispose();
+      this.material?.dispose();
     }
     const rand = mulberry32(77);
     const pos = new Float32Array(count * 3);

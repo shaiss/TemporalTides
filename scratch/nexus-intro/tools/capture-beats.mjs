@@ -77,11 +77,20 @@ async function tapProp(page, prop) {
 }
 
 async function run(kind) {
-  const dir = join(outDir, kind);
-  mkdirSync(dir, { recursive: true });
   const browser = await chromium.launch({
     args: ['--use-angle=swiftshader', '--use-gl=angle', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'],
   });
+  try {
+    await capture(browser, kind);
+  } finally {
+    // Always release Chromium, including when a step or screenshot throws.
+    await browser.close();
+  }
+}
+
+async function capture(browser, kind) {
+  const dir = join(outDir, kind);
+  mkdirSync(dir, { recursive: true });
   const context = await browser.newContext({ viewport: { width: VIEWPORTS[kind].width, height: VIEWPORTS[kind].height }, ...VIEWPORTS[kind] });
   const page = await context.newPage();
   const consoleLog = [];
@@ -143,7 +152,6 @@ async function run(kind) {
   log.console = consoleLog;
   writeFileSync(join(dir, 'log.json'), JSON.stringify(log, null, 2));
   console.log(`[${kind}] renderer=${gl} fps(swiftshader)=${log.fps} console_errors=${consoleLog.filter((l) => /error/i.test(l)).length}`);
-  await browser.close();
 }
 
 const kinds = which === 'both' ? ['desktop', 'phone'] : [which];
