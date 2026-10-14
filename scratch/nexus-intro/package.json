@@ -8,7 +8,8 @@
     "start": "npm run compile && vite",
     "build": "npm run compile && vite build",
     "preview:ink-only": "npm run compile && npx --yes serve . -p 4174",
-    "preview:static": "vite preview --port 4173"
+    "preview:static": "vite preview --port 4173",
+    "test": "node --test test/*.test.mjs"
   },
   "devDependencies": {
     "inkjs": "^2.2.3",
