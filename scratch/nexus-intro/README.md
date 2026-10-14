@@ -24,6 +24,15 @@ Every Vercel deployment bundles this playable at **`/play/`** on the deployment 
 
 The root `npm run build:vercel` runs `scripts/build-nexus-play.mjs`, which builds this folder with `VITE_BASE=/play/` and copies `dist/` into `.vitepress/dist/play/`. No clone is required to play — Ink + chamber run entirely from static assets under `/play/`.
 
+**Checking which build is live.** `/play/` loads one hashed bundle, `/play/assets/index-<hash>.js`. Compare the live hash with a local build of the same commit; the two normally match:
+
+```bash
+curl -s https://temporaltides.com/play/ | grep -o 'index-[A-Za-z0-9_-]*\.js'
+npm run build:vercel && ls .vitepress/dist/play/assets/index-*.js
+```
+
+A push to `main` normally shows up as a **Production** deployment on its GitHub commit within a minute. If the hashes still differ and no Production deployment appears, Vercel missed the push. Redeploy `main` from the Vercel dashboard (Deployments → Redeploy). Don't push to `main` directly to trigger it.
+
 - Locked wide camera (no OrbitControls / free roam).
 - Same chamber; per-mode **3D overlay groups** in `src/lenses.js` (Anne / Maya / Eli / Vibrion) driven by Ink `active` — no full-screen lens tint.
 - Beat / HUD cues from Ink tags (`# beat:N`, `# mode:…`, `# ui:mode_switch`).
