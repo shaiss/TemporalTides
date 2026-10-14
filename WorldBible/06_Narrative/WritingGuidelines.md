@@ -106,7 +106,7 @@
 
 ## Cross-References
 
-- [Story Structure](StoryStructure.md) - Dialogue, pacing
+- [Story Structure](StoryStructure.md) - Four-act structure; character arcs
 - [Themes](Themes.md) - Thematic consistency
 - [Character dossiers](../03_Characters/) - Voice, personality
 

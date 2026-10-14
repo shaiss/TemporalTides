@@ -100,7 +100,7 @@ Puzzles in Temporal Tides are rooted in temporal mechanics and character abiliti
 - [CoreLoop](CoreLoop.md) — Where puzzles fit
 - [CharacterGameplay](CharacterGameplay.md) — Ability mechanics
 - [TeamMechanics](TeamMechanics.md) — Coordination puzzles
-- [Story Structure](../06_Narrative/StoryStructure.md) — Puzzle types defined
+- [Story Structure](../06_Narrative/StoryStructure.md) — Four-act structure; narrative arcs
 
 ---
 

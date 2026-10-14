@@ -2349,7 +2349,7 @@ The Nexus exists in micro-dimension, inaccessible through normal space travel. O
 - [Entropy Forces](../05_Factions/EntropyForces.md) - Nexus as ultimate target
 
 **Guidelines:**
-- [Characters](../03_Characters/) - Character connections
+- [Characters](../00_INDEX.md) - Character connections
 - [Story Structure](../06_Narrative/StoryStructure.md) - Story function and plot points
 
 ---
