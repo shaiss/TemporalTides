@@ -291,7 +291,8 @@ export function buildRoom(scene, renderer) {
     const events = singers.map((cl, n) => {
       const delay = inPhase ? 0 : n * 0.16 + chime.rand() * 0.32;
       cl.flashAt = t + delay;
-      cl.amp = inPhase ? 1.6 : 0.8;
+      // Strong enough to read with sound off: the shimmer is how a muted player notices the outlier.
+      cl.amp = inPhase ? 2.4 : 1.8;
       return { delay, pan: THREE.MathUtils.clamp(cl.x / 9, -1, 1), index: n };
     });
     chime.next = t + 13 + chime.rand() * 8;
@@ -330,7 +331,7 @@ export function buildRoom(scene, renderer) {
       const unison = ctx.sealed ? 0.22 + 0.18 * Math.sin(t * 1.6) : 0;
       singers.forEach((cl) => {
         const since = t - cl.flashAt;
-        const flash = cl.flashAt >= 0 && since >= 0 ? cl.amp * Math.exp(-since * 2.6) : 0;
+        const flash = cl.flashAt >= 0 && since >= 0 ? cl.amp * Math.exp(-since * 1.7) : 0;
         cl.mat.emissiveIntensity = cl.base * (1 + unison) + flash;
       });
     },
