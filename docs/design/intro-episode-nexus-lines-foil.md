@@ -60,9 +60,9 @@ Moments: **look** = the active character looks at a station; **can act** = their
 
 | Moment | Speaker | Line | Canon basis |
 |---|---|---|---|
-| look | Anne | Okay, so — the first clock's next tick lands in about three seconds. Eighty percent sure. I can mark it, if we're ready to use it. | Anne: Probability percentages intuitively known; Anne: Verbal Tics ('Okay, so...'); Anne: Short-Range Precognition; Beat sheet beat 5: Anne marks timing |
-| look (no reference yet) | Maya | The second clock cycles its hands in a fixed sequence. I can lock it, but I need a steady reference beat. Nothing here holds one. | Maya: Temporal Rhythm Sense; Beat sheet beat 5: Maya locks sequence against the tick |
-| look (no lock yet) | Eli | Third clock opens for, like, half a second. I can hit that! But on what beat? It keeps moving. | Eli: Reaction ~50 ms; Beat sheet beat 5: Eli hits the window |
+| look | Anne | Okay, so — the first clock runs on the corridor's rhythm. Next tick in about three seconds, eighty percent sure. I can mark it. | Anne: Probability percentages intuitively known; Anne: Verbal Tics ('Okay, so...'); Anne: Short-Range Precognition; Beat sheet beat 5: Anne marks timing; Planted details FOIL: corridor spark rhythm drives clock 1 |
+| look (no reference yet) | Maya | The first clock keeps the corridor's intervals: 2.1, 5.8, 0.9, 3.3. I can lock the second to it, but I cannot predict its next tick. | Maya: Temporal Rhythm Sense; Beat sheet beat 5: Maya locks sequence against the tick; Maya: Pattern Sense requires observation; Planted details FOIL: corridor intervals = clock 1 tempo |
+| look (no lock yet) | Eli | Hey — that's the lever window! Same slot, third clock. But it won't sit still. I'd just be fast and wrong again. | Eli: Reaction ~50 ms; Beat sheet beat 5: Eli hits the window; Planted details FOIL: lever window slot on clock 3 |
 | look (panel still dead) | Vibrion | The seal needs more than I'm carrying. Its grid feed runs through that dead panel by the levers. | Vibrion: Storage Capacity / Energy Absorption (power grids); Beat sheet beat 5: Vibrion powers the seal from the world grid; Beat sheet beat 4: dead panel |
 | look (panel live) | Vibrion | If I couple now, I'm powering four clocks out of phase. Get them agreeing first, then the seal is mine. | Vibrion: Verbal Tics ('out of phase'); Beat sheet beat 5 order |
 | plan breaks at Maya | Maya | Lock to what? There is no reference beat yet. | Maya: Questions for clarity |
@@ -79,8 +79,8 @@ Moments: **look** = the active character looks at a station; **can act** = their
 
 | Moment | Speaker | Line | Canon basis |
 |---|---|---|---|
-| ending | Maya | The four clocks share one sequence now. I can see it running through the whole chamber. | Beat sheet beat 6: Maya helps them see the pattern |
-| ending | Vibrion | Good work, all of you. That shadow's still at the edge. We're not finished — but we're in phase. | Beat sheet beat 6: Vibrion's leadership; Entropy not solved; Vibrion: Thematic Representation (leadership empowers others) |
+| ending | Maya | The four clocks share one sequence now. I can see it running through every crystal in the chamber. Except one, by the rim. | Beat sheet beat 6: Maya helps them see the pattern; TimeNexus: crystals chime / sing; Planted details FOIL: one cluster outside the pattern |
+| ending | Vibrion | Good work, all of you. That crystal isn't ours. It's what brushed the edge when we came in. We're not finished — but we're in phase. | Beat sheet beat 6: Vibrion's leadership; Entropy not solved; Vibrion: Thematic Representation (leadership empowers others); Planted details FOIL: cause left unsaid (decision 2026-10-13) |
 
 ## Canon check
 
@@ -89,11 +89,14 @@ Two independent model judges (`gpt-5.5`, `gemini-3.1-pro-preview`) checked the l
 | Test | Method | Result |
 |---|---|---|
 | Distinct voices ("identifiable without tags", Writing Guidelines) | Each line shown alone, with no speaker or scene, alongside only the canon voice rules; judge names the speaker | 38/38 and 38/38 |
-| Canon compliance | All lines judged against writing restrictions, banned terms, representation rules, the beat sheet and each character's ability limits | 0 violations; 1 risk this run, 3 across the last two runs |
+| Canon compliance | All lines judged against writing restrictions, banned terms, representation rules, the beat sheet and each character's ability limits | 0 violations; 2 risks this run (both on unchanged Vibrion lines), 4 distinct across the last three runs |
 
-- **Risk** `corr-vibrion` (`gpt-5.5`): A brief glimpse is defensible from Vibrion’s limited precognition, but it sits near the boundary of undercutting Anne’s unique hazard read; the line mitigates this by making it insufficient to cross. Accepted: limited precognition is canon, and the line makes it insufficient to act on.
-- **Risk, earlier run** `pan-vibrion` (`gpt-5.5`): Electrical coupling fits Vibrion, but 'from here' pushes against canon silence on range/line-of-sight limits for coupling to panels. Open for admiral redline.
+- **Risk, earlier run** `corr-vibrion` (`gpt-5.5`): A brief glimpse is defensible from Vibrion’s limited precognition, but it sits near the boundary of undercutting Anne’s unique hazard read; the line mitigates this by making it insufficient to cross. Accepted: limited precognition is canon, and the line makes it insufficient to act on.
+- **Risk, this run and an earlier run** `pan-vibrion` (`gpt-5.5`): Coupling an out-of-phase panel to the grid fits Beat 4, but canon does not give the range or method for coupling to a panel, so 'from here' is inferred. Open for admiral redline.
+- **Risk, this run** `gate-vibrion-dead` (`gpt-5.5`): Needing the dead panel's feed fits the puzzle dependency, but the seal's energy demand against Vibrion's stored capacity is not defined. Accepted: depends on gap 5 below (Vibrion's reserves are not bounded).
 - **Risk, earlier run** `pan-eli-early` (`gpt-5.5`): Mechanically defensible because Eli cannot engage Kinetic Rush on a dead, unpowered task, but 'Boring!' is close to a stereotyped ADHD shorthand if overused. Open for admiral redline.
+
+The five lines rewritten for the [planted details](intro-episode-nexus-planted-details-foil.md) (`gate-anne`, `gate-maya`, `gate-eli`, `res-maya`, `res-vibrion`) passed both judges with no risk, each attributed to the right speaker (confidence 0.74–1.0).
 
 Judges are not deterministic: a borderline line can pass one run and be flagged the next, so risks from earlier runs stay listed until someone rules on them.
 
@@ -114,6 +117,7 @@ Writing these lines tested how far the canon keeps an author on model. These are
 | 9 | **Maya boundaries:** "puzzle" metaphors are to be avoided, yet her dossier lists "Puzzle Solving" as a strength; savant stereotypes are to be avoided, yet her canon examples recite exact measurements. | No "puzzle" in any line; her numbers come from watching, with stated limits ("I would need much longer to observe one"). | Clarify that "puzzle" is a system term, never a metaphor for Maya; define the line between precision and savant framing. |
 | 10 | **No game-dialogue guidance** on line length or how often verbal tics may appear. | At most 26 words. Tic frequency left to judgement (see gaps 1 and 3). | Add a short-form voice note per character for barks and subtitles. |
 | 11 | **Hand-off verbs** (Anne marks, Maya locks, Eli hits, Vibrion couples) come from the beat sheet, not the dossiers. | Used as the beat sheet words them. | Describe each hand-off in the ability sections. |
+| 12 | **Pattern Sense and phase.** Canon says Maya predicts sequences once she has observed them, but not whether knowing a clock's intervals lets her call its next tick. | `gate-maya` knows the first clock's intervals but "cannot predict its next tick": she has the sequence, not where it stands now. Anne's Foresight supplies that. | State whether Pattern Sense gives phase (when) as well as sequence (what). |
 
 ## Ink format
 Each line is tagged Ink content so the words live in one place. The playable's `nexus-intro.ink` uses this shape:
@@ -121,10 +125,10 @@ Each line is tagged Ink content so the words live in one place. The playable's `
 ```ink
 = look_corridor
 { lens:
-- "anne": Okay, so. Left plate sparks in four seconds, then far right, then center. If we move on the gaps, we're through. #say:anne #id:corr-anne
+- "anne": Okay, so. Left plate sparks in four seconds, then far right, then center. If we move on the gaps, we're through. #say:anne #id:corr-anne #fx:foresee
 - "maya": Intervals: 2.1, 5.8, 0.9, 3.3 seconds. No repeating sequence yet. I would need much longer to observe one. #say:maya #id:corr-maya
 …
 }
 ```
 
-`#say` names the speaker, `#id` matches the ids in the tables above, and an optional `#fx` cues the room (`done`, `clear`, `fail`, `entropy`).
+`#say` names the speaker, `#id` matches the ids in the tables above, and an optional `#fx` cues the room (`done`, `clear`, `fail`, `entropy`, and for the planted details `foresee`, `chime`, `chime-sync`, `outlier`).
