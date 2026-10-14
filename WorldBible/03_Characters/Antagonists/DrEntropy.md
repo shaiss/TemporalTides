@@ -25,17 +25,19 @@ Marcus Theron was born in Chronopolis Central to a family of Temporal Research C
 
 - **Age 26 (310 AC):** Married briefly; divorce after two years. His ex-partner described him as "brilliant but impossible to live with — he saw every routine as tyranny."
 
-- **Age 28-35:** Rose to senior researcher at Council-affiliated Temporal Physics Institute. Secretly began experiments the Council would never approve: measuring the creative potential of controlled entropy increase.
+- **Age 28-43:** Rose to senior researcher at Council-affiliated Temporal Physics Institute. Published provocative theory on entropy dynamics; colleagues considered his proposals too radical for approval.
 
-- **Age 36 (320 AC):** Council discovered his unauthorized research. Confiscated all materials, revoked his credentials, issued permanent ban from temporal research facilities. The incident that transformed frustration into conviction: *They fear what I've discovered.*
+- **Age 44 (328 AC):** Began unauthorized experiments in secret: measuring the creative potential of controlled entropy increase (see Universal Timeline).
+
+- **Age 48 (332 AC):** Council discovered his secret research. Confiscated all materials, revoked his credentials, issued permanent ban from temporal research facilities. The incident that transformed frustration into conviction: *They fear what I've discovered.*
 
 **Radicalization:**
 
-- **Age 37-45:** Disappeared from public record. Reemergence as "Dr. Entropy" in 337 AC. During the gap: studied natural chaos in the Fractured Wastes, built early prototypes in hidden facilities, recruited first followers.
+- **Age 48-53:** Disappeared from public record. Reemergence as "Dr. Entropy" in 337 AC. During the gap: studied natural chaos in the Fractured Wastes, built early prototypes in hidden facilities, recruited first followers.
 
-- **189 AC (Calendar discrepancy — refers to Council archival dating):** First attack on Time Nexus with early entropy device. Ancient defenses repelled him. The failure radicalized him further — *The Nexus itself proves my point. Maximum order, maximum resistance to change. It's a monument to stagnation.*
+- **Age 54 (338 AC):** First attack on Time Nexus with early entropy device. Nexus defenses repelled him. The failure radicalized him further — *The Nexus itself proves my point. Maximum order, maximum resistance to change. It's a monument to stagnation.*
 
-- **Age 46-58 (Present):** Refined Chronos Catalyst, built the Lair, assembled Entropy Forces. Believes he is saving the universe from heat death — that controlled chaos now prevents total chaos later.
+- **Age 55-58 (Present):** Formal Chronos Catalyst development (from 340 AC), Lair consolidation, Entropy Forces assembly. Believes he is saving the universe from heat death — that controlled chaos now prevents total chaos later.
 
 **Current Status:**
 
@@ -99,7 +101,7 @@ Does not have traditional growth arc. Narrative function: force protagonists to 
 Dr. Entropy does not possess neuro-temporal abilities. His power is technological and intellectual:
 
 **Chronos Catalyst:**
-- **Origin:** Built by Dr. Entropy over 15 years, incorporating confiscated research, Fractured Wastes observations, and original theory
+- **Origin:** Assembled from confiscated research (332 AC), Fractured Wastes observations, and original theory; formal Chronos Catalyst development began 340 AC (see Universal Timeline)
 - **Function:** Dramatically increases local entropy; fractures timelines; creates paradoxes; weakens causal coherence
 - **Appearance:** Dark crystalline structure, approximately 2 meters tall, organic-seeming growth patterns
 - **Power Source:** Self-sustaining through energy harvested from timeline collapse (paradox resolution releases energy)
