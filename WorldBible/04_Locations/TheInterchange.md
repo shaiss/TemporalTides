@@ -1334,7 +1334,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 **337 AC:** Labor Exchange reaches 10,000 workers
 **339 AC:** Trade Council recognized by Temporal Research Council
 **340 AC:** Eli begins working as navigator
-**341 AC:** Team first visits (equipment shopping)
+**Late 342 AC:** Team first visits (equipment shopping)
 **342 AC:** Team becomes regular visitors (current)
 
 ### Relationship to Temporal Research Council

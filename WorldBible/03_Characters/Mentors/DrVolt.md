@@ -38,7 +38,7 @@ Lawrence Volt was born in Baseline Metropolitan to a family of scientists. His g
 
 **Meeting Vibrion:**
 
-- **Age 50 (330 AC):** Vibrion, age 21, newly transformed by lightning, sought scientific understanding. Dr. Volt recognized the potential — and the danger. Took him on as protege. Three years developing the alloy chain mesh costume (forty-seven prototype iterations; self-repairing at molecular level). Seven years of mentorship. Vibrion became the son he never had. "He proved that difference could be strength. I needed to believe that. After Marcus..."
+- **Age 50 (330 AC):** Vibrion, age 22, newly transformed by lightning, sought scientific understanding. Dr. Volt recognized the potential — and the danger. Took him on as protege. Three years developing the alloy chain mesh costume (forty-seven prototype iterations; self-repairing at molecular level). Seven years of mentorship. Vibrion became the son he never had. "He proved that difference could be strength. I needed to believe that. After Marcus..."
 
 **Current Status:**
 
