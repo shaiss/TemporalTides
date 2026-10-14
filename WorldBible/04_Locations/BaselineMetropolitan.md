@@ -643,7 +643,7 @@ Metropolitan proves balance possible:
 
 **Marginal (5%):**
 - Temporarily unemployed (support available)
-- Disabled (comprehensive services)
+- People with disabilities (comprehensive services)
 - Homeless (rare, shelters exist)
 - Addicted (treatment available, destigmatized)
 - Better situation than Chronopolis marginal

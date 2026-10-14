@@ -348,7 +348,7 @@ The Lair grows more chaotic over time:
 - Dr. Entropy (living his philosophy)
 - No one? (Maybe benefits are illusions)
 
-**Who Suffers:**
+**Who Faces Harm:**
 - Everyone eventually (chaos kills given time)
 - Those accidentally trapped (didn't choose)
 - Followers losing faith (stuck anyway)
