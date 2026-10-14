@@ -9,6 +9,7 @@ const REF_RATE = 1.15; // simulated minutes per real second on the shared refere
 const DESYNC_RATES = [1.0, -0.72, 2.55, 0.38]; // at the gate: each timeline keeps its own tempo
 const DRIFT_RATES = [1.0, 1.035, 0.97, 1.02]; // elsewhere: slightly out of sync
 const OFFSETS = [-95, 140, -40, 255];
+const SPARK_MINUTES = 5; // the first clock's minute hand jumps this far on each corridor spark
 
 function backOut(x) {
   const c1 = 1.9;
@@ -109,6 +110,18 @@ export class NexusClocks {
       };
     });
 
+    // The lever window, cut across the third clock's dial: same accent, same blink, same slot.
+    // It sits below the pivot like a date window, so it never reads as another hand.
+    const slotMat = glowMaterial(ROOM.accent, 1.2);
+    const slot = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.09, 0.008), slotMat);
+    const cut = new THREE.Mesh(new THREE.BoxGeometry(1.26, 0.17, 0.004), new THREE.MeshBasicMaterial({ color: 0x04050c }));
+    cut.position.z = -0.005;
+    slot.add(cut);
+    slot.position.set(0, -0.36, 0.088); // above the face (0.072), under the hands (0.1+)
+    this.clocks[2].root.add(slot);
+    this.slot = { mesh: slot, mat: slotMat, angle: 0 };
+    this.pendingSparks = 0;
+
     const off = LAYOUT.clocks.off;
     this.group.position.set(...off.position);
     this.group.scale.setScalar(off.scale);
@@ -143,6 +156,11 @@ export class NexusClocks {
 
   fail() {
     this.failT = 1;
+  }
+
+  /** A corridor spark: the first clock keeps the corridor's rhythm until it is locked. */
+  spark() {
+    this.pendingSparks += 1;
   }
 
   get hero() {
@@ -201,8 +219,18 @@ export class NexusClocks {
       const current = this.atGate && this.playing && !this.sealed && c.i === this.gateStep;
       c.lockBlend += ((locked ? 1 : 0) - c.lockBlend) * k(3.2);
 
-      const rate = this.atGate && !this.sealed ? DESYNC_RATES[c.i] : DRIFT_RATES[c.i];
-      c.time += dt * REF_RATE * rate;
+      // Clock 1 (index 0) has no tempo of its own: it ticks on the corridor's sparks.
+      const sparkDriven = c.i === 0 && !locked && c.lockBlend < 0.001;
+      if (sparkDriven) {
+        if (this.pendingSparks) {
+          c.jumpFrom = c.time;
+          c.time = Math.floor(c.time) + SPARK_MINUTES * this.pendingSparks;
+          c.jumpT = 0;
+        }
+      } else {
+        const rate = this.atGate && !this.sealed ? DESYNC_RATES[c.i] : DRIFT_RATES[c.i];
+        c.time += dt * REF_RATE * rate;
+      }
       if (c.lockBlend > 0.001) {
         // Converge onto the shared reference along the shortest path around the dial.
         const delta = wrap720(this.ref - c.time);
@@ -215,14 +243,22 @@ export class NexusClocks {
       if (whole !== c.lastWhole) {
         c.lastWhole = whole;
         c.tickFlash = 1;
-        this.onTick?.(c.i, { locked, current, atGate: this.atGate, ref: !locked ? 0 : 1 });
+        this.onTick?.(c.i, { locked, current, atGate: this.atGate, ref: !locked ? 0 : 1, spark: sparkDriven });
       }
       c.tickFlash = Math.max(0, c.tickFlash - dt * 5);
 
       // Jumping minute hand with a small overshoot on each tick.
-      const frac = c.time - whole;
-      const jump = frac < 0.16 ? backOut(frac / 0.16) : 1;
-      c.minute.rotation.z = -((whole - 1 + jump) / 60) * TAU;
+      let shown;
+      if (sparkDriven && c.jumpFrom != null) {
+        c.jumpT += dt;
+        shown = c.jumpFrom + (c.time - c.jumpFrom) * backOut(Math.min(1, c.jumpT / 0.2));
+      } else {
+        const frac = c.time - whole;
+        const jump = frac < 0.16 ? backOut(frac / 0.16) : 1;
+        shown = whole - 1 + jump;
+        c.jumpFrom = null;
+      }
+      c.minute.rotation.z = -(shown / 60) * TAU;
       c.hour.rotation.z = -(c.time / 720) * TAU;
 
       // Step ring / halo.
@@ -249,5 +285,20 @@ export class NexusClocks {
       c.root.scale.setScalar(sc);
       c.root.rotation.z = flick ? Math.sin(t * 55 + c.i) * 0.04 : 0;
     });
+    this.pendingSparks = 0;
+
+    // Third clock's slot: sways on that clock's own tempo until Maya's lock holds it still,
+    // opens fully once Eli hits it (like the lever window once the levers are thrown).
+    const c2 = this.clocks[2];
+    const held = this.sealed || (this.atGate && this.gateStep >= 2);
+    const open = this.sealed || (this.atGate && this.gateStep >= 3);
+    const sway = held ? 0 : Math.sin(c2.time * 0.9) * 0.6;
+    this.slot.angle += (sway - this.slot.angle) * k(held ? 4 : 10);
+    // It slides and tilts in its cut ("it won't sit still"), then holds once the second clock is locked.
+    this.slot.mesh.position.x = this.slot.angle * 0.3;
+    this.slot.mesh.rotation.z = this.slot.angle * 0.2;
+    const blink = Math.sin(t * 9) > 0.6 ? 1.2 : 0;
+    this.slot.mat.color.set(open ? ROOM.secondary : ROOM.accent).multiplyScalar(open ? 1.7 : 0.6 + blink);
+    this.slot.mesh.scale.x = open ? 1 : 0.25 + 0.2 * (0.5 + 0.5 * Math.sin(t * 2.2));
   }
 }

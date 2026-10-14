@@ -72,7 +72,7 @@ VAR g_window = false
 
 === arrive ===
 Same room, four ways of seeing it. Let's find out what each of you picks up before anyone commits. #say:vibrion #id:arrive-1
-Something brushed the edge of the chamber. Faint signature, out of phase with everything else. Gone now. #say:vibrion #id:arrive-2 #fx:entropy
+Something brushed the edge of the chamber. Faint signature, out of phase with everything else. Gone now. #say:vibrion #id:arrive-2 #fx:entropy #fx:chime
 -> DONE
 
 // ——————————————————————————————— Look ———————————————————————————————
@@ -88,7 +88,7 @@ Something brushed the edge of the chamber. Faint signature, out of phase with ev
 
 = look_corridor
 { lens:
-- "anne": Okay, so. Left plate sparks in four seconds, then far right, then center. If we move on the gaps, we're through. #say:anne #id:corr-anne
+- "anne": Okay, so. Left plate sparks in four seconds, then far right, then center. If we move on the gaps, we're through. #say:anne #id:corr-anne #fx:foresee
 - "maya": Intervals: 2.1, 5.8, 0.9, 3.3 seconds. No repeating sequence yet. I would need much longer to observe one. #say:maya #id:corr-maya
 - "eli": Wait, wait — where does it spark next? No idea. Three seconds to cross, but not blind. #say:eli #id:corr-eli
 - "vibrion": That's not current, it's temporal discharge. Nothing I can couple to. I catch a flash of the next spark, maybe — not enough to cross on. #say:vibrion #id:corr-vibrion
@@ -140,9 +140,9 @@ Something brushed the edge of the chamber. Faint signature, out of phase with ev
 
 = look_gate
 { lens:
-- "anne": Okay, so — the first clock's next tick lands in about three seconds. Eighty percent sure. I can mark it, if we're ready to use it. #say:anne #id:gate-anne
-- "maya": The second clock cycles its hands in a fixed sequence. I can lock it, but I need a steady reference beat. Nothing here holds one. #say:maya #id:gate-maya
-- "eli": Third clock opens for, like, half a second. I can hit that! But on what beat? It keeps moving. #say:eli #id:gate-eli
+- "anne": Okay, so — the first clock runs on the corridor's rhythm. Next tick in about three seconds, eighty percent sure. I can mark it. #say:anne #id:gate-anne #fx:foresee
+- "maya": The first clock keeps the corridor's intervals: 2.1, 5.8, 0.9, 3.3. I can lock the second to it, but I cannot predict its next tick. #say:maya #id:gate-maya
+- "eli": Hey — that's the lever window! Same slot, third clock. But it won't sit still. I'd just be fast and wrong again. #say:eli #id:gate-eli
 - "vibrion":
     {
     - panel_clear:
@@ -272,6 +272,6 @@ Something brushed the edge of the chamber. Faint signature, out of phase with ev
 
 === resonance ===
 ~ at = "end"
-The four clocks share one sequence now. I can see it running through the whole chamber. #say:maya #id:res-maya
-Good work, all of you. That shadow's still at the edge. We're not finished — but we're in phase. #say:vibrion #id:res-vibrion #fx:entropy
+The four clocks share one sequence now. I can see it running through every crystal in the chamber. Except one, by the rim. #say:maya #id:res-maya #fx:chime-sync #fx:outlier
+Good work, all of you. That crystal isn't ours. It's what brushed the edge when we came in. We're not finished — but we're in phase. #say:vibrion #id:res-vibrion #fx:entropy
 -> END

@@ -136,18 +136,45 @@ function buildAnne() {
   const brackets = buildBrackets(C.flash);
   group.add(brackets);
 
+  // Branching futures over the singing crystals. Nothing branches from the outlier.
+  const fans = [];
+  LAYOUT.crystals.spots.forEach(([x, z, s], i) => {
+    if (i === LAYOUT.crystals.outlier) return;
+    const origin = new THREE.Vector3(x, 2.1 * s, z);
+    const pts = [];
+    for (let b = 0; b < 3; b++) {
+      const a = (b - 1) * 0.55;
+      const end = origin.clone().add(new THREE.Vector3(Math.sin(a) * 0.6 * s, 0.75 * s, Math.cos(a) * 0.15 * s));
+      pts.push(origin, end);
+      [-0.35, 0.35].forEach((fork) => {
+        pts.push(end, end.clone().add(new THREE.Vector3(Math.sin(a + fork) * 0.25 * s, 0.3 * s, 0)));
+      });
+    }
+    const line = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(pts), dyn(lineMat(C.rim, 0.4, 2.2)));
+    group.add(line);
+    fans.push({ line, phase: i * 0.37 });
+  });
+
+  const LEAD = 0.8; // seconds Foresight runs ahead of a spark
   const tmp = new THREE.Vector3();
   return {
     id: 'anne',
     group,
-    update({ t, fade, camera, focus, at, flags }) {
+    update({ t, fade, camera, focus, at, flags, sparks }) {
       const corridorClear = flags?.corridorClear;
-      const cycle = 1.9;
-      blades.forEach((b) => {
+      blades.forEach((b, i) => {
+        // Foresight runs ahead of the corridor: a plate's blade rises just before it sparks.
+        const until = sparks ? sparks.untilNext(i) : Infinity;
+        const since = sparks ? sparks.sinceLast(i) : Infinity;
         b.echoes.forEach((e, k) => {
-          const ph = ((t / cycle + b.phase - e.lag) % 1 + 1) % 1;
-          // Spike up fast, hold, retract — the "trap timing".
-          const up = ph < 0.08 ? ph / 0.08 : ph < 0.32 ? 1 : ph < 0.42 ? 1 - (ph - 0.32) / 0.1 : 0;
+          let u = until + e.lag;
+          let sn = since - e.lag;
+          if (sn < 0) {
+            u = -sn;
+            sn = Infinity;
+          }
+          // Rise ahead of the spark, hold through it, retract.
+          const up = u < LEAD ? 1 - u / LEAD : sn < 0.3 ? 1 : sn < 0.45 ? 1 - (sn - 0.3) / 0.15 : 0;
           e.mesh.scale.set(1, Math.max(0.02, up), 1);
           e.mesh.position.y = 0.28 + 0.85 * up;
           const danger = up > 0.5 && k === 0 ? 1 : 0;
@@ -156,11 +183,14 @@ function buildAnne() {
           e.fill.opacity = (0.14 + up * 0.34) * echoFade * fade;
           e.edge.opacity = (0.25 + up * 0.75) * echoFade * fade;
         });
-        const ph0 = ((t / cycle + b.phase) % 1 + 1) % 1;
-        const warn = ph0 > 0.85 || ph0 < 0.36 ? 1 : 0.15;
+        const warn = until < 1.2 || since < 0.3 ? 1 : 0.15;
         b.zone.material.opacity = warn * (corridorClear ? 0.25 : 0.75) * fade;
       });
-      const beatTick = Math.floor((t / cycle) * 12) % 12;
+      // Twelve ticks along the edge: where the corridor is in its twelve-spark pattern.
+      const beatTick = sparks ? sparks.k % 12 : 0;
+      fans.forEach((f) => {
+        f.line.material.opacity = (0.16 + 0.24 * (0.5 + 0.5 * Math.sin(t * 2.3 + f.phase * 6))) * fade;
+      });
       ticks.forEach((tk, j) => {
         tk.material.opacity = (j === beatTick ? 1 : 0.18) * fade;
       });
@@ -245,6 +275,17 @@ function buildMaya() {
     group.add(ring);
     return ring;
   });
+  // Pattern Sense across the room: the crystals' shared sequence, marked at each base in turn.
+  // The outlier is outside the pattern, so it gets no mark.
+  const crystalMarks = [];
+  LAYOUT.crystals.spots.forEach(([x, z, s], i) => {
+    if (i === LAYOUT.crystals.outlier) return;
+    const ring = new THREE.Mesh(new THREE.RingGeometry(0.85 * s, 0.9 * s, 48), dyn(overlayMaterial(C.teal, 0.5, 2.2)));
+    ring.rotation.x = -Math.PI / 2;
+    ring.position.set(x, 0.035, z);
+    group.add(ring);
+    crystalMarks.push({ ring, n: crystalMarks.length });
+  });
   const echoClocks = [0, 1, 2, 3].map(() => {
     const ring = new THREE.Mesh(new THREE.RingGeometry(1.08, 1.12, 64), dyn(overlayMaterial(C.main, 0.6, 2.4)));
     group.add(ring);
@@ -254,7 +295,7 @@ function buildMaya() {
   return {
     id: 'maya',
     group,
-    update({ t, fade, camera, clocks, clockScale = 1 }) {
+    update({ t, fade, camera, clocks, clockScale = 1, sparks }) {
       const stepDur = 0.5;
       const marksN = MAYA_SEQUENCE.length;
       const phase = (t / stepDur) % (marksN + 2); // one mark per lever + 2 beats rest
@@ -272,9 +313,16 @@ function buildMaya() {
         l.tube.material.opacity = (l.rank < lit && lit < marksN ? 0.85 : 0.08) * fade;
       });
       const echoPulse = lit < marksN ? 1 - local : 0.2;
+      // Plate echoes flash when that plate sparks: she reads the corridor's intervals off them.
       echoFloor.forEach((r, i) => {
-        r.material.opacity = (0.15 + echoPulse * 0.5) * fade * (i === lit % 3 ? 1 : 0.5);
-        r.scale.setScalar(1 + (1 - echoPulse) * 0.25);
+        const since = sparks ? sparks.sinceLast(i) : Infinity;
+        const hit = Number.isFinite(since) ? Math.exp(-since * 3) : 0;
+        r.material.opacity = (0.15 + hit * 0.75) * fade;
+        r.scale.setScalar(1 + hit * 0.35);
+      });
+      const cm = Math.floor(t / 0.45) % (crystalMarks.length + 2);
+      crystalMarks.forEach((m) => {
+        m.ring.material.opacity = (m.n === cm ? 0.7 : m.n < cm ? 0.3 : 0.12) * fade;
       });
       echoClocks.forEach((r, i) => {
         if (!clocks?.[i]) {
@@ -328,6 +376,15 @@ function buildEli() {
       len: 3 + rand() * 3,
       ambient: true,
     });
+  }
+
+  // Past the outlier even Eli's world slows: a few streaks crawl by it.
+  const [ox, oz] = LAYOUT.crystals.spots[LAYOUT.crystals.outlier];
+  for (let i = 0; i < 4; i++) {
+    const mat = dyn(overlayMaterial(C.blur, 0.35, 1.6, { map: tex }));
+    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 0.03), mat);
+    group.add(mesh);
+    streaks.push({ mesh, mat, anchor: new THREE.Vector3(ox + 2.6, 0.7 + i * 0.55, oz + 0.9), speed: 0.5 + rand() * 0.2, phase: rand(), dy: 0, len: 1.6, ambient: true });
   }
 
   // The panel's jammed lever, in world space (matches NexusProps' stuck lever).
@@ -417,6 +474,8 @@ function gridMaterial() {
       uSrcB: { value: new THREE.Vector2(0, LAYOUT.gate.z + 0.6) },
       uSrcBOn: { value: 0 },
       uRadius: { value: LAYOUT.roomRadius - 0.35 },
+      // The outlier: the grid bends away from it and thins out (x, z, radius).
+      uVoid: { value: new THREE.Vector3(LAYOUT.crystals.spots[LAYOUT.crystals.outlier][0], LAYOUT.crystals.spots[LAYOUT.crystals.outlier][1], 2.8) },
     },
     vertexShader: /* glsl */ `
       varying vec2 vXZ;
@@ -435,6 +494,7 @@ function gridMaterial() {
       uniform vec2 uSrcB;
       uniform float uSrcBOn;
       uniform float uRadius;
+      uniform vec3 uVoid;
       varying vec2 vXZ;
       float gridLine(vec2 p, float spacing, float width) {
         vec2 g = abs(fract(p / spacing - 0.5) - 0.5) * spacing;
@@ -446,6 +506,9 @@ function gridMaterial() {
         vec2 p = vXZ;
         // Molecular shimmer (heat waves).
         p += vec2(sin(p.y * 3.0 + uTime * 2.3), cos(p.x * 2.6 + uTime * 1.9)) * 0.018;
+        vec2 dv = vXZ - uVoid.xy;
+        float dvl = length(dv);
+        p += (dvl > 0.001 ? dv / dvl : vec2(0.0)) * smoothstep(uVoid.z, 0.0, dvl) * 0.8;
         float major = gridLine(p, 1.2, 0.012);
         float minor = gridLine(p, 0.3, 0.004) * 0.35;
         float dA = distance(vXZ, uSrcA);
@@ -456,6 +519,7 @@ function gridMaterial() {
         float r = length(vXZ);
         float mask = smoothstep(uRadius, uRadius - 1.2, r);
         float lines = (major + minor) * (0.3 + nearA * 0.25 + (waveA + waveB) * 0.6);
+        lines *= 1.0 - smoothstep(uVoid.z * 0.8, 0.0, dvl) * 0.85;
         vec3 col = mix(uColor, uWhite, clamp(waveA + waveB, 0.0, 1.0) * 0.55) * lines * 1.35;
         float a = clamp(lines, 0.0, 1.0) * mask * uFade;
         gl_FragColor = vec4(col * a, a);

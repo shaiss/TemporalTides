@@ -61,6 +61,51 @@ function buildCrystalCluster(rand, size = 1) {
   return group;
 }
 
+/**
+ * The cluster that does not sing. Same footprint and height as its neighbours, but grown rather
+ * than cut: smooth, tapered, slightly bent, opaque and dark. It never takes part in a chime.
+ * Nothing about it glows or pulses; it is only slightly wrong.
+ */
+function buildOutlierCluster(size = 1) {
+  const rand = mulberry32(4242);
+  const group = new THREE.Group();
+  const mat = new THREE.MeshPhysicalMaterial({
+    color: 0x150c26,
+    roughness: 0.3,
+    metalness: 0.2,
+    clearcoat: 0.7,
+    clearcoatRoughness: 0.2,
+    emissive: 0x2a0f45,
+    emissiveIntensity: 0.14,
+    envMapIntensity: 0.5,
+  });
+  for (let i = 0; i < 5; i++) {
+    const r = (0.17 + rand() * 0.15) * size;
+    const h = (0.9 + rand() * 1.6) * size * (i === 0 ? 1.45 : 1);
+    const pts = [];
+    const steps = 18;
+    for (let j = 0; j <= steps; j++) {
+      const u = j / steps;
+      const rr = r * Math.pow(1 - u, 0.45) * (1 + 0.07 * Math.sin(u * 9 + i));
+      pts.push(new THREE.Vector2(Math.max(0.002, rr), u * h));
+    }
+    const geo = new THREE.LatheGeometry(pts, 16);
+    const pos = geo.attributes.position;
+    const bend = (rand() - 0.5) * 0.5 * size;
+    for (let v = 0; v < pos.count; v++) {
+      const u = pos.getY(v) / h;
+      pos.setX(v, pos.getX(v) + bend * u * u);
+    }
+    geo.computeVertexNormals();
+    const shard = new THREE.Mesh(geo, mat);
+    const a = rand() * Math.PI * 2;
+    const d = i === 0 ? 0 : (0.15 + rand() * 0.4) * size;
+    shard.position.set(Math.cos(a) * d, 0, Math.sin(a) * d);
+    shard.rotation.set((rand() - 0.5) * 0.35, rand() * Math.PI, (rand() - 0.5) * 0.35);
+    group.add(shard);
+  }
+  return group;
+}
 function auroraMaterial() {
   return new THREE.ShaderMaterial({
     transparent: true,
@@ -221,28 +266,52 @@ export function buildRoom(scene, renderer) {
 
   // —— Crystal clusters (set dressing; never occlude props) ——
   const clusters = [];
-  const spots = [
-    [-4.25, -7.75, 1.25],
-    [4.3, -7.8, 1.35],
-    [-7.3, -5.4, 1.1],
-    [7.5, -5.0, 1.05],
-    [-8.4, -1.4, 0.95],
-    [8.6, -2.6, 0.9],
-    [-8.2, 3.2, 0.7],
-    [8.1, 3.6, 0.75],
-  ];
-  spots.forEach(([x, z, s]) => {
-    const c = buildCrystalCluster(rand, s);
+  const C = LAYOUT.crystals;
+  C.spots.forEach(([x, z, s], i) => {
+    // Every regular cluster comes from the same seeded stream, so the outlier does not reshuffle
+    // its neighbours: its regular twin is built (and dropped) to keep the stream in step.
+    const regular = buildCrystalCluster(rand, s);
+    const outlier = i === C.outlier;
+    const c = outlier ? buildOutlierCluster(s) : regular;
+    if (outlier) regular.traverse((o) => o.geometry?.dispose());
     c.position.set(x, 0, z);
     c.rotation.y = rand() * Math.PI;
     scene.add(c);
-    clusters.push(c);
+    const mat = outlier ? null : regular.children[0].material;
+    clusters.push({ group: c, mat, base: mat?.emissiveIntensity ?? 0, outlier, x, z, flashAt: -1, amp: 0 });
   });
+
+  // —— Chimes (TimeNexus.md · Singing Crystals) ——
+  // Out of phase, the crystals chime raggedly round the rim. Once the gate is in phase they chime
+  // as one. The outlier never chimes.
+  const chime = { t: 0, next: 40, rand: mulberry32(77), onChime: null };
+  const singers = clusters.filter((c) => !c.outlier).sort((a, b) => Math.atan2(a.z, a.x) - Math.atan2(b.z, b.x));
+  function ring(inPhase) {
+    const t = chime.t;
+    const events = singers.map((cl, n) => {
+      const delay = inPhase ? 0 : n * 0.16 + chime.rand() * 0.32;
+      cl.flashAt = t + delay;
+      cl.amp = inPhase ? 1.6 : 0.8;
+      return { delay, pan: THREE.MathUtils.clamp(cl.x / 9, -1, 1), index: n };
+    });
+    chime.next = t + 13 + chime.rand() * 8;
+    chime.onChime?.(events, { inPhase });
+    return events;
+  }
 
   return {
     floorMat,
     wallMat,
     keyLight: key,
+    crystals: clusters,
+    outlier: clusters.find((c) => c.outlier)?.group ?? null,
+    /** Ring the crystals now; `inPhase` = the single in-tune chime at the seal. */
+    chime(inPhase = false) {
+      return ring(inPhase);
+    },
+    set onChime(fn) {
+      chime.onChime = fn;
+    },
     setShadowMapSize(n) {
       key.shadow.mapSize.set(n, n);
       key.shadow.map?.dispose();
@@ -254,6 +323,16 @@ export function buildRoom(scene, renderer) {
       aurora.uniforms.uIntensity.value = 0.75 + surge * 0.9;
       floorMat.emissiveIntensity = 0.5 + Math.sin(t * 0.9) * 0.06 + surge * 0.4;
       wallMat.emissiveIntensity = 0.32 + surge * 0.35;
+
+      chime.t = t;
+      if (ctx.ambientChimes !== false && t >= chime.next) ring(false);
+      // After the seal the singing clusters breathe together; the outlier keeps still.
+      const unison = ctx.sealed ? 0.22 + 0.18 * Math.sin(t * 1.6) : 0;
+      singers.forEach((cl) => {
+        const since = t - cl.flashAt;
+        const flash = cl.flashAt >= 0 && since >= 0 ? cl.amp * Math.exp(-since * 2.6) : 0;
+        cl.mat.emissiveIntensity = cl.base * (1 + unison) + flash;
+      });
     },
   };
 }

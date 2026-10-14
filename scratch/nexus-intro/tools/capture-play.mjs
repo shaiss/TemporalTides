@@ -25,6 +25,14 @@ async function run(kind) {
   const browser = await chromium.launch({
     args: ['--use-angle=swiftshader', '--use-gl=angle', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'],
   });
+  try {
+    await play(kind, dir, browser);
+  } finally {
+    await browser.close();
+  }
+}
+
+async function play(kind, dir, browser) {
   const context = await browser.newContext(VIEWPORTS[kind]);
   const page = await context.newPage();
   const errors = [];
@@ -121,6 +129,14 @@ async function run(kind) {
   await page.goto(url, { waitUntil: 'networkidle' });
   await until(() => window.__nexusDebug?.view?.());
   await shot('00-room-arrive', 2200);
+  if (kind === 'desktop') {
+    // Each lens in the room: Anne's branches skip the outlier, Maya's sequence skips it,
+    // Eli's streaks slow past it, Vibrion's grid bends around it.
+    for (const id of ['anne', 'maya', 'eli', 'vibrion']) {
+      await portrait(id);
+      await shot(`00d-room-${id}`, 900);
+    }
+  }
   if (kind === 'phone') {
     await page.locator('#pan-left').click();
     await shot('00b-room-look-left', 1400);
@@ -165,6 +181,11 @@ async function run(kind) {
   // Coordination gate: a wrong plan first, then the right one.
   await enter('gate');
   await shot('10-gate-empty-plan');
+  // The gate read in other eyes: Maya hears the corridor in the first clock, Anne calls its tick.
+  await portrait('maya');
+  await shot('10b-gate-maya');
+  await portrait('anne');
+  await shot('10c-gate-anne');
   for (const [slot, id] of ['anne', 'eli', 'maya', 'vibrion'].entries()) await dragToSlot(id, slot);
   await shot('11-gate-wrong-plan', 300);
   await page.locator('#sync-btn').click();
@@ -178,6 +199,10 @@ async function run(kind) {
   await shot('13-gate-playing', 100);
   await until(() => window.__nexusDebug.view().at === 'end', null, 40000);
   await shot('14-gate-sealed-resonance', 1500);
+  // Maya's last line turns the camera to the crystal that did not sing.
+  await until(() => window.__nexusDebug.shot() === 'outlier', null, 60000)
+    .then(() => shot('14b-end-outlier', 1200))
+    .catch(() => console.log(`[${kind}] no outlier shot`));
   await until(() => !document.getElementById('ending').hidden, null, 60000).catch(async () => {
     for (let i = 0; i < 8; i++) await page.locator('#subtitle').click().catch(() => {});
   });
@@ -187,7 +212,6 @@ async function run(kind) {
   writeFileSync(join(dir, 'log.json'), JSON.stringify({ quality, errors, shots: log }, null, 2));
   console.log(`[${kind}] ${log.length} shots, quality=${quality}, errors=${errors.length}`);
   errors.slice(0, 5).forEach((e) => console.log(`  ! ${e}`));
-  await browser.close();
 }
 
 for (const kind of which === 'both' ? ['desktop', 'phone'] : [which]) await run(kind);

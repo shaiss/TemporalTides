@@ -29,6 +29,13 @@ export const PORTRAIT_POSES = {
   levers: pose([3.3, 6.2, 8.0], [4.15, 0.9, 1.7], 60),
   panel: pose([2.67, 4.2, 4.2], [5.4, 1.3, -0.9], 60),
 };
+/**
+ * Shots that are not places: the ending drifts to the crystal that did not sing. Only used at the
+ * end; any other place clears it.
+ */
+export const SHOTS = {
+  outlier: { wide: pose([-2.4, 2.7, -0.2], [-7.3, 1.3, -5.4], 44), portrait: pose([-3.0, 3.4, 0.4], [-7.3, 1.2, -5.4], 58), rate: 0.9 },
+};
 
 const RATE = 2.1; // 1/s — a move settles in about 1.5 s
 
@@ -44,6 +51,12 @@ export class StationCamera {
 
   setPlace(place) {
     this.place = POSES[place] ? place : 'room';
+    if (this.place !== 'end') this.shot = null;
+  }
+
+  /** A slow drift to a named shot (SHOTS); only holds while the place is the end. */
+  setShot(name) {
+    this.shot = SHOTS[name] && this.place === 'end' ? name : null;
   }
 
   /** Width / height of the canvas; below 0.9 the portrait poses apply. */
@@ -52,6 +65,7 @@ export class StationCamera {
   }
 
   get pose() {
+    if (this.shot) return this.portrait ? SHOTS[this.shot].portrait : SHOTS[this.shot].wide;
     return (this.portrait && PORTRAIT_POSES[this.place]) || POSES[this.place];
   }
 
@@ -62,7 +76,8 @@ export class StationCamera {
 
   update(dt, { snap = false } = {}) {
     const { position, lookAt, fov } = this.pose;
-    const k = snap ? 1 : 1 - Math.exp(-RATE * dt);
+    const rate = this.shot ? SHOTS[this.shot].rate : RATE;
+    const k = snap ? 1 : 1 - Math.exp(-rate * dt);
     this.camera.position.lerp(position, k);
     this.look.lerp(lookAt, k);
     this.camera.lookAt(this.look);
