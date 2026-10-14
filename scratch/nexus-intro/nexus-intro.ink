@@ -1,316 +1,277 @@
-// Nexus intro episode — ability-mode scratch (foil: docs/design/intro-episode-nexus-foil.md)
-// Prose is placeholder scratch aligned to the locked beat sheet; not WorldBible canon.
+// Nexus intro — open room (FOIL: docs/design/intro-episode-nexus-interaction-foil.md,
+// lines: docs/design/intro-episode-nexus-lines-foil.md). Placeholder scratch prose, not WorldBible canon.
+//
+// The UI never shows a choice list. It sets `lens` and `at`, then runs knots by path:
+//   arrive          — opening lines
+//   look            — the active character's one line about what they see where they are
+//   act             — the active character acts on the lit thing (only offered when can_act())
+//   gate_begin      — start playing the four-slot plan (plan1..plan4)
+//   gate_step       — play the next slot; sets gate_result to ok | break | sealed
+//   resonance       — closing lines
+// Every spoken line carries #say:<character> and #id:<line id>; #fx tags drive presentation only.
 
-VAR active = "vibrion"
+VAR lens = "vibrion"
+VAR at = "room"
 
-// Beat progress
-VAR beat1_clear = false
-VAR beat2_clear = false
-VAR beat3_clear = false
-VAR beat4_clear = false
-VAR beat5_step = 0
-VAR beat5_clear = false
-VAR idle_hint_shown = false
+VAR corridor_clear = false
+VAR levers_marked = false
+VAR levers_clear = false
+VAR panel_live = false
+VAR panel_clear = false
+VAR gate_clear = false
 
--> beat_0
+VAR plan1 = ""
+VAR plan2 = ""
+VAR plan3 = ""
+VAR plan4 = ""
+VAR gate_i = 0
+VAR gate_result = ""
+VAR g_tick = false
+VAR g_lock = false
+VAR g_window = false
 
-// —— Beat 0: Arrive / stakes whisper (Vibrion frame) ——
-=== beat_0 ===
-# beat:0 # mode:vibrion
-The Time Nexus holds its breath around you. Time feels subjective here — not wrong, just unwilling to agree with itself.
+-> DONE
 
-A shadow of Entropy passes the chamber edge. Light touch only; it does not settle.
+// ——————————————————————————————— Rules the UI asks about ———————————————————————————————
 
-Vibrion keeps the frame: "One lens at a time. Same room — different choices."
-
-+ [Step into the Nexus chamber] -> beat_0_enter
-
-=== beat_0_enter ===
-You are in the chamber. The corridor ahead waits; the coordination gate beyond that is still dark.
-
-+ [Switch active character before moving on] -> mode_switch(-> beat_1)
-+ [Continue as Vibrion] -> beat_1
-
-// —— Beat 1: Hazard corridor (Anne / Foresight) ——
-=== beat_1 ===
-# beat:1
-The hazard corridor flickers. Trap timing is buried in noise unless something overlays the future hazard.
-
-{ beat1_clear:
-    -> beat_1_done
+=== function can_enter(place) ===
+{ place:
+- "corridor": ~ return not corridor_clear
+- "levers": ~ return not levers_clear
+- "panel": ~ return not panel_clear
+- "gate": ~ return not gate_clear
 }
+~ return false
 
-{ active == "anne":
-    + [Use Foresight — read the trap timing overlay] -> beat_1_anne_clear
+=== function can_act() ===
+{ at:
+- "corridor": ~ return lens == "anne" && not corridor_clear
+- "levers":
+    { lens == "maya":
+        ~ return not levers_marked
+    }
+    ~ return lens == "eli" && levers_marked && not levers_clear
+- "panel":
+    { lens == "vibrion":
+        ~ return not panel_live
+    }
+    ~ return lens == "eli" && panel_live && not panel_clear
 }
-{ active != "anne":
-    + [Press forward without the hazard overlay] -> beat_1_wrong_mode
+~ return false
+
+=== function plan_at(i) ===
+{ i:
+- 1: ~ return plan1
+- 2: ~ return plan2
+- 3: ~ return plan3
+- 4: ~ return plan4
 }
+~ return ""
 
-+ [Switch active character] -> mode_switch(-> beat_1)
-+ {idle_hint_shown == false} [Pause — accessibility hint stub (idle)] -> beat_1_hint
+// ——————————————————————————————— Arrival ———————————————————————————————
 
-=== beat_1_anne_clear ===
-~ beat1_clear = true
-Foresight lays the trap options bare. You choose the clean line through.
+=== arrive ===
+Same room, four ways of seeing it. Let's find out what each of you picks up before anyone commits. #say:vibrion #id:arrive-1
+Something brushed the edge of the chamber. Faint signature, out of phase with everything else. Gone now. #say:vibrion #id:arrive-2 #fx:entropy
+-> DONE
 
--> beat_1_done
+// ——————————————————————————————— Look ———————————————————————————————
 
-=== beat_1_wrong_mode ===
-Without Foresight, the corridor punishes guesswork. Back out and try another lens.
-
--> beat_1
-
-=== beat_1_hint ===
-~ idle_hint_shown = true
-(Hint stub) Try Anne — Foresight reveals hazard options others do not see.
-
--> beat_1
-
-=== beat_1_done ===
-The corridor is behind you.
-
--> mode_switch(-> beat_2)
-
-// —— Beat 2: Echo out of order (Maya / Pattern Sense) ——
-=== beat_2 ===
-# beat:2
-Echo levers answer in the wrong order. Relative strain and markings hide the true sequence unless someone marks what others cannot see.
-
-{ beat2_clear:
-    -> beat_2_done
+=== look ===
+{ at:
+- "corridor": -> look_corridor
+- "levers": -> look_levers
+- "panel": -> look_panel
+- "gate": -> look_gate
 }
+-> DONE
 
-{ active == "maya":
-    + [Use Pattern Sense — mark the lever strain sequence] -> beat_2_maya_clear
+= look_corridor
+{ lens:
+- "anne": Okay, so. Left plate sparks in four seconds, then far right, then center. If we move on the gaps, we're through. #say:anne #id:corr-anne
+- "maya": Intervals: 2.1, 5.8, 0.9, 3.3 seconds. No repeating sequence yet. I would need much longer to observe one. #say:maya #id:corr-maya
+- "eli": Wait, wait — where does it spark next? No idea. Three seconds to cross, but not blind. #say:eli #id:corr-eli
+- "vibrion": That's not current, it's temporal discharge. Nothing I can couple to. I catch a flash of the next spark, maybe — not enough to cross on. #say:vibrion #id:corr-vibrion
 }
-{ active != "maya":
-    + [Pull levers by guess] -> beat_2_wrong_mode
+-> DONE
+
+= look_levers
+{ lens:
+- "maya":
+    { levers_marked:
+        The sequence is correct. The window closes in under four seconds. I cannot move through five levers that fast. #say:maya #id:lev-maya-blocked
+    - else:
+        Pulling one lever sounds a different one. The strain marks give the order: third, first, fifth, second, fourth. #say:maya #id:lev-maya
+    }
+- "anne": Five levers is a hundred and twenty possible orders. I can see what follows each pull, not which order holds. Too many branches. #say:anne #id:lev-anne
+- "eli":
+    { levers_marked:
+        Got it — the marks are right there. Window's closing, but I'm faster than it. Going! #say:eli #id:lev-eli
+    - else:
+        These echo! Pull one, another one answers. So cool. Which order, though? I'd just be fast and wrong. #say:eli #id:lev-eli-early
+    }
+- "vibrion": Purely mechanical. I could shake them loose, but that won't tell me the order. This isn't a frequency problem. #say:vibrion #id:lev-vibrion
 }
+-> DONE
 
-+ [Switch active character] -> mode_switch(-> beat_2)
-+ {idle_hint_shown == false} [Pause — hint stub] -> beat_2_hint
-
-=== beat_2_maya_clear ===
-~ beat2_clear = true
-Pattern Sense marks the sequence. The echo falls into place — marked, not merely "restored."
-
--> beat_2_done
-
-=== beat_2_wrong_mode ===
-The levers fight you. Maya's lens is needed to mark the pattern.
-
--> beat_2
-
-=== beat_2_hint ===
-~ idle_hint_shown = true
-(Hint stub) Switch to Maya — Pattern Sense marks patterns others cannot see.
-
--> beat_2
-
-=== beat_2_done ===
-The echo chamber settles.
-
--> mode_switch(-> beat_3)
-
-// —— Beat 3: Closing window (Eli / Kinetic Rush) ——
-=== beat_3 ===
-# beat:3
-Maya's marked sequence still needs speed: a closing window will not wait for careful hands.
-
-{ beat3_clear:
-    -> beat_3_done
+= look_panel
+{ lens:
+- "vibrion":
+    { panel_live:
+        It's live. That lever is jammed — mechanical, not electrical. It needs one fast, hard shove while I hold the current. #say:vibrion #id:pan-vibrion-blocked
+    - else:
+        This panel's out of phase with the grid under the floor. I can couple it from here. #say:vibrion #id:pan-vibrion
+    }
+- "maya":
+    { panel_live:
+        It is running now, in a steady cycle. The lever is jammed against it. That needs force, not observation. #say:maya #id:pan-maya-live
+    - else:
+        Nothing here is running. There is no sequence to observe. #say:maya #id:pan-maya
+    }
+- "anne": Okay, so — nothing here is about to happen. No hazard, no countdown. What if it's not a trap at all, just dead? #say:anne #id:pan-anne
+- "eli":
+    { panel_live:
+        It's humming now! Okay, lever — one hard shove, right now. #say:eli #id:pan-eli
+    - else:
+        Dead panel, stuck lever. I could shove that all day and nothing moves — nothing's even humming. Boring! #say:eli #id:pan-eli-early
+    }
 }
+-> DONE
 
-{ active == "eli":
-    + [Use Kinetic Rush — bend your timeline to complete Maya's sequence in the window] -> beat_3_eli_clear
+= look_gate
+{ lens:
+- "anne": Okay, so — the first clock's next tick lands in about three seconds. Eighty percent sure. I can mark it, if we're ready to use it. #say:anne #id:gate-anne
+- "maya": The second clock cycles its hands in a fixed sequence. I can lock it, but I need a steady reference beat. Nothing here holds one. #say:maya #id:gate-maya
+- "eli": Third clock opens for, like, half a second. I can hit that! But on what beat? It keeps moving. #say:eli #id:gate-eli
+- "vibrion":
+    {
+    - panel_clear:
+        If I couple now, I'm powering four clocks out of phase. Get them agreeing first, then the seal is mine. #say:vibrion #id:gate-vibrion
+    - panel_live:
+        The panel's live, but that jammed lever is still cutting the feed. The seal gets nothing until it moves. #say:vibrion #id:gate-vibrion-jammed
+    - else:
+        The seal needs more than I'm carrying. Its grid feed runs through that dead panel by the levers. #say:vibrion #id:gate-vibrion-dead
+    }
 }
-{ active != "eli":
-    + [Try to finish the sequence at ordinary pace] -> beat_3_wrong_mode
+-> DONE
+
+// ——————————————————————————————— Act ———————————————————————————————
+
+=== act ===
+{ not can_act():
+    -> DONE
 }
-
-+ [Switch active character] -> mode_switch(-> beat_3)
-+ {idle_hint_shown == false} [Pause — hint stub] -> beat_3_hint
-
-=== beat_3_eli_clear ===
-~ beat3_clear = true
-Kinetic Rush bends your temporal timeline; Maya's identified sequence completes inside the window.
-
--> beat_3_done
-
-=== beat_3_wrong_mode ===
-The window slams shut. Eli's lens is required to move fast enough.
-
--> beat_3
-
-=== beat_3_hint ===
-~ idle_hint_shown = true
-(Hint stub) Switch to Eli — Kinetic Rush completes Maya's sequence faster by bending his timeline.
-
--> beat_3
-
-=== beat_3_done ===
-The window is cleared.
-
--> mode_switch(-> beat_4)
-
-// —— Beat 4: Dead panel (Vibrion / Vibrational Manipulation) ——
-=== beat_4 ===
-# beat:4
-A dead panel — tied to the world's electrical components. One lever is stuck; Maya cannot read this pattern.
-
-{ beat4_clear:
-    -> beat_4_done
+{ at:
+- "corridor":
+    ~ corridor_clear = true
+    Through. I saw three ways that could go wrong. None of them happened. #say:anne #id:corr-anne-done #fx:clear #fx:done
+- "levers":
+    { lens == "maya":
+        ~ levers_marked = true
+        The sequence is correct. The window closes in under four seconds. I cannot move through five levers that fast. #say:maya #id:lev-maya-blocked #fx:clear
+    - else:
+        ~ levers_clear = true
+        Done! Five for five. Did anyone see that? #say:eli #id:lev-eli-done #fx:clear #fx:done
+    }
+- "panel":
+    { lens == "vibrion":
+        ~ panel_live = true
+        It's live. That lever is jammed — mechanical, not electrical. It needs one fast, hard shove while I hold the current. #say:vibrion #id:pan-vibrion-blocked #fx:clear
+    - else:
+        ~ panel_clear = true
+        Free! That felt great. #say:eli #id:pan-eli-done #fx:clear #fx:done
+    }
 }
+-> DONE
 
-{ active == "vibrion":
-    + [Use Vibrational Manipulation — couple to the panel and partner the stuck lever decision] -> beat_4_vibrion_clear
+// ——————————————————————————————— Coordination gate ———————————————————————————————
+// A plan plays slot by slot. Each character either does their part or says why they can't,
+// and the plan stops there. Order is never named: it falls out of what each part needs.
+
+=== gate_begin ===
+~ gate_i = 0
+~ gate_result = ""
+~ g_tick = false
+~ g_lock = false
+~ g_window = false
+{ plan1 != "" && plan1 == plan2 && plan2 == plan3 && plan3 == plan4:
+    ~ gate_result = "break"
+    One of us can't bring four timelines into phase. It takes all four. #say:vibrion #id:gate-solo #fx:fail #fx:solo
 }
-{ active == "eli" && beat4_clear == false:
-    + [Help shoulder the stuck lever while Vibrion works the panel] -> beat_4_eli_partner_stub
+-> DONE
+
+=== gate_step ===
+~ gate_i = gate_i + 1
+~ temp who = plan_at(gate_i)
+{ who:
+- "anne": -> anne_part
+- "maya": -> maya_part
+- "eli": -> eli_part
+- "vibrion": -> vibrion_part
 }
-{ active != "vibrion" && active != "eli":
-    + [Try to energize the panel alone] -> beat_4_wrong_mode
+~ gate_result = "break"
+-> DONE
+
+= anne_part
+{ g_tick:
+    ~ gate_result = "break"
+    I already marked that tick. What if we're waiting on the wrong clock? Marking it twice won't change what comes next. #say:anne #id:gate-break-anne #fx:fail
+    -> DONE
 }
-{ active == "eli":
-    + [Switch to Vibrion for the energy gate] -> mode_switch(-> beat_4)
+~ g_tick = true
+~ gate_result = "ok"
+-> DONE
+
+= maya_part
+{
+- not g_tick:
+    ~ gate_result = "break"
+    Lock to what? There is no reference beat yet. #say:maya #id:gate-break-maya #fx:fail
+- g_lock:
+    ~ gate_result = "break"
+    The sequence is already locked. Locking it again changes nothing. Something else has to happen next. #say:maya #id:gate-break-maya-again #fx:fail
+- else:
+    ~ g_lock = true
+    ~ gate_result = "ok"
 }
+-> DONE
 
-+ [Switch active character] -> mode_switch(-> beat_4)
-
-=== beat_4_vibrion_clear ===
-~ beat4_clear = true
-Vibrational Manipulation meets the panel's hum. Where Eli's rush is needed at the lever, you call it — this beat clears on Vibrion's lens.
-
--> beat_4_done
-
-=== beat_4_eli_partner_stub ===
-Eli can assist, but the energy gate does not open without Vibrion active on the panel.
-
--> beat_4
-
-=== beat_4_wrong_mode ===
-The panel stays dead. Vibrion must be active for this energy beat.
-
--> beat_4
-
-=== beat_4_done ===
-The panel lives. Beyond it: the coordination gate — four clock faces disagree, each timeline keeping its own tempo.
-
--> mode_switch(-> beat_5)
-
-// —— Beat 5: Coordination gate (all four; must fail solo) ——
-=== beat_5 ===
-# beat:5
-Four clock faces hang over the gate, out of sync. Friction from different timelines — sync the clocks; do not invent drama.
-
-The seal listens only to a cross-lens sequence: Anne ticks timing → Maya locks against that tick → Eli hits the sync window → Vibrion couples power from the world grid.
-
-{ beat5_clear:
-    -> beat_6
+= eli_part
+{
+- not g_lock:
+    ~ gate_result = "break"
+    It won't hold still! I can't catch a window that keeps moving. #say:eli #id:gate-break-eli #fx:fail
+- g_window:
+    ~ gate_result = "break"
+    Already hit it! The window's open — I can't hit it twice. Who's next? #say:eli #id:gate-break-eli-again #fx:fail
+- else:
+    ~ g_window = true
+    ~ gate_result = "ok"
 }
+-> DONE
 
-{ beat5_step == 0 && active == "anne":
-    + [Foresight — mark the timing tick for clock sync] -> beat_5_anne
+= vibrion_part
+{
+- not g_window:
+    ~ gate_result = "break"
+    Still out of phase. I'm not forcing power through that. #say:vibrion #id:gate-break-vibrion #fx:fail
+- panel_live && not panel_clear:
+    ~ gate_result = "break"
+    The panel's live, but that jammed lever is still cutting the feed. The seal gets nothing until it moves. #say:vibrion #id:gate-vibrion-jammed #fx:fail
+- not panel_clear:
+    ~ gate_result = "break"
+    The seal needs more than I'm carrying. Its grid feed runs through that dead panel by the levers. #say:vibrion #id:gate-vibrion-dead #fx:fail
+- else:
+    ~ gate_clear = true
+    ~ gate_result = "sealed"
+    They're in phase. Coupling now. #say:vibrion #id:gate-seal #fx:sync
 }
-{ beat5_step == 0 && active != "anne":
-    + [Try to mark timing without Foresight] -> beat_5_wrong_order
-}
+-> DONE
 
-{ beat5_step == 1 && active == "maya":
-    + [Pattern Sense — lock the sequence against the marked tick] -> beat_5_maya
-}
-{ beat5_step == 1 && active != "maya":
-    + [Try to lock sequence out of order] -> beat_5_wrong_order
-}
+// ——————————————————————————————— Resonance ———————————————————————————————
 
-{ beat5_step == 2 && active == "eli":
-    + [Kinetic Rush — hit the sync window] -> beat_5_eli
-}
-{ beat5_step == 2 && active != "eli":
-    + [Try to hit the window without Rush] -> beat_5_wrong_order
-}
-
-{ beat5_step == 3 && active == "vibrion":
-    + [Vibrational Manipulation — power the seal] -> beat_5_vibrion
-}
-{ beat5_step == 3 && active != "vibrion":
-    + [Try to power the seal without coupling to the world grid] -> beat_5_wrong_order
-}
-
-// Solo-mode failure: attempting the full gate without crossing all four lenses
-{ beat5_step < 3:
-    + [Force the seal closed from one lens alone] -> beat_5_solo_fail
-}
-
-+ [Switch active character] -> mode_switch(-> beat_5)
-+ {idle_hint_shown == false} [Pause — hint stub] -> beat_5_hint
-
-=== beat_5_anne ===
-~ beat5_step = 1
-Anne's Foresight marks the first timing tick. Three clocks still drift — switch to Maya and lock the sequence to that tick.
-
--> mode_switch(-> beat_5)
-
-=== beat_5_maya ===
-~ beat5_step = 2
-Maya's marks pin the lever sequence to Anne's tick. The sync window opens — Eli must hit it before the clocks slip again.
-
--> mode_switch(-> beat_5)
-
-=== beat_5_eli ===
-~ beat5_step = 3
-Kinetic Rush closes the sync window on Maya's locked beat. Vibrion must couple to the world grid and power the seal.
-
--> mode_switch(-> beat_5)
-
-=== beat_5_vibrion ===
-~ beat5_step = 4
-~ beat5_clear = true
-Vibrational Manipulation meets the seal. The four clocks align — timeline friction eases into sync, not surrender.
-
--> beat_6
-
-=== beat_5_wrong_order ===
-The clocks stutter: this step needs a different lens and order. Sync in sequence — Anne (tick) → Maya (lock) → Eli (window) → Vibrion (seal).
-
--> beat_5
-
-=== beat_5_solo_fail ===
-One lens cannot bully four disagreeing clocks into agreement. Switch through every mode in order until each timeline has spoken.
-
--> beat_5
-
-=== beat_5_hint ===
-~ idle_hint_shown = true
-(Hint stub) Desynced clocks, not a brawl — sync in order: Anne (timing tick) → Maya (sequence lock) → Eli (sync window) → Vibrion (seal power). Switch active character between steps.
-
--> beat_5
-
-// —— Beat 6: Resonance tease / exit ——
-=== beat_6 ===
-# beat:6
-Maya helps you see the pattern forming in the chamber — with Vibrion's leadership holding the frame.
-
-Entropy is not solved. The episode ends on resonance, not victory over the shadow.
-
+=== resonance ===
+~ at = "end"
+The four clocks share one sequence now. I can see it running through the whole chamber. #say:maya #id:res-maya
+Good work, all of you. That shadow's still at the edge. We're not finished — but we're in phase. #say:vibrion #id:res-vibrion #fx:entropy
 -> END
-
-// —— Mode switch (one active character at a time) ——
-=== mode_switch(-> return_knot) ===
-# ui:mode_switch
-Active character: {active}
-
-+ {active != "anne"} [Anne — Foresight]
-    ~ active = "anne"
-    -> return_knot
-+ {active != "maya"} [Maya — Pattern Sense]
-    ~ active = "maya"
-    -> return_knot
-+ {active != "eli"} [Eli — Kinetic Rush]
-    ~ active = "eli"
-    -> return_knot
-+ {active != "vibrion"} [Vibrion — Vibrational Manipulation]
-    ~ active = "vibrion"
-    -> return_knot
-+ [Keep current: {active}] -> return_knot

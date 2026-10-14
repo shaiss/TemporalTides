@@ -9,14 +9,14 @@ const tmpColor = new THREE.Color();
 const WARN = new THREE.Color(ROOM.warning);
 
 /**
- * Beat props: hazard corridor (beat 1), echo lever console (beats 2–3), dead electrical panel with
- * conduits to the gate (beat 4). Props are display + tap targets only — every state change comes from
- * Ink flags via sync(); taps are resolved to existing Ink choices by main.js.
+ * Room props: hazard corridor, echo lever console, dead electrical panel with conduits to the gate.
+ * Props are display + tap targets only — every state change comes from Ink flags via sync(); taps go
+ * back to main.js, which asks the game (and so Ink) what they mean.
  */
 export class NexusProps {
   constructor(scene) {
     this.scene = scene;
-    this.state = { beat1Clear: false, beat2Clear: false, beat3Clear: false, beat4Clear: false, beat5Step: 0, beat5Clear: false };
+    this.state = { corridorClear: false, leversMarked: false, leversClear: false, panelLive: false, panelClear: false, gateStep: 0, gateClear: false };
     this.props = {};
     this.targets = [];
     this.bound = new Set();
@@ -56,7 +56,7 @@ export class NexusProps {
     };
   }
 
-  // —— Beat 1: hazard corridor ——
+  // —— Hazard corridor ——
   _buildCorridor() {
     const c = LAYOUT.corridor;
     const group = new THREE.Group();
@@ -102,7 +102,7 @@ export class NexusProps {
       return { plate, mat, frame };
     });
 
-    // Clean line through (revealed when beat1_clear).
+    // Clean line through (revealed once Anne crosses).
     const pts = [
       [-3.35, 3.55],
       [-3.5, 2.6],
@@ -134,7 +134,7 @@ export class NexusProps {
     });
   }
 
-  // —— Beats 2–3: echo lever console ——
+  // —— Echo lever console ——
   _buildLevers() {
     const L = LAYOUT.levers;
     const cx = (L.xs[0] + L.xs[L.xs.length - 1]) / 2;
@@ -153,7 +153,7 @@ export class NexusProps {
     frontStrip.position.set(cx, 0.44, L.z + 0.49);
     group.add(frontStrip);
 
-    // The "window" slot on the back panel (beat 3).
+    // The closing "window" slot on the back panel (Eli's speed check).
     this.windowMat = glowMaterial(ROOM.accent, 1.2);
     this.windowSlot = new THREE.Mesh(new THREE.BoxGeometry(width - 0.3, 0.09, 0.02), this.windowMat);
     this.windowSlot.position.set(cx, 0.86, L.z - 0.37);
@@ -180,8 +180,26 @@ export class NexusProps {
       group.add(housing, slot, pivot);
       return { pivot, knob, knobMat, angle: 0, twitch: 0, x };
     });
-    this.leverScramble = [0.46, -0.32, 0.52, -0.44];
-    this.echoOrder = [2, 0, 3, 1];
+    this.leverScramble = [0.46, -0.32, 0.52, -0.44, 0.38];
+    // Pulling one lever sounds a different one: the echo plays in the wrong order.
+    this.echoOrder = [1, 3, 0, 4, 2];
+
+    // Maya's marks stay on the console once she has read them, so every lens can use them.
+    const order = L.order;
+    const markMat = glowMaterial(0x00e5ff, 2.2, { transparent: true, opacity: 0 });
+    this.markMat = markMat;
+    this.leverMarks = L.xs.map((x, i) => {
+      const rank = order.indexOf(i);
+      const mark = new THREE.Group();
+      for (let p = 0; p <= rank; p++) {
+        const pip = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.05, 0.02), markMat);
+        pip.position.set((p - rank / 2) * 0.085, 0, 0);
+        mark.add(pip);
+      }
+      mark.position.set(x, 1.0, L.z - 0.37);
+      group.add(mark);
+      return mark;
+    });
     this.echoTimer = 0;
     this.echoIndex = 0;
 
@@ -196,7 +214,7 @@ export class NexusProps {
     });
   }
 
-  // —— Beat 4: dead panel + conduits to the gate ——
+  // —— Dead panel + conduits to the gate ——
   _buildPanel() {
     const P = LAYOUT.panel;
     const group = new THREE.Group();
@@ -250,6 +268,12 @@ export class NexusProps {
     lknob.position.y = 0.72;
     lp.add(lhub, lshaft, lknob);
     this.stuckLever = lp;
+    // Halo on the knob: what Eli's lens lights once the panel is live.
+    this.stuckHaloMat = glowMaterial(0xff7a1a, 2.6, { transparent: true, opacity: 0, additive: true, side: THREE.DoubleSide });
+    this.stuckHalo = new THREE.Mesh(new THREE.TorusGeometry(0.17, 0.018, 8, 40), this.stuckHaloMat);
+    this.stuckHalo.position.y = 0.72;
+    this.stuckHalo.rotation.y = Math.PI / 2;
+    lp.add(this.stuckHalo);
 
     group.add(plinth, cabinet, face, lp);
     applyShadows(group);
@@ -325,12 +349,13 @@ export class NexusProps {
 
   sync(state) {
     Object.assign(this.state, {
-      beat1Clear: !!state.beat1Clear,
-      beat2Clear: !!state.beat2Clear,
-      beat3Clear: !!state.beat3Clear,
-      beat4Clear: !!state.beat4Clear,
-      beat5Step: state.beat5Step ?? 0,
-      beat5Clear: !!state.beat5Clear,
+      corridorClear: !!state.corridorClear,
+      leversMarked: !!state.leversMarked,
+      leversClear: !!state.leversClear,
+      panelLive: !!state.panelLive,
+      panelClear: !!state.panelClear,
+      gateStep: state.gateStep ?? 0,
+      gateClear: !!state.gateClear,
     });
   }
 
@@ -386,7 +411,7 @@ export class NexusProps {
 
     // Corridor: plates flicker red-gold until Foresight clears them; then the clean line draws in.
     this.plates.forEach((pl, i) => {
-      if (s.beat1Clear) {
+      if (s.corridorClear) {
         pl.mat.emissive.set(0x9fb4ff);
         pl.mat.emissiveIntensity += (0.32 - pl.mat.emissiveIntensity) * k(3);
       } else {
@@ -396,37 +421,41 @@ export class NexusProps {
         pl.mat.emissiveIntensity = 0.9 + Math.max(0, n) * 0.9 + fail * 2.5 * (Math.sin(t * 40) > 0 ? 1 : 0);
       }
     });
-    this.safePathReveal += ((s.beat1Clear ? 1 : 0) - this.safePathReveal) * k(1.6);
+    this.safePathReveal += ((s.corridorClear ? 1 : 0) - this.safePathReveal) * k(1.6);
     const count = Math.floor((this.safePathCount * this.safePathReveal) / 3) * 3;
     this.safePath.geometry.setDrawRange(0, count);
     this.safePath.visible = count > 0;
 
-    // Levers: scrambled + echo twitch → ordered (beat 2) → thrown (beat 3).
+    // Levers: scrambled + echo twitch → marked by Maya → thrown by Eli.
+    this.markMat.opacity += ((s.leversMarked ? 1 : 0) - this.markMat.opacity) * k(3);
+    this.leverMarks.forEach((m) => {
+      m.visible = this.markMat.opacity > 0.01;
+    });
     this.echoTimer += dt;
-    if (!s.beat2Clear && this.echoTimer > 0.55) {
+    if (!s.leversMarked && this.echoTimer > 0.55) {
       this.echoTimer = 0;
-      const idx = this.echoOrder[this.echoIndex % 4];
+      const idx = this.echoOrder[this.echoIndex % this.echoOrder.length];
       this.levers[idx].twitch = 1;
       this.echoIndex++;
     }
     const failL = this.props.levers.fail;
     this.levers.forEach((l, i) => {
       let target = this.leverScramble[i];
-      if (s.beat3Clear) target = -0.62;
-      else if (s.beat2Clear) target = 0.34;
+      if (s.leversClear) target = -0.62;
+      else if (s.leversMarked) target = 0.34;
       l.twitch = Math.max(0, l.twitch - dt * 3.2);
       const jitter = failL * Math.sin(t * 50 + i) * 0.12;
-      l.angle += (target - l.angle) * k(s.beat2Clear ? 5 : 8);
+      l.angle += (target - l.angle) * k(s.leversMarked ? 5 : 8);
       l.pivot.rotation.z = l.angle + l.twitch * 0.12 * (i % 2 ? 1 : -1) + jitter;
-      const lit = s.beat3Clear ? 1.7 : s.beat2Clear ? 1.5 : 1.2 + l.twitch * 1.8;
-      l.knobMat.color.set(s.beat2Clear ? ROOM.temporalWhite : ROOM.accent).multiplyScalar(lit);
+      const lit = s.leversClear ? 1.7 : s.leversMarked ? 1.5 : 1.2 + l.twitch * 1.8;
+      l.knobMat.color.set(s.leversMarked ? ROOM.temporalWhite : ROOM.accent).multiplyScalar(lit);
     });
-    const winTarget = s.beat3Clear ? 1.7 : 0.6 + (Math.sin(t * 9) > 0.6 ? 1.2 : 0);
-    this.windowMat.color.set(s.beat3Clear ? ROOM.secondary : ROOM.accent).multiplyScalar(winTarget);
-    this.windowSlot.scale.x = s.beat3Clear ? 1 : 0.25 + 0.2 * (0.5 + 0.5 * Math.sin(t * 2.2));
+    const winTarget = s.leversClear ? 1.7 : 0.6 + (Math.sin(t * 9) > 0.6 ? 1.2 : 0);
+    this.windowMat.color.set(s.leversClear ? ROOM.secondary : ROOM.accent).multiplyScalar(winTarget);
+    this.windowSlot.scale.x = s.leversClear ? 1 : 0.25 + 0.2 * (0.5 + 0.5 * Math.sin(t * 2.2));
 
-    // Panel: dead → live; conduits carry power toward the gate.
-    const live = s.beat4Clear;
+    // Panel: dead → live (Vibrion) → lever thrown (Eli); conduits carry power toward the gate.
+    const live = s.panelLive;
     const failP = this.props.panel.fail;
     if (live) {
       this.panelFaceMat.emissive.set(0x2a8cff);
@@ -441,12 +470,16 @@ export class NexusProps {
     const fm = this.panelFrameMat;
     fm.userData.baseIntensity += (frameTarget - fm.userData.baseIntensity) * k(3);
     this.panelLight.intensity += ((live ? 9 : 0) - this.panelLight.intensity) * k(3);
-    const stuckTarget = live ? -0.75 : 0.55 + Math.sin(t * 3.1) * 0.03 + failP * Math.sin(t * 45) * 0.1;
+    const stuckTarget = s.panelClear ? -0.75 : 0.55 + Math.sin(t * 3.1) * 0.03 + failP * Math.sin(t * 45) * 0.1;
     this.stuckLever.rotation.x += (stuckTarget - this.stuckLever.rotation.x) * k(6);
+    const haloOn = live && !s.panelClear && this.bound.has('panel') ? 1 : 0;
+    this.stuckHaloMat.opacity += (haloOn * (0.55 + 0.4 * Math.sin(t * 5.2)) - this.stuckHaloMat.opacity) * k(6);
+    this.stuckHalo.scale.setScalar(1 + haloOn * 0.12 * Math.sin(t * 5.2));
 
-    const sealPower = s.beat5Clear ? 1 : s.beat5Step >= 3 ? 0.8 : 0;
+    // The feed only reaches the gate once the jammed lever is thrown.
+    const sealPower = s.gateClear ? 1 : s.gateStep >= 4 ? 0.8 : 0;
     this.conduits.forEach((cd, i) => {
-      const target = live ? 0.75 + sealPower * 0.25 : 0;
+      const target = s.panelClear ? 0.75 + sealPower * 0.25 : live ? 0.12 : 0;
       cd.coreMat.opacity += (target - cd.coreMat.opacity) * k(2.5);
       cd.tex.offset.x -= dt * (0.6 + sealPower * 1.6) * (i ? 1.1 : 1);
     });

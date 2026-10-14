@@ -250,14 +250,15 @@ export class NexusAudio {
     src.start(now);
   }
 
-  /** Beat-5 seal: all clocks agree — chord + deep portal chime. */
+  /** Gate seal: all clocks agree — chord + deep portal chime. */
   sync() {
     if (!this.live) return;
     [293.66, 369.99, 440, 587.33, 659.25].forEach((f, k) => this._bell(f, { when: k * 0.07, gain: 0.11, decay: 3.2, pan: (k - 2) * 0.25 }));
     this._bell(73.42, { when: 0.05, gain: 0.3, decay: 4.5 });
   }
 
-  beat() {
+  /** Walking up to a place, or back into the room. */
+  move() {
     if (!this.live) return;
     this._bell(146.83, { gain: 0.12, decay: 2.6 });
   }

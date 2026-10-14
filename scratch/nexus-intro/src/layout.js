@@ -19,7 +19,9 @@ export const LAYOUT = {
     [-4.2, 1.2],
     [-3.25, -0.2],
   ],
-  levers: { xs: [2.85, 3.6, 4.35, 5.1], z: 1.8, pivotY: 0.66 },
+  // Five echo levers. `order` is the true sequence Maya reads from the strain marks
+  // ("third, first, fifth, second, fourth"), as lever indices.
+  levers: { xs: [2.75, 3.45, 4.15, 4.85, 5.55], z: 1.8, pivotY: 0.66, order: [2, 0, 4, 1, 3] },
   panel: { x: 5.65, z: -1.0, rotY: -0.5, w: 1.7, h: 2.3 },
   clocks: {
     off: { position: [0, 6.72, -7.0], scale: 0.5 },
@@ -28,13 +30,12 @@ export const LAYOUT = {
   },
 };
 
-/** World point the portrait crop centers on for each beat (subject of the beat). */
-export const BEAT_FOCUS = {
-  0: [0, 2.6, -6.4],
-  1: [-4.2, 0.5, 1.2],
-  2: [3.95, 0.9, 1.8],
-  3: [3.95, 0.9, 1.8],
-  4: [5.0, 1.3, 0.2],
-  5: [0, 3.05, -5.55],
-  6: [0, 2.8, -6.4],
+/** World point the portrait crop centers on at each place (room = gate, the room's centerpiece). */
+export const PLACE_FOCUS = {
+  room: [0, 2.6, -6.4],
+  corridor: [-4.2, 0.5, 1.2],
+  levers: [4.15, 0.9, 1.8],
+  panel: [5.3, 1.3, -0.6],
+  gate: [0, 3.05, -5.55],
+  end: [0, 2.8, -6.4],
 };

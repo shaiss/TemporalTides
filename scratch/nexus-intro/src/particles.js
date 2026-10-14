@@ -5,7 +5,7 @@ import { mulberry32, softDotTexture } from './textures.js';
 
 /**
  * Drifting temporal motes. Speed follows the active lens (TemporalVisuals.md: accelerated perception
- * = faster particle movement) and beat-5 desync adds jitter that calms once the clocks sync.
+ * = faster particle movement) and the desynced gate adds jitter that calms once the clocks sync.
  */
 export class TemporalMotes {
   constructor(scene, count = 400) {
@@ -27,7 +27,7 @@ export class TemporalMotes {
     this.seeds = new Float32Array(count * 3);
     const R = LAYOUT.roomRadius - 1.2;
     for (let i = 0; i < count; i++) {
-      // Keep motes behind the beat-5 push camera (z ≈ 7) so none smear into near-lens fog.
+      // Keep motes behind the gate camera (z ≈ 7) so none smear into near-lens fog.
       let x;
       let z;
       do {
@@ -61,10 +61,10 @@ export class TemporalMotes {
     this.count = count;
   }
 
-  update(t, dt, { active, onBeat5, beat5Clear }) {
-    this.speedTarget = active === 'eli' ? 3.2 : onBeat5 && !beat5Clear ? 1.4 : 1;
+  update(t, dt, { active, atGate, sealed }) {
+    this.speedTarget = active === 'eli' ? 3.2 : atGate && !sealed ? 1.4 : 1;
     this.speed += (this.speedTarget - this.speed) * (1 - Math.exp(-3 * dt));
-    this.jitter += ((onBeat5 && !beat5Clear ? 1 : 0) - this.jitter) * (1 - Math.exp(-2 * dt));
+    this.jitter += ((atGate && !sealed ? 1 : 0) - this.jitter) * (1 - Math.exp(-2 * dt));
     const tint = new THREE.Color(ROOM.temporalWhite).lerp(new THREE.Color(CHARACTER.eli.hot), active === 'eli' ? 0.45 : 0);
     this.material.color.copy(tint).multiplyScalar(1.6);
 

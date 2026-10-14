@@ -5,15 +5,16 @@ import { NexusProps } from './props.js';
 import { NexusClocks } from './clocks.js';
 import { LensSystem } from './lenses.js';
 import { TemporalMotes } from './particles.js';
-import { CameraBeat } from './cameraBeat.js';
+import { StationCamera } from './stationCamera.js';
 import { ViewportFraming } from './framing.js';
 import { PointerPicker } from './interact.js';
 import { PostFX, detectQuality } from './post.js';
-import { BEAT_FOCUS, LAYOUT } from './layout.js';
+import { PLACE_FOCUS, LAYOUT } from './layout.js';
 import { CHARACTER, ROOM } from './palette.js';
 
 const GATE_POINT = new THREE.Vector3(...LAYOUT.gate.center);
 const _v = new THREE.Vector3();
+const _w = new THREE.Vector3();
 // Frame-time cap. Default 0.1 s keeps animation stable through hitches; `?dtcap=1` lets very slow
 // software-GL captures (SwiftShader ~1 fps) advance in real time so screenshots show settled states.
 const DT_CAP = (() => {
@@ -21,10 +22,13 @@ const DT_CAP = (() => {
   return v > 0 && v <= 2 ? v : 0.1;
 })();
 
+/** The clocks and the arch are one place: the gate. */
+const placeOf = (id) => (id && id.startsWith('clock') ? 'gate' : id);
+
 /**
- * Time Nexus chamber — Three.js presentation for the Ink episode.
- * Ink stays the rules brain: syncFromInk() is the only state input. Props are tap targets that
- * main.js resolves to choices already on the rail; the chamber never advances the story itself.
+ * Time Nexus chamber — Three.js presentation for the open room.
+ * The game (and so Ink) stays the rules brain: sync() is the only state input. Props are tap
+ * targets that main.js hands back to the game; the chamber never changes game state itself.
  */
 export class NexusChamber {
   constructor(canvas, { onPropTap, onHoverChange, onClockTick } = {}) {
@@ -33,12 +37,19 @@ export class NexusChamber {
     this.onHoverChange = onHoverChange;
     this.onClockTick = onClockTick;
     this.clock = new THREE.Clock();
-    this.state = { active: 'vibrion', currentBeat: null, beat5Step: 0, beat5Clear: false };
+    this.view = {
+      lens: 'vibrion',
+      at: 'room',
+      flags: {},
+      gateStep: 0,
+      playing: false,
+    };
     this.synced = false;
     this.bound = new Set();
     this.pointerHover = null;
-    this.linkedHover = null;
     this.hovered = null;
+    this.roomPan = 0.5;
+    this.dragUntil = 0;
     this.reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
 
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
@@ -46,7 +57,7 @@ export class NexusChamber {
 
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(48, 1, 0.1, 80);
-    this.cameraBeat = new CameraBeat(this.camera);
+    this.stationCamera = new StationCamera(this.camera);
     this.framing = new ViewportFraming(this.camera);
 
     const quality = detectQuality();
@@ -80,12 +91,14 @@ export class NexusChamber {
 
     this.picker = new PointerPicker(canvas, this.camera, () => this.targets, {
       onHover: (id) => {
-        this.pointerHover = id;
+        this.pointerHover = placeOf(id);
         this._refreshHover();
       },
       onTap: (id) => {
-        if (this.bound.has(id)) this.onPropTap?.(id);
+        const place = placeOf(id);
+        if (this.bound.has(place)) this.onPropTap?.(place);
       },
+      onDrag: (dx) => this._dragPan(dx),
     });
 
     this._onResize = this._onResize.bind(this);
@@ -98,51 +111,64 @@ export class NexusChamber {
     this.renderer.setAnimationLoop(() => this._frame());
   }
 
-  // —— Ink → chamber ——
-  syncFromInk(state) {
-    const prevActive = this.state.active;
-    this.state = { ...state, currentBeat: state.currentBeat == null ? null : String(state.currentBeat) };
-    const beat = this.state.currentBeat;
-    const onBeat5 = beat === '5';
-    this.props.sync(state);
-    this.clocks.sync({ onBeat5, beat5Step: state.beat5Step, beat5Clear: state.beat5Clear });
-    this.gate.setState({ beat5Step: state.beat5Step, beat5Clear: state.beat5Clear, onBeat5, ended: beat === '6' });
-    this.cameraBeat.syncFromInk({ beat5Step: state.beat5Step, beat5Clear: state.beat5Clear, inBeatFive: onBeat5 });
-    this.lenses.setActive(state.active);
-    if (this.synced && prevActive !== state.active) this._activationFlash(state.active);
+  // —— Game → chamber ——
+  /** view = NexusGame.view() plus presentation-only gate playback ({ gateStep, playing }). */
+  sync(view, { gateStep = 0, playing = false } = {}) {
+    const prevLens = this.view.lens;
+    const f = view.flags;
+    this.view = { ...view, gateStep, playing };
+    const atGate = view.at === 'gate';
+    this.props.sync({ ...f, gateStep });
+    this.clocks.sync({ atGate, gateStep, sealed: f.gateClear, playing });
+    this.gate.setState({ gateStep, sealed: f.gateClear, atGate, ended: view.at === 'end' });
+    this.stationCamera.setPlace(view.at);
+    this.lenses.setActive(view.lens);
+    if (this.synced && prevLens !== view.lens) this._activationFlash(view.lens);
     this.synced = true;
   }
 
-  /** Prop ids that currently resolve to an Ink choice on the rail. */
+  /** Places that answer a tap right now (room: places you can walk to; inside: the thing to act on). */
   setBindings(ids) {
     this.bound = new Set(ids);
     this.props.setBound(ids);
-    this.clocks.setBound(ids);
+    this.clocks.setBound(ids.includes('gate') ? ['clock0', 'clock1', 'clock2', 'clock3'] : []);
     this._refreshHover(true);
   }
 
-  /** Rail button hover/focus → highlight its prop (two-way link with the chamber). */
-  setLinkedHover(id) {
-    this.linkedHover = id;
-    this._refreshHover();
+  /** Narrow screens: look around the open room by dragging sideways. */
+  _dragPan(dx) {
+    if (this.view.at !== 'room') return;
+    const range = this.framing.panRange(this.canvas.clientWidth, this.canvas.clientHeight);
+    if (!range) return;
+    this.roomPan = THREE.MathUtils.clamp(this.roomPan - dx / range, 0, 1);
+    this.dragUntil = performance.now() + 120;
+  }
+
+  /** Pan the room crop toward a place (used by the edge arrows on narrow screens). */
+  panToward(direction) {
+    if (this.view.at !== 'room') return;
+    this.roomPan = THREE.MathUtils.clamp(this.roomPan + direction * 0.5, 0, 1);
+  }
+
+  get canPan() {
+    return this.view.at === 'room' && this.framing.cropping;
   }
 
   _refreshHover(announce = false) {
-    const pointer = this.pointerHover && this.bound.has(this.pointerHover) ? this.pointerHover : null;
-    const id = pointer ?? (this.linkedHover && this.bound.has(this.linkedHover) ? this.linkedHover : null);
-    this.canvas.style.cursor = pointer ? 'pointer' : '';
+    const id = this.pointerHover && this.bound.has(this.pointerHover) ? this.pointerHover : null;
+    this.canvas.style.cursor = id ? 'pointer' : '';
     if (id === this.hovered) {
-      if (announce) this.onHoverChange?.(pointer);
+      if (announce) this.onHoverChange?.(id);
       return;
     }
     this.hovered = id;
     this.props.setHover(id);
-    this.clocks.setHover(id);
+    this.clocks.setHover(id === 'gate' ? 'clock1' : null);
     this.gate.setHover(id === 'gate');
-    this.onHoverChange?.(pointer);
+    this.onHoverChange?.(id);
   }
 
-  // —— Feedback events (from main.js outcome detection) ——
+  // —— Feedback events (from main.js) ——
   feedback({ type, prop, charId }) {
     const color = CHARACTER[charId]?.flash ?? ROOM.temporalWhite;
     if (type === 'clear') {
@@ -161,8 +187,8 @@ export class NexusChamber {
       this.post.flash(1.1);
       this._flashLight(ROOM.temporalWhite, 60);
       this.props.burst(new THREE.Vector3(0, 0, LAYOUT.gate.z + 1.2), ROOM.temporalWhite, { from: 0.5, to: 8, dur: 1.8, y: 0.34 });
-    } else if (type === 'beat') {
-      this.post.flash(0.2);
+    } else if (type === 'move') {
+      this.post.flash(0.15);
     }
   }
 
@@ -187,37 +213,31 @@ export class NexusChamber {
     this.post.flash(0.35);
   }
 
-  /** World point of the current beat's subject (portrait crop focus + Anne's brackets). */
+  /** World point of what the player is looking at (portrait crop focus + flash placement). */
   _subjectPoint(target = new THREE.Vector3()) {
-    const beat = this.state.currentBeat;
-    if (beat === '5' && !this.state.beat5Clear) return target.copy(this.clocks.group.position);
-    // Follow the prop that is tappable right now (e.g. beat 0 "Continue" → corridor) so the
-    // portrait crop never hides the thing the rail says you can act on.
-    if (this.bound.size === 1) {
-      const [only] = this.bound;
-      if (only !== 'gate' && !only.startsWith('clock')) {
-        const f = this.props.focusPoint(only);
-        if (f) return target.copy(f);
-      }
+    const { at, flags = {} } = this.view;
+    if (at === 'gate') return target.copy(this.clocks.group.position);
+    const f = this.props.focusPoint(at);
+    if (f && at === 'panel' && flags.panelLive && !flags.panelClear) {
+      // Once the panel is live the jammed lever is the subject: keep it in a narrow crop too.
+      return target.copy(f).lerp(this.props.stuckLever.getWorldPosition(_w), 0.55);
     }
-    const f = BEAT_FOCUS[beat] ?? BEAT_FOCUS[0];
-    return target.set(f[0], f[1], f[2]);
+    if (f) return target.copy(f);
+    const p = PLACE_FOCUS[at] ?? PLACE_FOCUS.room;
+    return target.set(p[0], p[1], p[2]);
   }
 
+  /** Anne's timing brackets: on the thing she is looking at; the first clock at the gate. */
   _bracketPoint() {
-    const beat = this.state.currentBeat;
-    if (beat === '1') return this.props.focusPoint('corridor');
-    if (beat === '2' || beat === '3') return this.props.focusPoint('levers');
-    if (beat === '4') return this.props.focusPoint('panel');
-    if (beat === '5' && !this.state.beat5Clear) return this.clocks.clockWorldPosition(Math.min(this.state.beat5Step, 3), _v);
-    return null;
+    const { at } = this.view;
+    if (at === 'gate') return this.clocks.clockWorldPosition(0, _v);
+    return this.props.focusPoint(at);
   }
 
-  /** Client-space point for a prop (used by the debug harness to tap props). */
+  /** Client-space point for a prop (used by the capture harness to tap props). */
   propScreenPoint(id) {
     let p;
     if (id === 'gate') p = GATE_POINT.clone();
-    else if (id === 'clocks') p = this.clocks.clockWorldPosition(Math.min(this.state.beat5Step ?? 0, 3), new THREE.Vector3());
     else if (id.startsWith('clock')) p = this.clocks.clockWorldPosition(Number(id.slice(5)), new THREE.Vector3());
     else p = this.props.focusPoint(id)?.clone();
     if (!p) return null;
@@ -228,57 +248,84 @@ export class NexusChamber {
     return { x: rect.left + (p.x * 0.5 + 0.5) * rect.width, y: rect.top + (-p.y * 0.5 + 0.5) * rect.height };
   }
 
+  /** Point the room crop at a place (capture harness / keyboard entry on narrow screens). */
+  panToPlace(id) {
+    const w = this.canvas.clientWidth;
+    const h = this.canvas.clientHeight;
+    const range = this.framing.panRange(w, h);
+    if (!range) return;
+    const p = id === 'gate' ? GATE_POINT.clone() : this.props.focusPoint(id)?.clone();
+    if (!p) return;
+    const cam = this.camera.clone();
+    cam.aspect = 16 / 9;
+    cam.clearViewOffset();
+    cam.updateProjectionMatrix();
+    p.project(cam);
+    const fullWidth = range + w;
+    const px = (p.x * 0.5 + 0.5) * fullWidth;
+    this.roomPan = THREE.MathUtils.clamp((px - w / 2) / range, 0, 1);
+  }
+
+  get cameraSettled() {
+    return this.stationCamera.settled;
+  }
+
   _onResize() {
     const w = this.canvas.clientWidth;
     const h = this.canvas.clientHeight;
     if (!w || !h) return;
     this.post.setSize(w, h);
     this.clocks.setAspect(w / h);
-    this.framing.update(w, h, 0, this._subjectPoint(), { snap: true });
+    this.stationCamera.setAspect(w / h);
+    this._frame(true);
   }
 
-  _frame() {
-    const frameDt = this.clock.getDelta();
+  _frame(resizeOnly = false) {
+    const frameDt = resizeOnly ? 0 : this.clock.getDelta();
     const dt = Math.min(frameDt, DT_CAP);
-    const t = this.clock.elapsedTime;
-    const s = this.state;
-    const beat = s.currentBeat;
-    const onBeat5 = beat === '5';
+    const v = this.view;
+    const f = v.flags || {};
+    const atGate = v.at === 'gate';
 
-    this.cameraBeat.update(dt);
-    this.gate.update(t, dt);
-    this.props.update(t, dt);
-    this.clocks.update(t, dt);
-    this.motes.update(t, dt, { active: s.active, onBeat5, beat5Clear: s.beat5Clear });
+    if (!resizeOnly) {
+      const t = this.clock.elapsedTime;
+      this.stationCamera.update(dt);
+      this.gate.update(t, dt);
+      this.props.update(t, dt);
+      this.clocks.update(t, dt);
+      this.motes.update(t, dt, { active: v.lens, atGate, sealed: f.gateClear });
 
-    const sync = s.beat5Clear ? 1 : onBeat5 ? (s.beat5Step / 4) * 0.5 : 0;
-    this.room.update(t, dt, { sync });
+      const sync = f.gateClear ? 1 : atGate ? (v.gateStep / 4) * 0.5 : 0;
+      this.room.update(t, dt, { sync });
 
-    const clockPositions = this.clocks.clocks.map((c) => c.root.getWorldPosition(new THREE.Vector3()));
-    this.lenses.update({
-      t,
-      dt,
-      camera: this.camera,
-      beat,
-      focus: this._bracketPoint(),
-      beat1Clear: s.beat1Clear,
-      beat4Clear: s.beat4Clear,
-      beat5Step: s.beat5Step,
-      clocks: clockPositions,
-      clockScale: this.clocks.group.scale.x,
-    });
+      const clockPositions = this.clocks.clocks.map((c) => c.root.getWorldPosition(new THREE.Vector3()));
+      this.lenses.update({
+        t,
+        dt,
+        camera: this.camera,
+        at: v.at,
+        flags: f,
+        gateStep: v.gateStep,
+        focus: this._bracketPoint(),
+        clocks: clockPositions,
+        clockScale: this.clocks.group.scale.x,
+      });
 
-    const modeColor = CHARACTER[s.active]?.main ?? ROOM.primary;
-    this.modeLight.color.lerp(new THREE.Color(modeColor), 1 - Math.exp(-4 * dt));
-    this.modeLight.intensity += (0.55 - this.modeLight.intensity) * (1 - Math.exp(-3 * dt));
-    this.flash = Math.max(0, this.flash - dt * this.flash * 3.2 - dt * 2);
-    this.flashLight.intensity = this.flash;
+      const modeColor = CHARACTER[v.lens]?.main ?? ROOM.primary;
+      this.modeLight.color.lerp(new THREE.Color(modeColor), 1 - Math.exp(-4 * dt));
+      this.modeLight.intensity += (0.55 - this.modeLight.intensity) * (1 - Math.exp(-3 * dt));
+      this.flash = Math.max(0, this.flash - dt * this.flash * 3.2 - dt * 2);
+      this.flashLight.intensity = this.flash;
+    }
 
+    const inRoom = v.at === 'room';
     this.framing.update(this.canvas.clientWidth, this.canvas.clientHeight, dt, this._subjectPoint(), {
-      subjectFrac: onBeat5 && !s.beat5Clear ? 0.36 : 0.4,
+      subjectFrac: atGate ? 0.3 : 0.36,
+      panX: inRoom ? this.roomPan : null,
+      snap: resizeOnly || (inRoom && performance.now() < this.dragUntil),
     });
 
-    this.post.render(dt, frameDt);
+    if (!resizeOnly) this.post.render(dt, frameDt);
   }
 
   dispose() {

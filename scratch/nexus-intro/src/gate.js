@@ -7,7 +7,7 @@ import { mulberry32 } from './textures.js';
 /**
  * Coordination gate (TimeNexus.md · Archways and Portals): crystalline arch with carvings in an
  * unknown script; an inactive portal reads as a mirror of alternative timelines, an active one as a
- * shimmering membrane. Activity is driven only by Ink state (beat5_step / beat5_clear) via setState.
+ * shimmering membrane. Activity is driven only by Ink state (the gate plan playback (step) and seal state) via setState.
  */
 function archShape(halfW, straight, close = true) {
   const s = new THREE.Shape();
@@ -222,9 +222,9 @@ export class NexusGate {
   }
 
   /** active: 0 mirror … 1 open membrane. */
-  setState({ beat5Step = 0, beat5Clear = false, onBeat5 = false, ended = false }) {
-    if (beat5Clear || ended) this.activeTarget = 1;
-    else if (onBeat5) this.activeTarget = 0.08 + beat5Step * 0.1;
+  setState({ gateStep = 0, sealed = false, atGate = false, ended = false }) {
+    if (sealed || ended) this.activeTarget = 1;
+    else if (atGate) this.activeTarget = 0.08 + gateStep * 0.1;
     else this.activeTarget = 0;
   }
 

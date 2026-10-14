@@ -140,7 +140,8 @@ function buildAnne() {
   return {
     id: 'anne',
     group,
-    update({ t, fade, camera, focus, beat, beat1Clear }) {
+    update({ t, fade, camera, focus, at, flags }) {
+      const corridorClear = flags?.corridorClear;
       const cycle = 1.9;
       blades.forEach((b) => {
         b.echoes.forEach((e, k) => {
@@ -150,14 +151,14 @@ function buildAnne() {
           e.mesh.scale.set(1, Math.max(0.02, up), 1);
           e.mesh.position.y = 0.28 + 0.85 * up;
           const danger = up > 0.5 && k === 0 ? 1 : 0;
-          const echoFade = (k === 0 ? 1 : 0.45 / k) * (beat1Clear ? 0.3 : 1);
+          const echoFade = (k === 0 ? 1 : 0.45 / k) * (corridorClear ? 0.3 : 1);
           e.fill.color.set(danger ? C.flash : C.main).multiplyScalar(danger ? 1.7 : 1.4);
           e.fill.opacity = (0.14 + up * 0.34) * echoFade * fade;
           e.edge.opacity = (0.25 + up * 0.75) * echoFade * fade;
         });
         const ph0 = ((t / cycle + b.phase) % 1 + 1) % 1;
         const warn = ph0 > 0.85 || ph0 < 0.36 ? 1 : 0.15;
-        b.zone.material.opacity = warn * (beat1Clear ? 0.25 : 0.75) * fade;
+        b.zone.material.opacity = warn * (corridorClear ? 0.25 : 0.75) * fade;
       });
       const beatTick = Math.floor((t / cycle) * 12) % 12;
       ticks.forEach((tk, j) => {
@@ -170,11 +171,11 @@ function buildAnne() {
         seg.lookAt(tmp.add(seg.position));
         seg.material.opacity = 0.75 * fade * Math.sin(u * Math.PI);
       });
-      if (focus && camera && beat !== '0' && beat !== '6') {
+      if (focus && camera) {
         brackets.visible = true;
         brackets.position.copy(focus);
         brackets.quaternion.copy(camera.quaternion);
-        const s = (beat === '5' ? 1.25 : 1.6) * (1 + 0.04 * Math.sin(t * 6));
+        const s = (at === 'gate' ? 1.25 : 1.6) * (1 + 0.04 * Math.sin(t * 6));
         brackets.scale.setScalar(s);
         brackets.userData.mat.opacity = 0.85 * fade;
       } else {
@@ -185,7 +186,7 @@ function buildAnne() {
 }
 
 // ————————————————————————————————— Maya —————————————————————————————————
-const MAYA_SEQUENCE = [1, 3, 0, 2]; // lever indices in the order Pattern Sense marks them
+const MAYA_SEQUENCE = LAYOUT.levers.order; // lever indices in the order Pattern Sense marks them
 
 function buildMaya() {
   const C = CHARACTER.maya;
@@ -212,7 +213,7 @@ function buildMaya() {
   });
   // Structural connections drawn in sequence order.
   const links = [];
-  for (let r = 0; r < 3; r++) {
+  for (let r = 0; r < MAYA_SEQUENCE.length - 1; r++) {
     const a = marks.find((m) => m.rank === r);
     const b = marks.find((m) => m.rank === r + 1);
     const p0 = new THREE.Vector3(a.x, markY, L.z);
@@ -225,8 +226,8 @@ function buildMaya() {
 
   // Structural lattice over console + panel ("she sees order").
   const latticeMat = lineMat(C.teal, 0.45, 2.2);
-  const cx = (L.xs[0] + L.xs[3]) / 2;
-  const width = L.xs[3] - L.xs[0] + 1.0;
+  const cx = (L.xs[0] + L.xs[L.xs.length - 1]) / 2;
+  const width = L.xs[L.xs.length - 1] - L.xs[0] + 1.0;
   const consoleEdges = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(width + 0.04, 0.54, 0.99)), latticeMat);
   consoleEdges.position.set(cx, 0.25, L.z);
   const P = LAYOUT.panel;
@@ -255,11 +256,12 @@ function buildMaya() {
     group,
     update({ t, fade, camera, clocks, clockScale = 1 }) {
       const stepDur = 0.5;
-      const phase = (t / stepDur) % 6; // 4 marks + 2 beats rest
+      const marksN = MAYA_SEQUENCE.length;
+      const phase = (t / stepDur) % (marksN + 2); // one mark per lever + 2 beats rest
       const lit = Math.floor(phase);
       const local = phase - lit;
       marks.forEach((m) => {
-        const on = m.rank <= lit && lit < 4;
+        const on = m.rank <= lit && lit < marksN;
         const just = m.rank === lit ? 1 - local : 0;
         m.mat.opacity = (on ? 0.95 : 0.22) * fade;
         m.gem.rotation.y = t * 1.4 + m.rank;
@@ -267,9 +269,9 @@ function buildMaya() {
         m.strain.material.opacity = (0.35 + 0.35 * Math.sin(t * 3 + m.rank)) * fade;
       });
       links.forEach((l) => {
-        l.tube.material.opacity = (l.rank < lit && lit < 4 ? 0.85 : 0.08) * fade;
+        l.tube.material.opacity = (l.rank < lit && lit < marksN ? 0.85 : 0.08) * fade;
       });
-      const echoPulse = lit < 4 ? 1 - local : 0.2;
+      const echoPulse = lit < marksN ? 1 - local : 0.2;
       echoFloor.forEach((r, i) => {
         r.material.opacity = (0.15 + echoPulse * 0.5) * fade * (i === lit % 3 ? 1 : 0.5);
         r.scale.setScalar(1 + (1 - echoPulse) * 0.25);
@@ -290,6 +292,7 @@ function buildMaya() {
 }
 
 // ————————————————————————————————— Eli —————————————————————————————————
+const ELI_CLOCK = 2; // "Third clock opens for, like, half a second."
 function buildEli() {
   const C = CHARACTER.eli;
   const L = LAYOUT.levers;
@@ -327,6 +330,10 @@ function buildEli() {
     });
   }
 
+  // The panel's jammed lever, in world space (matches NexusProps' stuck lever).
+  const P = LAYOUT.panel;
+  const stuckLever = panelMatrix().localToWorld(new THREE.Vector3(-P.w / 2 - 0.12, 1.15 + 0.4, 0.05));
+
   // Closing window band.
   const barMat = dyn(overlayMaterial(C.hot, 1, 3.4));
   const barL = new THREE.Mesh(new THREE.BoxGeometry(0.06, 1.5, 0.06), barMat);
@@ -338,7 +345,7 @@ function buildEli() {
   return {
     id: 'eli',
     group,
-    update({ t, fade, beat, beat5Step, clocks, clockScale = 1, camera }) {
+    update({ t, fade, at, flags, clocks, clockScale = 1, camera }) {
       streaks.forEach((s) => {
         const u = (t * s.speed * 0.25 + s.phase) % 1;
         const x = s.anchor.x - u * s.len * (s.ambient ? 2.5 : 1);
@@ -346,18 +353,24 @@ function buildEli() {
         s.mesh.scale.x = 0.6 + u * 0.7;
         s.mat.opacity = Math.sin(u * Math.PI) * (s.ambient ? 0.35 : 0.9) * fade;
       });
-      // Window target: lever row, or the current clock during the beat-5 sync window.
+      // Window target: the lever row, or the third clock (Eli's window) at the gate.
       const cycle = 2.4;
       const ph = (t % cycle) / cycle;
       const close = ph * ph;
-      let cx = (L.xs[0] + L.xs[3]) / 2;
+      let cx = (L.xs[0] + L.xs[L.xs.length - 1]) / 2;
       let cy = 1.05;
       let cz = L.z + 0.55;
-      let halfW = (L.xs[3] - L.xs[0]) / 2 + 0.6;
+      let halfW = (L.xs[L.xs.length - 1] - L.xs[0]) / 2 + 0.6;
       let h = 1;
-      const onClock = beat === '5' && clocks?.[beat5Step];
-      if (onClock) {
-        const p = clocks[beat5Step];
+      const onClock = at === 'gate' && clocks?.[ELI_CLOCK];
+      if (at === 'panel' && flags?.panelLive && !flags?.panelClear) {
+        cx = stuckLever.x;
+        cy = stuckLever.y;
+        cz = stuckLever.z + 0.15;
+        halfW = 0.55;
+        h = 0.75;
+      } else if (onClock) {
+        const p = clocks[ELI_CLOCK];
         cx = p.x;
         cy = p.y;
         cz = p.z + 0.2;
@@ -535,12 +548,14 @@ function buildVibrion() {
   return {
     id: 'vibrion',
     group,
-    update({ t, fade, beat, beat4Clear, beat5Step }) {
+    update({ t, fade, at, flags, gateStep = 0 }) {
+      const panelLive = flags?.panelLive;
       const gu = grid.material.uniforms;
       gu.uTime.value = t;
       gu.uFade.value = fade;
-      gu.uSrcBOn.value = beat === '5' || beat === '6' ? 1 : 0;
-      const energy = beat4Clear ? 1 : 0.55;
+      // The gate only joins the grid once its feed runs through a finished panel.
+      gu.uSrcBOn.value = flags?.panelClear || at === 'end' ? 1 : 0;
+      const energy = panelLive ? 1 : 0.55;
       arcs.forEach((a) => {
         const f = Math.sin(t * 23 + a.seed * 7) * Math.sin(t * 9.7 + a.seed * 3);
         const on = f > -0.2 ? 1 : 0.15;
@@ -548,11 +563,11 @@ function buildVibrion() {
       });
       beams.forEach((b, i) => {
         const pulse = 0.6 + 0.4 * Math.sin(t * 3.4 + i * 1.7);
-        const gateOn = i === 1 ? (beat === '5' && beat5Step >= 3 ? 1 : beat === '6' ? 0.6 : 0.15) : 1;
+        const gateOn = i === 1 ? (gateStep >= 4 ? 1 : at === 'end' ? 0.6 : flags?.panelClear ? 0.45 : 0.15) : 1;
         b.mat.opacity = 0.2 * pulse * gateOn * fade;
       });
       auraMat.opacity = (0.16 + 0.1 * Math.sin(t * 5.1)) * energy * fade;
-      auraMat.color.set(beat4Clear ? C.shimmer : C.main).multiplyScalar(beat4Clear ? 0.9 : 1.6);
+      auraMat.color.set(panelLive ? C.shimmer : C.main).multiplyScalar(panelLive ? 0.9 : 1.6);
     },
   };
 }
