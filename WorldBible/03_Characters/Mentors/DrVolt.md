@@ -38,7 +38,7 @@ Lawrence Volt was born in Baseline Metropolitan to a family of scientists. His g
 
 **Meeting Vibrion:**
 
-- **Age 50 (330 AC):** Vibrion, age 21, newly transformed by lightning, sought scientific understanding. Dr. Volt recognized the potential — and the danger. Took him on as protege. Three years developing the alloy chain mesh costume. Seven years of mentorship. Vibrion became the son he never had. "He proved that difference could be strength. I needed to believe that. After Marcus..."
+- **Age 50 (330 AC):** Vibrion, age 21, newly transformed by lightning, sought scientific understanding. Dr. Volt recognized the potential — and the danger. Took him on as protege. Three years developing the alloy chain mesh costume (forty-seven prototype iterations; self-repairing at molecular level). Seven years of mentorship. Vibrion became the son he never had. "He proved that difference could be strength. I needed to believe that. After Marcus..."
 
 **Current Status:**
 
@@ -97,7 +97,7 @@ Dr. Volt has standard time perception. His value is intellectual, not perceptual
 
 **Inventions:**
 - Temporal stabilization arrays (regrets full deployment)
-- Alloy chain mesh costume (Vibrion; 3 years development)
+- Alloy chain mesh costume (Vibrion; 3 years, 47 iterations; self-repairing; unique)
 - Gradient monitoring systems (Interchange, others)
 - Containment theory for Fractured Wastes (failed in practice; theoretical contribution remains)
 
