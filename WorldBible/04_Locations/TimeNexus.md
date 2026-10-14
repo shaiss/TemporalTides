@@ -191,7 +191,7 @@ The Nexus is *saturated* with temporal phenomena, but all are **stable and non-t
 - 127 AC: Major wormhole collapse prevented by Nexus stabilization field
 - 338 AC: Dr. Entropy's first attack attempt with an early entropy device, repelled by Nexus's inherent resistance (see Dr. Entropy dossier)
 - 298 AC: Timeline fracture healed by channeling through Nexus convergence
-- 341 AC: Team established headquarters (current era)
+- Late 342 AC: Team established headquarters (current era)
 
 **Scientific Consensus:**
 
@@ -1186,7 +1186,7 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 - Vibrion's parents died in rescue operation (he was 10)
 - Event that motivated his dedication to temporal stability
 
-**341 AC: Team Establishes Headquarters**
+**Late 342 AC: Team Establishes Headquarters**
 - Vibrion granted permanent residence by Concord
 - Team quarters established (residential level)
 - Training grounds expanded for team use
