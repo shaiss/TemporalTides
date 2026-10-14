@@ -1787,7 +1787,7 @@ Despite horror, the Wastes chapter ends with:
 - [Dr. Entropy's Lair](DrEntropysLair.md) - Intentional vs. natural chaos comparison
 - [The Time Nexus](TimeNexus.md) - What prevents this elsewhere (anchor function)
 - [Chronopolis Central](ChronopolisCentral.md) - Order extreme vs. chaos extreme
-- [Gradient Frontier](GradientFrontier.md) - Neighboring unstable zone, approach route
+- [Gradient Frontier (see Dr. Entropy's Lair)](DrEntropysLair.md) - Neighboring unstable zone, approach route
 
 **Factions:**
 - [The Team](../05_Factions/TheTeam.md) - Rescue and training missions
@@ -1795,8 +1795,7 @@ Despite horror, the Wastes chapter ends with:
 - [Entropy Forces](../05_Factions/EntropyForces.md) - Dr. Entropy's study site
 
 **Guidelines:**
-- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Chaos spectrum extreme
-- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Stakes visualization, character testing
+- [Story Structure](../06_Narrative/StoryStructure.md) - Stakes visualization, character testing
 
 ---
 

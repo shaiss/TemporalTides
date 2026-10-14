@@ -687,7 +687,7 @@ Relatable to anyone who's experienced:
 - [Vibrion](Vibrion.md) - Team leader relationship
 - [Leo](Leo.md) - Complementary analyst
 - [The Team](../../05_Factions/TheTeam.md) - Strategic planning role
-- [Character Development Guidelines](../../../.cursor/rules/character-development.mdc)
+- [Writing Guidelines](../../06_Narrative/WritingGuidelines.md) - Representation and voice guardrails
 
 ---
 

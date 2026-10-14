@@ -234,5 +234,5 @@ Potential areas for development:
 
 **END INDEX**
 
-*For questions about structure or content, refer to the Cursor rules in `.cursor/rules/`*
+*For narrative structure and representation guardrails, see [Writing Guidelines](06_Narrative/WritingGuidelines.md) and [Story Structure](06_Narrative/StoryStructure.md).*
 

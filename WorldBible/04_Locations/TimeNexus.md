@@ -2340,7 +2340,7 @@ The Nexus exists in micro-dimension, inaccessible through normal space travel. O
 **Other Locations:**
 - [Chronopolis Central](ChronopolisCentral.md) - Council stronghold, Council Portal connection
 - [The Interchange](TheInterchange.md) - Economic partner, trade hub
-- [Gradient Frontier](GradientFrontier.md) - Accessible via Frontier Portal
+- [Gradient Frontier (see Dr. Entropy's Lair)](DrEntropysLair.md) - Accessible via Frontier Portal
 - [The Fractured Wastes](FracturedWastes.md) - Chaos zones, Nexus's opposite
 
 **Factions:**
@@ -2349,9 +2349,8 @@ The Nexus exists in micro-dimension, inaccessible through normal space travel. O
 - [Entropy Forces](../05_Factions/EntropyForces.md) - Nexus as ultimate target
 
 **Guidelines:**
-- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Enhanced template used
-- [Character Development](../../.cursor/rules/character-development.mdc) - Character connections
-- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Story function and plot points
+- [Characters](../00_INDEX.md) - Character connections
+- [Story Structure](../06_Narrative/StoryStructure.md) - Story function and plot points
 
 ---
 

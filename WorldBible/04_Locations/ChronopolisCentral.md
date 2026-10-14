@@ -2303,7 +2303,7 @@ Chronopolis is **NOT a major gameplay hub** (oppressive, players want to leave):
 **Other Locations:**
 - [The Time Nexus](TimeNexus.md) - Contrast (freedom vs. control), Anne's escape
 - [The Interchange](TheInterchange.md) - Economic partnership, regulatory tension
-- [Velocity City](VelocityCity.md) - Opposite (autonomous vs. ordered), Eli's escape
+- [Accelerated Quarter (Velocity City)](AcceleratedQuarter.md) - Opposite (autonomous vs. ordered), Eli's escape
 - [Baseline Metropolitan](BaselineMetropolitan.md) - Sister city, friendlier version
 
 **Factions:**
@@ -2312,9 +2312,8 @@ Chronopolis is **NOT a major gameplay hub** (oppressive, players want to leave):
 - [Entropy Forces](../05_Factions/EntropyForces.md) - Ideological enemy, possible target
 
 **Guidelines:**
-- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Order-Chaos spectrum extreme
-- [Character Development](../../.cursor/rules/character-development.mdc) - Anne's background
-- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Thematic representation
+- [Anne](../03_Characters/Heroes/Anne.md) - Character background
+- [Story Structure](../06_Narrative/StoryStructure.md) - Thematic representation
 
 ---
 
