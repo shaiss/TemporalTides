@@ -15,16 +15,23 @@ npm install && npm start
 
 `npm start` compiles Ink (`story.json`, inkVersion 21) and serves the **Vite + Three.js + inkjs** app at **http://localhost:4173/**.
 
-### Hosted HITL (Vercel)
+### Hosted (Vercel)
 
-Every Vercel deploy (including **PR previews**) bundles the same playable at **`/play/`** on the deployment origin — docs stay at `/`.
+Every Vercel deployment bundles this playable at **`/play/`** on the deployment origin; docs stay at `/`.
 
-- **This PR (#21) preview:** after deploy, open  
-  `https://<preview-host>.vercel.app/play/`  
-  (example pattern: `https://temporal-tides-<hash>-shaiss-projects.vercel.app/play/`).
-- **Production** (`temporaltides.com` or the project’s production alias): `/play/` ships after this branch merges to `main` and production redeploys.
+- **Production:** [temporaltides.com/play/](https://temporaltides.com/play/)
+- **PR previews:** `https://<preview-host>.vercel.app/play/` (pattern: `https://temporal-tides-git-<branch>-shaiss-projects.vercel.app/play/`)
 
-No clone required — Ink + chamber run entirely from static assets under `/play/`.
+The root `npm run build:vercel` runs `scripts/build-nexus-play.mjs`, which builds this folder with `VITE_BASE=/play/` and copies `dist/` into `.vitepress/dist/play/`. No clone is required to play — Ink + chamber run entirely from static assets under `/play/`.
+
+**Checking which build is live.** `/play/` loads one hashed bundle, `/play/assets/index-<hash>.js`. Compare the live hash with a local build of the same commit; the two normally match:
+
+```bash
+curl -s https://temporaltides.com/play/ | grep -o 'index-[A-Za-z0-9_-]*\.js'
+npm run build:vercel && ls .vitepress/dist/play/assets/index-*.js
+```
+
+A push to `main` normally shows up as a **Production** deployment on its GitHub commit within a minute. If the hashes still differ and no Production deployment appears, Vercel missed the push. Redeploy `main` from the Vercel dashboard (Deployments → Redeploy). Don't push to `main` directly to trigger it.
 
 - Locked wide camera (no OrbitControls / free roam).
 - Same chamber; per-mode **3D overlay groups** in `src/lenses.js` (Anne / Maya / Eli / Vibrion) driven by Ink `active` — no full-screen lens tint.
@@ -62,6 +69,48 @@ Goal: prove the coordination gate **cannot** clear in a single active mode (cloc
 
 **Wrong-order check:** With `beat5_step == 1`, stay on Anne and pick any non-Maya action. **Expected:** wrong-order messaging; gate does not advance.
 
+## Interaction and feedback (art pass v1)
+
+Props in the chamber are **tap targets for choices Ink is already offering** — never a parallel rules path. `src/bindings.js` maps the current beat's action choice onto one prop; tapping that prop is identical to clicking its rail button (which shows a small lens-colored marker).
+
+| Beat | Tap target | Bound choice |
+|------|-----------|--------------|
+| 0 | Gate, then corridor | "Step into…", then "Continue as …" |
+| 1 | Hazard corridor | Current lens's corridor action |
+| 2 / 3 | Lever console | Current lens's lever action |
+| 4 | Dead panel | Current lens's panel action |
+| 5 | Current step's clock (`clock0`…`clock3`) | Current lens's clock action |
+
+- **Affordance:** bound props get a breathing floor ring; hover (mouse) or rail-button hover/focus highlights the prop and its button together.
+- **Wrong lens = the room pushes back:** acting with the wrong lens (e.g. tapping the corridor as Vibrion, or clock 1 out of order) stays an Ink decision; the UI reads the unchanged state as a failure and plays a fail cue (prop jitter + warning flash, rail shake, low buzz).
+- **Clears** pulse the prop in the acting lens's color with a bloom flash and a chime; **lens switches** fire a short activation burst + whoosh; the **beat-5 seal** runs all hands to XII with a chord and a deep portal chime.
+- **Sound** is synthesized WebAudio (drone, chimes, per-clock ticks at desynced tempos — they converge as steps lock). It starts on the first gesture; the top-right toggle persists in `localStorage` (`nexus-sound`).
+- **Reduced motion** (`prefers-reduced-motion`) disables rail/HUD animations and halves light flashes.
+
+### Quality and debug
+
+| Param | Effect |
+|-------|--------|
+| `?quality=low\|medium\|high` | Pin a render tier (DPR, bloom, shadows, mote count). Unpinned: `high` on desktop, `medium` on coarse-pointer / small screens, with automatic downgrade if frame time stays above ~32 ms. |
+| `?debug` | Exposes `window.__nexusDebug` (`state()`, `bindings()`, `propScreenPoint(id)`, `quality()`) on production builds; always on in the dev server. |
+| `?dtcap=1` | Raises the per-frame time cap (default 0.1 s) so very slow software-GL captures advance in real time. Screenshot harnesses only. |
+
+### Headless checks
+
+`npm test` runs `test/bindings.test.mjs` (Node test runner) against the compiled `story.json`: golden path driven only by prop taps, bindings only ever target rail action choices, wrong-lens / solo-seal / out-of-order taps report failure without advancing Ink.
+
+### Beat captures (visual regression by eye)
+
+`tools/capture-beats.mjs` plays the whole intro in headless Chromium (SwiftShader WebGL) and saves one still per beat / lens for desktop (1440×900) and phone (390×844). With `--tap` it drives beats 1–5 by tapping props instead of rail buttons, and fails if a tap does not advance Ink.
+
+```bash
+npm i --no-save playwright && npx playwright install chromium   # one-time, keeps package.json / lock untouched
+npm start                                                       # in another shell (port 4173)
+node tools/capture-beats.mjs "http://localhost:4173/?quality=high&dtcap=1" ./captures both --tap
+```
+
+Before / after sheets from the art pass live in `docs/art-pass/`.
+
 ## Layout
 
 | Path | Role |
@@ -69,13 +118,28 @@ Goal: prove the coordination gate **cannot** clear in a single active mode (cloc
 | `nexus-intro.ink` | Source story |
 | `story.json` | Compiled Ink (committed) |
 | `index.html` | Vite entry |
-| `src/main.js` | inkjs + UI wiring |
-| `src/room.js` | Chamber shell materials, emissive edges, base lighting + shadows |
-| `src/lenses.js` | Per-mode 3D overlays (Anne / Maya / Eli / Vibrion) |
-| `src/clocks.js` | Beat-5 hero clocks (desync + step accent) |
+| `src/main.js` | inkjs + UI wiring, outcome → feedback dispatch, sound toggle |
+| `src/inkStory.js` | Tag + variable bridge (read-only; adds choice `kind` and clear flags) |
+| `src/bindings.js` | Prop ↔ choice bindings and before/after outcome detection (pure functions) |
+| `src/chamber.js` | Scene wiring: Ink hooks → room / gate / props / clocks / lenses / camera / framing |
+| `src/palette.js` | Canon colors (ColorPalettes.md) + lens colors |
+| `src/layout.js` | Shared world positions for props, clocks, gate, beat focus points |
+| `src/textures.js` | Procedural canvas textures (floor inlay, dial faces, streaks, soft dots) |
+| `src/materials.js` | Crystal / structure / glow / overlay material helpers |
+| `src/room.js` | Crystalline rotunda shell, floor, crystal clusters, aurora, lighting + shadows |
+| `src/gate.js` | Crystal arch + membrane shader (dormant → active) |
+| `src/props.js` | Beat props (corridor, lever console, panel + conduits), affordance rings, clear / fail pulses |
+| `src/clocks.js` | Lintel ↔ hero clocks: luminous dials, jumping minute hands, per-clock tempo, step rings |
+| `src/lenses.js` | Per-mode 3D overlays (Anne / Maya / Eli / Vibrion) with crossfades |
+| `src/particles.js` | Temporal motes (speed follows the active lens) |
+| `src/post.js` | Bloom + output pass, quality tiers, auto-downgrade |
+| `src/framing.js` | Portrait / narrow crop: pans the fixed 16:9 frame to the beat's subject |
+| `src/interact.js` | Pointer raycast → prop ids (hover + tap) |
+| `src/audio.js` | Procedural WebAudio |
 | `src/cameraBeat.js` | Beat-5 camera push (wide ↔ clock wall) |
-| `src/chamber.js` | Scene wiring: Ink hooks → room / lenses / clocks / camera |
-| `src/inkStory.js` | Tag + variable bridge |
+| `test/bindings.test.mjs` | Headless Ink + bindings checks (`npm test`) |
+| `tools/capture-beats.mjs` | Headless per-beat screenshot harness (Playwright, not a dependency) |
+| `docs/art-pass/` | Before / after captures from the art + game-feel pass |
 | `preview/index.html` | Legacy ink-only preview |
 
 ## Ink variables
@@ -94,14 +158,14 @@ Mode chips in the UI are **display-only**; switching lens still happens only thr
 
 | Mode | What you should see in the room |
 |------|----------------------------------|
-| **Anne** | Left corridor: sharp trap wedges, square cold rims, vertical spikes — cold `#646cff` / ice rim |
-| **Maya** | Octahedron marks + torus echoes on levers, traps, corridor, and panel; linked bars between props |
-| **Eli** | Horizontal motion streaks on levers and traps; closing-window band on the lever row |
-| **Vibrion** | Floor-sitting perspective grid across the chamber plus panel grid and vertical coupling beams |
+| **Anne** (Foresight, red / steel blue) | Translucent "possible future" blades cycling over the trap plates (the live one flashes red), hazard footprints, a metronome tick row, a dashed future path, and red corner brackets on the beat's subject |
+| **Maya** (Pattern Sense, cyan) | Sequence gems with rank pips over the levers lighting in rhythm, connecting arcs, a structural lattice over console and panel, echo rings on trap plates and clocks |
+| **Eli** (Kinetic Rush, orange) | Speed streaks off levers and plates, faster motes, and a closing-window band — on the lever row, or around the current clock on beat 5 |
+| **Vibrion** (Vibrational Manipulation, blue → white) | Floor grid with heat shimmer and pulse rings from the panel (and the gate on beat 5), Lichtenberg arcs to the panel, coupling beams, panel aura |
 
-4. Only one overlay set is visible at a time; entropy stays the CSS edge vignette (unchanged).
+4. Only one overlay set is visible at a time (crossfade on switch); entropy stays the CSS edge vignette (unchanged).
 
-Production bundle: after merge, same check at **`/play/`** on the Vercel deployment.
+Hosted: same check at **`/play/`** on any Vercel deployment.
 
 ## inkVersion / inkjs
 

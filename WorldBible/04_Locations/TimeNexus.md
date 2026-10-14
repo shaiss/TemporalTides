@@ -189,7 +189,7 @@ The Nexus is *saturated* with temporal phenomena, but all are **stable and non-t
 
 **Notable Incidents:**
 - 127 AC: Major wormhole collapse prevented by Nexus stabilization field
-- 189 AC (Council archival dating; discrepancy noted — see Dr. Entropy dossier): Dr. Entropy's first attack attempt, repelled by Nexus's inherent resistance
+- 338 AC: Dr. Entropy's first attack attempt with an early entropy device, repelled by Nexus's inherent resistance (see Dr. Entropy dossier)
 - 298 AC: Timeline fracture healed by channeling through Nexus convergence
 - 341 AC: Team established headquarters (current era)
 
@@ -1105,8 +1105,8 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 - Disappeared but left their greatest work behind
 - Evidence: Sophisticated technology, deliberate design
 
-**Theory 2: Temporal Travelers from Future**
-- Future civilization sent Nexus backward in time
+**Theory 2: Future Civilization Bootstrap**
+- A later-era civilization displaced the Nexus to an earlier temporal state
 - Created convergence point to prevent their timeline's destruction
 - Bootstrap paradox: Nexus exists because it will exist
 - Evidence: Some technology seems prophetic, anticipating needs
@@ -1170,12 +1170,14 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 - 200 lives saved
 - Reinforced understanding: Nexus is critical anchor
 
-**189 AC: Dr. Entropy's First Attack**
+**338 AC: Dr. Entropy's First Attack**
 - Attempt to destabilize Nexus with early entropy device
-- Ancient defense systems activate
+- Nexus defense systems activate
 - Entropy repelled, but escapes
 - Heightened security since
 - Incident that radicalized Dr. Entropy further
+
+**Pre-Entropy legend (misattributed):** Older Council archives sometimes blame a failed Nexus probe on "entropy cultists" in the 180s AC; no evidence links Marcus Theron (born 284 AC) to those incidents.
 
 **298 AC: The Timeline Fracture Healing**
 - Distant zone experiences timeline split

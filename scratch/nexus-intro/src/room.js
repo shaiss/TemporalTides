@@ -1,154 +1,259 @@
 import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { ROOM } from './palette.js';
+import { LAYOUT } from './layout.js';
+import { crystalMaterial, glowMaterial, structureMaterial } from './materials.js';
+import { floorInlayTexture, mulberry32, wallSeamTexture } from './textures.js';
 
-/** Chamber base palette — keep in sync with CSS `--temporal-primary` / `--temporal-secondary`. */
-export const PRIMARY = 0x646cff;
-export const SECONDARY = 0x747bff;
-
-const FLOOR_TINT = 0x141a28;
-const WALL_TINT = 0x0f141f;
-const FRAME_TINT = 0x1a2030;
-
-function surfaceMaterial(color, { emissive = 0x000000, emissiveIntensity = 0, metalness = 0.42, roughness = 0.52 } = {}) {
-  return new THREE.MeshStandardMaterial({
-    color,
-    emissive,
-    emissiveIntensity,
-    metalness,
-    roughness,
-  });
-}
-
-function edgeStripMaterial(intensity = 0.75) {
-  return new THREE.MeshStandardMaterial({
-    color: PRIMARY,
-    emissive: PRIMARY,
-    emissiveIntensity: intensity,
-    metalness: 0.55,
-    roughness: 0.38,
-  });
-}
-
-function addEdgeStrip(scene, geometry, position, rotation = null) {
-  const mesh = new THREE.Mesh(geometry, edgeStripMaterial());
-  mesh.position.copy(position);
-  if (rotation) mesh.rotation.set(rotation.x, rotation.y, rotation.z);
-  mesh.castShadow = false;
-  mesh.receiveShadow = false;
-  scene.add(mesh);
-  return mesh;
-}
-
-/** Shadow map + tone-friendly defaults for the chamber diorama. */
+/**
+ * Time Nexus chamber shell (TimeNexus.md · Architecture): seamless curved rotunda wall, polished
+ * crystal floor with a clock-position inlay, crystalline ribs, crystal clusters, aurora "sky of
+ * compressed timelines". Light comes from the crystal itself — emissive + bloom, few fixtures.
+ */
 export function configureRoomRenderer(renderer) {
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.05;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 }
 
-/**
- * One shadow-casting direction plus soft fill — room shell only; mode/gate accents stay in chamber.
- * @returns {{ keyLight: THREE.DirectionalLight }}
- */
-export function installRoomBaseLighting(scene) {
-  scene.add(new THREE.HemisphereLight(SECONDARY, 0x05070e, 0.32));
-
-  const key = new THREE.DirectionalLight(0xf0f2ff, 1.08);
-  key.position.set(5.5, 11.5, 8.5);
-  key.castShadow = true;
-  key.shadow.mapSize.set(2048, 2048);
-  key.shadow.camera.near = 1;
-  key.shadow.camera.far = 36;
-  const frustum = 13;
-  key.shadow.camera.left = -frustum;
-  key.shadow.camera.right = frustum;
-  key.shadow.camera.top = frustum;
-  key.shadow.camera.bottom = -frustum;
-  key.shadow.bias = -0.0006;
-  key.shadow.normalBias = 0.018;
-  scene.add(key);
-
-  const fill = new THREE.DirectionalLight(PRIMARY, 0.14);
-  fill.position.set(-5, 4.5, -2);
-  scene.add(fill);
-
-  return { keyLight: key };
+export function applyShadows(obj, { cast = true, receive = true } = {}) {
+  obj.traverse?.((o) => {
+    if (o.isMesh) {
+      o.castShadow = cast;
+      o.receiveShadow = receive;
+    }
+  });
+  return obj;
 }
 
-/**
- * Primitive room shell: lit floor, matte walls, emissive perimeter edges, gate frame.
- * @returns {{ gateFrame: THREE.Mesh }}
- */
-export function buildRoomShell(scene) {
-  const floorMat = surfaceMaterial(FLOOR_TINT, { metalness: 0.28, roughness: 0.38 });
-  const floor = new THREE.Mesh(new THREE.PlaneGeometry(22, 16), floorMat);
+const THETA_START = Math.PI / 3;
+const THETA_LEN = (Math.PI * 4) / 3;
+
+function crystalShardGeometry(radius, height) {
+  const prism = new THREE.CylinderGeometry(radius, radius * 1.08, height, 6, 1);
+  const tip = new THREE.ConeGeometry(radius, radius * 2.2, 6, 1);
+  tip.translate(0, height / 2 + radius * 1.1, 0);
+  const g = mergeGeometries([prism.toNonIndexed(), tip.toNonIndexed()]);
+  g.translate(0, height / 2, 0);
+  g.computeVertexNormals();
+  return g;
+}
+
+function buildCrystalCluster(rand, size = 1) {
+  const group = new THREE.Group();
+  const mat = crystalMaterial({ emissiveIntensity: 0.5 + rand() * 0.25 });
+  const count = 4 + Math.floor(rand() * 4);
+  for (let i = 0; i < count; i++) {
+    const r = (0.12 + rand() * 0.2) * size;
+    const h = (0.6 + rand() * 2.0) * size * (i === 0 ? 1.5 : 1);
+    const shard = new THREE.Mesh(crystalShardGeometry(r, h), mat);
+    const a = rand() * Math.PI * 2;
+    const d = i === 0 ? 0 : (0.15 + rand() * 0.45) * size;
+    shard.position.set(Math.cos(a) * d, 0, Math.sin(a) * d);
+    shard.rotation.set((rand() - 0.5) * 0.5, rand() * Math.PI, (rand() - 0.5) * 0.5);
+    shard.castShadow = false;
+    shard.receiveShadow = false;
+    group.add(shard);
+  }
+  return group;
+}
+
+function auroraMaterial() {
+  return new THREE.ShaderMaterial({
+    transparent: true,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+    side: THREE.BackSide,
+    uniforms: {
+      uTime: { value: 0 },
+      uIntensity: { value: 1 },
+      uA: { value: new THREE.Color(ROOM.primary) },
+      uB: { value: new THREE.Color(0x00a0a0) },
+      uC: { value: new THREE.Color(0x8a5cff) },
+    },
+    vertexShader: /* glsl */ `
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: /* glsl */ `
+      uniform float uTime;
+      uniform float uIntensity;
+      uniform vec3 uA;
+      uniform vec3 uB;
+      uniform vec3 uC;
+      varying vec2 vUv;
+      void main() {
+        float x = vUv.x * 18.0;
+        float w1 = sin(x + uTime * 0.18 + sin(vUv.x * 7.0 + uTime * 0.11) * 1.6);
+        float w2 = sin(x * 1.7 - uTime * 0.13 + 1.3);
+        float curtain = smoothstep(0.15, 1.0, w1 * 0.6 + w2 * 0.4 + 0.35);
+        float band = smoothstep(0.0, 0.45, vUv.y) * smoothstep(1.0, 0.55, vUv.y);
+        float streak = pow(abs(sin(vUv.x * 160.0 + w1 * 3.0)), 18.0) * 0.6;
+        vec3 col = mix(uA, uB, w2 * 0.5 + 0.5);
+        col = mix(col, uC, smoothstep(0.6, 1.0, vUv.y));
+        float a = band * (curtain * 0.55 + streak * curtain) * uIntensity;
+        gl_FragColor = vec4(col * a * 1.4, a);
+      }
+    `,
+  });
+}
+
+export function buildRoom(scene, renderer) {
+  const R = LAYOUT.roomRadius;
+  const rand = mulberry32(1337);
+
+  scene.background = new THREE.Color(ROOM.void);
+  scene.fog = new THREE.FogExp2(ROOM.fog, 0.02);
+
+  // Image-based reflections for crystal / metal (generic studio env, kept dim).
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  scene.environmentIntensity = 0.22;
+  pmrem.dispose();
+
+  // —— Lights ——
+  const hemi = new THREE.HemisphereLight(0xa3b0ff, 0x0b0e1c, 0.75);
+  scene.add(hemi);
+
+  const key = new THREE.DirectionalLight(0xf0f3ff, 1.55);
+  key.position.set(4.5, 12, 8.5);
+  key.target.position.set(0, 0, -2);
+  key.castShadow = true;
+  key.shadow.mapSize.set(2048, 2048);
+  key.shadow.camera.left = -11;
+  key.shadow.camera.right = 11;
+  key.shadow.camera.top = 11;
+  key.shadow.camera.bottom = -11;
+  key.shadow.camera.near = 1;
+  key.shadow.camera.far = 30;
+  key.shadow.bias = -0.0004;
+  key.shadow.normalBias = 0.02;
+  scene.add(key, key.target);
+
+  const rim = new THREE.SpotLight(0x7f8cff, 220, 30, Math.PI / 5, 0.6, 1.6);
+  rim.position.set(-7, 9, -8);
+  rim.target.position.set(1, 0, 1);
+  scene.add(rim, rim.target);
+
+  const warm = new THREE.PointLight(0xffc27a, 2.2, 6, 1.8); // warmth in inhabited areas
+  warm.position.set(-4.6, 2.2, -0.4);
+  scene.add(warm);
+
+  // —— Floor: polished crystal + emissive inlay ——
+  const inlay = floorInlayTexture();
+  const floorMat = new THREE.MeshPhysicalMaterial({
+    color: ROOM.floor,
+    roughness: 0.42,
+    metalness: 0.1,
+    clearcoat: 0.55,
+    clearcoatRoughness: 0.32,
+    emissive: ROOM.primary,
+    emissiveMap: inlay,
+    emissiveIntensity: 0.55,
+    envMapIntensity: 0.16,
+  });
+  const floor = new THREE.Mesh(new THREE.CircleGeometry(R, 128), floorMat);
   floor.rotation.x = -Math.PI / 2;
   floor.receiveShadow = true;
   scene.add(floor);
 
-  const wallMat = surfaceMaterial(WALL_TINT, { metalness: 0.35, roughness: 0.62 });
-  const back = new THREE.Mesh(new THREE.PlaneGeometry(22, 7), wallMat);
-  back.position.set(0, 3.5, -8);
-  back.receiveShadow = true;
-  scene.add(back);
-
-  const left = new THREE.Mesh(new THREE.PlaneGeometry(16, 7), wallMat);
-  left.position.set(-11, 3.5, 0);
-  left.rotation.y = Math.PI / 2;
-  left.receiveShadow = true;
-  scene.add(left);
-
-  const right = new THREE.Mesh(new THREE.PlaneGeometry(16, 7), wallMat);
-  right.position.set(11, 3.5, 0);
-  right.rotation.y = -Math.PI / 2;
-  right.receiveShadow = true;
-  scene.add(right);
-
-  const stripH = 0.06;
-  const stripD = 0.04;
-  const edgeGeoH = new THREE.BoxGeometry(22, stripH, stripD);
-  const edgeGeoV = new THREE.BoxGeometry(stripD, stripH, 16);
-  const y = stripH * 0.5;
-
-  addEdgeStrip(scene, edgeGeoH, new THREE.Vector3(0, y, 8));
-  addEdgeStrip(scene, edgeGeoH, new THREE.Vector3(0, y, -8));
-  addEdgeStrip(scene, edgeGeoV, new THREE.Vector3(-11, y, 0));
-  addEdgeStrip(scene, edgeGeoV, new THREE.Vector3(11, y, 0));
-
-  const wallBaseGeo = new THREE.BoxGeometry(22, 0.05, 0.06);
-  addEdgeStrip(scene, wallBaseGeo, new THREE.Vector3(0, 0.025, -7.97));
-  const sideBaseGeo = new THREE.BoxGeometry(0.06, 0.05, 16);
-  addEdgeStrip(scene, sideBaseGeo, new THREE.Vector3(-10.97, 0.025, 0));
-  addEdgeStrip(scene, sideBaseGeo, new THREE.Vector3(10.97, 0.025, 0));
-
-  const crownGeo = new THREE.BoxGeometry(22, 0.05, 0.05);
-  const crownMat = edgeStripMaterial(0.45);
-  const crown = new THREE.Mesh(crownGeo, crownMat);
-  crown.position.set(0, 6.98, -7.98);
-  scene.add(crown);
-
-  const gateFrame = new THREE.Mesh(
-    new THREE.BoxGeometry(6.5, 4.8, 0.35),
-    surfaceMaterial(FRAME_TINT, {
-      emissive: PRIMARY,
-      emissiveIntensity: 0.12,
-      metalness: 0.48,
-      roughness: 0.48,
-    }),
+  // Raised rim where floor meets wall.
+  const curb = new THREE.Mesh(
+    new THREE.TorusGeometry(R - 0.1, 0.12, 8, 160),
+    structureMaterial(ROOM.frame, { metalness: 0.7 }),
   );
-  gateFrame.position.set(0, 2.4, -7.1);
-  gateFrame.castShadow = true;
-  gateFrame.receiveShadow = true;
-  scene.add(gateFrame);
+  curb.rotation.x = -Math.PI / 2;
+  curb.position.y = 0.06;
+  scene.add(curb);
 
-  const frameEdgeMat = edgeStripMaterial(0.9);
-  const frameRing = new THREE.Mesh(new THREE.BoxGeometry(6.7, 0.08, 0.12), frameEdgeMat);
-  frameRing.position.set(0, 4.72, -6.92);
-  scene.add(frameRing);
+  // —— Seamless curved wall ——
+  const seams = wallSeamTexture();
+  const wallMat = new THREE.MeshStandardMaterial({
+    color: ROOM.wall,
+    roughness: 0.55,
+    metalness: 0.25,
+    emissive: ROOM.secondary,
+    emissiveMap: seams,
+    emissiveIntensity: 0.35,
+    side: THREE.BackSide,
+    envMapIntensity: 0.6,
+  });
+  const wall = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 11, 96, 1, true, THETA_START, THETA_LEN), wallMat);
+  wall.position.y = 5.5;
+  wall.receiveShadow = true;
+  scene.add(wall);
 
-  return { gateFrame };
-}
+  // Aurora band: "sky of compressed timelines".
+  const aurora = auroraMaterial();
+  const auroraMesh = new THREE.Mesh(
+    new THREE.CylinderGeometry(R - 0.25, R - 0.25, 4.2, 96, 1, true, THETA_START, THETA_LEN),
+    aurora,
+  );
+  auroraMesh.position.y = 8.0;
+  scene.add(auroraMesh);
 
-/** Opt-in shadow flags for chamber props (keeps room module owning shell defaults). */
-export function applyRoomShadows(mesh, { cast = true, receive = true } = {}) {
-  mesh.castShadow = cast;
-  mesh.receiveShadow = receive;
+  // —— Crystalline ribs at the 12 clock positions (front arc left open for the camera) ——
+  const ribMat = structureMaterial(0x252f57, { metalness: 0.65, roughness: 0.28 });
+  const ribGlow = glowMaterial(ROOM.primary, 1.05);
+  for (let k = 0; k < 12; k++) {
+    const theta = (k / 12) * Math.PI * 2;
+    if (theta < THETA_START - 0.01 || theta > THETA_START + THETA_LEN + 0.01) continue;
+    if (Math.abs(theta - Math.PI) < 0.01) continue; // keep the gate silhouette clean
+    const rib = new THREE.Group();
+    const body = new THREE.Mesh(new THREE.BoxGeometry(0.46, 11, 0.5), ribMat);
+    body.position.y = 5.5;
+    const strip = new THREE.Mesh(new THREE.BoxGeometry(0.07, 10.4, 0.04), ribGlow);
+    strip.position.set(0, 5.6, -0.27);
+    const foot = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.5, 0.8), ribMat);
+    foot.position.y = 0.25;
+    rib.add(body, strip, foot);
+    rib.position.set(Math.sin(theta) * (R - 0.25), 0, Math.cos(theta) * (R - 0.25));
+    rib.rotation.y = theta;
+    applyShadows(rib, { cast: false, receive: true });
+    scene.add(rib);
+  }
+
+  // —— Crystal clusters (set dressing; never occlude props) ——
+  const clusters = [];
+  const spots = [
+    [-4.25, -7.75, 1.25],
+    [4.3, -7.8, 1.35],
+    [-7.3, -5.4, 1.1],
+    [7.5, -5.0, 1.05],
+    [-8.4, -1.4, 0.95],
+    [8.6, -2.6, 0.9],
+    [-8.2, 3.2, 0.7],
+    [8.1, 3.6, 0.75],
+  ];
+  spots.forEach(([x, z, s]) => {
+    const c = buildCrystalCluster(rand, s);
+    c.position.set(x, 0, z);
+    c.rotation.y = rand() * Math.PI;
+    scene.add(c);
+    clusters.push(c);
+  });
+
+  return {
+    floorMat,
+    wallMat,
+    keyLight: key,
+    setShadowMapSize(n) {
+      key.shadow.mapSize.set(n, n);
+      key.shadow.map?.dispose();
+      key.shadow.map = null;
+    },
+    update(t, dt, ctx = {}) {
+      aurora.uniforms.uTime.value = t;
+      const surge = ctx.sync ?? 0;
+      aurora.uniforms.uIntensity.value = 0.75 + surge * 0.9;
+      floorMat.emissiveIntensity = 0.5 + Math.sin(t * 0.9) * 0.06 + surge * 0.4;
+      wallMat.emissiveIntensity = 0.32 + surge * 0.35;
+    },
+  };
 }

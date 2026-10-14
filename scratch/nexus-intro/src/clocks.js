@@ -1,210 +1,251 @@
 import * as THREE from 'three';
+import { CHARACTER, ROOM, STEP_ORDER } from './palette.js';
+import { LAYOUT } from './layout.js';
+import { glowMaterial, structureMaterial } from './materials.js';
+import { dialTextures } from './textures.js';
 
-const PRIMARY = 0x646cff;
-const SECONDARY = 0x747bff;
-const ACCENT = 0x9aa8ff;
+const TAU = Math.PI * 2;
+const REF_RATE = 1.15; // simulated minutes per real second on the shared reference
+const DESYNC_RATES = [1.0, -0.72, 2.55, 0.38]; // beat 5: each timeline keeps its own tempo
+const DRIFT_RATES = [1.0, 1.035, 0.97, 1.02]; // elsewhere: slightly out of sync
+const OFFSETS = [-95, 140, -40, 255];
 
-const CLOCK_X = [-2.85, -0.95, 0.95, 2.85];
+function backOut(x) {
+  const c1 = 1.9;
+  const c3 = c1 + 1;
+  return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+}
+
+function wrap720(d) {
+  return ((((d + 360) % 720) + 720) % 720) - 360;
+}
+
 /**
- * Beat-5 clock diorama: large readable faces, tick marks, accent only on the active sync step.
- * Driven by Ink vars beat5_step and beat5_clear; visibility emphasis only on beat 5.
+ * Coordination-gate clocks. Dials face the camera (XY plane), with luminous markings and
+ * jumping minute hands so each clock's tempo is visible (and audible via onTick).
+ * Clock i belongs to beat-5 step i (Anne → Maya → Eli → Vibrion) and wears that lens color once
+ * it is the current step or locked. All state comes from Ink via sync().
  */
-export class NexusBeat5Clocks {
-  constructor(scene, matFactory) {
-    this._mat = matFactory;
-    this.targetBeat = null;
+export class NexusClocks {
+  constructor(scene) {
+    this.group = new THREE.Group();
+    this.onBeat5 = false;
     this.beat5Step = 0;
     this.beat5Clear = false;
+    this.layout = 'row';
+    this.hovered = null;
+    this.bound = new Set();
+    this.failT = 0;
+    this.syncFlash = 0;
+    this.onTick = null;
+    this.ref = 10 * 60 + 8;
+    this.refTarget = null;
+    this.targets = [];
 
-    this.group = new THREE.Group();
-    this.group.position.set(0, 3.65, -6.35);
+    const { map, emissiveMap } = dialTextures();
+    const faceMat = new THREE.MeshStandardMaterial({
+      map,
+      emissive: 0xffffff,
+      emissiveMap,
+      emissiveIntensity: 1.1,
+      roughness: 0.35,
+      metalness: 0.2,
+    });
+    const backMat = structureMaterial(0x1a2142, { metalness: 0.7 });
+    const bezelMat = structureMaterial(ROOM.silver, { metalness: 0.95, roughness: 0.18, clearcoat: 0.4 });
+
+    this.clocks = STEP_ORDER.map((charId, i) => {
+      const root = new THREE.Group();
+      const back = new THREE.Mesh(new THREE.CylinderGeometry(0.88, 0.9, 0.14, 64), backMat);
+      back.rotation.x = Math.PI / 2;
+      const bezel = new THREE.Mesh(new THREE.TorusGeometry(0.84, 0.075, 18, 96), bezelMat);
+      bezel.position.z = 0.075;
+      const face = new THREE.Mesh(new THREE.CircleGeometry(0.8, 96), faceMat);
+      face.position.z = 0.072;
+
+      const handMat = glowMaterial(ROOM.temporalWhite, 1.5);
+      const hourGeo = new THREE.BoxGeometry(0.085, 0.44, 0.02);
+      hourGeo.translate(0, 0.16, 0);
+      const minuteGeo = new THREE.BoxGeometry(0.052, 0.66, 0.02);
+      minuteGeo.translate(0, 0.27, 0);
+      const hour = new THREE.Mesh(hourGeo, handMat);
+      hour.position.z = 0.1;
+      const minute = new THREE.Mesh(minuteGeo, handMat);
+      minute.position.z = 0.115;
+      const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.055, 0.055, 0.05, 20), bezelMat);
+      cap.rotation.x = Math.PI / 2;
+      cap.position.z = 0.13;
+
+      const stepHex = CHARACTER[charId].flash;
+      const ringMat = glowMaterial(stepHex, 3.2, { transparent: true, opacity: 0, additive: true });
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(0.97, 0.032, 10, 120), ringMat);
+      ring.position.z = 0.05;
+      const haloMat = glowMaterial(stepHex, 1.6, { transparent: true, opacity: 0, additive: true });
+      const halo = new THREE.Mesh(new THREE.RingGeometry(1.02, 1.2, 96), haloMat);
+      halo.position.z = 0.0;
+
+      root.add(back, bezel, face, hour, minute, cap, ring, halo);
+      [back, bezel, face].forEach((m) => {
+        m.userData.propId = `clock${i}`;
+        this.targets.push(m);
+      });
+      this.group.add(root);
+      return {
+        i,
+        charId,
+        stepHex,
+        root,
+        hour,
+        minute,
+        handMat,
+        ringMat,
+        haloMat,
+        time: this.ref + OFFSETS[i],
+        lockBlend: 0,
+        hover: 0,
+        tickFlash: 0,
+        lastWhole: Math.floor(this.ref + OFFSETS[i]),
+        local: new THREE.Vector3(),
+      };
+    });
+
+    const off = LAYOUT.clocks.off;
+    this.group.position.set(...off.position);
+    this.group.scale.setScalar(off.scale);
+    this._layoutLocals(true);
     scene.add(this.group);
-
-    this.clocks = CLOCK_X.map((x, i) => this._buildClock(x, i));
   }
 
-  _buildClock(x, index) {
-    const root = new THREE.Group();
-    root.position.set(x, 0, 0);
-    this.group.add(root);
-
-    const face = new THREE.Mesh(
-      new THREE.CylinderGeometry(1, 1, 0.16, 64),
-      this._mat(0x1a1f2e, 0x000000, 0),
-    );
-    face.rotation.x = Math.PI / 2;
-    root.add(face);
-
-    const dial = new THREE.Mesh(
-      new THREE.CircleGeometry(0.92, 64),
-      new THREE.MeshStandardMaterial({
-        color: 0x141824,
-        metalness: 0.25,
-        roughness: 0.72,
-        emissive: 0x000000,
-        emissiveIntensity: 0,
-      }),
-    );
-    dial.rotation.x = -Math.PI / 2;
-    dial.position.y = 0.082;
-    root.add(dial);
-
-    const ticks = new THREE.Group();
-    for (let i = 0; i < 12; i++) {
-      const major = i % 3 === 0;
-      const len = major ? 0.16 : 0.1;
-      const thick = major ? 0.05 : 0.032;
-      const tick = new THREE.Mesh(
-        new THREE.BoxGeometry(thick, len, 0.025),
-        this._mat(major ? 0xc8d0e8 : 0x6a7288, 0x000000, 0),
-      );
-      const r = 0.8;
-      const a = (i / 12) * Math.PI * 2;
-      const radial = len * 0.5 + 0.04;
-      tick.position.set(Math.sin(a) * (r - radial), 0.09, Math.cos(a) * (r - radial));
-      tick.rotation.x = -Math.PI / 2;
-      tick.rotation.y = a;
-      ticks.add(tick);
-    }
-    root.add(ticks);
-
-    const rim = new THREE.Mesh(
-      new THREE.TorusGeometry(1.02, 0.055, 12, 72),
-      this._mat(0x2a3040, 0x000000, 0),
-    );
-    rim.rotation.x = Math.PI / 2;
-    rim.position.y = 0.02;
-    root.add(rim);
-
-    const hub = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.08, 0.08, 0.12, 16),
-      this._mat(0x3a4055, SECONDARY, 0.15),
-    );
-    hub.rotation.x = Math.PI / 2;
-    hub.position.y = 0.1;
-    root.add(hub);
-
-    const hand = new THREE.Mesh(
-      new THREE.BoxGeometry(0.06, 0.72, 0.04),
-      this._mat(0x8890a8, 0x000000, 0),
-    );
-    hand.geometry.translate(0, 0.36, 0);
-    hand.position.y = 0.11;
-    root.add(hand);
-
-    const stepRing = new THREE.Mesh(
-      new THREE.TorusGeometry(1.12, 0.04, 10, 64),
-      this._mat(0x2a3040, PRIMARY, 0, { transparent: true, opacity: 0.85 }),
-    );
-    stepRing.rotation.x = Math.PI / 2;
-    stepRing.position.y = 0.04;
-    stepRing.visible = false;
-    root.add(stepRing);
-
-    return {
-      root,
-      face,
-      dial,
-      rim,
-      hand,
-      stepRing,
-      ticks,
-      baseSpeed: 0.9 + index * 0.38,
-      phase: index * 1.85,
-      index,
-    };
-  }
-
-  sync({ targetBeat, beat5Step, beat5Clear }) {
-    this.targetBeat = targetBeat;
+  sync({ onBeat5, beat5Step, beat5Clear }) {
+    const becameClear = beat5Clear && !this.beat5Clear;
+    this.onBeat5 = onBeat5;
     this.beat5Step = beat5Step;
     this.beat5Clear = beat5Clear;
+    if (becameClear) {
+      this.refTarget = Math.ceil((this.ref + 30) / 720) * 720; // all hands meet at XII
+      this.syncFlash = 1;
+    }
   }
 
-  _onBeat5() {
-    const b = this.targetBeat;
-    return b === '5' || b === 5;
+  /** Portrait viewports stack the hero clocks 2×2 so all four stay inside the crop. */
+  setAspect(aspect) {
+    this.layout = aspect < 0.9 ? 'grid' : 'row';
   }
 
-  _activeStepIndex() {
-    if (this.beat5Clear) return -1;
-    return Math.min(Math.max(this.beat5Step, 0), 3);
+  setHover(id) {
+    this.hovered = id;
   }
 
-  update(elapsed) {
-    const onBeat5 = this._onBeat5();
-    const activeIdx = this._activeStepIndex();
-    const syncFactor = this.beat5Clear ? 1 : Math.min(this.beat5Step / 4, 0.9);
-    const desync = this.beat5Clear ? 0 : 1 - syncFactor;
+  setBound(ids) {
+    this.bound = new Set(ids);
+  }
 
-    const heroScale = onBeat5 ? 1.28 : 0.52;
-    const targetScale = new THREE.Vector3(heroScale, heroScale, heroScale);
-    this.group.scale.lerp(targetScale, onBeat5 ? 0.06 : 0.04);
-    this.group.position.y = THREE.MathUtils.lerp(this.group.position.y, onBeat5 ? 3.35 : 3.85, 0.05);
-    this.group.position.z = THREE.MathUtils.lerp(this.group.position.z, onBeat5 ? -5.95 : -6.55, 0.05);
+  fail() {
+    this.failT = 1;
+  }
 
+  get hero() {
+    return this.onBeat5 && !this.beat5Clear;
+  }
+
+  clockWorldPosition(i, target = new THREE.Vector3()) {
+    return this.clocks[i].root.getWorldPosition(target);
+  }
+
+  _layoutLocals(snap = false, k = 1) {
+    const useGrid = this.hero && this.layout === 'grid';
+    const spacing = useGrid ? LAYOUT.clocks.heroGrid.spacing : LAYOUT.clocks.heroRow.spacing;
     this.clocks.forEach((c, i) => {
-      const speed = c.baseSpeed * desync + 0.07;
-      const wobble = Math.sin(elapsed * 3.2 + c.phase) * 0.18 * desync;
-      if (this.beat5Clear) {
-        c.hand.rotation.z = 0;
-      } else {
-        c.hand.rotation.z = elapsed * speed + c.phase * desync + wobble;
-      }
-
-      const isActiveStep = onBeat5 && !this.beat5Clear && i === activeIdx;
-      const allSynced = onBeat5 && this.beat5Clear;
-
-      c.stepRing.visible = isActiveStep;
-      if (isActiveStep) {
-        const pulse = 0.85 + Math.sin(elapsed * 5) * 0.2;
-        c.stepRing.material.emissive.setHex(PRIMARY);
-        c.stepRing.material.emissiveIntensity = pulse;
-        c.stepRing.material.color.setHex(SECONDARY);
-      }
-
-      const rimEmissive = allSynced
-        ? 0.55
-        : isActiveStep
-          ? 0.45 + Math.sin(elapsed * 4 + i) * 0.15
-          : onBeat5
-            ? 0.02
-            : 0;
-      c.rim.material.emissive.setHex(allSynced || isActiveStep ? SECONDARY : 0x000000);
-      c.rim.material.emissiveIntensity = rimEmissive;
-      c.rim.material.color.setHex(allSynced || isActiveStep ? SECONDARY : 0x2a3040);
-
-      const dialEmissive = allSynced ? 0.12 : isActiveStep ? 0.22 : 0;
-      c.dial.material.emissive.setHex(isActiveStep || allSynced ? PRIMARY : 0x000000);
-      c.dial.material.emissiveIntensity = dialEmissive;
-
-      c.hand.material.color.setHex(allSynced ? SECONDARY : isActiveStep ? 0x747bff : 0x8890a8);
-      c.hand.material.emissive.setHex(isActiveStep || allSynced ? ACCENT : 0x000000);
-      c.hand.material.emissiveIntensity = isActiveStep ? 0.9 : allSynced ? 0.5 : 0;
-
-      c.ticks.children.forEach((tick, ti) => {
-        const major = ti % 3 === 0;
-        if (!onBeat5) {
-          tick.material.color.setHex(major ? 0x4a5060 : 0x353945);
-          tick.material.emissiveIntensity = 0;
-          return;
-        }
-        if (isActiveStep || allSynced) {
-          tick.material.color.setHex(major ? 0xe8ecff : 0xa8b0d0);
-          tick.material.emissive.setHex(major ? PRIMARY : 0x000000);
-          tick.material.emissiveIntensity = major ? (isActiveStep ? 0.35 : 0.2) : 0;
-        } else {
-          tick.material.color.setHex(major ? 0x6a7288 : 0x4a5060);
-          tick.material.emissiveIntensity = 0;
-        }
-      });
-
-      c.face.material.emissiveIntensity = isActiveStep ? 0.08 : allSynced ? 0.06 : 0;
-      c.face.material.emissive.setHex(isActiveStep || allSynced ? PRIMARY : 0x000000);
+      const target = useGrid
+        ? new THREE.Vector3(((i % 2) - 0.5) * spacing, (i < 2 ? 0.5 : -0.5) * spacing, 0)
+        : new THREE.Vector3((i - 1.5) * spacing, 0, 0);
+      if (snap) c.local.copy(target);
+      else c.local.lerp(target, k);
+      c.root.position.copy(c.local);
     });
   }
 
-  dispose() {
-    this.group.removeFromParent();
+  update(t, dt) {
+    const k = (rate) => 1 - Math.exp(-rate * dt);
+
+    // Group placement: lintel row ↔ hero position in front of the membrane.
+    const cfg = this.hero
+      ? this.layout === 'grid'
+        ? LAYOUT.clocks.heroGrid
+        : LAYOUT.clocks.heroRow
+      : LAYOUT.clocks.off;
+    const pos = new THREE.Vector3(...cfg.position);
+    this.group.position.lerp(pos, k(2.4));
+    const s = this.group.scale.x + (cfg.scale - this.group.scale.x) * k(2.4);
+    this.group.scale.setScalar(s);
+    this._layoutLocals(false, k(3));
+
+    // Shared reference time (eases to XII on sync).
+    if (this.refTarget != null) {
+      this.ref += (this.refTarget - this.ref) * k(2.2);
+      if (Math.abs(this.refTarget - this.ref) < 0.02) {
+        this.ref = this.refTarget;
+        this.refTarget = null;
+      }
+    } else {
+      this.ref += dt * REF_RATE;
+    }
+
+    this.failT = Math.max(0, this.failT - dt * 1.5);
+    this.syncFlash = Math.max(0, this.syncFlash - dt * 0.8);
+
+    this.clocks.forEach((c) => {
+      const locked = this.beat5Clear || (this.onBeat5 && c.i < this.beat5Step);
+      const current = this.onBeat5 && !this.beat5Clear && c.i === this.beat5Step;
+      c.lockBlend += ((locked ? 1 : 0) - c.lockBlend) * k(3.2);
+
+      const rate = this.onBeat5 && !this.beat5Clear ? DESYNC_RATES[c.i] : DRIFT_RATES[c.i];
+      c.time += dt * REF_RATE * rate;
+      if (c.lockBlend > 0.001) {
+        // Converge onto the shared reference along the shortest path around the dial.
+        const delta = wrap720(this.ref - c.time);
+        c.time += delta * Math.min(1, c.lockBlend * k(6) * 3);
+        if (c.lockBlend > 0.98) c.time = this.ref;
+      }
+      if (this.failT > 0 && !locked) c.time += Math.sin(t * 60 + c.i * 3) * this.failT * 0.6;
+
+      const whole = Math.floor(c.time);
+      if (whole !== c.lastWhole) {
+        c.lastWhole = whole;
+        c.tickFlash = 1;
+        this.onTick?.(c.i, { locked, current, onBeat5: this.onBeat5, ref: !locked ? 0 : 1 });
+      }
+      c.tickFlash = Math.max(0, c.tickFlash - dt * 5);
+
+      // Jumping minute hand with a small overshoot on each tick.
+      const frac = c.time - whole;
+      const jump = frac < 0.16 ? backOut(frac / 0.16) : 1;
+      c.minute.rotation.z = -((whole - 1 + jump) / 60) * TAU;
+      c.hour.rotation.z = -(c.time / 720) * TAU;
+
+      // Step ring / halo.
+      c.hover += ((this.hovered === `clock${c.i}` ? 1 : 0) - c.hover) * k(12);
+      const pulse = 0.5 + 0.5 * Math.sin(t * 4.2);
+      let ringOpacity = 0;
+      let halo = 0;
+      if (this.onBeat5 || this.beat5Clear) {
+        if (locked) ringOpacity = 0.85 + c.tickFlash * 0.15;
+        else if (current) {
+          ringOpacity = 0.35 + pulse * 0.55;
+          halo = 0.12 + pulse * 0.2 + c.hover * 0.35;
+        } else ringOpacity = 0.1;
+      }
+      const flick = this.failT > 0 && !locked ? (Math.sin(t * 38) > 0 ? 1 : 0) * this.failT : 0;
+      const ringColor = new THREE.Color(c.stepHex).lerp(new THREE.Color(ROOM.warning), flick);
+      ringColor.lerp(new THREE.Color(ROOM.temporalWhite), this.syncFlash * 0.7);
+      c.ringMat.color.copy(ringColor).multiplyScalar(3.2 + c.hover * 2 + this.syncFlash * 4);
+      c.ringMat.opacity = Math.min(1, ringOpacity + flick * 0.6 + this.syncFlash * 0.5);
+      c.haloMat.opacity = halo + this.syncFlash * 0.4;
+      c.handMat.color.set(ROOM.temporalWhite).multiplyScalar(1.4 + c.tickFlash * 0.6 + c.lockBlend * 0.6 + this.syncFlash * 2);
+
+      const sc = 1 + c.hover * 0.05 + (current ? pulse * 0.015 : 0);
+      c.root.scale.setScalar(sc);
+      c.root.rotation.z = flick ? Math.sin(t * 55 + c.i) * 0.04 : 0;
+    });
   }
 }

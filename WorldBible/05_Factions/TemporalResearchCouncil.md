@@ -68,7 +68,7 @@
 - Chronopolis established as secure capital
 
 **Key Events:**
-- Dr. Entropy (Marcus Theron) expelled (320 AC) — research confiscated
+- Dr. Entropy (Marcus Theron) expelled (332 AC) — research confiscated
 - Dr. Volt left Council employ (328 AC) — disillusionment
 - Team formed (342 AC) — Council reluctantly accepts independent operatives
 - Ongoing: Entropy threat forces unprecedented cooperation
