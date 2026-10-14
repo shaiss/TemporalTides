@@ -1105,8 +1105,8 @@ The absolute truth of the Nexus's creation remains **mystery**. What is known:
 - Disappeared but left their greatest work behind
 - Evidence: Sophisticated technology, deliberate design
 
-**Theory 2: Temporal Travelers from Future**
-- Future civilization sent Nexus backward in time
+**Theory 2: Future Civilization Bootstrap**
+- A later-era civilization displaced the Nexus to an earlier temporal state
 - Created convergence point to prevent their timeline's destruction
 - Bootstrap paradox: Nexus exists because it will exist
 - Evidence: Some technology seems prophetic, anticipating needs
