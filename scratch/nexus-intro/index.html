@@ -3,29 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Time Nexus — chamber + choice rail</title>
+  <title>Time Nexus</title>
   <link rel="stylesheet" href="/src/styles.css" />
 </head>
 <body>
-  <div id="app" data-mode="vibrion" data-beat="">
+  <div id="app" data-lens="vibrion" data-at="room">
     <canvas id="chamber-canvas" aria-hidden="true"></canvas>
     <div class="entropy-vignette" aria-hidden="true"></div>
 
     <div class="chrome-top">
-      <div class="chrome-top-inner">
-        <span class="beat-pill" id="hud-beat">Beat —</span>
-        <p class="narrative-line" id="narrative-line" aria-live="polite">One lens at a time.</p>
-      </div>
-      <div class="chrome-right">
-        <div class="mode-chips" id="mode-chips" aria-label="Active ability modes (display only)"></div>
-        <button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="true">Sound on</button>
-      </div>
+      <button type="button" class="back-btn" id="back-btn" hidden>
+        <span aria-hidden="true">‹</span> Room
+      </button>
+      <button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="true">Sound on</button>
     </div>
 
-    <p id="story" class="sr-only" aria-live="polite"></p>
+    <button type="button" class="pan-arrow pan-left" id="pan-left" aria-label="Look left" hidden>‹</button>
+    <button type="button" class="pan-arrow pan-right" id="pan-right" aria-label="Look right" hidden>›</button>
+
+    <!-- Keyboard and screen-reader route to the same taps as the chamber props. -->
+    <nav class="places" id="places" aria-label="In the chamber"></nav>
 
     <div class="chrome-bottom">
-      <div id="choices" class="choice-rail"></div>
+      <div class="planner" id="planner" hidden>
+        <ol class="slots" id="slots" aria-label="Plan"></ol>
+        <button type="button" class="sync-btn" id="sync-btn" disabled>Sync</button>
+      </div>
+      <div class="ending" id="ending" hidden>
+        <button type="button" class="replay-btn" id="replay-btn">Play again</button>
+      </div>
+      <div class="subtitle" id="subtitle" aria-live="polite" hidden>
+        <span class="who" data-who></span>
+        <span class="line" data-line></span>
+      </div>
+      <div class="team" id="team" role="radiogroup" aria-label="Team"></div>
     </div>
   </div>
   <script type="module" src="/src/main.js"></script>

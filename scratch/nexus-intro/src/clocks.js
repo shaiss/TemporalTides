@@ -6,7 +6,7 @@ import { dialTextures } from './textures.js';
 
 const TAU = Math.PI * 2;
 const REF_RATE = 1.15; // simulated minutes per real second on the shared reference
-const DESYNC_RATES = [1.0, -0.72, 2.55, 0.38]; // beat 5: each timeline keeps its own tempo
+const DESYNC_RATES = [1.0, -0.72, 2.55, 0.38]; // at the gate: each timeline keeps its own tempo
 const DRIFT_RATES = [1.0, 1.035, 0.97, 1.02]; // elsewhere: slightly out of sync
 const OFFSETS = [-95, 140, -40, 255];
 
@@ -23,15 +23,15 @@ function wrap720(d) {
 /**
  * Coordination-gate clocks. Dials face the camera (XY plane), with luminous markings and
  * jumping minute hands so each clock's tempo is visible (and audible via onTick).
- * Clock i belongs to beat-5 step i (Anne → Maya → Eli → Vibrion) and wears that lens color once
+ * Clock i belongs to plan slot i (Anne → Maya → Eli → Vibrion) and wears that lens color once
  * it is the current step or locked. All state comes from Ink via sync().
  */
 export class NexusClocks {
   constructor(scene) {
     this.group = new THREE.Group();
-    this.onBeat5 = false;
-    this.beat5Step = 0;
-    this.beat5Clear = false;
+    this.atGate = false;
+    this.gateStep = 0;
+    this.sealed = false;
     this.layout = 'row';
     this.hovered = null;
     this.bound = new Set();
@@ -116,11 +116,12 @@ export class NexusClocks {
     scene.add(this.group);
   }
 
-  sync({ onBeat5, beat5Step, beat5Clear }) {
-    const becameClear = beat5Clear && !this.beat5Clear;
-    this.onBeat5 = onBeat5;
-    this.beat5Step = beat5Step;
-    this.beat5Clear = beat5Clear;
+  sync({ atGate, gateStep, sealed, playing = false }) {
+    this.playing = playing;
+    const becameClear = sealed && !this.sealed;
+    this.atGate = atGate;
+    this.gateStep = gateStep;
+    this.sealed = sealed;
     if (becameClear) {
       this.refTarget = Math.ceil((this.ref + 30) / 720) * 720; // all hands meet at XII
       this.syncFlash = 1;
@@ -145,7 +146,7 @@ export class NexusClocks {
   }
 
   get hero() {
-    return this.onBeat5 && !this.beat5Clear;
+    return this.atGate && !this.sealed;
   }
 
   clockWorldPosition(i, target = new THREE.Vector3()) {
@@ -195,11 +196,12 @@ export class NexusClocks {
     this.syncFlash = Math.max(0, this.syncFlash - dt * 0.8);
 
     this.clocks.forEach((c) => {
-      const locked = this.beat5Clear || (this.onBeat5 && c.i < this.beat5Step);
-      const current = this.onBeat5 && !this.beat5Clear && c.i === this.beat5Step;
+      const locked = this.sealed || (this.atGate && c.i < this.gateStep);
+      // Only a playing plan has a current clock; while planning, no clock is singled out.
+      const current = this.atGate && this.playing && !this.sealed && c.i === this.gateStep;
       c.lockBlend += ((locked ? 1 : 0) - c.lockBlend) * k(3.2);
 
-      const rate = this.onBeat5 && !this.beat5Clear ? DESYNC_RATES[c.i] : DRIFT_RATES[c.i];
+      const rate = this.atGate && !this.sealed ? DESYNC_RATES[c.i] : DRIFT_RATES[c.i];
       c.time += dt * REF_RATE * rate;
       if (c.lockBlend > 0.001) {
         // Converge onto the shared reference along the shortest path around the dial.
@@ -213,7 +215,7 @@ export class NexusClocks {
       if (whole !== c.lastWhole) {
         c.lastWhole = whole;
         c.tickFlash = 1;
-        this.onTick?.(c.i, { locked, current, onBeat5: this.onBeat5, ref: !locked ? 0 : 1 });
+        this.onTick?.(c.i, { locked, current, atGate: this.atGate, ref: !locked ? 0 : 1 });
       }
       c.tickFlash = Math.max(0, c.tickFlash - dt * 5);
 
@@ -228,7 +230,7 @@ export class NexusClocks {
       const pulse = 0.5 + 0.5 * Math.sin(t * 4.2);
       let ringOpacity = 0;
       let halo = 0;
-      if (this.onBeat5 || this.beat5Clear) {
+      if (this.atGate || this.sealed) {
         if (locked) ringOpacity = 0.85 + c.tickFlash * 0.15;
         else if (current) {
           ringOpacity = 0.35 + pulse * 0.55;

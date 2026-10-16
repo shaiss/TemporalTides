@@ -4,16 +4,18 @@ const TAP_SLOP_PX = 12;
 const TAP_MAX_MS = 650;
 
 /**
- * Raycasts pointer input against chamber props. Emits prop ids only — main.js decides whether the
- * prop maps to an Ink choice that is currently on the rail (props never bypass Ink).
+ * Raycasts pointer input against chamber props. Emits prop ids only — main.js asks the game what a
+ * tap means (props never bypass Ink). A press that travels past the tap slop becomes a drag instead,
+ * reported as horizontal deltas (used to look around the room on narrow screens).
  */
 export class PointerPicker {
-  constructor(canvas, camera, getTargets, { onHover, onTap }) {
+  constructor(canvas, camera, getTargets, { onHover, onTap, onDrag }) {
     this.canvas = canvas;
     this.camera = camera;
     this.getTargets = getTargets;
     this.onHover = onHover;
     this.onTap = onTap;
+    this.onDrag = onDrag;
     this.raycaster = new THREE.Raycaster();
     this.ndc = new THREE.Vector2();
     this.down = null;
@@ -21,6 +23,19 @@ export class PointerPicker {
     this.hoverClearTimer = 0;
 
     canvas.addEventListener('pointermove', (e) => {
+      const d = this.down;
+      if (d && e.pointerId === d.id) {
+        const dx = e.clientX - d.lastX;
+        d.lastX = e.clientX;
+        if (!d.dragging && Math.hypot(e.clientX - d.x, e.clientY - d.y) > TAP_SLOP_PX) {
+          d.dragging = true;
+          this._setHover(null);
+        }
+        if (d.dragging) {
+          this.onDrag?.(dx, e);
+          return;
+        }
+      }
       if (e.pointerType !== 'mouse') return;
       this._setHover(this.pick(e.clientX, e.clientY));
     });
@@ -35,7 +50,8 @@ export class PointerPicker {
         this.down = null;
         return;
       }
-      this.down = { x: e.clientX, y: e.clientY, t: performance.now(), id: e.pointerId };
+      this.down = { x: e.clientX, y: e.clientY, lastX: e.clientX, t: performance.now(), id: e.pointerId, dragging: false };
+      canvas.setPointerCapture?.(e.pointerId);
       if (e.pointerType !== 'mouse') {
         this._cancelHoverClear();
         this._setHover(this.pick(e.clientX, e.clientY));
@@ -53,7 +69,7 @@ export class PointerPicker {
       }
       if (!d || e.button !== 0 || e.pointerId !== d.id) return;
       const moved = Math.hypot(e.clientX - d.x, e.clientY - d.y);
-      if (moved > TAP_SLOP_PX || performance.now() - d.t > TAP_MAX_MS) return;
+      if (d.dragging || moved > TAP_SLOP_PX || performance.now() - d.t > TAP_MAX_MS) return;
       const id = this.pick(e.clientX, e.clientY);
       if (id) this.onTap?.(id, e);
     });
