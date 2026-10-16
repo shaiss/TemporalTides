@@ -7,6 +7,7 @@ import { applyShadows } from './room.js';
 
 const tmpColor = new THREE.Color();
 const WARN = new THREE.Color(ROOM.warning);
+const SPARK_HOT = new THREE.Color(0xffe2a0);
 
 /**
  * Room props: hazard corridor, echo lever console, dead electrical panel with conduits to the gate.
@@ -347,6 +348,11 @@ export class NexusProps {
     b.mesh.visible = true;
   }
 
+  /** The corridor's spark rhythm (shared with the first gate clock and the lenses). */
+  setSparks(schedule) {
+    this.sparks = schedule;
+  }
+
   sync(state) {
     Object.assign(this.state, {
       corridorClear: !!state.corridorClear,
@@ -409,16 +415,22 @@ export class NexusProps {
       });
     });
 
-    // Corridor: plates flicker red-gold until Foresight clears them; then the clean line draws in.
+    // Corridor: plates spark on the corridor's rhythm (SparkSchedule). Red-gold hazard until
+    // Foresight clears a line through; after that they still spark, cool and dim, so the rhythm
+    // stays readable for anyone comparing it with the first gate clock.
     this.plates.forEach((pl, i) => {
+      const since = this.sparks ? this.sparks.sinceLast(i) : Infinity;
+      const spark = Number.isFinite(since) ? Math.exp(-since * 9) : 0;
       if (s.corridorClear) {
+        pl.base = (pl.base ?? 0.85) + (0.32 - (pl.base ?? 0.85)) * k(3);
         pl.mat.emissive.set(0x9fb4ff);
-        pl.mat.emissiveIntensity += (0.32 - pl.mat.emissiveIntensity) * k(3);
+        pl.mat.emissiveIntensity = pl.base + spark * 1.3;
       } else {
-        const n = Math.sin(t * 13 + i * 2.1) * Math.sin(t * 7.3 + i);
         const fail = this.props.corridor.fail;
-        pl.mat.emissive.set(ROOM.warning);
-        pl.mat.emissiveIntensity = 0.9 + Math.max(0, n) * 0.9 + fail * 2.5 * (Math.sin(t * 40) > 0 ? 1 : 0);
+        pl.base = 0.85;
+        // A spark runs hot toward white-gold so it reads on the far plates too (and without bloom).
+        pl.mat.emissive.set(ROOM.warning).lerp(SPARK_HOT, Math.min(1, spark * 1.2));
+        pl.mat.emissiveIntensity = pl.base + spark * 6.5 + fail * 2.5 * (Math.sin(t * 40) > 0 ? 1 : 0);
       }
     });
     this.safePathReveal += ((s.corridorClear ? 1 : 0) - this.safePathReveal) * k(1.6);

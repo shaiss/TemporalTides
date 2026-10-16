@@ -250,6 +250,57 @@ export class NexusAudio {
     src.start(now);
   }
 
+  /**
+   * Corridor spark: a crackle over the first clock's click. The first gate clock keeps the
+   * corridor's rhythm, so this is also its tick. `level` = how close the corridor is (0..1).
+   */
+  spark(level = 1) {
+    if (!this.live || level <= 0) return;
+    const ctx = this.ctx;
+    const now = ctx.currentTime;
+    [0, 0.018].forEach((off, n) => {
+      const t0 = now + off;
+      const src = this._noise(0.05);
+      const hp = ctx.createBiquadFilter();
+      hp.type = 'highpass';
+      hp.frequency.value = 2400 + n * 1800;
+      const g = ctx.createGain();
+      g.gain.setValueAtTime(0, t0);
+      g.gain.linearRampToValueAtTime(0.09 * level, t0 + 0.002);
+      g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.05);
+      src.connect(hp).connect(g).connect(this._out(1, -0.4));
+      src.start(t0);
+    });
+    const click = this._noise(0.04);
+    const bp = ctx.createBiquadFilter();
+    bp.type = 'bandpass';
+    bp.frequency.value = 1700;
+    bp.Q.value = 6;
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0.08 * level, now);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + 0.04);
+    click.connect(bp).connect(g).connect(this._out(1, -0.4));
+    click.start(now);
+  }
+
+  /**
+   * Crystal chime (TimeNexus.md · Singing Crystals). Out of phase: a ragged, slightly detuned
+   * ripple round the rim. In phase: one chord, in tune. The outlier never sounds.
+   */
+  chime(events, { inPhase = false } = {}) {
+    if (!this.live) return;
+    const scale = [587.33, 659.25, 739.99, 880, 987.77, 1174.66, 1318.51];
+    events.forEach((e, n) => {
+      const detune = inPhase ? 1 : Math.pow(2, (((n % 3) - 1) * 0.35) / 12);
+      this._bell(scale[n % scale.length] * detune, {
+        when: e.delay,
+        gain: inPhase ? 0.045 : 0.022,
+        decay: inPhase ? 3.4 : 1.6,
+        pan: e.pan * 0.8,
+      });
+    });
+  }
+
   /** Gate seal: all clocks agree — chord + deep portal chime. */
   sync() {
     if (!this.live) return;

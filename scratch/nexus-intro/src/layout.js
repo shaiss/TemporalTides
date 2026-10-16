@@ -19,6 +19,24 @@ export const LAYOUT = {
     [-4.2, 1.2],
     [-3.25, -0.2],
   ],
+  // The corridor's spark rhythm. Sparks walk the plates left → far right → center (trap indices,
+  // as Anne calls them) with the gaps Maya reads: 2.1, 5.8, 0.9, 3.3 s. Three plates against four
+  // gaps means the full pattern only repeats every 12 sparks. The first gate clock ticks on it too.
+  sparks: { gaps: [2.1, 5.8, 0.9, 3.3], plates: [0, 2, 1], first: 1.6 },
+  // Crystal clusters around the rim: [x, z, size]. `outlier` is the one that does not sing.
+  crystals: {
+    spots: [
+      [-4.25, -7.75, 1.25],
+      [4.3, -7.8, 1.35],
+      [-7.3, -5.4, 1.1],
+      [7.5, -5.0, 1.05],
+      [-8.4, -1.4, 0.95],
+      [8.6, -2.6, 0.9],
+      [-8.2, 3.2, 0.7],
+      [8.1, 3.6, 0.75],
+    ],
+    outlier: 2,
+  },
   // Five echo levers. `order` is the true sequence Maya reads from the strain marks
   // ("third, first, fifth, second, fourth"), as lever indices.
   levers: { xs: [2.75, 3.45, 4.15, 4.85, 5.55], z: 1.8, pivotY: 0.66, order: [2, 0, 4, 1, 3] },
@@ -38,4 +56,5 @@ export const PLACE_FOCUS = {
   panel: [5.3, 1.3, -0.6],
   gate: [0, 3.05, -5.55],
   end: [0, 2.8, -6.4],
+  outlier: [-7.3, 1.3, -5.4],
 };

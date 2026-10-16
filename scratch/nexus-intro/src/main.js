@@ -29,6 +29,8 @@ const panLeft = document.getElementById('pan-left');
 const panRight = document.getElementById('pan-right');
 
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+// How loud a corridor spark is from each place (the first gate clock ticks with it).
+const SPARK_LEVEL = { corridor: 1, gate: 0.8, room: 0.45, levers: 0.2, panel: 0.2, end: 0 };
 
 const audio = new NexusAudio();
 let game = null;
@@ -46,6 +48,11 @@ const subtitles = new Subtitles(document.getElementById('subtitle'), {
     const i = line ? CHARACTER_IDS.indexOf(line.speaker) : -1;
     if (i >= 0) appEl.style.setProperty('--speaker-index', String(i));
     if (line?.fx.includes('entropy')) retrigger(appEl, 'entropy-pass');
+    // Planted details: lines that make a timing claim make it true; the crystals answer lines.
+    if (line?.fx.includes('foresee')) chamber.foresee();
+    if (line?.fx.includes('chime')) chamber.chime(false);
+    if (line?.fx.includes('chime-sync')) chamber.chime(true);
+    if (line?.fx.includes('outlier')) chamber.showOutlier(1800);
   },
 });
 
@@ -56,8 +63,11 @@ const chamber = new NexusChamber(canvas, {
     lastHover = place;
   },
   onClockTick: (i, info) => {
-    if (game?.at === 'gate') audio.tick(i, info);
+    // The first clock's spark-driven ticks are voiced by the spark itself.
+    if (game?.at === 'gate' && !info.spark) audio.tick(i, info);
   },
+  onSpark: ({ clear }) => audio.spark((SPARK_LEVEL[game?.at] ?? 0) * (clear ? 0.7 : 1)),
+  onChime: (events, info) => audio.chime(events, info),
 });
 
 function retrigger(el, cls) {
@@ -434,5 +444,7 @@ if (import.meta.env.DEV || new URLSearchParams(window.location.search).has('debu
     panToPlace: (id) => chamber.panToPlace(id),
     settled: () => chamber.cameraSettled,
     quality: () => chamber.post.tier,
+    shot: () => chamber.stationCamera.shot,
+    sparks: () => ({ k: chamber.sparks.k, untilNext: chamber.sparks.untilNext() }),
   };
 }

@@ -9,6 +9,7 @@ import { StationCamera } from './stationCamera.js';
 import { ViewportFraming } from './framing.js';
 import { PointerPicker } from './interact.js';
 import { PostFX, detectQuality } from './post.js';
+import { SparkSchedule } from './sparks.js';
 import { PLACE_FOCUS, LAYOUT } from './layout.js';
 import { CHARACTER, ROOM } from './palette.js';
 
@@ -31,11 +32,13 @@ const placeOf = (id) => (id && id.startsWith('clock') ? 'gate' : id);
  * targets that main.js hands back to the game; the chamber never changes game state itself.
  */
 export class NexusChamber {
-  constructor(canvas, { onPropTap, onHoverChange, onClockTick } = {}) {
+  constructor(canvas, { onPropTap, onHoverChange, onClockTick, onSpark, onChime } = {}) {
     this.canvas = canvas;
     this.onPropTap = onPropTap;
     this.onHoverChange = onHoverChange;
     this.onClockTick = onClockTick;
+    this.onSpark = onSpark;
+    this.onChime = onChime;
     this.clock = new THREE.Clock();
     this.view = {
       lens: 'vibrion',
@@ -71,6 +74,10 @@ export class NexusChamber {
     this.props = new NexusProps(this.scene);
     this.clocks = new NexusClocks(this.scene);
     this.clocks.onTick = (i, info) => this.onClockTick?.(i, info);
+    // One rhythm for the corridor plates, the first gate clock and Anne's / Maya's overlays.
+    this.sparks = new SparkSchedule(LAYOUT.sparks, (spark) => this._onSpark(spark));
+    this.props.setSparks(this.sparks);
+    this.room.onChime = (events, info) => this.onChime?.(events, info);
     this.lenses = new LensSystem(this.scene);
     this.motes = new TemporalMotes(this.scene, this.post.settings.motes);
     this.targets = [...this.props.targets, ...this.clocks.targets, ...this.gate.targets];
@@ -192,6 +199,43 @@ export class NexusChamber {
     }
   }
 
+  _onSpark({ plate, k }) {
+    this.clocks.spark();
+    const [x, z] = LAYOUT.traps[plate];
+    const clear = !!this.view.flags?.corridorClear;
+    this.props.burst(new THREE.Vector3(x, 0, z), clear ? 0x9fb4ff : ROOM.warning, {
+      from: 0.15,
+      to: 0.85,
+      dur: 0.35,
+      y: 0.3,
+      intensity: clear ? 1.2 : 3,
+    });
+    this.onSpark?.({ plate, k, clear });
+  }
+
+  /**
+   * Make Anne's timing calls come true (lines tagged #fx:foresee). In the corridor she calls the
+   * left plate in four seconds; at the gate, the first clock's next tick in about three.
+   */
+  foresee() {
+    if (this.view.at === 'corridor') this.sparks.foresee(4.0, 0); // trap 0 = the left plate
+    else if (this.view.at === 'gate') {
+      const u = this.sparks.untilNext();
+      if (u < 2.5 || u > 3.5) this.sparks.foresee(3.0);
+    }
+  }
+
+  /** Ring the crystals (#fx:chime ragged, #fx:chime-sync in phase). */
+  chime(inPhase = false) {
+    return this.room.chime(inPhase);
+  }
+
+  /** The ending drifts to the crystal that did not sing (#fx:outlier), after the chime lands. */
+  showOutlier(delayMs = 0) {
+    clearTimeout(this._outlierTimer);
+    this._outlierTimer = setTimeout(() => this.stationCamera.setShot('outlier'), delayMs);
+  }
+
   _clockPulse(i, color) {
     const p = this.clocks.clockWorldPosition(i, new THREE.Vector3());
     this.props.burst(new THREE.Vector3(p.x, 0, LAYOUT.gate.z + 1.0), color, { from: 0.3, to: 2.6, dur: 0.9, y: 0.34 });
@@ -216,6 +260,7 @@ export class NexusChamber {
   /** World point of what the player is looking at (portrait crop focus + flash placement). */
   _subjectPoint(target = new THREE.Vector3()) {
     const { at, flags = {} } = this.view;
+    if (this.stationCamera.shot === 'outlier') return target.set(...PLACE_FOCUS.outlier);
     if (at === 'gate') return target.copy(this.clocks.group.position);
     const f = this.props.focusPoint(at);
     if (f && at === 'panel' && flags.panelLive && !flags.panelClear) {
@@ -290,13 +335,14 @@ export class NexusChamber {
     if (!resizeOnly) {
       const t = this.clock.elapsedTime;
       this.stationCamera.update(dt);
+      this.sparks.update(dt);
       this.gate.update(t, dt);
       this.props.update(t, dt);
       this.clocks.update(t, dt);
       this.motes.update(t, dt, { active: v.lens, atGate, sealed: f.gateClear });
 
       const sync = f.gateClear ? 1 : atGate ? (v.gateStep / 4) * 0.5 : 0;
-      this.room.update(t, dt, { sync });
+      this.room.update(t, dt, { sync, sealed: !!f.gateClear, ambientChimes: !(atGate && v.playing) && v.at !== 'end' });
 
       const clockPositions = this.clocks.clocks.map((c) => c.root.getWorldPosition(new THREE.Vector3()));
       this.lenses.update({
@@ -309,6 +355,7 @@ export class NexusChamber {
         focus: this._bracketPoint(),
         clocks: clockPositions,
         clockScale: this.clocks.group.scale.x,
+        sparks: this.sparks,
       });
 
       const modeColor = CHARACTER[v.lens]?.main ?? ROOM.primary;
