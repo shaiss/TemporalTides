@@ -1,0 +1,603 @@
+{
+  "date": "2026-09-21",
+  "passed": 33,
+  "failed": 0,
+  "results": [
+    {
+      "id": "happy.beat1",
+      "pass": true,
+      "detail": "Beat 1 cleared in Anne mode",
+      "evidence": {
+        "vars": {
+          "active": "anne",
+          "beat1_clear": true,
+          "beat2_clear": false,
+          "beat3_clear": false,
+          "beat4_clear": false,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "happy.beat2",
+      "pass": true,
+      "detail": "Beat 2 cleared in Maya mode",
+      "evidence": {
+        "vars": {
+          "active": "maya",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": false,
+          "beat4_clear": false,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "happy.beat3",
+      "pass": true,
+      "detail": "Beat 3 cleared in Eli mode",
+      "evidence": {
+        "vars": {
+          "active": "eli",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": false,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "happy.beat4",
+      "pass": true,
+      "detail": "Beat 4 cleared in Vibrion mode",
+      "evidence": {
+        "vars": {
+          "active": "vibrion",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "happy.b5.pre",
+      "pass": true,
+      "detail": "At beat5 step 0",
+      "evidence": {
+        "vars": {
+          "active": "anne",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "happy.b5.anne",
+      "pass": true,
+      "detail": "Step → 1 after Anne",
+      "evidence": {
+        "vars": {
+          "active": "anne",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 1,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "happy.b5.maya",
+      "pass": true,
+      "detail": "Step → 2 after Maya",
+      "evidence": {
+        "vars": {
+          "active": "maya",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 2,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "happy.b5.eli",
+      "pass": true,
+      "detail": "Step → 3 after Eli",
+      "evidence": {
+        "vars": {
+          "active": "eli",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 3,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "happy.b5.clear",
+      "pass": true,
+      "detail": "Beat 5 cleared; reached beat 6 resonance tease",
+      "evidence": {
+        "vars": {
+          "active": "vibrion",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 4,
+          "beat5_clear": true,
+          "idle_hint_shown": false
+        },
+        "textSnippet": "Vibrational Manipulation meets the seal. The four clocks align — timeline friction eases into sync, not surrender.\nMaya helps you see the pattern forming in the chamber — with Vibrion's leadership hol"
+      }
+    },
+    {
+      "id": "happy.end",
+      "pass": true,
+      "detail": "Story ended after beat 6",
+      "evidence": {
+        "canContinue": false,
+        "choices": []
+      }
+    },
+    {
+      "id": "wrong.beat1",
+      "pass": true,
+      "detail": "Wrong mode fails and stays in beat (flag beat1_clear=false)",
+      "evidence": {
+        "vars": {
+          "active": "vibrion",
+          "beat1_clear": false,
+          "beat2_clear": false,
+          "beat3_clear": false,
+          "beat4_clear": false,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        },
+        "textSnippet": "Without Foresight, the corridor punishes guesswork. Back out and try another lens.\nThe hazard corridor flickers. Trap timing is buried in noise unless something overlays the future",
+        "choices": [
+          "Press forward without the hazard overlay",
+          "Switch active character",
+          "Pause — accessibility hint stub (idle)"
+        ]
+      }
+    },
+    {
+      "id": "wrong.beat2",
+      "pass": true,
+      "detail": "Wrong mode fails and stays in beat (flag beat2_clear=false)",
+      "evidence": {
+        "vars": {
+          "active": "anne",
+          "beat1_clear": true,
+          "beat2_clear": false,
+          "beat3_clear": false,
+          "beat4_clear": false,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        },
+        "textSnippet": "The levers fight you. Maya's lens is needed to mark the pattern.\nEcho levers answer in the wrong order. Relative strain and markings hide the true sequence unless someone marks wha",
+        "choices": [
+          "Pull levers by guess",
+          "Switch active character",
+          "Pause — hint stub"
+        ]
+      }
+    },
+    {
+      "id": "wrong.beat3",
+      "pass": true,
+      "detail": "Wrong mode fails and stays in beat (flag beat3_clear=false)",
+      "evidence": {
+        "vars": {
+          "active": "maya",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": false,
+          "beat4_clear": false,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        },
+        "textSnippet": "The window slams shut. Eli's lens is required to move fast enough.\nMaya's marked sequence still needs speed: a closing window will not wait for careful hands.",
+        "choices": [
+          "Try to finish the sequence at ordinary pace",
+          "Switch active character",
+          "Pause — hint stub"
+        ]
+      }
+    },
+    {
+      "id": "wrong.beat4",
+      "pass": true,
+      "detail": "Wrong mode fails and stays in beat (flag beat4_clear=false)",
+      "evidence": {
+        "vars": {
+          "active": "anne",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": false,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        },
+        "textSnippet": "The panel stays dead. Vibrion must be active for this energy beat.\nA dead panel — tied to the world's electrical components. One lever is stuck; Maya cannot read this pattern.",
+        "choices": [
+          "Try to energize the panel alone",
+          "Switch active character"
+        ]
+      }
+    },
+    {
+      "id": "wrong.beat4.eli_partner",
+      "pass": true,
+      "detail": "Eli partner stub does not clear beat 4",
+      "evidence": {
+        "vars": {
+          "active": "eli",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": false,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        },
+        "textSnippet": "Eli can assist, but the energy gate does not open without Vibrion active on the panel.\nA dead panel — tied to the world's electrical components. One lever is stuck; Maya cannot rea"
+      }
+    },
+    {
+      "id": "solo.pre",
+      "pass": true,
+      "detail": "At step 0",
+      "evidence": {
+        "vars": {
+          "active": "anne",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "solo.fail",
+      "pass": true,
+      "detail": "Solo-force fails; stays at step 0; beat5_clear false",
+      "evidence": {
+        "vars": {
+          "active": "anne",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        },
+        "textSnippet": "One lens cannot bully four disagreeing clocks into agreement. Switch through every mode in order until each timeline has spoken.\nFour clock faces hang over the gate, out of sync. Friction from different timelines — sync "
+      }
+    },
+    {
+      "id": "order.maya_first",
+      "pass": true,
+      "detail": "Non-Anne at step 0 fails; step stays 0",
+      "evidence": {
+        "vars": {
+          "active": "maya",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        },
+        "textSnippet": "The clocks stutter: this step needs a different lens and order. Sync in sequence — Anne (tick) → Maya (lock) → Eli (window) → Vibrion (seal).\nFour clock faces hang over the gate, out of sync. Friction"
+      }
+    },
+    {
+      "id": "order.skip_maya",
+      "pass": true,
+      "detail": "Skipping Maya at step 1 keeps step=1",
+      "evidence": {
+        "vars": {
+          "active": "eli",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 1,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        },
+        "textSnippet": "The clocks stutter: this step needs a different lens and order. Sync in sequence — Anne (tick) → Maya (lock) → Eli (window) → Vibrion (seal).\nFour clock faces hang over the gate, out of sync. Friction"
+      }
+    },
+    {
+      "id": "order.skip_eli",
+      "pass": true,
+      "detail": "Skipping Eli at step 2 keeps step=2",
+      "evidence": {
+        "vars": {
+          "active": "vibrion",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 2,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "order.wrong_power",
+      "pass": true,
+      "detail": "Non-Vibrion at step 3 keeps step=3; no clear",
+      "evidence": {
+        "vars": {
+          "active": "anne",
+          "beat1_clear": true,
+          "beat2_clear": true,
+          "beat3_clear": true,
+          "beat4_clear": true,
+          "beat5_step": 3,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "hint.pre",
+      "pass": true,
+      "detail": "idle_hint_shown starts false",
+      "evidence": {
+        "vars": {
+          "active": "vibrion",
+          "beat1_clear": false,
+          "beat2_clear": false,
+          "beat3_clear": false,
+          "beat4_clear": false,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": false
+        }
+      }
+    },
+    {
+      "id": "hint.available",
+      "pass": true,
+      "detail": "Hint choice present when idle_hint_shown false",
+      "evidence": {
+        "choices": [
+          "Press forward without the hazard overlay",
+          "Switch active character",
+          "Pause — accessibility hint stub (idle)"
+        ]
+      }
+    },
+    {
+      "id": "hint.shown",
+      "pass": true,
+      "detail": "Hint sets idle_hint_shown and shows stub text",
+      "evidence": {
+        "vars": {
+          "active": "vibrion",
+          "beat1_clear": false,
+          "beat2_clear": false,
+          "beat3_clear": false,
+          "beat4_clear": false,
+          "beat5_step": 0,
+          "beat5_clear": false,
+          "idle_hint_shown": true
+        },
+        "textSnippet": "(Hint stub) Try Anne — Foresight reveals hazard options others do not see.\nThe hazard corridor flickers. Trap timing is buried in noise unless something overlays the future hazard."
+      }
+    },
+    {
+      "id": "hint.once",
+      "pass": true,
+      "detail": "Hint choice removed after idle_hint_shown true",
+      "evidence": {
+        "choices": [
+          "Press forward without the hazard overlay",
+          "Switch active character"
+        ]
+      }
+    },
+    {
+      "id": "mode.nonsticky.0_anne",
+      "pass": true,
+      "detail": "After switching to anne, mode_switch offers other three + Keep (non-sticky)",
+      "evidence": {
+        "offered": {
+          "anne": false,
+          "maya": true,
+          "eli": true,
+          "vibrion": true,
+          "keep": true
+        },
+        "active": "anne",
+        "choices": [
+          "Maya — Pattern Sense",
+          "Eli — Kinetic Rush",
+          "Vibrion — Vibrational Manipulation",
+          "Keep current: anne"
+        ]
+      }
+    },
+    {
+      "id": "mode.nonsticky.1_maya",
+      "pass": true,
+      "detail": "After switching to maya, mode_switch offers other three + Keep (non-sticky)",
+      "evidence": {
+        "offered": {
+          "anne": true,
+          "maya": false,
+          "eli": true,
+          "vibrion": true,
+          "keep": true
+        },
+        "active": "maya",
+        "choices": [
+          "Anne — Foresight",
+          "Eli — Kinetic Rush",
+          "Vibrion — Vibrational Manipulation",
+          "Keep current: maya"
+        ]
+      }
+    },
+    {
+      "id": "mode.nonsticky.2_eli",
+      "pass": true,
+      "detail": "After switching to eli, mode_switch offers other three + Keep (non-sticky)",
+      "evidence": {
+        "offered": {
+          "anne": true,
+          "maya": true,
+          "eli": false,
+          "vibrion": true,
+          "keep": true
+        },
+        "active": "eli",
+        "choices": [
+          "Anne — Foresight",
+          "Maya — Pattern Sense",
+          "Vibrion — Vibrational Manipulation",
+          "Keep current: eli"
+        ]
+      }
+    },
+    {
+      "id": "mode.nonsticky.3_vibrion",
+      "pass": true,
+      "detail": "After switching to vibrion, mode_switch offers other three + Keep (non-sticky)",
+      "evidence": {
+        "offered": {
+          "anne": true,
+          "maya": true,
+          "eli": true,
+          "vibrion": false,
+          "keep": true
+        },
+        "active": "vibrion",
+        "choices": [
+          "Anne — Foresight",
+          "Maya — Pattern Sense",
+          "Eli — Kinetic Rush",
+          "Keep current: vibrion"
+        ]
+      }
+    },
+    {
+      "id": "mode.nonsticky.4_anne",
+      "pass": true,
+      "detail": "After switching to anne, mode_switch offers other three + Keep (non-sticky)",
+      "evidence": {
+        "offered": {
+          "anne": false,
+          "maya": true,
+          "eli": true,
+          "vibrion": true,
+          "keep": true
+        },
+        "active": "anne",
+        "choices": [
+          "Maya — Pattern Sense",
+          "Eli — Kinetic Rush",
+          "Vibrion — Vibrational Manipulation",
+          "Keep current: anne"
+        ]
+      }
+    },
+    {
+      "id": "playtime.estimate",
+      "pass": true,
+      "detail": "Within / near FOIL 10–15m band depending on reading pace (~19 decisions, ~3529 chars prose; est 8–14 min)",
+      "evidence": {
+        "decisions": 19,
+        "textChars": 3529,
+        "estimateMinutes": [
+          8,
+          14
+        ],
+        "path": [
+          "Step into",
+          "Continue as Vibrion",
+          "Switch active",
+          "Anne —",
+          "Use Foresight",
+          "Maya —",
+          "Use Pattern Sense",
+          "Eli —",
+          "Use Kinetic Rush",
+          "Vibrion —",
+          "Use Vibrational Manipulation",
+          "Anne —",
+          "Foresight — mark",
+          "Maya —",
+          "Pattern Sense — lock",
+          "Eli —",
+          "Kinetic Rush — hit",
+          "Vibrion —",
+          "Vibrational Manipulation — power"
+        ]
+      }
+    },
+    {
+      "id": "preview.bug.cumulative_log",
+      "pass": true,
+      "detail": "Confirmed: storyEl.textContent += accumulates mode_switch \"Active character\" lines",
+      "evidence": {
+        "severity": "post-freeze polish"
+      }
+    },
+    {
+      "id": "preview.bug.hud_ability_lag",
+      "pass": true,
+      "detail": "Confirmed: tagMode sticky after beat 0 #mode:vibrion; HUD cue branch overrides chip-synced active",
+      "evidence": {
+        "severity": "post-freeze polish",
+        "stickyCueBranch": true,
+        "clearsInContinue": false,
+        "assigns": [
+          "tagMode = null",
+          "tagMode = tag.slice(5)"
+        ]
+      }
+    }
+  ]
+}
