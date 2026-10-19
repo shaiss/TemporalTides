@@ -15,6 +15,10 @@ export default defineConfig({
   
   // Clean URLs (removes .html extension)
   cleanUrls: true,
+
+  sitemap: {
+    hostname: 'https://temporaltides.com'
+  },
   
   // Last updated timestamp
   lastUpdated: true,
