@@ -103,8 +103,8 @@ The beat sheet's rule reads: *"One active character at a time. Same Nexus chambe
 The intent (one lens at a time, same room, different truth) is unchanged; only the wording moves from menu terms to world terms.
 
 ## Open decisions
-The open-room playable (`scratch/nexus-intro`) takes a provisional answer to each, so the decisions can be judged in play:
+Product-ruled by Tide (PM): all three are kept as the playable has them, matching shipped #45/#47. The admiral may override in review.
 
-1. **Gate availability:** open from the start, with Vibrion's line covering the dead panel (recommended), or only after the three solo stations are clear? *Playable: open from the start.*
-2. **Corridor payoff:** is crossing the corridor self-contained, or should it lead to or leave something used elsewhere in the room? *Playable: self-contained; Anne's safe line stays drawn on the floor.*
-3. **Team staging:** do the three inactive characters appear in the chamber? The lines assume the team is together, as in storyboard Panel 6. *Playable: not staged; the team is the portrait strip.*
+1. **Gate availability:** open from the start, with Vibrion's line covering the dead panel (recommended), or only after the three solo stations are clear? **Ruled: open from the start.**
+2. **Corridor payoff:** is crossing the corridor self-contained, or should it lead to or leave something used elsewhere in the room? **Ruled: self-contained; Anne's safe line stays drawn on the floor.**
+3. **Team staging:** do the three inactive characters appear in the chamber? The lines assume the team is together, as in storyboard Panel 6. **Ruled: not staged; the team is the portrait strip.**
