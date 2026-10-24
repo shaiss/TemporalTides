@@ -24,7 +24,7 @@ The intro is an MVP that showcases the idea, the visuals and the characters. Pla
 | Tap what is lit | Act. Only a character who can act there sees something lit |
 | Drag portraits into slots, then **Sync** | Coordination gate only: plan who goes in what order |
 
-That is the whole control set. Every action is a single tap.
+That is the whole control set. Every action is a single tap, except planning the coordination gate, where portraits are dragged into slots.
 
 ## Not in the MVP
 
@@ -88,7 +88,7 @@ No links or locks are drawn on screen. Characters say what is missing.
 - There is no choice list. The UI sets three things — the active character (`lens`), where the player is (`at`), and the gate plan (`plan1`…`plan4`) — and runs a knot: `arrive`, `look`, `act`, `gate_begin`, `gate_step` (once per slot), `resonance`.
 - Two Ink functions decide what is lit: `can_enter(place)` and `can_act()`. The UI never decides who can do what.
 - Lines are Ink text tagged `#say:<character>` and `#id:<line id>`, plus `#fx:` cues (`done` ends a place, `fail`, `clear`, `entropy`). The UI shows them as subtitles.
-- `npm test` drives the same flow headlessly:
+- `npm test` in `scratch/nexus-intro` (not the repo root, whose `test` script builds the docs) compiles the Ink and drives the same flow headlessly (`test/game.test.mjs`):
   - each station clears only with its character(s), in its order
   - of all 256 gate plans, only Anne → Maya → Eli → Vibrion seals, and only with the panel finished
   - stations can be cleared in any order; backing out keeps progress; the gate can be failed and come back to

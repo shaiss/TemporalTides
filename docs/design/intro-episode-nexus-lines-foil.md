@@ -131,4 +131,4 @@ Each line is tagged Ink content so the words live in one place. The playable's `
 }
 ```
 
-`#say` names the speaker, `#id` matches the ids in the tables above, and an optional `#fx` cues the room (`done`, `clear`, `fail`, `entropy`, and for the planted details `foresee`, `chime`, `chime-sync`, `outlier`).
+`#say` names the speaker, `#id` is the line's stable id (the ids used in this doc and in the planted details; `scratch/nexus-intro/nexus-intro.ink` is the registry of record), and an optional `#fx` cues the room (`done`, `clear`, `fail`, `entropy`, and for the planted details `foresee`, `chime`, `chime-sync`, `outlier`).
