@@ -12,7 +12,7 @@ The intro is an MVP that showcases the idea, the visuals and the characters. Pla
 
 - One open chamber with four stations: **Hazard corridor**, **Echo levers**, **Dead panel**, **Coordination gate**.
 - The player picks any station, goes in, and can back out at any time to try another.
-- Stuck on one station? Back out and try another. That is the MVP's help system.
+- Stuck on one station? Back out and try another. That is the MVP's help system — no timed idle hint (see **Not in the MVP** and **Open decisions**).
 - Nothing on screen names beats, steps or puzzles.
 
 ## Everything the player has to learn
@@ -30,7 +30,7 @@ That is the whole control set. Every action is a single tap, except planning the
 
 - Action menus or choice lists
 - Per-station gestures (timing taps, holds, traced paths)
-- A hint system. Later, for the full game: perception hints for a part the player has not figured out
+- A timed idle hint. The beat sheet's success criterion "Hint after idle threshold (accessibility per CoreLoop)" is **overridden for this MVP** (Tide, PM): help is back-out / try another station only. The full game keeps CoreLoop accessibility, including perception hints after idle when the player has not figured out a part
 - Ability meters, cooldowns or switch delays
 - Visible dependency links between stations or clocks
 - Beat numbers, step counters or designer text on screen
@@ -51,7 +51,7 @@ When the active character looks at a station:
 |---|---|---|---|---|
 | Hazard corridor | Anne | Ghost firings a beat ahead and the safe line between them | Tap the line: the corridor is crossed | Corridor clear |
 | Echo levers | Maya, then Eli | **Maya:** strain marks giving the lever order. **Eli,** once marked: the marked order with the closing window slowed | Maya marks the order; the window closes too fast for careful hands; Eli completes it | Levers clear |
-| Dead panel | Vibrion, then Eli | **Vibrion:** grid current under the floor and the break in the panel. **Eli,** once live: the jammed lever | Vibrion couples the panel; the lever is jammed; Eli shoves it free | Panel live; the gate's seal can now draw power |
+| Dead panel | Vibrion, then Eli | **Vibrion:** grid current under the floor and the break in the panel. **Eli,** once live: the jammed lever | Vibrion couples the panel; the lever is jammed; Eli shoves it free | Panel live after Vibrion; panel clear after Eli's shove — only then can the gate's seal draw power |
 | Coordination gate | All four, by plan | Each clock's state as that character perceives it | Plan, Sync, playback | Episode ending |
 
 ## Dependencies the player discovers by looking
@@ -70,7 +70,7 @@ No links or locks are drawn on screen. Characters say what is missing.
 3. Press **Sync**. The plan plays out step by step on the clocks.
 4. At the first step that cannot happen, playback stops and that character says why. Later slots stay unplayed.
 5. One character in every slot: the clocks grind against each other, and Vibrion says it takes all four.
-6. Anne → Maya → Eli → Vibrion with a live panel: the seal powers, then the resonance ending plays.
+6. Anne → Maya → Eli → Vibrion with the panel finished (clear): the seal powers, then the resonance ending plays.
 7. **Back** leaves the gate at any time. The plan stays in the slots.
 
 ## On screen
@@ -108,3 +108,4 @@ Product-ruled by Tide (PM): all three are kept as the playable has them, matchin
 1. **Gate availability:** open from the start, with Vibrion's line covering the dead panel (recommended), or only after the three solo stations are clear? **Ruled: open from the start.**
 2. **Corridor payoff:** is crossing the corridor self-contained, or should it lead to or leave something used elsewhere in the room? **Ruled: self-contained; Anne's safe line stays drawn on the floor.**
 3. **Team staging:** do the three inactive characters appear in the chamber? The lines assume the team is together, as in storyboard Panel 6. **Ruled: not staged; the team is the portrait strip.**
+4. **Idle hint (accessibility):** timed hint after the player sits idle, as in the beat sheet's CoreLoop accessibility criterion? **Ruled (Tide, PM, Option A): not in MVP.** Help stays back-out / try another station, matching shipped open-room playable (#45/#47) and this FOIL's cut of coach chrome. Timed idle hints defer to the full game with CoreLoop accessibility. The admiral may reverse in #44 redline.

@@ -6,7 +6,7 @@
 
 ## Line rules
 
-- Only the active character speaks. One line per look, per action, or per broken plan.
+- Look and act lines are spoken by the active lens. Exceptions: (1) coordination-gate Sync playback / breaks speak as the character in that slot without changing the lens; (2) the resonance ending sequences Maya then Vibrion. Still one spoken line at a time.
 - A line says what that character perceives and what limits them. It never names who should act.
 - Lines are short enough to read at a glance: at most 26 words.
 - No designer vocabulary in any line: puzzle, step, station, beat numbers.
@@ -64,7 +64,7 @@ Moments: **look** = the active character looks at a station; **can act** = their
 | look (no reference yet) | Maya | The first clock keeps the corridor's intervals: 2.1, 5.8, 0.9, 3.3. I can lock the second to it, but I cannot predict its next tick. | Maya: Temporal Rhythm Sense; Beat sheet beat 5: Maya locks sequence against the tick; Maya: Pattern Sense requires observation; Planted details FOIL: corridor intervals = clock 1 tempo |
 | look (no lock yet) | Eli | Hey — that's the lever window! Same slot, third clock. But it won't sit still. I'd just be fast and wrong again. | Eli: Reaction ~50 ms; Beat sheet beat 5: Eli hits the window; Planted details FOIL: lever window slot on clock 3 |
 | look (panel still dead) | Vibrion | The seal needs more than I'm carrying. Its grid feed runs through that dead panel by the levers. | Vibrion: Storage Capacity / Energy Absorption (power grids); Beat sheet beat 5: Vibrion powers the seal from the world grid; Beat sheet beat 4: dead panel |
-| look (panel live) | Vibrion | If I couple now, I'm powering four clocks out of phase. Get them agreeing first, then the seal is mine. | Vibrion: Verbal Tics ('out of phase'); Beat sheet beat 5 order |
+| look (panel clear) | Vibrion | If I couple now, I'm powering four clocks out of phase. Get them agreeing first, then the seal is mine. | Vibrion: Verbal Tics ('out of phase'); Beat sheet beat 5 order |
 | plan breaks at Maya | Maya | Lock to what? There is no reference beat yet. | Maya: Questions for clarity |
 | plan breaks at Eli | Eli | It won't hold still! I can't catch a window that keeps moving. | Eli: Speech Patterns (energetic, present tense) |
 | plan breaks at Vibrion | Vibrion | Still out of phase. I'm not forcing power through that. | Vibrion: Fears (losing control of powers); Vibrion: Verbal Tics |
