@@ -1,238 +1,385 @@
 import * as THREE from 'three';
-import {
-  applyRoomShadows,
-  buildRoomShell,
-  configureRoomRenderer,
-  installRoomBaseLighting,
-} from './room.js';
-import { NexusBeat5Clocks } from './clocks.js';
-import { CameraBeat } from './cameraBeat.js';
-import {
-  LENS_PRIMARY,
-  LENS_SECONDARY,
-  LENS_ACCENT,
-  buildLensOverlays,
-  applyActiveLens,
-  tickLensAnimation,
-  createOverlayMaterialFactory,
-} from './lenses.js';
+import { buildRoom, configureRoomRenderer } from './room.js';
+import { NexusGate } from './gate.js';
+import { NexusProps } from './props.js';
+import { NexusClocks } from './clocks.js';
+import { LensSystem } from './lenses.js';
+import { TemporalMotes } from './particles.js';
+import { StationCamera } from './stationCamera.js';
+import { ViewportFraming } from './framing.js';
+import { PointerPicker } from './interact.js';
+import { PostFX, detectQuality } from './post.js';
+import { SparkSchedule } from './sparks.js';
+import { PLACE_FOCUS, LAYOUT } from './layout.js';
+import { CHARACTER, ROOM } from './palette.js';
 
-const PRIMARY = LENS_PRIMARY;
-const SECONDARY = LENS_SECONDARY;
-const ACCENT = LENS_ACCENT;
+const GATE_POINT = new THREE.Vector3(...LAYOUT.gate.center);
+const _v = new THREE.Vector3();
+const _w = new THREE.Vector3();
+// Frame-time cap. Default 0.1 s keeps animation stable through hitches; `?dtcap=1` lets very slow
+// software-GL captures (SwiftShader ~1 fps) advance in real time so screenshots show settled states.
+const DT_CAP = (() => {
+  const v = Number(new URLSearchParams(window.location.search).get('dtcap'));
+  return v > 0 && v <= 2 ? v : 0.1;
+})();
 
+/** The clocks and the arch are one place: the gate. */
+const placeOf = (id) => (id && id.startsWith('clock') ? 'gate' : id);
+
+/**
+ * Time Nexus chamber — Three.js presentation for the open room.
+ * The game (and so Ink) stays the rules brain: sync() is the only state input. Props are tap
+ * targets that main.js hands back to the game; the chamber never changes game state itself.
+ */
 export class NexusChamber {
-  constructor(canvas) {
+  constructor(canvas, { onPropTap, onHoverChange, onClockTick, onSpark, onChime } = {}) {
     this.canvas = canvas;
+    this.onPropTap = onPropTap;
+    this.onHoverChange = onHoverChange;
+    this.onClockTick = onClockTick;
+    this.onSpark = onSpark;
+    this.onChime = onChime;
     this.clock = new THREE.Clock();
-    this.targetBeat = null;
-    this.beat5Step = 0;
-    this.beat5Clear = false;
-    this.activeMode = 'vibrion';
+    this.view = {
+      lens: 'vibrion',
+      at: 'room',
+      flags: {},
+      gateStep: 0,
+      playing: false,
+    };
+    this.synced = false;
+    this.bound = new Set();
+    this.pointerHover = null;
+    this.hovered = null;
+    this.roomPan = 0.5;
+    this.dragUntil = 0;
+    this.reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
 
-    this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    this.renderer.setClearColor(0x080a12, 1);
-    this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.15;
+    this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
     configureRoomRenderer(this.renderer);
 
     this.scene = new THREE.Scene();
-    this.scene.fog = new THREE.FogExp2(0x080a12, 0.028);
-
     this.camera = new THREE.PerspectiveCamera(48, 1, 0.1, 80);
-    this.cameraBeat = new CameraBeat(this.camera);
-    this.camera.position.set(0.3, 3.8, 10.8);
-    this.camera.lookAt(0, 1.4, -2);
+    this.stationCamera = new StationCamera(this.camera);
+    this.framing = new ViewportFraming(this.camera);
 
-    this.modeLights = {};
+    const quality = detectQuality();
+    this.post = new PostFX(this.renderer, this.scene, this.camera, quality);
 
-    installRoomBaseLighting(this.scene);
-    this._buildSceneLights();
-    const { gateFrame } = buildRoomShell(this.scene);
-    this.gateFrame = gateFrame;
-    this._buildProps();
-    this._buildLensLayer();
-    this._buildGateFocus();
-    this.beat5Clocks = new NexusBeat5Clocks(this.scene, this._mat.bind(this));
-
-    this._onResize();
-    window.addEventListener('resize', () => this._onResize());
-    this._animate();
-  }
-
-  _mat(color, emissive = 0x000000, emissiveIntensity = 0, opts = {}) {
-    return new THREE.MeshStandardMaterial({
-      color,
-      emissive,
-      emissiveIntensity,
-      metalness: opts.metalness ?? 0.4,
-      roughness: opts.roughness ?? 0.55,
-      transparent: opts.transparent ?? false,
-      opacity: opts.opacity ?? 1,
+    this.room = buildRoom(this.scene, this.renderer);
+    this.gate = new NexusGate(this.scene);
+    this.gate.targets.forEach((m) => {
+      m.userData.propId = 'gate';
     });
-  }
+    this.props = new NexusProps(this.scene);
+    this.clocks = new NexusClocks(this.scene);
+    this.clocks.onTick = (i, info) => this.onClockTick?.(i, info);
+    // One rhythm for the corridor plates, the first gate clock and Anne's / Maya's overlays.
+    this.sparks = new SparkSchedule(LAYOUT.sparks, (spark) => this._onSpark(spark));
+    this.props.setSparks(this.sparks);
+    this.room.onChime = (events, info) => this.onChime?.(events, info);
+    this.lenses = new LensSystem(this.scene);
+    this.motes = new TemporalMotes(this.scene, this.post.settings.motes);
+    this.targets = [...this.props.targets, ...this.clocks.targets, ...this.gate.targets];
 
-  _buildSceneLights() {
-    this.gateLight = new THREE.SpotLight(PRIMARY, 0, 18, Math.PI / 5, 0.4);
-    this.gateLight.position.set(0, 5.5, 2);
-    this.gateLight.target.position.set(0, 2.5, -6);
-    this.scene.add(this.gateLight);
-    this.scene.add(this.gateLight.target);
-
-    const modes = {
-      anne: { color: 0x88bbff, pos: [-5, 2.5, 3] },
-      maya: { color: SECONDARY, pos: [4, 2, 3] },
-      eli: { color: ACCENT, pos: [2, 1.5, 5] },
-      vibrion: { color: PRIMARY, pos: [6, 2, -1] },
+    this.post.onTierChange = (tier, s) => {
+      this.room.setShadowMapSize(s.shadowMap);
+      this.motes.build(s.motes);
     };
-    Object.entries(modes).forEach(([id, cfg]) => {
-      const light = new THREE.PointLight(cfg.color, 0, 22);
-      light.position.set(...cfg.pos);
-      this.scene.add(light);
-      this.modeLights[id] = light;
+    this.room.setShadowMapSize(this.post.settings.shadowMap);
+
+    // Lens tint + activation flash lights.
+    // Hemisphere = diffuse-only tint, so the active lens colors the room without a floor hotspot.
+    this.modeLight = new THREE.HemisphereLight(CHARACTER.vibrion.main, 0x05060c, 0);
+    this.flashLight = new THREE.PointLight(0xffffff, 0, 18, 1.4);
+    this.flashLight.position.set(0, 2.5, 2);
+    this.scene.add(this.modeLight, this.flashLight);
+    this.flash = 0;
+
+    this.picker = new PointerPicker(canvas, this.camera, () => this.targets, {
+      onHover: (id) => {
+        this.pointerHover = placeOf(id);
+        this._refreshHover();
+      },
+      onTap: (id) => {
+        const place = placeOf(id);
+        if (this.bound.has(place)) this.onPropTap?.(place);
+      },
+      onDrag: (dx) => this._dragPan(dx),
     });
-  }
 
-  _buildGateFocus() {
-    this.gateRing = new THREE.Mesh(
-      new THREE.TorusGeometry(2.4, 0.08, 12, 48),
-      this._mat(PRIMARY, PRIMARY, 0.6),
-    );
-    this.gateRing.position.set(0, 2.5, -6.85);
-    this.scene.add(this.gateRing);
-
-    this.gatePortal = new THREE.Mesh(
-      new THREE.PlaneGeometry(4.2, 3.2),
-      new THREE.MeshBasicMaterial({
-        color: PRIMARY,
-        transparent: true,
-        opacity: 0.12,
-        side: THREE.DoubleSide,
-      }),
-    );
-    this.gatePortal.position.set(0, 2.5, -6.75);
-    this.scene.add(this.gatePortal);
-  }
-
-  _buildProps() {
-    const corridor = new THREE.Mesh(
-      new THREE.BoxGeometry(3.5, 0.12, 6),
-      this._mat(0x1a2030),
-    );
-    corridor.position.set(-4.2, 0.06, 0.5);
-    applyRoomShadows(corridor);
-    this.scene.add(corridor);
-
-    this.trapMeshes = [];
-    for (let i = 0; i < 3; i++) {
-      const trap = new THREE.Mesh(
-        new THREE.BoxGeometry(1, 0.25, 1),
-        this._mat(0x252a3d),
-      );
-      trap.position.set(-4.2 + (i - 1) * 1.1, 0.18, 2.8 - i * 1.4);
-      applyRoomShadows(trap);
-      this.scene.add(trap);
-      this.trapMeshes.push(trap);
+    this._onResize = this._onResize.bind(this);
+    window.addEventListener('resize', this._onResize);
+    if (typeof ResizeObserver !== 'undefined') {
+      this._resizeObserver = new ResizeObserver(this._onResize);
+      this._resizeObserver.observe(canvas);
     }
+    this._onResize();
+    this.renderer.setAnimationLoop(() => this._frame());
+  }
 
-    this.leverMeshes = [];
-    for (let i = 0; i < 4; i++) {
-      const lever = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.14, 0.14, 1.4, 8),
-        this._mat(0x2a3045),
-      );
-      lever.position.set(2.8 + i * 0.75, 0.7, 1.8);
-      lever.rotation.z = (i % 2 === 0 ? 0.3 : -0.25);
-      applyRoomShadows(lever);
-      this.scene.add(lever);
-      this.leverMeshes.push(lever);
+  // —— Game → chamber ——
+  /** view = NexusGame.view() plus presentation-only gate playback ({ gateStep, playing }). */
+  sync(view, { gateStep = 0, playing = false } = {}) {
+    const prevLens = this.view.lens;
+    const f = view.flags;
+    this.view = { ...view, gateStep, playing };
+    const atGate = view.at === 'gate';
+    this.props.sync({ ...f, gateStep });
+    this.clocks.sync({ atGate, gateStep, sealed: f.gateClear, playing });
+    this.gate.setState({ gateStep, sealed: f.gateClear, atGate, ended: view.at === 'end' });
+    this.stationCamera.setPlace(view.at);
+    this.lenses.setActive(view.lens);
+    if (this.synced && prevLens !== view.lens) this._activationFlash(view.lens);
+    this.synced = true;
+  }
+
+  /** Places that answer a tap right now (room: places you can walk to; inside: the thing to act on). */
+  setBindings(ids) {
+    this.bound = new Set(ids);
+    this.props.setBound(ids);
+    this.clocks.setBound(ids.includes('gate') ? ['clock0', 'clock1', 'clock2', 'clock3'] : []);
+    this._refreshHover(true);
+  }
+
+  /** Narrow screens: look around the open room by dragging sideways. */
+  _dragPan(dx) {
+    if (this.view.at !== 'room') return;
+    const range = this.framing.panRange(this.canvas.clientWidth, this.canvas.clientHeight);
+    if (!range) return;
+    this.roomPan = THREE.MathUtils.clamp(this.roomPan - dx / range, 0, 1);
+    this.dragUntil = performance.now() + 120;
+  }
+
+  /** Pan the room crop toward a place (used by the edge arrows on narrow screens). */
+  panToward(direction) {
+    if (this.view.at !== 'room') return;
+    this.roomPan = THREE.MathUtils.clamp(this.roomPan + direction * 0.5, 0, 1);
+  }
+
+  get canPan() {
+    return this.view.at === 'room' && this.framing.cropping;
+  }
+
+  _refreshHover(announce = false) {
+    const id = this.pointerHover && this.bound.has(this.pointerHover) ? this.pointerHover : null;
+    this.canvas.style.cursor = id ? 'pointer' : '';
+    if (id === this.hovered) {
+      if (announce) this.onHoverChange?.(id);
+      return;
     }
-
-    this.panelMesh = new THREE.Mesh(
-      new THREE.BoxGeometry(1.6, 2, 0.22),
-      this._mat(0x1a1f2e),
-    );
-    this.panelMesh.position.set(5.2, 1.5, -0.5);
-    applyRoomShadows(this.panelMesh);
-    this.scene.add(this.panelMesh);
+    this.hovered = id;
+    this.props.setHover(id);
+    this.clocks.setHover(id === 'gate' ? 'clock1' : null);
+    this.gate.setHover(id === 'gate');
+    this.onHoverChange?.(id);
   }
 
-  _buildLensLayer() {
-    const overlayMat = createOverlayMaterialFactory();
-    const { groups, anim } = buildLensOverlays(overlayMat);
-    this.lensGroups = groups;
-    this.lensAnim = anim;
-    Object.values(groups).forEach((g) => this.scene.add(g));
-    applyActiveLens(groups, this.activeMode);
+  // —— Feedback events (from main.js) ——
+  feedback({ type, prop, charId }) {
+    const color = CHARACTER[charId]?.flash ?? ROOM.temporalWhite;
+    if (type === 'clear') {
+      if (prop?.startsWith('clock')) this._clockPulse(Number(prop.slice(5)), color);
+      else if (prop) this.props.pulse(prop, color);
+      this.post.flash(0.45);
+      this._flashLight(color, 26);
+    } else if (type === 'fail') {
+      if (prop?.startsWith('clock') || prop === 'gate') {
+        this.clocks.fail();
+        this.gate.flashWarning();
+      } else if (prop) this.props.fail(prop);
+      this._flashLight(ROOM.warning, 14);
+    } else if (type === 'sync') {
+      this.gate.flashPulse(1);
+      this.post.flash(1.1);
+      this._flashLight(ROOM.temporalWhite, 60);
+      this.props.burst(new THREE.Vector3(0, 0, LAYOUT.gate.z + 1.2), ROOM.temporalWhite, { from: 0.5, to: 8, dur: 1.8, y: 0.34 });
+    } else if (type === 'move') {
+      this.post.flash(0.15);
+    }
   }
 
-  syncFromInk(state) {
-    this.activeMode = state.active;
-    this.targetBeat = state.currentBeat;
-    this.beat5Step = state.beat5Step;
-    this.beat5Clear = state.beat5Clear;
-
-    const inBeatFive = this.targetBeat === 5 || this.targetBeat === '5';
-    this.beat5Clocks?.sync({
-      targetBeat: state.currentBeat,
-      beat5Step: state.beat5Step,
-      beat5Clear: state.beat5Clear,
+  _onSpark({ plate, k }) {
+    this.clocks.spark();
+    const [x, z] = LAYOUT.traps[plate];
+    const clear = !!this.view.flags?.corridorClear;
+    this.props.burst(new THREE.Vector3(x, 0, z), clear ? 0x9fb4ff : ROOM.warning, {
+      from: 0.15,
+      to: 0.85,
+      dur: 0.35,
+      y: 0.3,
+      intensity: clear ? 1.2 : 3,
     });
-    this.cameraBeat.syncFromInk({
-      beat5Step: this.beat5Step,
-      beat5Clear: this.beat5Clear,
-      inBeatFive,
-    });
-    this._updateOverlayVisibility();
+    this.onSpark?.({ plate, k, clear });
   }
 
-  _updateOverlayVisibility() {
-    applyActiveLens(this.lensGroups, this.activeMode);
-    Object.entries(this.modeLights).forEach(([id, light]) => {
-      light.intensity = id === this.activeMode ? 0.55 : 0;
-    });
+  /**
+   * Make Anne's timing calls come true (lines tagged #fx:foresee). In the corridor she calls the
+   * left plate in four seconds; at the gate, the first clock's next tick in about three.
+   */
+  foresee() {
+    if (this.view.at === 'corridor') this.sparks.foresee(4.0, 0); // trap 0 = the left plate
+    else if (this.view.at === 'gate') {
+      const u = this.sparks.untilNext();
+      if (u < 2.5 || u > 3.5) this.sparks.foresee(3.0);
+    }
+  }
+
+  /** Ring the crystals (#fx:chime ragged, #fx:chime-sync in phase). */
+  chime(inPhase = false) {
+    return this.room.chime(inPhase);
+  }
+
+  /** The ending drifts to the crystal that did not sing (#fx:outlier), after the chime lands. */
+  showOutlier(delayMs = 0) {
+    clearTimeout(this._outlierTimer);
+    this._outlierTimer = setTimeout(() => this.stationCamera.setShot('outlier'), delayMs);
+  }
+
+  _clockPulse(i, color) {
+    const p = this.clocks.clockWorldPosition(i, new THREE.Vector3());
+    this.props.burst(new THREE.Vector3(p.x, 0, LAYOUT.gate.z + 1.0), color, { from: 0.3, to: 2.6, dur: 0.9, y: 0.34 });
+  }
+
+  _flashLight(hex, intensity) {
+    this.flashLight.color.set(hex);
+    const f = this._subjectPoint(_v);
+    this.flashLight.position.set(f.x, f.y + 3.2, f.z + 1.6);
+    this.flash = Math.max(this.flash, intensity * (this.reducedMotion ? 0.5 : 1));
+  }
+
+  _activationFlash(charId) {
+    const c = CHARACTER[charId];
+    if (!c) return;
+    const focus = this._subjectPoint();
+    this.props.burst(new THREE.Vector3(focus.x, 0, focus.z), c.flash, { from: 0.4, to: 5.5, dur: 1.1, y: 0.03, intensity: 3.5 });
+    this._flashLight(c.flash, 22);
+    this.post.flash(0.35);
+  }
+
+  /** World point of what the player is looking at (portrait crop focus + flash placement). */
+  _subjectPoint(target = new THREE.Vector3()) {
+    const { at, flags = {} } = this.view;
+    if (this.stationCamera.shot === 'outlier') return target.set(...PLACE_FOCUS.outlier);
+    if (at === 'gate') return target.copy(this.clocks.group.position);
+    const f = this.props.focusPoint(at);
+    if (f && at === 'panel' && flags.panelLive && !flags.panelClear) {
+      // Once the panel is live the jammed lever is the subject: keep it in a narrow crop too.
+      return target.copy(f).lerp(this.props.stuckLever.getWorldPosition(_w), 0.55);
+    }
+    if (f) return target.copy(f);
+    const p = PLACE_FOCUS[at] ?? PLACE_FOCUS.room;
+    return target.set(p[0], p[1], p[2]);
+  }
+
+  /** Anne's timing brackets: on the thing she is looking at; the first clock at the gate. */
+  _bracketPoint() {
+    const { at } = this.view;
+    if (at === 'gate') return this.clocks.clockWorldPosition(0, _v);
+    return this.props.focusPoint(at);
+  }
+
+  /** Client-space point for a prop (used by the capture harness to tap props). */
+  propScreenPoint(id) {
+    let p;
+    if (id === 'gate') p = GATE_POINT.clone();
+    else if (id.startsWith('clock')) p = this.clocks.clockWorldPosition(Number(id.slice(5)), new THREE.Vector3());
+    else p = this.props.focusPoint(id)?.clone();
+    if (!p) return null;
+    if (id === 'levers') p.y = 0.45;
+    if (id === 'corridor') p.set(LAYOUT.traps[1][0], 0.26, LAYOUT.traps[1][1]);
+    p.project(this.camera);
+    const rect = this.canvas.getBoundingClientRect();
+    return { x: rect.left + (p.x * 0.5 + 0.5) * rect.width, y: rect.top + (-p.y * 0.5 + 0.5) * rect.height };
+  }
+
+  /** Point the room crop at a place (capture harness / keyboard entry on narrow screens). */
+  panToPlace(id) {
+    const w = this.canvas.clientWidth;
+    const h = this.canvas.clientHeight;
+    const range = this.framing.panRange(w, h);
+    if (!range) return;
+    const p = id === 'gate' ? GATE_POINT.clone() : this.props.focusPoint(id)?.clone();
+    if (!p) return;
+    const cam = this.camera.clone();
+    cam.aspect = 16 / 9;
+    cam.clearViewOffset();
+    cam.updateProjectionMatrix();
+    p.project(cam);
+    const fullWidth = range + w;
+    const px = (p.x * 0.5 + 0.5) * fullWidth;
+    this.roomPan = THREE.MathUtils.clamp((px - w / 2) / range, 0, 1);
+  }
+
+  get cameraSettled() {
+    return this.stationCamera.settled;
   }
 
   _onResize() {
     const w = this.canvas.clientWidth;
     const h = this.canvas.clientHeight;
     if (!w || !h) return;
-    this.renderer.setSize(w, h, false);
-    this.camera.aspect = w / h;
-    this.camera.updateProjectionMatrix();
+    this.post.setSize(w, h);
+    this.clocks.setAspect(w / h);
+    this.stationCamera.setAspect(w / h);
+    this._frame(true);
   }
 
-  _animate() {
-    requestAnimationFrame(() => this._animate());
-    const t = this.clock.getElapsedTime();
+  _frame(resizeOnly = false) {
+    const frameDt = resizeOnly ? 0 : this.clock.getDelta();
+    const dt = Math.min(frameDt, DT_CAP);
+    const v = this.view;
+    const f = v.flags || {};
+    const atGate = v.at === 'gate';
 
-    const onBeat5 = this.targetBeat === '5' || this.targetBeat === 5;
-    this.cameraBeat.update();
-    this.beat5Clocks?.update(t);
+    if (!resizeOnly) {
+      const t = this.clock.elapsedTime;
+      this.stationCamera.update(dt);
+      this.sparks.update(dt);
+      this.gate.update(t, dt);
+      this.props.update(t, dt);
+      this.clocks.update(t, dt);
+      this.motes.update(t, dt, { active: v.lens, atGate, sealed: f.gateClear });
 
-    const syncFactor = this.beat5Clear ? 1 : Math.min(this.beat5Step / 4, 0.9);
+      const sync = f.gateClear ? 1 : atGate ? (v.gateStep / 4) * 0.5 : 0;
+      this.room.update(t, dt, { sync, sealed: !!f.gateClear, ambientChimes: !(atGate && v.playing) && v.at !== 'end' });
 
-    if (this.gateLight) {
-      const pulse = this.beat5Clear ? 2.4 : 0.9 + Math.sin(t * 2.5) * 0.35;
-      this.gateLight.intensity = onBeat5 ? pulse : 0;
+      const clockPositions = this.clocks.clocks.map((c) => c.root.getWorldPosition(new THREE.Vector3()));
+      this.lenses.update({
+        t,
+        dt,
+        camera: this.camera,
+        at: v.at,
+        flags: f,
+        gateStep: v.gateStep,
+        focus: this._bracketPoint(),
+        clocks: clockPositions,
+        clockScale: this.clocks.group.scale.x,
+        sparks: this.sparks,
+      });
+
+      const modeColor = CHARACTER[v.lens]?.main ?? ROOM.primary;
+      this.modeLight.color.lerp(new THREE.Color(modeColor), 1 - Math.exp(-4 * dt));
+      this.modeLight.intensity += (0.55 - this.modeLight.intensity) * (1 - Math.exp(-3 * dt));
+      this.flash = Math.max(0, this.flash - dt * this.flash * 3.2 - dt * 2);
+      this.flashLight.intensity = this.flash;
     }
-    if (this.gateRing) {
-      const scale = onBeat5 ? 1 + Math.sin(t * 2) * 0.04 : 1;
-      this.gateRing.scale.set(scale, scale, scale);
-      this.gateRing.material.emissiveIntensity = onBeat5 ? 0.7 + syncFactor * 0.5 : 0.15;
-    }
-    if (this.gatePortal) {
-      this.gatePortal.material.opacity = onBeat5 ? 0.15 + syncFactor * 0.2 : 0.06;
-    }
 
-    tickLensAnimation(this.lensAnim, this.activeMode, t);
+    const inRoom = v.at === 'room';
+    this.framing.update(this.canvas.clientWidth, this.canvas.clientHeight, dt, this._subjectPoint(), {
+      subjectFrac: atGate ? 0.3 : 0.36,
+      panX: inRoom ? this.roomPan : null,
+      snap: resizeOnly || (inRoom && performance.now() < this.dragUntil),
+    });
 
-    this.renderer.render(this.scene, this.camera);
+    if (!resizeOnly) this.post.render(dt, frameDt);
   }
 
   dispose() {
-    window.removeEventListener('resize', () => this._onResize());
+    window.removeEventListener('resize', this._onResize);
+    this._resizeObserver?.disconnect();
+    this.renderer.setAnimationLoop(null);
+    this.post.dispose();
     this.renderer.dispose();
   }
 }

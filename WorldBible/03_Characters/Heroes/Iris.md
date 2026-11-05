@@ -885,7 +885,7 @@ Appeals to:
 - [Leo](Leo.md) - Fellow see-beyond-obvious thinker
 - [Dave](Dave.md) - Emotional kindred spirit
 - [The Team](../../05_Factions/TheTeam.md) - Multi-reality specialist role
-- [Character Development Guidelines](../../../.cursor/rules/character-development.mdc)
+- [Writing Guidelines](../../06_Narrative/WritingGuidelines.md) - Representation and voice guardrails
 
 ---
 

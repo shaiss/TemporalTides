@@ -277,7 +277,7 @@ Chronopolis is **neither pure dystopia nor utopia**:
 - Surveillance infrastructure expanded
 - Cultural homogenization deepening
 - Autonomous zones increasingly resistant
-- Anne left for Time Nexus (341 AC)
+- Anne left for Time Nexus (late 342 AC)
 
 **Why It Succeeded:**
 
@@ -679,7 +679,7 @@ Chronopolis occupies the **ORDERED** extreme of the societal spectrum:
 - Students (large university population)
 - Retired (good pensions)
 - Temporarily between jobs (unemployment insurance)
-- Disabled (supported, but stigmatized)
+- People with disabilities (supported, but stigmatized)
 
 **Wealth Distribution:**
 
@@ -762,12 +762,12 @@ Chronopolis occupies the **ORDERED** extreme of the societal spectrum:
 
 **Marginal (5%):**
 - Long-term unemployed
-- Disabled (unable to work)
+- People with disabilities (unable to work)
 - Homeless (rare, but exist)
 - Mentally ill (institutionalized often)
 - **Characteristics:** Poverty (relative), social stigma, limited prospects
 - **Lifestyle:** Assisted housing, public support, marginalized
-- **Reality:** Better than many zones (safety net exists) but still suffering
+- **Reality:** Better than many zones (safety net exists), but hardship remains
 
 **Mobility:**
 
@@ -1087,7 +1087,7 @@ Despite **1.0 RFR baseline**, time feels accelerated:
 - **Upper-Middle (20%):** 1,000,000 - Professionals, managers, academics
 - **Middle (50%):** 2,500,000 - Government workers, teachers, skilled trades
 - **Working (20%):** 1,000,000 - Service, industrial, entry-level
-- **Marginal (5%):** 250,000 - Unemployed, disabled, homeless
+- **Marginal (5%):** 250,000 - People who are unemployed, people with disabilities, people experiencing homelessness
 
 **Zone Origin Distribution:**
 - **Native Chronopolis:** 60% (born here, multigenerational)
@@ -1496,7 +1496,7 @@ Anne discovered some underground culture as teenager (felt less alone), but fear
 **333 AC:** Anne starts school (pressure begins)
 **338 AC:** Foresight manifests (registered, monitored)
 **339 AC:** Anne wins achievement awards (anxious despite success)
-**341 AC:** Anne joins Team, moves to Time Nexus
+**Late 342 AC:** Anne joins Team, moves to Time Nexus
 **342 AC (Present):** Chronopolis peak population (5 million)
 
 **Current Tensions:**
@@ -2303,7 +2303,7 @@ Chronopolis is **NOT a major gameplay hub** (oppressive, players want to leave):
 **Other Locations:**
 - [The Time Nexus](TimeNexus.md) - Contrast (freedom vs. control), Anne's escape
 - [The Interchange](TheInterchange.md) - Economic partnership, regulatory tension
-- [Velocity City](VelocityCity.md) - Opposite (autonomous vs. ordered), Eli's escape
+- [Accelerated Quarter (Velocity City)](AcceleratedQuarter.md) - Opposite (autonomous vs. ordered), Eli's escape
 - [Baseline Metropolitan](BaselineMetropolitan.md) - Sister city, friendlier version
 
 **Factions:**
@@ -2312,9 +2312,8 @@ Chronopolis is **NOT a major gameplay hub** (oppressive, players want to leave):
 - [Entropy Forces](../05_Factions/EntropyForces.md) - Ideological enemy, possible target
 
 **Guidelines:**
-- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - Order-Chaos spectrum extreme
-- [Character Development](../../.cursor/rules/character-development.mdc) - Anne's background
-- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Thematic representation
+- [Anne](../03_Characters/Heroes/Anne.md) - Character background
+- [Story Structure](../06_Narrative/StoryStructure.md) - Thematic representation
 
 ---
 

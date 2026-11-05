@@ -1,3 +1,15 @@
+# Automated PR code review via the code-review plugin (anthropics/claude-code).
+#
+# SETUP (repo admin):
+#   - Secret: CLAUDE_CODE_OAUTH_TOKEN — long-lived token from `claude setup-token`
+#     (Claude Pro/Max/Team/Enterprise). Pass it only as `claude_code_oauth_token`
+#     below; do not substitute ANTHROPIC_API_KEY in this workflow unless you
+#     intentionally switch auth modes.
+#   - Install the Claude GitHub App on this repo (OIDC + PR comment tools).
+#
+# If the job fails immediately with `is_error: true`, 1 turn, ~$0, and no
+# model usage, the secret is usually present but expired or invalid — mint a
+# new token locally and update the repository secret (no workflow change needed).
 name: Claude Code Review
 
 on:

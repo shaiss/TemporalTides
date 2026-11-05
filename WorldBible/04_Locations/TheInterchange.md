@@ -1210,7 +1210,7 @@ The Interchange isn't explicitly designed for neurodiversity (unlike Time Nexus 
 **Artisan Prime Daleth (Slow Market):**
 - Master craftsperson from dilated zone
 - Creates temporal-resistant materials
-- Vibrion's costume incorporated her alloys
+- Fabricates upgrades and repairs for Vibrion's alloy chain mesh (mesh created by Dr. Volt's team)
 - Patient, wise, centuries-old (subjective)
 - Team ally
 
@@ -1334,7 +1334,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 **337 AC:** Labor Exchange reaches 10,000 workers
 **339 AC:** Trade Council recognized by Temporal Research Council
 **340 AC:** Eli begins working as navigator
-**341 AC:** Team first visits (equipment shopping)
+**Late 342 AC:** Team first visits (equipment shopping)
 **342 AC:** Team becomes regular visitors (current)
 
 ### Relationship to Temporal Research Council
@@ -1553,7 +1553,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 - 200+ artisan workshops
 - Visible craftsmanship (watch masters work)
 - Quality goods (hand-made, time-intensive)
-- Vibrion's costume materials sourced here
+- Temporal-resistant materials and mesh maintenance (Vibrion's alloy chain mesh upgrades; origin Dr. Volt's team)
 - Contemplative atmosphere
 
 **The Antique Emporium:**
@@ -1870,7 +1870,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 **Vibrion:**
 - Regular customer (equipment)
 - Respects efficient design
-- Artisan Daleth supplied costume materials
+- Artisan Daleth maintains and upgrades his alloy chain mesh (Volt-team origin)
 - Appreciates chronometric innovation
 - Recruits Eli here (sees potential)
 - Uses for mission prep
@@ -1934,7 +1934,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 **Chapter 6 (Equipment Acquisition):**
 - Team shops for mission gear
 - Meet Guild Master Torrent (antagonistic)
-- Artisan Daleth helps (upgrades Vibrion's costume)
+- Artisan Daleth helps (mesh upgrades and repairs; not the mesh's original forge)
 - Learn about chronometric standardization
 - Foreshadowing: Economic warfare potential
 
@@ -1966,7 +1966,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 
 **Chapter 15 (Preparation):**
 - Team equips for final mission
-- Artisan Daleth provides special materials
+- Artisan Daleth provides temporal-resistant materials for final-mission mesh reinforcement
 - Navigator community supports (information, routes)
 - Emotional goodbyes (might not return)
 - Eli's former colleagues honor him
@@ -2130,8 +2130,8 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 **Other Locations:**
 - [The Time Nexus](TimeNexus.md) - Complementary hub, scientific/spiritual center
 - [Chronopolis Central](ChronopolisCentral.md) - Largest trading partner, regulatory tension
-- [Velocity City](VelocityCity.md) - Fast Market connections, Eli's origin
-- [Silent Hollow](SilentHollow.md) - Slow Market connections, Dave's origin
+- [Accelerated Quarter (Velocity City)](AcceleratedQuarter.md) - Fast Market connections, Eli's origin
+- [Contemplative Sanctuaries (Silent Hollow)](ContemplativeSanctuaries.md) - Slow Market connections, Dave's origin
 
 **Factions:**
 - [The Team](../05_Factions/TheTeam.md) - Regular visitors, Eli's background
@@ -2139,8 +2139,7 @@ By 280 AC, cross-zone trade was inefficient and inequitable:
 - [Entropy Forces](../05_Factions/EntropyForces.md) - Economic attack target
 
 **Guidelines:**
-- [Location Development Guidelines](../../.cursor/rules/locations-worldbuilding.mdc) - AC-inspired economic models
-- [Narrative Structure](../../.cursor/rules/narrative-structure.mdc) - Plot integration
+- [Story Structure](../06_Narrative/StoryStructure.md) - Plot integration
 
 ---
 

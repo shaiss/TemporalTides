@@ -11,10 +11,32 @@ export default defineConfig({
   srcDir: './',
   
   // Exclude directories from build (internal-only docs must not become public pages)
-  srcExclude: ['deprecated/**', 'scripts/**', 'logs/**', 'scratch/**', 'play/**', 'node_modules/**', '.vitepress/cache/**', '.git/**', '.cursor/**', 'AGENTS.md', 'CLAUDE.md', 'docs/**'],
+  srcExclude: [
+    'deprecated/**',
+    'scripts/**',
+    'logs/**',
+    'scratch/**',
+    'play/**',
+    'node_modules/**',
+    '.vitepress/cache/**',
+    '.git/**',
+    '.cursor/**',
+    'AGENTS.md',
+    'CLAUDE.md',
+    'docs/**',
+    // Repo meta / internal docs (not part of the public site or sitemap)
+    'README.md',
+    'QUICK_START.md',
+    'WorldBible/_*.md',
+    'References/**',
+  ],
   
   // Clean URLs (removes .html extension)
   cleanUrls: true,
+
+  sitemap: {
+    hostname: 'https://temporaltides.com'
+  },
   
   // Last updated timestamp
   lastUpdated: true,

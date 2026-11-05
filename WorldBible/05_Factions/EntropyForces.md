@@ -8,7 +8,7 @@
 
 **Official Name:** Dr. Entropy's Forces (no formal name; Entropy rejects formalization)
 **Type:** Antagonist organization; chaos philosophy movement
-**Formation:** ~330 AC (post-Entropy's exile)
+**Formation:** ~335 AC (post-exile recruitment; public identity from 337 AC)
 **Headquarters:** Dr. Entropy's Lair (hidden; chaotic temporal zone)
 **Status:** Active threat; preparing Chronos Catalyst deployment
 **Leadership:** Dr. Entropy (absolute); Enigma Volt (field commander)
@@ -24,10 +24,10 @@
 - No official name (Entropy: "We don't need labels")
 
 **Formation:**
-- 320 AC: Dr. Entropy (Marcus Theron) expelled from Council
-- 330 AC: First followers recruited; Lair established
+- 332 AC: Dr. Entropy (Marcus Theron) expelled from Council; research confiscated
+- 335 AC: First followers recruited; Lair site secured in unstable zone
 - 337 AC: Reemergence as "Dr. Entropy"; public threat
-- 340 AC+: Operations escalate; Catalyst refinement
+- 340 AC+: Chronos Catalyst development; operations escalate
 
 **Current Status:**
 - **Size:** ~50-200 (estimates vary; no census)
@@ -57,10 +57,10 @@
 ## 3. History
 
 **Founding:**
-- Dr. Entropy's exile (320 AC) — radicalized
+- Dr. Entropy's exile (332 AC) — radicalized
 - Fractured Wastes study (learned from natural chaos)
 - Early prototypes (entropy devices)
-- First attack on Nexus (189 AC archival — failed)
+- First attack on Nexus (338 AC — failed; Nexus defenses held)
 
 **Milestones:**
 - Lair established (hidden location)

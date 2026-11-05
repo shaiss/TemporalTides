@@ -1,140 +1,68 @@
 import { Story } from 'inkjs';
 
-export const MODES = [
-  { id: 'anne', label: 'Anne', ability: 'Foresight' },
-  { id: 'maya', label: 'Maya', ability: 'Pattern Sense' },
-  { id: 'eli', label: 'Eli', ability: 'Kinetic Rush' },
-  { id: 'vibrion', label: 'Vibrion', ability: 'Vibrational Manipulation' },
+export const CHARACTERS = [
+  { id: 'anne', name: 'Anne', ability: 'Foresight' },
+  { id: 'maya', name: 'Maya', ability: 'Pattern Sense' },
+  { id: 'eli', name: 'Eli', ability: 'Kinetic Rush' },
+  { id: 'vibrion', name: 'Vibrion', ability: 'Vibrational Manipulation' },
 ];
 
-export const BEAT_CUES = {
-  0: 'One lens at a time. · Wide chamber, clocks slightly out of sync.',
-  1: 'Hazard options only Anne sees · Foresight overlay on the corridor.',
-  2: 'She marks the pattern · sequence readable in Maya\'s lens.',
-  3: 'Faster than careful hands · Eli\'s window on Maya\'s sequence.',
-  4: 'Connected to the world\'s components · Vibrion on the dead panel.',
-  5: 'Four clock faces disagree · sync clocks in order — Anne → Maya → Eli → Vibrion.',
-  6: 'Resonance, not victory · team pattern under Vibrion\'s frame.',
-};
+export const CHARACTER_IDS = CHARACTERS.map((c) => c.id);
 
-export const MODE_CUES = {
-  anne: 'HUD: Foresight — timing / hazard overlay',
-  maya: 'HUD: Pattern Sense — strain marks & sequence',
-  eli: 'HUD: Kinetic Rush — sync window / rush',
-  vibrion: 'HUD: Vibrational Manipulation — world-grid coupling',
-};
+/** Parse `#say:anne #id:corr-anne #fx:clear` style tags into a line record. */
+export function parseLine(text, tags = []) {
+  const line = { text: text.trim(), speaker: null, id: null, fx: [] };
+  tags.forEach((raw) => {
+    const tag = raw.trim();
+    const i = tag.indexOf(':');
+    const key = i < 0 ? tag : tag.slice(0, i);
+    const value = i < 0 ? '' : tag.slice(i + 1);
+    if (key === 'say') line.speaker = value;
+    else if (key === 'id') line.id = value;
+    else if (key === 'fx') line.fx.push(value);
+  });
+  return line;
+}
 
+/**
+ * Thin wrapper over an inkjs Story. The story has no choice menus: callers set variables, run a
+ * knot by path, and get back the spoken lines it produced. Ink owns every rule and every flag.
+ */
 export class InkController {
-  constructor() {
-    this.story = null;
-    this.storyText = '';
-    this.latestPassage = '';
-    this.currentBeat = null;
-    this.tagMode = null;
-    this.modeSwitchUi = false;
-    this.listeners = new Set();
-  }
-
-  subscribe(fn) {
-    this.listeners.add(fn);
-    return () => this.listeners.delete(fn);
-  }
-
-  notify() {
-    const state = this.getState();
-    this.listeners.forEach((fn) => fn(state));
-  }
-
-  readVar(name, fallback = null) {
-    if (!this.story) return fallback;
-    try {
-      const v = this.story.variablesState[name];
-      return v != null ? v : fallback;
-    } catch {
-      return fallback;
-    }
-  }
-
-  readActive() {
-    const v = this.readVar('active', 'vibrion');
-    return String(v);
-  }
-
-  applyTags(tags) {
-    (tags || []).forEach((raw) => {
-      const tag = raw.trim();
-      if (tag.startsWith('beat:')) this.currentBeat = tag.slice(5);
-      if (tag.startsWith('mode:')) this.tagMode = tag.slice(5);
-      if (tag === 'ui:mode_switch') this.modeSwitchUi = true;
-    });
-  }
-
-  getNarrativeLine() {
-    const raw = this.latestPassage.replace(/\s+/g, ' ').trim();
-    if (!raw) return '';
-    const sentence = raw.match(/^[^.!?]+[.!?]?/)?.[0]?.trim() || raw;
-    return sentence.length > 120 ? `${sentence.slice(0, 117)}…` : sentence;
-  }
-
-  getHudCue() {
-    const active = this.readActive();
-    let cue = BEAT_CUES[this.currentBeat] || 'Time Nexus chamber — switch lens to see different choices.';
-    if (this.modeSwitchUi) {
-      cue = `Switch lens · ${MODE_CUES[active] || active}`;
-    } else if (this.tagMode && MODE_CUES[this.tagMode]) {
-      cue = MODE_CUES[this.tagMode];
-    } else if (MODE_CUES[active]) {
-      cue = `${cue.split(' · ')[0]} · ${MODE_CUES[active].replace('HUD: ', '')}`;
-    }
-    return cue;
-  }
-
-  getState() {
-    const choices = this.story
-      ? this.story.currentChoices.map((c) => ({
-        text: c.text,
-        isMode: /Anne —|Maya —|Eli —|Vibrion —|Switch active|Keep current/i.test(c.text),
-      }))
-      : [];
-    return {
-      storyText: this.storyText,
-      narrativeLine: this.getNarrativeLine(),
-      choices,
-      active: this.readActive(),
-      currentBeat: this.currentBeat,
-      hudCue: this.getHudCue(),
-      beat5Step: Number(this.readVar('beat5_step', 0)),
-      beat5Clear: Boolean(this.readVar('beat5_clear', false)),
-      modeSwitchUi: this.modeSwitchUi,
-    };
-  }
-
-  continueStory() {
-    if (!this.story) return;
-    this.modeSwitchUi = false;
-    let turnText = '';
-    while (this.story.canContinue) {
-      const chunk = this.story.Continue();
-      this.storyText += chunk;
-      turnText += chunk;
-      this.applyTags(this.story.currentTags);
-    }
-    this.latestPassage = turnText.trim();
-    this.notify();
-  }
-
-  choose(index) {
-    if (!this.story) return;
-    this.story.ChooseChoiceIndex(index);
-    this.continueStory();
-  }
-
-  async load() {
-    const storyUrl = `${import.meta.env.BASE_URL}story.json`;
-    const res = await fetch(storyUrl);
-    if (!res.ok) throw new Error('Missing story.json — run npm run compile');
-    const content = await res.json();
+  constructor(content) {
     this.story = new Story(content);
-    this.continueStory();
+  }
+
+  static async fetchStory(url) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Missing story.json — run npm run compile');
+    return new InkController(await res.json());
+  }
+
+  get(name) {
+    return this.story.variablesState[name];
+  }
+
+  set(name, value) {
+    this.story.variablesState[name] = value;
+  }
+
+  call(fn, ...args) {
+    return this.story.EvaluateFunction(fn, args);
+  }
+
+  /** Run a knot (or knot.stitch) to its end and return the lines it spoke. */
+  run(path) {
+    this.story.ChoosePathString(path);
+    const lines = [];
+    while (this.story.canContinue) {
+      const text = this.story.Continue();
+      if (text.trim()) lines.push(parseLine(text, this.story.currentTags));
+    }
+    return lines;
+  }
+
+  reset() {
+    this.story.ResetState();
   }
 }

@@ -807,7 +807,7 @@ Maya's character provides autism representation in gameplay:
 - [Leo](Leo.md) - Fellow pattern-seeker (different approach)
 - [Anne](Anne.md) - Shared appreciation for structure
 - [The Team](../../05_Factions/TheTeam.md) - Team dynamics
-- [Character Development Guidelines](../../../.cursor/rules/character-development.mdc)
+- [Writing Guidelines](../../06_Narrative/WritingGuidelines.md) - Representation and voice guardrails
 
 ---
 

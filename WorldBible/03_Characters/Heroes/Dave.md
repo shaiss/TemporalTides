@@ -805,7 +805,7 @@ Appeals to:
 - [Leo](Leo.md) - Kindred slow-time spirit
 - [Eli](Eli.md) - Energy opposite, deep friendship
 - [The Team](../../05_Factions/TheTeam.md) - Emotional support role
-- [Character Development Guidelines](../../../.cursor/rules/character-development.mdc)
+- [Writing Guidelines](../../06_Narrative/WritingGuidelines.md) - Representation and voice guardrails
 
 ---
 
