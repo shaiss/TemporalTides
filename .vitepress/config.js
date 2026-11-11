@@ -35,7 +35,15 @@ export default defineConfig({
   cleanUrls: true,
 
   sitemap: {
-    hostname: 'https://temporaltides.com'
+    hostname: 'https://temporaltides.com',
+    // /play/ is a separate Vite app copied into dist after `vitepress build`
+    // (scripts/build-nexus-play.mjs), so VitePress never sees it. Add it here.
+    transformItems: (items) => {
+      if (!items.some((item) => item.url === 'play/')) {
+        items.push({ url: 'play/' })
+      }
+      return items
+    }
   },
   
   // Last updated timestamp
